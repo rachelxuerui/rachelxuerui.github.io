@@ -1,3 +1,4 @@
+/*FOR ALL PAGES*/
 .top-buttons {
     display: flex;
     flex-direction: row;
@@ -17,6 +18,14 @@ button {
     float: left;
     cursor: pointer;
 }
+.br {
+    display: block;
+    margin-bottom: 40px;
+}
+.small-br {
+    display: block;
+    margin-bottom: 2px;
+}
 .heading{
     font-family: Helvetica;
     text-align: center;
@@ -28,56 +37,6 @@ button {
 .title {
     font-size: 15px;
     font-style: italic;
-}
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    padding-left: 40px;
-    padding-right: 40px;
-    align-items: center;
-}
-.intro {
-    background-color: black;
-    padding: 20px 43px 20px 43px;
-    border-radius: 1px;
-    font-family: Helvetica;
-    color:white;
-    font-size: 18px;
-    margin: auto;
-    max-width: 100%;
-}
-.br {
-    display: block;
-    margin-bottom: 40px;
-}
-.small-br {
-    display: block;
-    margin-bottom: 2px;
-}
-.photo-grid {
-    max-width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-content: center;
-    gap: 20px 20px;
-}
-.photo {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-img {
-    border-radius: 1px;
-    height: 300px;
-    width: 300px;
-}
-.rect {
-    border-radius: 1px;
-    height: 300px;
-    width: 300px;
-    background-color: grey;
 }
 .space {
     padding-bottom: 50px;
@@ -99,3 +58,83 @@ img {
 a {
     color: white;
   }
+
+/*HOMEPAGE COMPONENTS*/
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+    padding-right: 40px;
+    align-items: center;
+}
+.intro {
+    background-color: black;
+    padding: 20px 43px 20px 43px;
+    border-radius: 1px;
+    font-family: Helvetica;
+    color:white;
+    font-size: 18px;
+    margin: auto;
+    max-width: 100%;
+}
+.photo-grid {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 20px 20px;
+}
+.photo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+img {
+    border-radius: 1px;
+    height: 300px;
+    width: 300px;
+}
+
+/*SECTION PAGES*/
+.section-heading {
+    font-family: Helvetica;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 40px;
+    margin-right: 10px;
+}
+.section-body {
+    font-family: Helvetica;
+    font-size: 15px;
+    margin-left: 40px;
+    margin-right: 10px;
+}
+.centered-photo {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.page-photo {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
+}
+.photo-description {
+    padding-top: 15px;
+    font-style: italic;
+    font-family: Helvetica;
+    font-size: 15px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.photo-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
