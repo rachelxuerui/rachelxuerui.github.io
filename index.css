@@ -176,7 +176,8 @@ img {
     font-size: 15px;
     font-weight: bold;
     color: black;
-    padding: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
     width: 100%;
 }
 .float {
