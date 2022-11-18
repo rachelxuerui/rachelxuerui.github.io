@@ -104,13 +104,12 @@ img {
     font-size: 30px;
     font-weight: bold;
     margin-left: 40px;
-    margin-right: 10px;
 }
 .section-body {
     font-family: Helvetica;
     font-size: 15px;
     margin-left: 40px;
-    margin-right: 10px;
+    margin-right: 40px;
 }
 .centered-photo {
     display: flex;
@@ -145,15 +144,6 @@ img {
     gap: 20px;
     align-items: center;
     justify-content: center;
-    /*background-color: black;*/
-    padding: 10px 10px 10px 10px;
-    border-radius: 1px;
-}
-.chapter {
-    color: white;
-    font-family: Helvetica;
-    font-weight: bold;
-    font-size: 15px;
 }
 .float{
 	position:fixed;
@@ -164,6 +154,8 @@ img {
     font-size: 15px;
     justify-content: center;
     align-items: center;
+    width: 20px;
+    height: 20px;
 	bottom:40px;
 	right:40px;
 	background-color: rgba(0, 0, 0, 0.5);
@@ -171,19 +163,5 @@ img {
 	border-radius:5px;
 	text-align:center;
 }
-.back-to-home {
-    font-family: Helvetica;
-    font-size: 15px;
-    font-weight: bold;
-    color: black;
-    padding-left: 30px;
-    padding-right: 30px;
-    width: 100%;
-}
-.float {
-    display: flex;
-    flex-direction: column;
-    width: 20px;
-    height: 20px;
-}
+
 
