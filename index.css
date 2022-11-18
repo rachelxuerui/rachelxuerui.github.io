@@ -99,6 +99,7 @@ img {
 
 /*SECTION PAGES*/
 .section-heading {
+    color: black;
     font-family: Helvetica;
     font-size: 30px;
     font-weight: bold;
@@ -134,7 +135,52 @@ img {
 .photo-row {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     gap: 100px;
 }
+.menu {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    /*background-color: black;*/
+    padding: 10px 10px 10px 10px;
+    border-radius: 1px;
+}
+.chapter {
+    color: white;
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 15px;
+}
+.float{
+	position:fixed;
+    display: flex;
+    font-family: Helvetica;
+    padding: 10px 10px 10px 10px;
+    font-size: 15px;
+    justify-content: center;
+    align-items: center;
+	bottom:40px;
+	right:40px;
+	background-color: rgba(0, 0, 0, 0.5);
+	color:#FFF;
+	border-radius:5px;
+	text-align:center;
+}
+.back-to-home {
+    font-family: Helvetica;
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    padding: 30px;
+}
+.float {
+    display: flex;
+    flex-direction: column;
+    width: 20px;
+    height: 20px;
+}
+
