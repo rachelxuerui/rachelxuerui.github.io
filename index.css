@@ -68,12 +68,38 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    justify-content: center;
 }
+.photo:hover {
+    filter: brightness(50%);
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.photo-description {
+    color: black;
+    visibility: hidden;
+    /*-moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;*/
+    align-items: center;
+}
+  .photo:hover .photo-description {
+    visibility: visible;
+    opacity: 1;
+    align-items: center;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+
 img {
     border-radius: 1px;
     height: 400px;
     width: 400px;
 }
+
 
 /*SECTION PAGES*/
 .section-heading {
