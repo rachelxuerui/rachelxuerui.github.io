@@ -1,6 +1,9 @@
 /*FOR ALL PAGES*/
+
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
 .top-buttons {
-    font-family: Helvetica;
+    font-family: 'Open Sans';
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -13,7 +16,7 @@
     margin-bottom: 2px;
 }
 .heading{
-    font-family: Helvetica;
+    font-family: 'Open Sans';
     text-align: center;
 }
 .name {
@@ -35,7 +38,7 @@
     height: 100px;
     width: 100%;
     bottom: 0px;
-    font-family: Helvetica;
+    font-family: 'Open Sans';
     font-size: 15px;
     justify-content: center;
     align-items: center;
@@ -44,14 +47,14 @@
 a {
     color: black;
     text-decoration: none;
-    font-family: Helvetica;
+    font-family: 'Open Sans';
   }
 
 /*HOMEPAGE COMPONENTS*/
 .intro {
     margin-left: 40px;
     margin-right: 40px;
-    font-family: Helvetica;
+    font-family: 'Open Sans';
     color:black;
     font-size: 20px;
     max-width: 100%;
@@ -80,10 +83,8 @@ a {
 .photo-description {
     color: black;
     visibility: hidden;
-    /*-moz-transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;*/
-    align-items: center;
+    font-family: 'Open Sans';
+    font-size: 15px;
 }
   .photo:hover .photo-description {
     visibility: visible;
@@ -100,17 +101,16 @@ img {
     width: 400px;
 }
 
-
 /*SECTION PAGES*/
 .section-heading {
     color: black;
-    font-family: Helvetica;
+    font-family: 'Open Sans';
     font-size: 30px;
     font-weight: bold;
     margin-left: 40px;
 }
 .section-body {
-    font-family: Helvetica;
+    font-family: 'Open Sans';
     font-size: 15px;
     margin-left: 40px;
     margin-right: 40px;
@@ -126,14 +126,15 @@ img {
     justify-content: center;
     filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
 }
-.photo-description {
+.description {
     padding-top: 15px;
     font-style: italic;
-    font-family: Helvetica;
+    font-family: 'Open Sans';
     font-size: 15px;
     display: flex;
     align-content: center;
     justify-content: center;
+    color: black;
 }
 .photo-row {
     display: flex;
@@ -152,7 +153,7 @@ img {
 .float{
 	position:fixed;
     display: flex;
-    font-family: Helvetica;
+    font-family: 'Open Sans';
     padding: 10px 10px 10px 10px;
     text-decoration: none;
     font-size: 15px;
@@ -164,8 +165,29 @@ img {
     right:40px;
     background-color: rgba(0, 0, 0, 0.5);
     color:#FFF;
-    border-radius:5px;
+    border-radius:2px;
     text-align:center;
 }
 
-
+/*ABOUT ME PAGE*/
+.about-me-heading {
+    color: black;
+    font-family: 'Open Sans';
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 40px;
+}
+.about-me-body {
+    font-family: 'Open Sans';
+    font-size: 25px;
+}
+.about-me-wrapper {
+    margin-left: 40px;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 80px;
+    align-content: center;
+    
+}
