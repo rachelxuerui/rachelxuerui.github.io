@@ -61,11 +61,11 @@ a {
     max-width: 100%;
 }
 .photo-grid {
-    margin-left: 40px;
-    margin-right: 40px;
+    /*margin-left: 40px;
+    margin-right: 40px;*/
     max-width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 .photo {
@@ -120,6 +120,7 @@ img {
     display: flex;
     align-content: center;
     justify-content: center;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
 }
 .page-photo {
     display: flex;
