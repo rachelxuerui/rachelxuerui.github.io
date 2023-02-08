@@ -2,7 +2,9 @@
 <html>
 <head>
 <link rel="stylesheet" href="index.css">
+<script src="https://unpkg.com/scrollreveal"></script>
 </head>
+<body>
 <a id = "#top"></a>
 <div class = "top-buttons">
     <b><a href = "index.html">PORTFOLIO</a></b>
@@ -11,6 +13,7 @@
 </div>
 <br><br>
 
+<div class = "section">
 <div class = heading>
     <div class = name>Infinite Goods</div>
     <div class = title>Product Designer</div>
@@ -23,9 +26,11 @@
     <a href = "#methodology">METHODOLOGY</a>
     <a href = "#who-we-are">WHO WE ARE</a>
 </div>
+</div>
 
 <br><br>
 
+<div class = "section">
 <a id = "overview">
     <div class = "section-heading">Overview</div></a><br>
 <div class = "section-body">
@@ -35,9 +40,11 @@
     <br><br>
     As a product designer for Infinite Goods, I am responsible for the design of the website, 
     including new pages and features.</div>
+</div>
 
 <br><br>
 
+<div class = "section">
 <a id = "process">
     <div class = "section-heading">Process</div></a><br>
 <div class = "centered-photo"><img src="portfolio/infinite-goods/process.png" alt="flow chart diagram" style="display: block; width: 100%; height: auto; max-width: 600px;"></div>
@@ -53,7 +60,9 @@
     <li>Must be possible to implement using basic Shopify template (this was before we had software engineers on our team)</li>
     </ul>
     You can see the finalized homepage design <b><a href="https://www.figma.com/file/D1C7djJoWxhNyphoqdLf4W/Infinite-Goods-Homepage-Design-V1?node-id=0%3A1&t=grXnYyx6PBZpzzOv-1" target="_blank" rel="noopener noreferrer" style="color: black;">here</a></b>.</div>
+</div>
 
+<div class = "section">
 <br><br>
 <a id = "favorites">
 <div class = "section-heading">Favorites</div></a><br>
@@ -77,9 +86,12 @@
 </div><br><br>
 <div class = "page-photo"><img src="portfolio/infinite-goods/favorites-collection.png" alt="product page" style="display: block; width: 100%; height: auto; max-width: 400px;"></div>
 <div class = "description">Favorites on collection page, Figma mockup</div>
+</div>
+
 
 <br><br>
 
+<div class = "section">
 <a id = "methodology">
     <div class = "section-heading">Methodology</div></a><br>
 <div class = "section-body">
@@ -88,7 +100,7 @@
     I initially designed it to be a long page walking users through how each category is ranked, shown below.
 </div><br><br>
 <div class = "page-photo"><img src="portfolio/infinite-goods/methodology-scrapped.png" alt="product page" style="display: block; width: 100%; height: auto; max-width: 400px;"></div>
-<div class = "description">Methodology page V1, Figma mockup</div><br><br>
+<div class = "description">Methodology page, initial design, Figma mockup</div><br><br>
 <div class = "section-body">
     However, seeing as the Sustainability Score has 13 categories, this would be a very long and monotonous 
     page that users would be subjected to scroll through. 
@@ -96,11 +108,14 @@
     directly interacting with the label. Clicking on any category would lead to a popup with more information on how that category is scored.
 </div><br><br>
 <div class = "centered-photo"><img src="portfolio/infinite-goods/methodology-flow.png" alt="product page" style="display: block; width: 100%; height: auto; max-width: 1000px;"></div>
-<div class = "description">Methodology page V2 (final), Figma mockup</div><br><br>
+<div class = "description">Methodology page, final design, Figma mockup</div><br><br>
 <div class = "section-body">This design is currently being implemented into the website by Surya Akella.</div>
+</div>
 
 <br><br>
 
+
+<div class = "section">
 <a id = "who-we-are">
     <div class = "section-heading">Who we are</div></a><br>
 <div class = "section-body">
@@ -110,7 +125,7 @@
     <div class = "page-photo"><img src="portfolio/infinite-goods/who-we-are-banner.png" alt="product page" style="display: block; width: 100%; height: auto; max-width: 400px;"></div>
     <div class = "page-photo"><img src="portfolio/infinite-goods/who-we-are-blocks.png" alt="product page" style="display: block; width: 100%; height: auto; max-width: 400px;"></div>
 </div>
-<div class = "description">Who we are page, V1 and V2 (from left to right), Figma mockup</div><br><br>
+<div class = "description">Who we are page, initial iterations, Figma mockup</div><br><br>
 <div class = "section-body">
     After presenting these three designs to the full team, 
     I received feedback that they liked V1 for it’s larger pictures, 
@@ -121,12 +136,13 @@
     <div class = "page-photo"><img src="portfolio/infinite-goods/who-we-are-final1.png" alt="product page" style="display: block; width: 100%; height: auto; max-width: 400px;"></div>
     <div class = "page-photo"><img src="portfolio/infinite-goods/who-we-are-final2.png" alt="product page" style="display: block; width: 100%; height: auto; max-width: 400px;"></div>
 </div>
-<div class = "description">Who we are page, V3 (final), Figma mockup</div><br><br>
+<div class = "description">Who we are page, final design, Figma mockup</div><br><br>
 <div class = "section-body">
     This design is currently being implemented into the website by Kimly Tor and Han Choi.
     </div><br><br>
 
 <div class = "section-body">Stay tuned for more updates on my work with Infinite Goods!</div>
+</div>
 
 <br><br>
 <div class = bottom>Thank you for visiting :)<br>Designed and coded by Rachel Xuerui Michelson</div>
@@ -134,4 +150,19 @@
 <a href="#top" class="float">
     <b>&#8593</b>
     </a>
+
+    <script>
+        ScrollReveal({
+            reset: true,
+            distance: '60px',
+            duration: 1500,
+            delay: 0
+        });
+        ScrollReveal({ reset: false });
+        ScrollReveal().reveal('.section', {delay: 500});
+    </script>
+
+</body>
+
 </html>
+

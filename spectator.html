@@ -2,7 +2,9 @@
 <html>
 <head>
 <link rel="stylesheet" href="index.css">
+<script src="https://unpkg.com/scrollreveal"></script>
 </head>
+<body>
 <a id = "#top"></a>
 <div class = "top-buttons">
     <b><a href = "index.html">PORTFOLIO</a></b>
@@ -11,14 +13,17 @@
 </div>
 <br><br>
 
+<div class = "section">
 <div class = heading>
     <div class = name>Spectator Publishing Company</div>
     <div class = title>Product Designer</div>
 <br>
 </div>
+</div>
 
 <br><br>
 
+<div class = "section">
 <a id = "overview">
 <div class = "section-heading">Overview</div></a><br>
 <div class = "section-body">
@@ -30,7 +35,9 @@
     and high fidelity mockups. One of my primary responsibilities was designing a painted door test for the website 
     (mobile) to see whether users would be interested in a mobile app.</div>
     <br><br>
+</div>
 
+<div class = "section">
 <a id = "painted-door-test">
 <div class = "section-heading">Painted door test</div></a><br>
 <div class = "section-body">
@@ -56,12 +63,26 @@
     <div class = "page-photo"><img src="portfolio/spec/popup-final.png" alt="popup final" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
     <div class = "page-photo"><img src="portfolio/spec/landing3.png" alt="landing final" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
 </div>
-<div class = "description">Final designs for the painted door test popup and landing page, Figma mockup</div>
+<div class = "description">Final design for the painted door test popup and landing page, Figma mockup</div>
 <br><br>
 <div class = "section-body">My code for this popup can be found <b><u><a href = "https://github.com/rachelxuerui/painted-door-test" target="_blank" rel="noopener noreferrer" style = "color:black;">here</a></u></b>.
     To view this popup, please download the "painted-door-test" directory, and run `npm start` in terminal.</div>
+</div>
 
 <a href="#top" class="float">
     <b>&#8593</b>
     </a>
+
+    <script>
+        ScrollReveal({
+            reset: true,
+            distance: '60px',
+            duration: 1500,
+            delay: 0
+        });
+        ScrollReveal({ reset: false });
+        ScrollReveal().reveal('.section', {delay: 500});
+    </script>
+
+</body>
 </html>

@@ -2,7 +2,10 @@
 <html>
 <head>
 <link rel="stylesheet" href="index.css">
+<script src="https://unpkg.com/scrollreveal"></script>
 </head>
+
+<body>
 <a id = "#top"></a>
 <div class = "top-buttons">
     <b><a href = "index.html">PORTFOLIO</a></b>
@@ -11,21 +14,26 @@
 </div>
 <br><br>
 
+<div class = "section">
 <div class = heading>
     <div class = name>HotSpot</div>
-    <div class = title>An app designed for COMS W4170 with Andy Wang, Teji Vijayakumar, and Theo Mack</div>
+    <div class = title>App designed for COMS W4170 with Andy Wang, Teji Vijayakumar, and Theo Mack</div>
 <br>
 </div>
+</div>
 
+<div class = "section">
 <div class = "menu">
     <a href = "#overview">OVERVIEW</a>
     <a href = "#lo-fi-prototype">LOW FIDELITY PROTOTYPE</a>
     <a href = "#mid-fi-prototype">MEDIUM FIDELITY PROTOTYPE</a>
     <a href = "#high-fi-prototype">HIGH FIDELITY PROTOTYPE</a>
 </div>
+</div>
 
 <br><br>
 
+<div class = "section">
 <a id = "overview">
     <div class = "section-heading">Overview</div></a><br>
 <div class = "section-body">
@@ -56,9 +64,10 @@
     <li>84.6% of respondents are either “likely” or “very likely” to recommend a place they like to their friends</li>
     </ul>
 </div>
+</div>
 
 
-
+<div class = "section">
 <br>
 <a id = "lo-fi-prototype">
 <div class = "section-heading">Low fidelity prototype</div></a><br>
@@ -83,8 +92,10 @@
 </div>
 <div class = "description">HotSpot main screen, filter button opened, food filter selected, Absolute Bagels expanded upon, paper prototype</div>
 <br><br>
+</div>
 
 
+<div class = "section">
 <a id = "mid-fi-prototype">
     <div class = "section-heading">Medium fidelity prototype</div></a><br>
     <div class = "section-body">
@@ -145,7 +156,9 @@
     </div>
     <div class = "description">HotSpot review screen with filtering, Figma prototype</div>
     <br><br>
+    </div>
 
+    <div class = "section">
     <a id = "high-fi-prototype">
         <div class = "section-heading">High fidelity prototype</div></a><br>
         <div class = "section-body">
@@ -166,17 +179,17 @@
             <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-fooddrink.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
             <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-price.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
         </div>
-        <div class = "description">HotSpot main screen, Figma prototype</div>
+        <div class = "description">HotSpot main screen, Figma prototype</div><br><br>
         <div class = "photo-row">
             <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-spotview.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
             <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-spotview2.jpg" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
         </div>
-        <div class = "description">HotSpot review screen, Figma prototype</div>
+        <div class = "description">HotSpot review screen, Figma prototype</div><br><br>
         <div class = "photo-row">
             <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-suggest1.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
             <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-suggest.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
         </div>
-        <div class = "description">HotSpot suggest screen, Figma prototype</div>
+        <div class = "description">HotSpot suggest screen, Figma prototype</div><br><br>
         <br><br>
 
         <div class = "section-body">
@@ -203,6 +216,7 @@
 <br><br>
 
 <div class = "section-body">The Figma with the final mockups can be found <b><u><a href = "https://www.figma.com/file/Ev7BdctOsmgJ616YHbRGi5/HOTSPOT-FINAL?node-id=0%3A1&t=7FVBYNUP5gCEDdOr-1" target="_blank" rel="noopener noreferrer" style = "color:black;">here</a></u></b>, and the code for this app (currently only front end) can be found <b><u><a href = "https://github.com/andyjwang19/HotSpot" target="_blank" rel="noopener noreferrer" style = "color:black;">here</a></u></b>.</div>
+</div>
 
 <br><br>
 
@@ -211,4 +225,17 @@
 <a href="#top" class="float">
     <b>&#8593</b>
     </a>
+
+    <script>
+        ScrollReveal({
+            reset: true,
+            distance: '60px',
+            duration: 1500,
+            delay: 0
+        });
+        ScrollReveal({ reset: false });
+        ScrollReveal().reveal('.section', {delay: 500});
+    </script>
+
+</body>
 </html>
