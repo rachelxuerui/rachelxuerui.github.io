@@ -53,8 +53,8 @@ a {
 
 /*HOMEPAGE COMPONENTS*/
 .intro {
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 60px;
+    margin-right: 60px;
     font-family: 'Open Sans';
     color:black;
     font-size: 20px;
@@ -108,13 +108,13 @@ img {
     font-family: 'Open Sans';
     font-size: 30px;
     font-weight: bold;
-    margin-left: 40px;
+    margin-left: 60px;
 }
 .section-body {
     font-family: 'Open Sans';
     font-size: 15px;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 .centered-photo {
     display: flex;
@@ -177,15 +177,15 @@ img {
     font-family: 'Open Sans';
     font-size: 30px;
     font-weight: bold;
-    margin-left: 40px;
+    margin-left: 60px;
 }
 .about-me-body {
     font-family: 'Open Sans';
     font-size: 25px;
 }
 .about-me-wrapper {
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 60px;
+    margin-right: 60px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
