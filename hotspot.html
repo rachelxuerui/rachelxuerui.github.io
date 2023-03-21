@@ -10,24 +10,25 @@
 
 <div class = "top-buttons">
     <b><a href = "index.html">PORTFOLIO</a></b>
-    <a href = "assets/resume.pdf">RESUME</a>
-    <a href = "mailto: rxm2101@columbia.edu">CONNECT</a>
+    <a href = "assets/resume.pdf" target="_blank" rel="noopener noreferrer">RESUME</a>
+    <a href = "mailto: rxm2101@columbia.edu" target="_blank" rel="noopener noreferrer">EMAIL</a>
+    <a href = "https://www.linkedin.com/in/rachel-michelson-6140091ab/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
 </div>
 <br><br>
 
 <div class = "section">
 <div class = heading>
     <div class = name>HotSpot</div>
-    <div class = title>App designed for COMS W4170 with Andy Wang, Teji Vijayakumar, and Theo Mack</div>
+    <div class = title>App designed for User Interface Design with Andy Wang, Teji Vijayakumar, and Theo Mack</div>
 <br>
 </div>
 </div>
 
 <div class = "section">
 <div class = "menu">
-    <a href = "#lo-fi-prototype">LOW FIDELITY PROTOTYPE</a>
-    <a href = "#mid-fi-prototype">MEDIUM FIDELITY PROTOTYPE</a>
-    <a href = "#high-fi-prototype">HIGH FIDELITY PROTOTYPE</a>
+    <a href = "#lo-fi-prototype">LOW FIDELITY</a>
+    <a href = "#mid-fi-prototype">MEDIUM FIDELITY</a>
+    <a href = "#high-fi-prototype">HIGH FIDELITY</a>
 </div>
 </div>
 
@@ -105,9 +106,9 @@
         as well as how easy each feature is to use and how it may be improved.
     <br><br>
     One of the main issues we uncovered through our low fidelity prototype evaluation was that though users expressed a 
-    desire to filter their options, they did not use the provided “filter” button. 
+    desire to filter their options, <b>they did not use the provided “filter” button</b>. 
     Thus, our updated design solution was designed to draw users to choose to <b>filter by three modes: 
-    “food”, “drink”, or “fun”</b>. These modes, when selected, filter the map and reduce it significantly to reduce user choice, 
+    “food”, “drink”, or “fun”</b>. These modes, when selected, <b>filter the map and reduce it significantly to reduce user choice</b>, 
     while also shifting the color theme to put it in a specific “mode”. 
 
     </div><br><br>
@@ -121,7 +122,7 @@
     <br><br>
     <div class = "section-body">
         We also experimented with more filtering options, as users found searching for spots using certain categories to be a useful potential feature. Categories that users have shown us are important to them include price, 
-        cuisine type for Food, Friends, and location. Thus, we experimented with price filters, cuisine filters, and bar vibe filters.
+        cuisine type for food, friends, and location. Thus, we experimented with price filters, cuisine filters, and bar vibe filters.
     </div><br><br>
     <div class = "photo-row">
         <div class = "page-photo"><img src="portfolio/hotspot/hotspot-midfi-filter1.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
@@ -131,8 +132,8 @@
     <br><br>
 
     <div class = "section-body">
-        We also added static frames exploring a feature for <b>commenting</b>, as user feedback suggested more social features. 
-        Our hope was that this would <b>allow users to engage socially in the app without feeling overwhelmed</b> by potentially excessive social functionality.
+        We also added static frames exploring a feature for <b>commenting</b>, as users expressed a need for more social engagement. 
+        Our hope was that this would <b>allow users to engage socially in the app without feeling overwhelmed</b> by excessive social functionality.
     </div><br><br>
     <div class = "photo-row">
         <div class = "page-photo"><img src="portfolio/hotspot/hotspot-midfi-comments1.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
@@ -161,39 +162,77 @@
     <a id = "high-fi-prototype">
         <div class = "section-heading">High fidelity prototype</div></a><br>
         <div class = "section-body">
-            Our final design solution centers on three screens - the main screen, the review screen, and the suggest screen. 
+            Our final design solution centers on three screens - <b>a main screen, a "review" screen, and a "suggest" screen</b>. 
             The main navigation screen is designed to minimize the decisions a user has to make, 
             thus preventing a feeling of overwhelmingness by doing the following:
-            <ul>
-                <li>Two different types of location pins for spots on the map. One is a classic geotag pin shape that is slightly larger, and the other is a small dot. Our app has an algorithm that determines which suggested spots users are most likely to like, which determines which spots appear as a larger geotag. The other spots are just spots the users’ friends suggest, but not recommended by the algorithm, marked on the map as dots. This draws the users to select the larger geo tags they are more likely to like, thus reducing decisions they have to make and preventing them from feeling overwhelmed.</li>
-                <li>Our app has “food,” “drink,” and “fun” filters, as well as price filters that users can crossfilter to find exactly what they are looking for. Furthermore, these filters dramatically reduce what appears on the screen, thus decreasing the potential for users to be overwhelmed but what shows up on their screen.</li>
-                <li>For the spot review page, when a user clicks on a spot, a preview pops up that shows them a review summary (“loves,” “likes,” and “okays”), two reviews, and pictures, so that they can quickly see relevant information. This allows them to quickly move between the map and the review without being jumped from page to page, also reducing the risk that they will be overwhelmed. If they want to continue reading the reviews for a spot, they can swipe up and see more reviews, and they can also filter reviews based on “love”/”like”/”okay”, and bookmark a spot. For the “suggest a spot” page, users can enter their review, rate their experience based on “love,” ‘like,” and “okay,” and add pictures.</li>
-            </ul>
-        </div>
-        <br><br>
 
-        <div class = "photo-row">
-            <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-main.jpg" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
-            <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-food.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
-            <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-fooddrink.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
-            <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-price.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
+            <br><br>
+            <div style = "font-size: 20px";><b>Location pins</b></div>
+            Our app has two different types of location pins for spots on the map. 
+            One is a classic geotag pin shape that is slightly larger, and the other is a small dot. 
+            Our app has an algorithm that determines which suggested spots users are most likely to like, 
+            which determines which spots appear as a larger geotag. 
+            The other spots are just spots the users’ friends suggest, but not recommended by the algorithm, marked on the map as dots. 
+            This draws the users to select the larger geo tags they are more likely to like, 
+            thus reducing decisions they have to make and preventing them from feeling overwhelmed.
+            <br><br>
+            <div class = "page-photo"><img src="portfolio/hotspot/pins.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
+            <div class = "description">HotSpot location pins</div>
+            <br><br>
+            
+            <div style = "font-size: 20px";><b>Filters</b></div>
+            Our app has <b>“food,” “drink,” and “fun” filters</b>, as well as <b>price filters</b> that users can <b>crossfilter</b> to find exactly what they are looking for. 
+            Furthermore, these filters reduce what appears on the screen, 
+            thus decreasing the potential for users to be overwhelmed by what shows up on their screen.
+            <br><br>
+            <div class = "photo-row">
+                <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-main.jpg" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
+                <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-food.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
+                <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-fooddrink.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
+                <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-price.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
+            </div>
+            <div class = "description">HotSpot main screen, Figma prototype</div>
+            <br><br>
+            
+            <div style = "font-size: 20px";><b>Review summaries</b></div>
+            For the spot review page, when a user clicks on a spot, a preview pops up that shows them a review summary (“loves,” “likes,” and “okays”), two reviews, and pictures, so that they can <b>quickly see relevant information</b>. 
+            This allows them to <b>quickly move between the map and the review without being jumped from page to page</b>, also reducing the risk that they will be overwhelmed. 
+            If they want to continue reading the reviews for a spot, they can swipe up and see more reviews, and they can also filter reviews based on “love”/”like”/”okay”, and bookmark a spot. 
+            <br><br>
+            <div class = "photo-row">
+                <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-spotview.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
+                <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-spotview2.jpg" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
+            </div>
+            <div class = "description">HotSpot "review" screen, Figma prototype</div>
+            <br><br>
+            We changed our method for review filtering as users found it to be unintuitive. 
+            After a lot of iteration, we settled on a design with a separate option to filter reviews, 
+            and double checked that this was useful and more intuitive through our final contextual inquiry.
+            <br><br>
+            <div class = "photo-row">
+                <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-filterreviews1.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
+                <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-filterreviews2.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
+                <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-filterreviews3.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
+            </div>
+            <div class = "description">HotSpot "review" screen filtering, Figma prototype</div>
+            <br><br>
+
+            <div style = "font-size: 20px";><b>Suggesting</b></div>
+            Users can enter their review, rate their experience based on whether they “love,” ‘like,” and “okay,” the spot, and add pictures. 
+            We designed this app such that users can only <b>suggest</b> spots, rather than review all spots, to further minimize the content
+            that a user might have to sift through.
+            <br><br>
+            <div class = "photo-row">
+                <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-suggestA.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
+                <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-suggest.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
+            </div>
+            <div class = "description">HotSpot "suggest" screen, Figma prototype</div>
+            <br><br>
         </div>
-        <div class = "description">HotSpot main screen, Figma prototype</div><br><br>
-        <div class = "photo-row">
-            <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-spotview.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
-            <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-spotview2.jpg" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
-        </div>
-        <div class = "description">HotSpot review screen, Figma prototype</div><br><br>
-        <div class = "photo-row">
-            <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-suggest1.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
-            <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-suggest.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
-        </div>
-        <div class = "description">HotSpot suggest screen, Figma prototype</div><br><br>
-        <br><br>
 
         <div class = "section-body">
-            Though not major, in addition, we also have a profile screen, where users can see their reviews, 
-            their bookmarked spots, and their friends, and they can also add friends. 
+        <div style = "font-size: 20px";><b>Profile</b></div>
+            We also designed a profile screen, where users can see their reviews, their bookmarked spots, and their friends. Here, they can also add friends. 
         </div>
         <br><br>
         <div class = "photo-row">
@@ -201,18 +240,6 @@
             <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-addfriends.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
         </div>
         <br><br>
-        <div class = "section-body">
-            Finally, in a contextual inquiry with our medium fidelity prototypes, 
-            some users noted that there were features that seemed unintuitive, such as filtering reviews. After a lot of iteration, 
-            we settled on a design with a separate option to filter reviews, and double checked that this was more intuitive through our final contextual inquiry.
-        </div>
-        <br><br>
-        <div class = "photo-row">
-            <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-filterreviews1.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
-            <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-filterreviews2.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
-            <div class = "page-photo"><img src="portfolio/hotspot/hotspot-hifi-filterreviews3.png" style="display: block; width: 100%; height: auto; max-width: 200px;"></div>
-        </div>
-<br><br>
 
 <div class = "section-body">The Figma with all of the final mockups can be found <b><a href = "https://www.figma.com/file/Ev7BdctOsmgJ616YHbRGi5/HOTSPOT-FINAL?node-id=0%3A1&t=7FVBYNUP5gCEDdOr-1" target="_blank" rel="noopener noreferrer">here</a></b>, and the code for this app (currently only front end) can be found <b><a href = "https://github.com/andyjwang19/HotSpot" target="_blank" rel="noopener noreferrer">here</a></b>.</div>
 </div>
