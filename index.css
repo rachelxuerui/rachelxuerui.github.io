@@ -1,6 +1,6 @@
 /*FOR ALL PAGES*/
 
-@import url("https://fonts.googleapis.com/css?family=Lantinghei%20SC%3A400");
+@import url("https://fonts.google.com/specimen/Montserrat?preview.text=Hi,%20I%27m%20Rachel&preview.text_type=custom");
 
 .top-buttons {
     font-family: Lantinghei SC;
@@ -13,7 +13,7 @@
 }
 
 .bold {
-    font-family: Lantinghei SC;
+    font-family: Montserrat;
     font-weight: bold;
 }
 
@@ -25,7 +25,7 @@ a {
 /*HOMEPAGE COMPONENTS*/
 
 .intro{
-    font-family: Lantinghei SC;
+    font-family: Montserrat;
     text-align: left;
     width: 1200px;
 }
@@ -65,26 +65,26 @@ a {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    font-family: Lantinghei SC;
+    font-family: Montserrat;
     padding-bottom: 36px;
 }
 
 .page-header {
-    font-family: Lantinghei SC;
+    font-family: Montserrat;
     font-size: 30px;
     font-weight: bold;
     padding-bottom: 12px;
 }
 
 .page-subheader {
-    font-family: Lantinghei SC;
+    font-family: Montserrat;
     font-size: 18px;
 }
 
 .overview {
     display: flex;
     flex-direction: column;
-    font-family: Lantinghei SC;
+    font-family: Montserrat;
     padding-bottom: 54px;
 }
 
@@ -118,7 +118,7 @@ a {
 .section-wrapper {
     display: flex;
     flex-direction: column;
-    font-family: Lantinghei SC;
+    font-family: Montserrat;
 }
 
 .section {
@@ -128,12 +128,12 @@ a {
 .body {
     padding-top: 12px;
     font-size: 18px;
-    font-family: Lantinghei SC;
+    font-family: Montserrat;
 }
 
 .bodyy {
     font-size: 18px;
-    font-family: Lantinghei SC;
+    font-family: Montserrat;
 }
 
 .padding {
@@ -151,14 +151,14 @@ a {
 }
 
 .section-title {
-    font-family: Lantinghei SC;
+    font-family: Montserrat;
     font-weight: bold;
     padding-bottom: 54px;
     font-size: 24px;
 }
 
 .section-subtitle {
-    font-family: Lantinghei SC;
+    font-family: Montserrat;
     font-size: 18px;
     font-weight: bold;
 }
@@ -171,14 +171,14 @@ a {
 }
 
 .finding-title {
-    font-family: Lantinghei SC;
+    font-family: Montserrat;
     font-size: 16px;
     font-weight: bold;
     width: 840px;
 }
 
 .quote {
-    font-family: Lantinghei SC;
+    font-family: Montserrat;
     padding-top: 12px;
     padding-left: 12px;
     font-size: 16px;
