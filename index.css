@@ -4,203 +4,184 @@
 
 
 .top-buttons {
-    font-family: 'Open Sans';
+    font-family: Lantinghei SC;
     display: flex;
     flex-direction: row;
     justify-content: left;
-    margin-left: 20px;
-    margin-top: 20px;
-    gap: 20px;
+    margin-left: 24px;
+    margin-top: 36x;
+    gap: 12px;
 }
-.small-br {
-    display: block;
-    margin-bottom: 2px;
-}
-.heading{
-    font-family: 'Open Sans';
-    text-align: center;
-}
-.name {
-    font-size: 50px;
+
+.bold {
+    font-family: Lantinghei SC;
     font-weight: bold;
 }
-.title {
-    font-size: 15px;
-    font-style: italic;
-}
-.space {
-    padding-bottom: 50px;
-}
-.bottom {
-    display: flex;
-    background-color: black;
-    color: white;
-    position: bottom;
-    height: 100px;
-    width: 100%;
-    bottom: 0px;
-    font-family: 'Open Sans';
-    font-size: 15px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+
 a {
     color: black;
     text-decoration: none;
-    font-family: 'Open Sans';
   }
 
 /*HOMEPAGE COMPONENTS*/
-.intro {
-    margin-left: 60px;
-    margin-right: 60px;
-    font-family: 'Open Sans';
-    color:black;
-    font-size: 20px;
-    max-width: 100%;
+
+.intro{
+    font-family: Lantinghei SC;
+    text-align: left;
+    width: 1200px;
 }
-.photo-grid {
-    /*margin-left: 40px;
-    margin-right: 40px;*/
-    max-width: 100%;
+
+.intro-header {
+    font-size: 24px;
+    font-weight: bold;
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 12px;
 }
-.photo {
+
+.intro-subheader {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.homepage-wrapper {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    text-align: center;
-    justify-content: center;
-}
-.photo:hover {
-    filter: brightness(50%);
-    -moz-transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-}
-.photo-description {
-    color: black;
-    visibility: hidden;
-    font-family: 'Open Sans';
-    font-size: 15px;
-}
-  .photo:hover .photo-description {
-    visibility: visible;
-    opacity: 1;
-    align-items: center;
-    -moz-transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-  }
-
-img {
-    border-radius: 1px;
-    height: 400px;
-    width: 400px;
 }
 
 /*SECTION PAGES*/
-.section-heading {
-    color: black;
-    font-family: 'Open Sans';
-    font-size: 30px;
-    font-weight: bold;
-    margin-left: 60px;
-}
-.section-body {
-    font-family: 'Open Sans';
-    font-size: 15px;
-    margin-left: 60px;
-    margin-right: 60px;
-}
-.centered-photo {
+.container {
     display: flex;
-    align-content: center;
-    justify-content: center;
-    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
-}
-.page-photo {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
-}
-.description {
-    padding-top: 15px;
-    font-style: italic;
-    font-family: 'Open Sans';
-    font-size: 15px;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    color: black;
-}
-.photo-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 100px;
-}
-.menu {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
-}
-.float{
-	position:fixed;
-    display: flex;
-    font-family: 'Open Sans';
-    padding: 10px 10px 10px 10px;
-    text-decoration: none;
-    font-size: 15px;
-    justify-content: center;
-    align-items: center;
-    width: 20px;
-    height: 20px;
-    bottom:40px;
-    right:40px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color:#FFF;
-    border-radius:2px;
-    text-align:center;
+    flex-direction: column;
+    width: 1200px;
+    padding-left: 120px;
+    padding-right: 120px;
 }
 
-/*ABOUT ME PAGE*/
-.about-me-heading {
-    color: black;
-    font-family: 'Open Sans';
+.project-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: Lantinghei SC;
+    padding-bottom: 36px;
+}
+
+.page-header {
+    font-family: Lantinghei SC;
     font-size: 30px;
     font-weight: bold;
-    margin-left: 60px;
+    padding-bottom: 12px;
 }
-.about-me-body {
-    font-family: 'Open Sans';
-    font-size: 25px;
+
+.page-subheader {
+    font-family: Lantinghei SC;
+    font-size: 18px;
 }
-.about-me-wrapper {
-    margin-left: 60px;
-    margin-right: 60px;
+
+.overview {
+    display: flex;
+    flex-direction: column;
+    font-family: Lantinghei SC;
+    padding-bottom: 54px;
+}
+
+.overview-row {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    gap: 80px;
-    align-content: center;
-    
+    align-content: flex-start;
+    padding-bottom: 12px;
 }
-.reveal{
-    position: relative;
-    transform: translateY(150px);
-    opacity: 0;
-    transition: 1s all ease;
-  }
-  
-.reveal.active{
-    transform: translateY(0);
-    opacity: 1;
-  }
+
+.overview-category {
+    display: flex;
+    font-weight: bold;
+    align-items: stretch;
+    width: 120px;
+    font-size: 18px;
+}
+
+.overview-info {
+    display: flex;
+    font-size: 18px;
+}
+
+.project-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 54px;
+}
+
+.section-wrapper {
+    display: flex;
+    flex-direction: column;
+    font-family: Lantinghei SC;
+}
+
+.section {
+    margin-bottom: 24px;
+}
+
+.body {
+    padding-top: 12px;
+    font-size: 18px;
+    font-family: Lantinghei SC;
+}
+
+.bodyy {
+    font-size: 18px;
+    font-family: Lantinghei SC;
+}
+
+.padding {
+    padding-top: 12px;
+}
+
+.break {
+    margin-top: 84px;
+    margin-bottom: 84px;
+    width: 1080px;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.50);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    font-family: Lantinghei SC;
+    font-weight: bold;
+    padding-bottom: 54px;
+    font-size: 24px;
+}
+
+.section-subtitle {
+    font-family: Lantinghei SC;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.finding {
+    margin-top: 36px;
+    margin-bottom: 36px;
+    display: flex;
+    flex-direction: column;
+}
+
+.finding-title {
+    font-family: Lantinghei SC;
+    font-size: 16px;
+    font-weight: bold;
+    width: 840px;
+}
+
+.quote {
+    font-family: Lantinghei SC;
+    padding-top: 12px;
+    padding-left: 12px;
+    font-size: 16px;
+    font-style: italic;
+}
