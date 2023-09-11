@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
 
 .top-buttons {
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -13,7 +13,7 @@
 }
 
 .bold {
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 }
 
@@ -25,7 +25,7 @@ a {
 /*HOMEPAGE COMPONENTS*/
 
 .intro{
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     text-align: left;
     width: 1200px;
 }
@@ -65,26 +65,26 @@ a {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     padding-bottom: 36px;
 }
 
 .page-header {
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     font-weight: bold;
     padding-bottom: 12px;
 }
 
 .page-subheader {
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
 }
 
 .overview {
     display: flex;
     flex-direction: column;
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     padding-bottom: 54px;
 }
 
@@ -118,7 +118,7 @@ a {
 .section-wrapper {
     display: flex;
     flex-direction: column;
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .section {
@@ -128,12 +128,12 @@ a {
 .body {
     padding-top: 12px;
     font-size: 18px;
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .bodyy {
     font-size: 18px;
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .padding {
@@ -151,14 +151,14 @@ a {
 }
 
 .section-title {
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     padding-bottom: 54px;
     font-size: 24px;
 }
 
 .section-subtitle {
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: bold;
 }
@@ -171,14 +171,14 @@ a {
 }
 
 .finding-title {
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: bold;
     width: 840px;
 }
 
 .quote {
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     padding-top: 12px;
     padding-left: 12px;
     font-size: 16px;
