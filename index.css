@@ -1,9 +1,9 @@
 /*FOR ALL PAGES*/
 
-@import url("https://fonts.google.com/specimen/Montserrat?preview.text=Hi,%20I%27m%20Rachel&preview.text_type=custom");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
 
 .top-buttons {
-    font-family: Lantinghei SC;
+    font-family: Montserrat;
     display: flex;
     flex-direction: row;
     justify-content: left;
