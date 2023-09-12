@@ -2,12 +2,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;600&display=swap');
 
+.big-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    height: auto;
+
+}
 .top-buttons {
     font-family: 'Montserrat', sans-serif;
     display: flex;
     flex-direction: row;
     justify-content: left;
-    margin-left: 24px;
     margin-top: 36x;
     gap: 12px;
 }
@@ -27,7 +34,7 @@ a {
 .intro{
     font-family: 'Montserrat', sans-serif;
     text-align: left;
-    width: 1200px;
+    width: 100%;
 }
 
 .intro-header {
@@ -55,7 +62,7 @@ a {
 .container {
     display: flex;
     flex-direction: column;
-    width: 1200px;
+    margin: auto;
     padding-left: 120px;
     padding-right: 120px;
 }
