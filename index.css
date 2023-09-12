@@ -35,7 +35,8 @@
     display: flex;
     flex-direction: row;
     justify-content: left;
-    margin-top: 36x;
+    margin-top: 12px;
+    margin-left: 12px;
     gap: 12px;
     font-size: 18px;
 }
