@@ -30,6 +30,35 @@
     padding-right: 120px;
 }
 
+.other-project {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    justify-content: left;
+}
+
+.company {
+    font-size: 18px;
+    padding-bottom: 3px;
+}
+
+.arrow-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+}
+
+.arrow {
+    font-size: 24px;
+    color:rgba(0, 0, 0);
+}
+
+.other-project-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
 .top-buttons {
     font-family: 'Montserrat', sans-serif;
     display: flex;
