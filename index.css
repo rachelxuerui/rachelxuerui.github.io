@@ -203,24 +203,10 @@ a {
     font-weight: bold;
 }
 
-.finding {
-    margin-top: 36px;
-    margin-bottom: 36px;
-    display: flex;
-    flex-direction: column;
-}
-
-.finding-title {
+.bottom {
+    padding-top: 36px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    width: 840px;
-}
-
-.quote {
-    font-family: 'Montserrat', sans-serif;
-    padding-top: 12px;
-    padding-left: 12px;
-    font-size: 16px;
-    font-style: italic;
+    font-size: 18px;
+    padding-bottom: 12px;
+    text-align: center;
 }
