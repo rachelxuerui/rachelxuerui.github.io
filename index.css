@@ -189,19 +189,20 @@ a {
 .photo-row {
     display: flex;
     flex-direction: row;
-    gap: 112px;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .body {
     padding-top: 12px;
     font-size: 18px;
     font-family: 'Montserrat', sans-serif;
+    line-height: 30px;
 }
 
 .bodyy {
     font-size: 18px;
     font-family: 'Montserrat', sans-serif;
+    line-height: 30px;
 }
 
 .padding {
