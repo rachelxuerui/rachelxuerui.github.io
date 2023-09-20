@@ -156,7 +156,7 @@ function playNote(key) {
       activeGainNodes[key].gain.setTargetAtTime(1/(2*n), audioCtx.currentTime, timeConstant)
     );
 
-    gainNode.gain.setTargetAtTime(1/(2*n), audioCtx.currentTime + attack, timeConstant);
+    gainNode.gain.setTargetAtTime(1/(2*n), audioCtx.currentTime + 2, timeConstant);
 
 }
 
