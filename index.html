@@ -2,6 +2,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="index.css">
+<script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <body>
@@ -25,6 +26,7 @@
 
 <br><br>
 
+<div class = "section">
 <div class = "project">
     <a href = "eva.html"><img src="assets/homepage/EVA.png" alt="cover for eva project" style="display: block; width: 100%; height: auto;"></a>
 </div>
@@ -49,6 +51,8 @@
     <div class = "project">
         <a href = "cart.html"><img src="assets/homepage/cart.png" alt="cover for cart project" style="display: block; width: 100%; height: auto;"></a>
     </div>
+
+</div>
 
     <div class = "padding"></div>
     <div class = "padding"></div>
@@ -128,6 +132,16 @@
 </div>
 </div>
 
+<script>
+    ScrollReveal({
+        reset: true,
+        distance: '60px',
+        duration: 1500,
+        delay: 0
+    });
+    ScrollReveal({ reset: false });
+    ScrollReveal().reveal('.project', {delay: 500});
+</script>
 
 </body>
 </html>
