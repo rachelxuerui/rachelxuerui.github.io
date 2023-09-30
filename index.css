@@ -14,12 +14,21 @@
     }
  }*/
 
+ html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 .big-container {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: auto;
     height: auto;
+    /*background: linear-gradient(173deg, #7A8FFF 1.36%, #120083 78.92%);*/
+    background: white;
+    color: black;
 }
 
 .container {
@@ -51,7 +60,7 @@
 
 .arrow {
     font-size: 24px;
-    color:rgba(0, 0, 0);
+    color:white;
 }
 
 .other-project-title {
@@ -76,7 +85,7 @@
 }
 
 a {
-    color: black;
+    color: white;
     text-decoration: none;
   }
 
@@ -215,7 +224,7 @@ a {
     width: 100%;
     max-width: 1080px;
     height: 1px;
-    background: rgba(0, 0, 0, 0.50);
+    background: white;
     margin-left: auto;
     margin-right: auto;
 }
