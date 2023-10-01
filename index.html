@@ -20,20 +20,21 @@
 
 <div class = "intro">
     <div class = "intro-header">Hi, I'm Rachel -</div>
-    <div class = "intro-subheader">a UI/UX designer and senior at Columbia University studying computer science, passionate about streamlining user experiences through consolidating existing resources and emerging technology.
+    <div class = "intro-subheader">a product designer passionate about streamlining user experiences through consolidating existing resources and emerging technology.
     </div>
 </div>
 
 <br><br>
 
 <div class = "section">
-<div class = "project">
+<div class = "project" onmouseover="moveBox(this)" onmouseout="resetBox(this)">
     <a href = "eva.html"><img src="assets/homepage/EVA.png" alt="cover for eva project" style="display: block; width: 100%; height: auto;"></a>
 </div>
 
 <br><br>
 
-    <div class = "project">
+<div class = "section">
+    <div class = "project" onmouseover="moveBox(this)" onmouseout="resetBox(this)">
         <a href = "roarreg.html"><img src="assets/homepage/roarreg.png" alt="cover for roarreg project" style="display: block; width: 100%; height: auto;"></a>
     </div>
 
@@ -41,14 +42,14 @@
 
 
 
-    <div class = "project">
+    <div class = "project" onmouseover="moveBox(this)" onmouseout="resetBox(this)">
         <a href = "eco-label.html"><img src="assets/homepage/ecolabel.png" alt="cover for eco label project" style="display: block; width: 100%; height: auto;"></a>
     </div>
 
     <br><br>
 
 
-    <div class = "project">
+    <div class = "project" onmouseover="moveBox(this)" onmouseout="resetBox(this)">
         <a href = "cart.html"><img src="assets/homepage/cart.png" alt="cover for cart project" style="display: block; width: 100%; height: auto;"></a>
     </div>
 
@@ -67,22 +68,9 @@
         <div class = "padding"></div>
         <div class = "padding"></div>
 
-        <a href = "nyccolor.html">
-        <div class = "other-project">
-            <div class = "company">NYCOLOR</div>
-            <div class = "arrow-wrapper">
-                <div class = "other-project-title">Gamifying urban exploration in NYC</div>
-                <div class = "arrow">&rarr;</div>
-            </div>
-            </div>
-        </a>
-
-        <div class = "padding"></div>
-        <div class = "padding"></div>
-        <div class = "padding"></div>
 
         <a href = "methodology.html">
-        <div class = "other-project">
+        <div class = "other-project" onmouseover = "moveArrow(this)" onmouseout="resetArrow(this)">
             <div class = "company">INFINITE GOODS</div>
             <div class = "arrow-wrapper">
                 <div class = "other-project-title">Explaining the methodology behind the eco-label</div>
@@ -95,8 +83,9 @@
         <div class = "padding"></div>
         <div class = "padding"></div>
 
+
         <a href = "who-we-are.html">
-            <div class = "other-project">
+            <div class = "other-project" onmouseover = "moveArrow(this)" onmouseout="resetArrow(this)">
                 <div class = "company">INFINITE GOODS</div>
                 <div class = "arrow-wrapper">
                     <div class = "other-project-title">Who We Are page</div>
@@ -110,8 +99,22 @@
         <div class = "padding"></div>
         <div class = "padding"></div>
 
+        <a href = "nycolor.html">
+            <div class = "other-project"  onmouseover = "moveArrow(this)" onmouseout="resetArrow(this)">
+                <div class = "company">NYCOLOR</div>
+                <div class = "arrow-wrapper">
+                    <div class = "other-project-title">Gamifying urban exploration in NYC</div>
+                    <div class = "arrow">&rarr;</div>
+                </div>
+                </div>
+            </a>
+    
+            <div class = "padding"></div>
+            <div class = "padding"></div>
+            <div class = "padding"></div>
+
         <a href = "painted-door-test.html">
-            <div class = "other-project">
+            <div class = "other-project" onmouseover = "moveArrow(this)" onmouseout="resetArrow(this)">
                 <div class = "company">SPECTATOR PUBLISHING COMPANY</div>
                 <div class = "arrow-wrapper">
                     <div class = "other-project-title">Painted door test</div>
@@ -141,7 +144,49 @@
     });
     ScrollReveal({ reset: false });
     ScrollReveal().reveal('.project', {delay: 500});
+
+function moveBox(project) {
+    // Add a white opacity layer
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay';
+    overlay.style.position = 'absolute';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = 'black';
+    overlay.style.opacity = '0.05'; 
+    overlay.style.borderRadius = "20px";
+    overlay.style.pointerEvents = "none";
+    overlay.style.transition = "0.3s ease";
+    project.appendChild(overlay);
+}
+
+function resetBox(project) {
+    // Remove the white opacity layer
+    const overlay = project.querySelector('.overlay');
+    if (overlay) {
+        project.removeChild(overlay);
+    }
+}
+
+function moveArrow(container) {
+    const arrow = container.querySelector('.arrow');
+    if (arrow) {
+        arrow.style.transition = "0.3s ease"
+        arrow.style.transform = 'translate(12px, 0)';
+    }
+}
+
+function resetArrow(container) {
+    const arrow = container.querySelector('.arrow');
+    if (arrow) {
+        arrow.style.transform = 'translate(0, 0)';
+    }
+}
+
 </script>
+
 
 </body>
 </html>
