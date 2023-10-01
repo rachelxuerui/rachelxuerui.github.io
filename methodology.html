@@ -3,6 +3,7 @@
 <head>
 <link rel="stylesheet" href="index.css">
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
 
@@ -68,6 +69,18 @@
 
 </div>
 </div>
+
+<script>
+    ScrollReveal({
+        reset: true,
+        distance: '60px',
+        duration: 1500,
+        delay: 0
+    });
+    ScrollReveal({ reset: false });
+    ScrollReveal().reveal('.section-wrapper', {delay: 500});
+
+</script>
 
 </body>
 </html>

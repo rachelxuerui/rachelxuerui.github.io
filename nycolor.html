@@ -3,6 +3,7 @@
 <head>
 <link rel="stylesheet" href="index.css">
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
 
@@ -64,14 +65,14 @@
     <div class = "section">
         <div class = "section-subtitle">Problem</div>
         <div class = "body">
-            <span style = "background-color: rgba(187, 150, 216, 0.25);">New York is the greatest city in the world - however, tight budgets and a lack of self-motivation can prevent New Yorkers from exploring the almost infinite offerings of the city.</span>
+            <span style = "background-color: rgba(187, 150, 216, 0.1);">New York is the greatest city in the world - however, tight budgets and a lack of self-motivation can prevent New Yorkers from exploring the almost infinite offerings of the city.</span>
             </div>
     </div>
 
     <div class = "section">
         <div class = "section-subtitle">Solution</div>
         <div class = "body">
-            Gamify urban exploration by allowing users to <span style = "background-color: rgba(187, 150, 216, 0.25);">color in a virtual map of New York City, pin interesting locations, compete in weekly challenges, and earn rewards from participating businesses</span>.
+            Gamify urban exploration by allowing users to <span style = "background-color: rgba(187, 150, 216, 0.1);">color in a virtual map of New York City, pin interesting locations, compete in weekly challenges, and earn rewards from participating businesses</span>.
             </div>
     </div>
 </div>
@@ -128,8 +129,8 @@
 
 <div class = "section">
     <div class = "section-subtitle">Rewards system</div>
-<div class = "body">Since the workers we interviewed found it <span style = "background-color: rgba(187, 150, 216, 0.25);">hard to participate in activities without spending too much money</span>, 
-    we implemented a <span style = "background-color: rgba(187, 150, 216, 0.25);">rewards system</span> enabling users to spend their free time exploring the city while being able to <span style = "background-color: rgba(187, 150, 216, 0.25);">receive 
+<div class = "body">Since the workers we interviewed found it <span style = "background-color: rgba(187, 150, 216, 0.1);">hard to participate in activities without spending too much money</span>, 
+    we implemented a <span style = "background-color: rgba(187, 150, 216, 0.1);">rewards system</span> enabling users to spend their free time exploring the city while being able to <span style = "background-color: rgba(187, 150, 216, 0.1);">receive 
     discounts at businesses</span> they may not have known about previously.</div>
 </div>
 
@@ -145,7 +146,7 @@
 
 <div class = "section">
     <div class = "section-subtitle">Prototype</div>
-<div class = "body">Based on a class vote, our project won <span style = "background-color: rgba(187, 150, 216, 0.25);">"idea that is most New York"</span>.</div>
+<div class = "body">Based on a class vote, our project won <span style = "background-color: rgba(187, 150, 216, 0.1);">"idea that is most New York"</span>.</div>
 </div>
 
 <div style = "display: flex; flex-direction: row; justify-content: center; gap: 120px;">
@@ -162,6 +163,18 @@
 </div>
 </div>
 </div>
+
+<script>
+    ScrollReveal({
+        reset: true,
+        distance: '60px',
+        duration: 1500,
+        delay: 0
+    });
+    ScrollReveal({ reset: false });
+    ScrollReveal().reveal('.section-wrapper', {delay: 500});
+
+</script>
 
 </body>
 </html>

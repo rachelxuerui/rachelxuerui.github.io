@@ -3,6 +3,7 @@
 <head>
 <link rel="stylesheet" href="index.css">
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
 
@@ -24,6 +25,7 @@
 
 <br><br>
 
+<div class = "section-wrapper">
 <div class = "overview">
     <div class = "overview-row">
         <div class = "overview-category">Duration</div>
@@ -47,6 +49,7 @@
     <video width="20%" controls autoplay style="display: block; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(0, 0, 0, 0.15);">
         <source src="assets/eva/eva.mov" type="video/mp4">
     </video>
+</div>
 </div>
 
 <div class = "padding"></div>
@@ -183,6 +186,18 @@
 </div>
 
 </div>
+
+<script>
+    ScrollReveal({
+        reset: true,
+        distance: '60px',
+        duration: 1500,
+        delay: 0
+    });
+    ScrollReveal({ reset: false });
+    ScrollReveal().reveal('.section-wrapper', {delay: 500});
+
+</script>
 
 </body>
 </html>
