@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta charset = "utf-8">
+    <link rel="stylesheet" href="hw2.css">
+
+</head>
+
+<div class = "container">
+
+    Rachel Michelson
+    Computational Sound - Lab 2
+
+    <div class = "buttons">
+        <label>
+            <input type="radio" name="synthesis" id="additiveSynthesis" onchange="changeMode(this)">
+            <span>Additive Synthesis</span>
+        </label>
+        <label>
+            <input type="radio" name="synthesis" id="AM" onchange="changeMode(this)">
+            <span>AM Synthesis</span>
+        </label>
+        <label>
+            <input type="radio" name="synthesis" id="FM" onchange="changeMode(this)">
+            <span>FM Synthesis</span>
+        </label>
+    </div>
+
+    <div class = "slider-container">
+        <label for="mod-slider">Modulation frequency (both AM and FM)</label>
+        <div class = "row"><input type="range" id="mod-slider" name="mod-slider" min="1" max="1000" value="500">
+        <p><span id="modulationFreq">500</span></p></div>
+    </div>
+
+    <div class = "slider-container">
+        <label for="depth-slider">AM depth value</label>
+        <div class = "row"><input type="range" id="depth-slider" name="depth-slider" min="0" max="1" step = "0.1" value="0.5">
+        <p><span id="depthValue">0.5</span></p></div>
+    </div>
+
+    <div class = "toggle-container">
+        <label for="toggleCheckbox">LFO</label>
+        <div class = "row"><input type="checkbox" id="toggleCheckbox">
+        <div id="toggleOutput">LFO off</div></div>
+    </div>
+
+    <div class = "slider-container">
+        <label for="lfo-frequency-slider">LFO frequency</label>
+        <div class = "row"><input type="range" id="lfo-frequency-slider" name="lfo-frequency-slider" min="1" step = "1" max="30" value="15">
+        <p><span id="lfo-frequency">15</span></p></div>
+    </div>
+
+    <div class = "slider-container">
+        <label for="lfo-gain-slider">LFO gain</label>
+        <div class = "row"><input type="range" id="lfo-gain-slider" name="lfo-gain-slider" min="1" step = "1" max="30" value="15">
+        <p><span id="lfo-gain">15</span></p></div>
+    </div>
+
+    <span>Partial values</span>
+    <input type="number" id="numberInput" placeholder="Enter a number" style="width:300px;">
+    <button onclick="addPartial()">Add Number</button>
+    <div id="result">Partials: </div>
+
+
+</div>
+
+<script src = "hw2.js"></script>
+
+</html>
