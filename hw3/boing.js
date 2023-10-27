@@ -72,7 +72,7 @@ function initAudio() {
     async function playWithDelay() {
         while (delay > 1) {
             await new Promise(resolve => setTimeout(resolve, delay));
-            delay /= 1.2; // lower delay
+            delay /= 1.5; // lower delay
 
             var b = boing(audioCtx, dampening);
 
