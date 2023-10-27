@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Lab 3 </title>
+    <style>
+        #ball {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>boing</h1>
+    <p><input type='button' value='Play' id='start'></p>
+
+        <label for="min">min amplitude</label>
+        <div class = "row"><input type="range" id="min-slider" name="min-slider" min="1" step = "1" max="2000" value="100">
+        <p><span id="min-amp">100</span></p></div>
+
+        <label for="max">max amplitude</label>
+        <div class = "row"><input type="range" id="max-slider" name="max-slider" min="1" step = "1" max="2000" value="500">
+        <p><span id="max-amp">500</span></p></div>
+
+    <div id="ball"></div>
+
+    <div id = "writeup">
+        the sound i have decided to recreate is the classic BOING!!! once i saw “boing” as an option in the reading, i knew i had to do it. 
+<br><br>
+however - i have decided to take this one step further. instead of just 1 (one) boing, i have implemented MULTIPLE BOINGS in the fashion of a boing-y ball being dropped. 
+<br><br>
+so how did i do this?
+<br><br>
+to simulate the boing noise, i generated a sine wave. the Math.abs function is used to take the absolute value of the sine wave. this is done to ensure that the frequency is ALWAYS POSITIVE - why would we want negative frequencies in our boing???
+<br><br>
+i also scale the sine wave amplitude. my code subtracts the desired minimum amplitude from the desire maximum, which results in a range. the amplitude of the sine wave is then modulated by this range, causing the amplitude to vary between the minimum and maximum desired amplitudes.
+<br><br>
+finally, the minimum desired amplitude is added to the result of the previous calculation. this is the base frequency of the sine wave.
+<br><br>
+i also used a dampening factor for my boing! what is this dampening factor you might ask? well, this is how we change the boinginess of each boing! in my playWithDelay() function, you can see that with every boing within a for-loop, i lower the dampening and the delay so that it simulates the change in time and dampening between boings of a bouncing ball. 
+    </div>
+
+</body>
+<script src="boing.js"> </script>
+</html>
