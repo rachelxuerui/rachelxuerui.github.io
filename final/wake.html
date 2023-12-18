@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>computational sound - live coding visuals</title>
+    <link rel="stylesheet" href="final.css">
+</head>
+<body>
+
+    <div class = "header"><b>act i - wake</b></div>
+    <div class = "description">
+        this piece is meant to simulate my typical morning experience. <br><br>
+        the melody in this act represents my mind, and the frequency at which is moves throughout the morning. <br><br>
+        the kick/bass here represents my heartbeat and alertness, changing throughout the morning appropriately. <br><br>
+        i have used samples from my alarm clock, my medication bottle, the water i use to brew coffee, and the spoon i use to stir honey into my morning coffee. <br><br>
+        the visuals are clips taken from this morning routine, and the playback speed, blurriness, opacity, and color is adjusted by the FFT from my live coding audio. <br><br>
+        i chose these particular factors to simulate a dreamy state of being. <br><br>
+        good morning!
+    </div>
+
+     <div id="videoContainer">
+        <video id="videoPlayer" width="640" height="360" controls muted autoplay loop>
+            <source src="wake_visuals.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <video id="sonicPi" width="640" height="360" controls autoplay>
+        <source src="wake.mp4" type="video/mp4">
+    </video>
+
+    <div class = "next">next act &rarr;
+    <a href = "lunch.html"><div class = "act">lunch</div></a>
+    </div>
+
+    <script src="wake.js"></script>
+</body>
+</html>
