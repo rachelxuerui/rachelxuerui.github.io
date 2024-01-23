@@ -14,12 +14,12 @@ function setup() {
     ];
 }
 
-  function drawPetals(x, y, count, startAt, petal) {
-    
+  function drawPetals(x, y, count, start, petal) {
+
     const step = TWO_PI / count;
     push();
     translate(x, y);
-    rotate(startAt);
+    rotate(start);
     noStroke();
 
     for (let i = 0; i < count; i += 1) {
@@ -69,16 +69,17 @@ function setup() {
     const petal = createPetal(200, 20);
 
     // petals
+
     drawPetals(width / 2, height / 3, 24, 0, petal);
     
     // center
 
-    const sectorAngle = TWO_PI / 60;
-    const sizeCenter = min(width, height) * 0.2 * 2;
+    const angle = TWO_PI / 60;
+    const size = min(width, height) * 0.2 * 2;
 
     for (let i = 0; i < 60; i++) {
-        const startAngle = i * sectorAngle;
-        const endAngle = (i + 1) * sectorAngle;
+        const startAngle = i * angle;
+        const endAngle = (i + 1) * angle;
 
 
         var m = map(minute(), 0, 60, 0, 60);
@@ -88,7 +89,7 @@ function setup() {
 
         beginShape();
         vertex(width / 2, height / 3);
-        arc(width / 2, height / 3, sizeCenter, sizeCenter, startAngle, endAngle, PIE);
+        arc(width / 2, height / 3, size, size, startAngle, endAngle, PIE);
         endShape(CLOSE);
     }
   }
