@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="bulletin-landing.css">
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+
+<div class = "button">
+    <a href = "index.html"><div class = "option"><b>Work</b></div></a>
+    <div class = "option"><div class = "opaque">Case studies</div></div> 
+    <a href = "assets/resume.pdf" target="_blank"><div class = "option"><div class = "opaque">Resume</div></div></a>
+    <div class = "option"><div class = "opaque">About</div></div>
+</div>
+
+<div class = "wrapper">
+
+<div class = "splash">
+<div class = "header">
+    <div class = "title">The Bulletin - Landing page</div> 
+    <div class = "subtitle">How might we excite and inform new users about The Bulletin?</div>
+</div>
+
+<div class = "project">
+    <div class = "photo-row" style = "padding: 0 120px;">
+        <div class = "box">
+            <video controls autoplay muted loop" style = "border-radius: 3px;">
+                <source src="assets/bulletin/landing.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <div class = "line"></div>
+
+    <div class = "project-overview">
+
+        <div class = "description-block">
+            <div class = "description-title">Project overview</div>
+            <div class = "description-subtitle">
+                This project was short yet sweet. 
+                <br><br>
+                It only took me a few hours, but I got to create something simple and beautiful that I hope will excite new users to sign up for The Bulletin.
+                <br><br>
+                Furthermore, I got to look at a lot of cool landing pages from other websites.
+        </div>
+            </div>
+
+        <div class = "overview-column">
+            <div class = "description-block">
+                <div class = "description-title">Timeline</div>
+                <div class = "description-subtitle">1 day</div>
+            </div>
+
+            <div class = "description-block">
+                <div class = "description-title">Role</div>
+                <div class = "description-subtitle">Product Designer</div>
+            </div>
+
+            <div class = "description-block">
+                <div class = "description-title">Skills</div>
+                <div class = "description-subtitle">
+                    Figma
+                    <br>
+                    UI Design
+                </div>
+            </div>
+        </div>
+
+        <div class = "description-block">
+            <div class = "description-title">Team</div>
+            <div class = "description-subtitle">
+                Rachel Michelson
+                <br>
+                Xuan Jiang
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+    <div class = "block">
+        <div class = "line"></div>
+    <div class = "text">
+        <div class = "block-title">Problem</div>
+        <div class = "block-subtitle">The original landing page does not excite nor inform users of The Bulletin's purpose, nor the types of events, applications, and organizations listed on the platform.</div>
+    </div>
+    <div class = "photo-row">
+        <div class = "box"><img src = "assets/bulletin/original-landing.png"></div>
+    </div>
+    <div class = "photo-description">Original landing page for The Bulletin</div>
+</div>
+
+<div class = "block">
+    <div class = "line"></div>
+    <div class = "text">
+        <div class = "block-title">Inspiration & Research</div>
+        <div class = "block-subtitle">I looked to many successful landing pages for popular websites for inspiration, trying to understand what made them so appealing to new users.</div>
+    </div>
+    <div class = "photo-row">
+        <img src = "assets/bulletin/inspiration.png" style = "width: 100%">
+    </div>
+</div>
+
+
+<div class = "block">
+    <div class = "line"></div>
+    <div class = "text">
+        <div class = "block-title">Final designs</div>
+        <div class = "block-subtitle">
+             This new landing page is being implemented by Xuan Jiang.</div>
+    </div>
+
+    <div class = "photo-row">
+        <div class = "box">
+            <video controls autoplay muted loop">
+                <source src="assets/bulletin/landing.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const rightArrow = document.getElementById("ab-test-right");
+    const leftArrow = document.getElementById("ab-test-left");
+    const photo = document.getElementById("ab-test-image");
+    var index = 0;
+
+    const rightFinal = document.getElementById("final-right");
+    const leftFinal = document.getElementById("final-left");
+    const div1 = document.getElementById("1");
+    const div2 = document.getElementById("2");
+    const div3 = document.getElementById("3");
+    const div4= document.getElementById("4");
+    const div5 = document.getElementById("5");
+    var finalIndex = 0;
+
+    rightArrow.addEventListener("click", function() {
+            if (index == 0) {
+                photo.src = "assets/bulletin/ab1.png";
+                photo.style.opacity = 1;
+                index = 1;
+                leftArrow.style.opacity = "100%";
+            }
+            else if (index == 1) {
+                photo.src = "assets/bulletin/ab2.png";
+                photo.style.opacity = 1;
+                rightArrow.style.opacity = "50%";
+                index = 2;
+            }
+        }); 
+
+
+    leftArrow.addEventListener("click", function() {
+                if (index == 2) {
+                    photo.src = "assets/bulletin/ab1.png";
+                    photo.style.opacity = 1;
+                    index = 1;
+                    rightArrow.style.opacity = "100%";
+                }
+                else if (index == 1) {
+                    photo.src = "assets/bulletin/ab.png";
+                    photo.style.opacity = 1;
+                    index = 0;
+                    leftArrow.style.opacity = "50%";
+                }
+            }); 
+
+    rightFinal.addEventListener("click", function() {
+            if (finalIndex == 0) {
+                div1.parentNode.replaceChild(div2, div1);
+                div2.style.display = "flex";
+                div1.style.display = "none";
+                leftFinal.style.opacity = "100%"
+                finalIndex = 1;
+            }
+            else if (finalIndex == 1) {
+                div2.parentNode.replaceChild(div3, div2);
+                div3.style.display = "flex";
+                div2.style.display = "none";
+                finalIndex = 2;
+            }
+            else if (finalIndex == 2) {
+                div3.parentNode.replaceChild(div4, div3);
+                div4.style.display = "flex";
+                div3.style.display = "none";
+                finalIndex = 3;
+            }
+            else if (finalIndex == 3) {
+                div4.parentNode.replaceChild(div5, div4);
+                div5.style.display = "flex";
+                div4.style.display = "none";
+                rightFinal.style.opacity = "50%"
+                finalIndex = 4;
+            }
+        }); 
+
+    leftFinal.addEventListener("click", function() {
+            if (finalIndex == 4) {
+                div5.parentNode.replaceChild(div4, div5);
+                div4.style.display = "flex";
+                div5.style.display = "none";
+                rightFinal.style.opacity = "100%"
+                finalIndex = 3;
+            }
+            else if (finalIndex == 3) {
+                div4.parentNode.replaceChild(div3, div4);
+                div3.style.display = "flex";
+                div4.style.display = "none";
+                finalIndex = 2;
+            }
+            else if (finalIndex == 2) {
+                div3.parentNode.replaceChild(div2, div3);
+                div2.style.display = "flex";
+                div3.style.display = "none";
+                finalIndex = 1;
+            }
+            else if (finalIndex == 1) {
+                div2.parentNode.replaceChild(div1, div2);
+                div1.style.display = "flex";
+                div2.style.display = "none";
+                finalIndex = 0;
+                leftFinal.style.opacity = "50%";
+            }
+
+        }); 
+
+
+        });
+
+    ScrollReveal({
+        reset: true,
+        distance: '60px',
+        duration: 1500,
+        delay: 0
+    });
+    ScrollReveal({ reset: false });
+    ScrollReveal().reveal('.block', {delay: 500});
+
+    
+
+</script>
+
+</body>
+</html>
