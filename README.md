@@ -1,2 +1,4 @@
 Thanks for checking out my portfolio! 
-I have coded this in only HTML and CSS -- all code is written by me. 
+I have coded this in HTML, CSS, and Javascript. 
+All code is written by me. 
+I am always open to feedback.
