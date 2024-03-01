@@ -1,192 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="index.css">
-<script src="https://unpkg.com/scrollreveal"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developing Accessible UIs - HW1</title>
+    <link rel="stylesheet" href="index.css">
 </head>
-<link rel="icon" type="image/x-icon" href="favicon.ico">
 <body>
-
-<div class = "big-container">
-<div class = "top-buttons">
-    <b><a href = "index.html">Work</a></b>
-    <a href = "about.html">About</a>
-    <a href = "assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-</div>
-
-<br><br>
-
-<div class = "container">
-
-<div class = "intro">
-    <div class = "intro-header">Hi, I'm <a href = "https://www.linkedin.com/in/rachelxmichelson/" target="_blank" rel="noopener noreferrer">&nbspRachel&nbsp</a> -</div>
-    <div class = "intro-subheader">a product designer passionate about streamlining user experiences through consolidating existing resources and emerging technology. Currently, a product designer at <a href = "https://www.thebulletin.info" target="_blank" rel="noopener noreferrer" style = "font-weight: bold; color: #4CB6EA;">The Bulletin</a>.
-    </div>
-</div>
-
-<br><br>
-
-<div class = "section">
-<div class = "project" onmouseover="moveBox(this)" onmouseout="resetBox(this)">
-    <a href = "eva.html"><img src="assets/homepage/EVA.png" alt="cover for eva project" style="display: block; width: 100%; height: auto;"></a>
-</div>
-
-<br><br>
-
-<div class = "section">
-    <div class = "project" onmouseover="moveBox(this)" onmouseout="resetBox(this)">
-        <a href = "roarreg.html"><img src="assets/homepage/roarreg.png" alt="cover for roarreg project" style="display: block; width: 100%; height: auto;"></a>
-    </div>
-
-    <br><br>
-
-
-
-    <div class = "project" onmouseover="moveBox(this)" onmouseout="resetBox(this)">
-        <a href = "eco-label.html"><img src="assets/homepage/ecolabel.png" alt="cover for eco label project" style="display: block; width: 100%; height: auto;"></a>
-    </div>
-
-    <br><br>
-
-
-    <div class = "project" onmouseover="moveBox(this)" onmouseout="resetBox(this)">
-        <a href = "cart.html"><img src="assets/homepage/cart.png" alt="cover for cart project" style="display: block; width: 100%; height: auto;"></a>
-    </div>
-
-</div>
-
-    <div class = "padding"></div>
-    <div class = "padding"></div>
-    <div class = "padding"></div>
-    <div class = "padding"></div>
-    <div class = "padding"></div>
-
-    <div class = "intro">
-        <div class = "intro-header">Other projects</div>
-
-        <div class = "padding"></div>
-        <div class = "padding"></div>
-        <div class = "padding"></div>
-
-
-        <a href = "methodology.html">
-        <div class = "other-project" onmouseover = "moveArrow(this)" onmouseout="resetArrow(this)">
-            <div class = "company">INFINITE GOODS</div>
-            <div class = "arrow-wrapper">
-                <div class = "other-project-title">Explaining the methodology behind the eco-label</div>
-                <div class = "arrow">&rarr;</div>
-            </div>
-            </div>
-        </a>
-
-        <div class = "padding"></div>
-        <div class = "padding"></div>
-        <div class = "padding"></div>
-
-
-        <a href = "who-we-are.html">
-            <div class = "other-project" onmouseover = "moveArrow(this)" onmouseout="resetArrow(this)">
-                <div class = "company">INFINITE GOODS</div>
-                <div class = "arrow-wrapper">
-                    <div class = "other-project-title">Who We Are page</div>
-                    <div class = "arrow">&rarr;</div>
-                </div>
-                </div>
-            </a>
-
-        
-        <div class = "padding"></div>
-        <div class = "padding"></div>
-        <div class = "padding"></div>
-
-        <a href = "nycolor.html">
-            <div class = "other-project"  onmouseover = "moveArrow(this)" onmouseout="resetArrow(this)">
-                <div class = "company">NYCOLOR</div>
-                <div class = "arrow-wrapper">
-                    <div class = "other-project-title">Gamifying urban exploration in NYC</div>
-                    <div class = "arrow">&rarr;</div>
-                </div>
-                </div>
-            </a>
     
-            <div class = "padding"></div>
-            <div class = "padding"></div>
-            <div class = "padding"></div>
+<div class = "button">
+    <div class = "option"><b>Work</b></div>
+    <div class = "option"><div class = "opaque">Case studies</div></div> 
+    <a href = "assets/resume.pdf" target="_blank"><div class = "option"><div class = "opaque">Resume</div></div></a>
+    <div class = "option"><div class = "opaque">About</div></div>
+</div>
 
-        <a href = "painted-door-test.html">
-            <div class = "other-project" onmouseover = "moveArrow(this)" onmouseout="resetArrow(this)">
-                <div class = "company">SPECTATOR PUBLISHING COMPANY</div>
-                <div class = "arrow-wrapper">
-                    <div class = "other-project-title">Painted door test</div>
-                    <div class = "arrow">&rarr;</div>
-                </div>
-                </div>
-            </a>
+<div class = "wrapper">
+    <div class = "top-text">
+        <div class = "header">Rachel Michelson is an incoming Product Designer at ExpertVoice, based in NYC.</div>
+        <div class = "subheader">As a computer science student, I am passionate about using the intersection between design and emerging technology to help streamline user experiences.</div>
+</div>
 
-        </div>
+    <div class = "experience">
+        <div class = "experience-text">
+            <div class = "experience-title">The Bulletin</div>
+            <div class = "experience-subtitle">Product Designer</div>
     </div>
+    <div class = "experience-description">
+        I am responsible for the overhaul of The Bulletin, including conducting user research, redesigning both the mobile and web apps in Figma, and conducting usability and A/B testing.
+    </div>
+    <div class = "photo-row">
 
-    <div class = "padding"></div>
-    <div class = "padding"></div>
-    <div class = "padding"></div>
+            <a href = 'bulletin-2-point-5.html'><div class = "box">
+                <img src = "assets/bulletin-25.png" id = "bulletin-25">
+                <div id = 'overlay-25'></div>
+                <div class = "photo-text" id = "bulletinTwoPointFiveText">
+                    <div class = "photo-text-header">The Bulletin 2.5</div>
+                    <div class = "photo-text-subheader">Integrating a personalized feed, notifications, and additional improvements. </div>
+                </div>
+            </div></a>
 
-    <div class = "bottom">© 2023 Rachel Michelson</div>
+            <a href = 'bulletin-landing.html'><div class = "box">
+                <img src = "assets/bulletin-landing.png" id = "bulletin-landing">
+                <div id = 'overlay-landing'></div>
+                <div class = "photo-text" id = "bulletinLandingText">
+                    <div class = "photo-text-header">Landing page</div>
+                    <div class = "photo-text-subheader">How might we inform and excite users about The Bulletin?</div>
+                </div>
+            </div></a>
+    </div>
+</div>
+
+<div class = "experience">
+    <div class = "experience-text">
+        <div class = "experience-title">ExpertVoice</div>
+        <div class = "experience-subtitle">Product Design Intern</div>
+</div>
+<div class = "experience-description">
+    My roles and responsibilities included biweekly meetings with the Commerce Performance Team, presenting check-ins with the executive board, conducting user research, designing high fidelity mockups and prototypes in Figma, and conducting usability testing.
+</div>
+<div class = "photo-row">
+
+        <a href = 'eva.html'><div class = "box">
+            <img src = "assets/eva.png" id = "eva">
+            <div id = 'overlay-eva'></div>
+            <div class = "photo-text" id = "eva-text">
+                <div class = "photo-text-header">Eva</div>
+                <div class = "photo-text-subheader">Using generative AI to solve the "paradox of choice"</div>
+            </div>
+        </div></a>
+
+        <a href = 'android.html'><div class = "box">
+            <img src = "assets/android.png" id = "android">
+            <div id = 'overlay-android'></div>
+            <div class = "photo-text" id = "android-text">
+                <div class = "photo-text-header">Android, redesigned</div>
+                <div class = "photo-text-subheader">Improving the Android navigation experience</div>
+            </div>
+        </div></a>
+</div>
+</div>
 
 </div>
 </div>
 
 <script>
-    ScrollReveal({
-        reset: true,
-        distance: '60px',
-        duration: 1500,
-        delay: 0
+    document.addEventListener("DOMContentLoaded", function() {
+    const bulletinTwoPointFive = document.getElementById("bulletin-25");
+    const bulletinTwoPointFiveText = document.getElementById("bulletinTwoPointFiveText");
+
+    bulletinTwoPointFive.addEventListener("mouseenter", function() {
+        const overlay = document.getElementById("overlay-25");
+        overlay.style.display = 'block';
+        bulletinTwoPointFiveText.style.display = 'block';
+    }); 
+    bulletinTwoPointFive.addEventListener("mouseleave", function() {
+        const overlay = document.getElementById("overlay-25");
+        overlay.style.display = 'none';
+        bulletinTwoPointFiveText.style.display = 'none';
     });
-    ScrollReveal({ reset: false });
-    ScrollReveal().reveal('.project', {delay: 500});
 
-function moveBox(project) {
-    // Add a white opacity layer
-    const overlay = document.createElement('div');
-    overlay.className = 'overlay';
-    overlay.style.position = 'absolute';
-    overlay.style.top = '0';
-    overlay.style.left = '0';
-    overlay.style.width = '100%';
-    overlay.style.height = '100%';
-    overlay.style.backgroundColor = 'black';
-    overlay.style.opacity = '0.05'; 
-    overlay.style.borderRadius = "20px";
-    overlay.style.pointerEvents = "none";
-    overlay.style.transition = "0.3s ease";
-    project.appendChild(overlay);
-}
+    const bulletinLanding = document.getElementById("bulletin-landing");
+    const bulletinLandingText = document.getElementById("bulletinLandingText");
 
-function resetBox(project) {
-    // Remove the white opacity layer
-    const overlay = project.querySelector('.overlay');
-    if (overlay) {
-        project.removeChild(overlay);
-    }
-}
+    bulletinLanding.addEventListener("mouseenter", function() {
+        const overlay = document.getElementById("overlay-landing");
+        overlay.style.display = 'block';
+        bulletinLandingText.style.display = 'block';
+    }); 
+    bulletinLanding.addEventListener("mouseleave", function() {
+        const overlay = document.getElementById("overlay-landing");
+        overlay.style.display = 'none';
+        bulletinLandingText.style.display = 'none';
+    }); 
 
-function moveArrow(container) {
-    const arrow = container.querySelector('.arrow');
-    if (arrow) {
-        arrow.style.transition = "0.3s ease"
-        arrow.style.transform = 'translate(12px, 0)';
-    }
-}
+    const eva = document.getElementById("eva");
+    const evaText = document.getElementById("eva-text");
 
-function resetArrow(container) {
-    const arrow = container.querySelector('.arrow');
-    if (arrow) {
-        arrow.style.transform = 'translate(0, 0)';
-    }
-}
+    eva.addEventListener("mouseenter", function() {
+        const overlay = document.getElementById("overlay-eva");
+        overlay.style.display = 'block';
+        evaText.style.display = 'block';
+    }); 
+    eva.addEventListener("mouseleave", function() {
+        const overlay = document.getElementById("overlay-eva");
+        overlay.style.display = 'none';
+        evaText.style.display = 'none';
+    });
+
+   
+    });
+
+    
 
 </script>
 
-
 </body>
-</html>
+</html
