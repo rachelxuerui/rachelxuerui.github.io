@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="bulletin-2-point-5.css">
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+
+<div class = "button">
+    <a href = "index.html"><div class = "option"><b>Work</b></div></a>
+    <div class = "option"><div class = "opaque">Case studies</div></div> 
+    <a href = "assets/resume.pdf" target="_blank"><div class = "option"><div class = "opaque">Resume</div></div></a>
+    <div class = "option"><div class = "opaque">About</div></div>
+</div>
+
+<div class = "wrapper">
+
+<div class = "splash">
+<div class = "header">
+    <div class = "title">The Bulletin 2.5</div> 
+    <div class = "subtitle">How might we integrate a personalized feed and notifications?</div>
+</div>
+
+<div class = "project">
+    <div class = "photo-row" style = "padding: 0 120px;">
+        <div class = "box">
+            <video controls autoplay muted loop style = "border-radius: 40px;">
+                <source src="assets/bulletin/search.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class = "box" style = "margin-top: -30px;">
+            <video controls autoplay muted loop" style = "border-radius: 40px;">
+                <source src="assets/bulletin/homepage.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class = "box"><img src ="assets/bulletin/notifications.png" style = "border-radius: 40px;"></div>
+    </div>
+
+    <div class = "line"></div>
+
+    <div class = "project-overview">
+
+        <div class = "description-block">
+            <div class = "description-title">Project overview</div>
+            <div class = "description-subtitle">
+                Lucy Chen, the CEO of The Bulletin, asked Freya Buison and I to implement updates to The Bulletin app. 
+                <br><br>
+                We wanted a place for students to see their saved events and applications, and notifications.
+                <br><br>
+                However, in developing these pages, we refined and redesigned the overarching user flow and app structure, improving the overall user experience.</div>
+            </div>
+
+        <div class = "overview-column">
+            <div class = "description-block">
+                <div class = "description-title">Timeline</div>
+                <div class = "description-subtitle">September 2024</div>
+            </div>
+
+            <div class = "description-block">
+                <div class = "description-title">Role</div>
+                <div class = "description-subtitle">Product Designer</div>
+            </div>
+
+            <div class = "description-block">
+                <div class = "description-title">Skills</div>
+                <div class = "description-subtitle">
+                    Figma
+                    <br>
+                    A/B testing
+                    <br>
+                    Cross-functional
+                </div>
+            </div>
+        </div>
+
+        <div class = "description-block">
+            <div class = "description-title">Team</div>
+            <div class = "description-subtitle">
+                Rachel Michelson
+                <br>
+                Freya Buison
+                <br>
+                Lucy Chen
+                <br>
+                Matthew Lou
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+    <div class = "block">
+        <div class = "line"></div>
+    <div class = "text">
+        <div class = "block-title">Problem</div>
+        <div class = "block-subtitle">The original app designs do not prioritize saved events, applications, or followed organizations. Furthermore, it is unintuitive and difficult for users to explore new content.</div>
+    </div>
+    <div class = "photo-row">
+        <div class = "box"><img src = "assets/bulletin/original-mobile-1.png"></div>
+        <div class = "box"><img src = "assets/bulletin/original-mobile-2.png"></div>
+        <div class = "box"><img src = "assets/bulletin/original-3.png"></div>
+    </div>
+    <div class = "photo-description">Original designs for The Bulletin</div>
+</div>
+
+<div class = "block">
+    <div class = "line"></div>
+    <div class = "text">
+        <div class = "block-title">Style guide</div>
+        <div class = "block-subtitle">Seeing as Freya and I were the first product designers at The Bulletin, we put together a simple style guide including reusable components for consistency and professionalism across the new app.</div>
+    </div>
+    <div class = "photo-row">
+        <img src = "assets/bulletin/style-guide.png" style = "width: 100%">
+    </div>
+</div>
+
+<div class = "block">
+    <div class = "line"></div>
+    <div class = "text">
+        <div class = "block-title">A/B Testing</div>
+        <div class = "block-subtitle">In order to make decisions between certain design choices, we conducted A/B testing with 12 students at Columbia University and Barnard College. </div>
+    </div>
+    <div class = "photo-row">
+        <img src = "assets/bulletin/ab.png" style = "width: 100%" id = "ab-test-image">
+    </div>
+    <div class = "arrows">
+        <div class="left-arrow" style = "opacity: 50%;" id = "ab-test-left">&larr;</div>
+        <div class="right-arrow" id = "ab-test-right">&rarr;</div>
+    </div>
+</div>
+
+<div class = "block">
+    <div class = "line"></div>
+    <div class = "text">
+        <div class = "block-title">User flow</div>
+        <div class = "block-subtitle">
+            Freya Buison and I linked together all of the finished designs together in one large flow diagram, including empty states, and marked these designs as ready for development.
+            <br><br>
+            This was to ensure that we covered every possible edge case, and that the flow was clear and understood by the development team.</div>
+    </div>
+    <div class = "photo-row">
+        <img src = "assets/bulletin/user-flow.png" style = "width: 100%">
+    </div>
+</div>
+
+<div class = "block">
+    <div class = "line"></div>
+    <div class = "text">
+        <div class = "block-title">Final designs</div>
+        <div class = "block-subtitle">
+             The Bulletin 2.5 was implemented and deployed by Matthew Lou.</div>
+    </div>
+    <div class = "final-designs-wrapper" id = "1">
+        <div class = "final-designs-text">
+            <div class = "final-title">App restructuring</div>
+            <br>
+            We opted for a more traditional app layout in order to make the user experience as familiar as possible, including the following changes
+            <br><br>
+            <div class = "opaque">
+                Merged the "hot", "new", and "upcoming" filters with existing filters on the events page
+                <br><br>
+                Added a bottom navigation bar for events, applications, and organizations
+                <br><br>
+                Added options for notifications, search, and extra in the top right
+            </div>
+        </div>
+        <video width="300" controls autoplay muted loop = "display: block; max-width: 240px; height: auto; border-radius: 6px;">
+            <source src="assets/bulletin/final-1.mov" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class = "final-designs-wrapper" id = "2" style = "display: none;">
+        <div class = "final-designs-text">
+            <div class = "final-title">Your Board</div>
+            <br><br>
+            A home for saved events, applications, and events and applications from followed organizations.
+            <br><br>
+            The empty state displays suggested events, encouraging users to save events.
+            </div>
+        <div class = "photo-row">
+            <div class = "box">
+                <img src = "assets/bulletin/homepage-empty.png">
+                <div class = 'opaque'>Empty state</div>
+            </div>
+            <div class = "box">
+                <img src = "assets/bulletin/homepage-filled.png">
+                <div class = 'opaque'>Filled state</div>
+            </div>
+        </div>
+    </div>
+
+    <div class = "final-designs-wrapper-column" id = "3" style = "display: none;">
+        <div class = "final-designs-text">
+            <div class = "final-title">Search</div>
+        <br>
+        Suggested events, browse by category, trending searches, and search result filtering
+        </div>
+        <div class = "photo-row" style = "gap: 48px;">
+            <div class = "box"><img src = "assets/bulletin/search-1.png"></div>
+            <div class = "box"><img src = "assets/bulletin/search-2.png"></div>
+            <div class = "box"><img src= "assets/bulletin/search-3.png"></div>
+        </div>
+    </div>
+
+    <div class = "final-designs-wrapper-column" id = "4" style = "display: none;">
+        <div class = "final-designs-text">
+        <div class = "final-title">Notifications</div>
+        <br>
+        A page consolidating all notifications regarding saved events, saved applications, and followed organizations.
+        </div>
+        <div class = "photo-row" style = "gap: 48px;">
+            <div class = "box"><img src = "assets/bulletin/notifications - empty state.png"></div>
+            <div class = "box"><img src = "assets/bulletin/notifications-2.png"></div>
+            <div class = "box"><img src= "assets/bulletin/notifications-3.png"></div>
+        </div>
+    </div>
+
+    <div class = "final-designs-wrapper-column" id = "5" style = "display: none;">
+        <div class = "final-designs-text">
+            <div class = "final-title">Revamped onboarding</div>
+        <br>
+        A more exciting, streamlined, and personalized first experience with The Bulletin.
+        </div>
+        <div class = "photo-row" style = "gap: 48px;">
+            <div class = "box"><img src = "assets/bulletin/onboarding1.png"></div>
+            <div class = "box"><img src = "assets/bulletin/onboarding2.png"></div>
+            <div class = "box"><img src= "assets/bulletin/onboarding3.png"></div>
+        </div>
+    </div>
+
+    <div class = "arrows">
+        <div class="left-arrow" style = "opacity: 50%;" id = "final-left">&larr;</div>
+        <div class="right-arrow" id = "final-right">&rarr;</div>
+    </div>
+
+</div>
+</div>
+
+</div>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const rightArrow = document.getElementById("ab-test-right");
+    const leftArrow = document.getElementById("ab-test-left");
+    const photo = document.getElementById("ab-test-image");
+    var index = 0;
+
+    const rightFinal = document.getElementById("final-right");
+    const leftFinal = document.getElementById("final-left");
+    const div1 = document.getElementById("1");
+    const div2 = document.getElementById("2");
+    const div3 = document.getElementById("3");
+    const div4= document.getElementById("4");
+    const div5 = document.getElementById("5");
+    var finalIndex = 0;
+
+    rightArrow.addEventListener("click", function() {
+            if (index == 0) {
+                photo.src = "assets/bulletin/ab1.png";
+                photo.style.opacity = 1;
+                index = 1;
+                leftArrow.style.opacity = "100%";
+            }
+            else if (index == 1) {
+                photo.src = "assets/bulletin/ab2.png";
+                photo.style.opacity = 1;
+                rightArrow.style.opacity = "50%";
+                index = 2;
+            }
+        }); 
+
+
+    leftArrow.addEventListener("click", function() {
+                if (index == 2) {
+                    photo.src = "assets/bulletin/ab1.png";
+                    photo.style.opacity = 1;
+                    index = 1;
+                    rightArrow.style.opacity = "100%";
+                }
+                else if (index == 1) {
+                    photo.src = "assets/bulletin/ab.png";
+                    photo.style.opacity = 1;
+                    index = 0;
+                    leftArrow.style.opacity = "50%";
+                }
+            }); 
+
+    rightFinal.addEventListener("click", function() {
+            if (finalIndex == 0) {
+                div1.parentNode.replaceChild(div2, div1);
+                div2.style.display = "flex";
+                div1.style.display = "none";
+                leftFinal.style.opacity = "100%"
+                finalIndex = 1;
+            }
+            else if (finalIndex == 1) {
+                div2.parentNode.replaceChild(div3, div2);
+                div3.style.display = "flex";
+                div2.style.display = "none";
+                finalIndex = 2;
+            }
+            else if (finalIndex == 2) {
+                div3.parentNode.replaceChild(div4, div3);
+                div4.style.display = "flex";
+                div3.style.display = "none";
+                finalIndex = 3;
+            }
+            else if (finalIndex == 3) {
+                div4.parentNode.replaceChild(div5, div4);
+                div5.style.display = "flex";
+                div4.style.display = "none";
+                rightFinal.style.opacity = "50%"
+                finalIndex = 4;
+            }
+        }); 
+
+    leftFinal.addEventListener("click", function() {
+            if (finalIndex == 4) {
+                div5.parentNode.replaceChild(div4, div5);
+                div4.style.display = "flex";
+                div5.style.display = "none";
+                rightFinal.style.opacity = "100%"
+                finalIndex = 3;
+            }
+            else if (finalIndex == 3) {
+                div4.parentNode.replaceChild(div3, div4);
+                div3.style.display = "flex";
+                div4.style.display = "none";
+                finalIndex = 2;
+            }
+            else if (finalIndex == 2) {
+                div3.parentNode.replaceChild(div2, div3);
+                div2.style.display = "flex";
+                div3.style.display = "none";
+                finalIndex = 1;
+            }
+            else if (finalIndex == 1) {
+                div2.parentNode.replaceChild(div1, div2);
+                div1.style.display = "flex";
+                div2.style.display = "none";
+                finalIndex = 0;
+                leftFinal.style.opacity = "50%";
+            }
+
+        }); 
+
+
+        });
+
+    ScrollReveal({
+        reset: true,
+        distance: '60px',
+        duration: 1500,
+        delay: 0
+    });
+    ScrollReveal({ reset: false });
+    ScrollReveal().reveal('.block', {delay: 500});
+
+    
+
+</script>
+
+</body>
+</html>
