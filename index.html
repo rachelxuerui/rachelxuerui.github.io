@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developing Accessible UIs - HW1</title>
+    <title>Rachel Xuerui Michelson - Design Portfolio</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -18,7 +18,7 @@
 <div class = "wrapper">
     <div class = "top-text">
         <div class = "header">Rachel Michelson is an incoming Product Designer at ExpertVoice, based in NYC.</div>
-        <div class = "subheader">As a computer science student, I am passionate about using the intersection between design and emerging technology to help streamline user experiences.</div>
+        <div class = "subheader">Studying Computer Science at Columbia University, I am passionate about using the intersection between design and emerging technology to help streamline user experiences.</div>
 </div>
 
     <div class = "experience">
@@ -81,66 +81,95 @@
 </div>
 </div>
 
+<div class = "experience">
+    <div class = "experience-text">
+        <div class = "experience-title">Infinite Goods</div>
+        <div class = "experience-subtitle">Product Designer</div>
+</div>
+<div class = "experience-description">
+    At an early-stage startup, I played a pivotal role in shaping the website's core elements using Figma, such as the Eco-label. Worked cross-functionally, collaborating with engineers, the product manager, and the CEO to ensure seamless execution of deliverables.
+</div>
+<div class = "photo-column">
+
+        <a href = 'label.html'><div class = "box">
+            <img src = "assets/label.png" id = "label">
+            <div id = 'overlay-label'></div>
+            <div class = "photo-text" id = "label-text">
+                <div class = "photo-text-header">Eco-label, redesigned</div>
+                <div class = "photo-text-subheader">Redesigning a method of scoring brand and product sustainability</div>
+            </div>
+        </div></a>
+
+        <div class = "photo-row">
+        <a href = 'methodology.html'><div class = "box">
+            <img src = "assets/methodology.png" id = "methodology">
+            <div id = 'overlay-methodology'></div>
+            <div class = "photo-text" id = "methodology-text">
+                <div class = "photo-text-header">Methodology</div>
+                <div class = "photo-text-subheader">Helping users understand how we score brand and product sustanability</div>
+            </div>
+        </div></a>
+
+        <a href = 'who.html'><div class = "box">
+            <img src = "assets/who.png" id = "who">
+            <div id = 'overlay-who'></div>
+            <div class = "photo-text" id = "who-text">
+                <div class = "photo-text-header">Who are we</div>
+                <div class = "photo-text-subheader">Designing a page showcasing the Infinite Goods team</div>
+            </div>
+        </div></a>
+        </div>
+</div>
+</div>
+
 </div>
 </div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-    const bulletinTwoPointFive = document.getElementById("bulletin-25");
-    const bulletinTwoPointFiveText = document.getElementById("bulletinTwoPointFiveText");
-
-    bulletinTwoPointFive.addEventListener("mouseenter", function() {
-        const overlay = document.getElementById("overlay-25");
+    
+        function addFadeTransition(element, overlayId, textId) {
+    element.addEventListener("mouseenter", function() {
+        const overlay = document.getElementById(overlayId);
+        const text = document.getElementById(textId);
+        
+        overlay.style.transition = 'opacity 0.5s ease';
+        text.style.transition = 'opacity 0.5s ease';
+        
+        overlay.style.opacity = '1';
+        text.style.opacity = '1';
+        
+        // Display the elements
         overlay.style.display = 'block';
-        bulletinTwoPointFiveText.style.display = 'block';
-    }); 
-    bulletinTwoPointFive.addEventListener("mouseleave", function() {
-        const overlay = document.getElementById("overlay-25");
-        overlay.style.display = 'none';
-        bulletinTwoPointFiveText.style.display = 'none';
+        text.style.display = 'block';
     });
 
-    const bulletinLanding = document.getElementById("bulletin-landing");
-    const bulletinLandingText = document.getElementById("bulletinLandingText");
+    element.addEventListener("mouseleave", function() {
+        const overlay = document.getElementById(overlayId);
+        const text = document.getElementById(textId);
+        
+        overlay.style.transition = 'opacity 0.5s ease';
+        text.style.transition = 'opacity 0.5s ease';
+        
+        overlay.style.opacity = '0';
+        text.style.opacity = '0';
+        
 
-    bulletinLanding.addEventListener("mouseenter", function() {
-        const overlay = document.getElementById("overlay-landing");
-        overlay.style.display = 'block';
-        bulletinLandingText.style.display = 'block';
-    }); 
-    bulletinLanding.addEventListener("mouseleave", function() {
-        const overlay = document.getElementById("overlay-landing");
-        overlay.style.display = 'none';
-        bulletinLandingText.style.display = 'none';
-    }); 
-
-    const eva = document.getElementById("eva");
-    const evaText = document.getElementById("eva-text");
-
-    eva.addEventListener("mouseenter", function() {
-        const overlay = document.getElementById("overlay-eva");
-        overlay.style.display = 'block';
-        evaText.style.display = 'block';
-    }); 
-    eva.addEventListener("mouseleave", function() {
-        const overlay = document.getElementById("overlay-eva");
-        overlay.style.display = 'none';
-        evaText.style.display = 'none';
+        setTimeout(function() {
+            overlay.style.display = 'none';
+            text.style.display = 'none';
+        }, 500); 
     });
+}
 
-    const android = document.getElementById("android");
-    const androidText = document.getElementById("android-text");
-
-    android.addEventListener("mouseenter", function() {
-        const overlay = document.getElementById("overlay-android");
-        overlay.style.display = 'block';
-        androidText.style.display = 'block';
-    }); 
-    android.addEventListener("mouseleave", function() {
-        const overlay = document.getElementById("overlay-android");
-        overlay.style.display = 'none';
-        androidText.style.display = 'none';
-    });
+    // Add fade transitions for each element
+    addFadeTransition(document.getElementById("bulletin-25"), "overlay-25", "bulletinTwoPointFiveText");
+    addFadeTransition(document.getElementById("bulletin-landing"), "overlay-landing", "bulletinLandingText");
+    addFadeTransition(document.getElementById("eva"), "overlay-eva", "eva-text");
+    addFadeTransition(document.getElementById("android"), "overlay-android", "android-text");
+    addFadeTransition(document.getElementById("label"), "overlay-label", "label-text");
+    addFadeTransition(document.getElementById("methodology"), "overlay-methodology", "methodology-text");
+    addFadeTransition(document.getElementById("who"), "overlay-who", "who-text");
 
 
    
