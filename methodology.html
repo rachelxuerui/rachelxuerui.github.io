@@ -1,76 +1,112 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="label.css">
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<title>Methodology</title>
 <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
 
-<div class = "big-container">
-
-<div class = "top-buttons">
-    <div class = "bold"><a href = "index.html">Work</a></div>
-    <a href = "about.html">About</a>
-    <a href = "assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+<div class = "button">
+    <a href = "index.html"><div class = "option"><b>Work</b></div></a>
+    <div class = "option"><div class = "opaque">Case studies</div></div> 
+    <a href = "assets/resume.pdf" target="_blank"><div class = "option"><div class = "opaque">Resume</div></div></a>
+    <div class = "option"><div class = "opaque">About</div></div>
 </div>
 
-<br><br><br>
+<div class = "wrapper" style = "background: radial-gradient(ellipse at bottom, rgba(234, 246, 251, 0.5), transparent), radial-gradient(ellipse at top, rgba(2, 122, 108, 0.75), transparent);">
 
-<div class = "container">
-
-<div class = "project-title">
-    <div class = "page-header">Infinite Goods</div>
-    <div class = "page-subheader">Designing a page explaining the methodology behind the eco-label</div>
+<div class = "splash">
+<div class = "header">
+    <div class = "title">Methodology</div> 
+    <div class = "subtitle">Designing a page for explaining the scoring system behind the original eco-label</div>
 </div>
 
-<br><br>
-
-<div class = "overview">
-    <div class = "overview-row">
-        <div class = "overview-category">Duration</div>
-        <div class = "overview-info">2 weeks</div>
+<div class = "project">
+    <div class = "photo-row">
+        <div class = "box">
+            <img src="assets/methodology/splash.png">
+        </div>
     </div>
-    <div class = "overview-row">
-        <div class = "overview-category">Role</div>
-        <div class = "overview-info">Product designer</div>
-    </div>
-    <div class = "overview-row">
-        <div class = "overview-category">Skills</div>
-        <div class = "overview-info">Figma</div>
-    </div>
-</div>
 
+    <div class = "line"></div>
 
-<div class = "section-wrapper">
+    <div class = "project-overview">
 
-    <div class = "section">
-        <div class = "section-subtitle">Background</div>
-        <div class = "body">
-            <b><a href = "https://www.infinitegoods.eco" target="_blank" rel="noopener noreferrer" style = "color: #B43598">Infinite Goods</a></b> is a startup company that was supported by the Columbia Build Lab and the Columbia Business School. Their mission is to consolidate sustainable brands into one e-commerce platform, and create a standard measuring the sustainability of brands.
+        <div class = "description-block">
+            <div class = "description-title">Project overview</div>
+            <div class = "description-subtitle">
+                This project was completed for Infinite Goods, a startup company that was supported by the Columbia Build Lab and the Columbia Business School. 
+                <br><br>
+                Their mission is to consolidate sustainable brands into one e-commerce platform, and create a universal standard for measuring the sustainability of brands.
+        </div>
             </div>
-    </div>
 
-    <div class = "section-wrapper">
+        <div class = "overview-column">
+            <div class = "description-block">
+                <div class = "description-title">Timeline</div>
+                <div class = "description-subtitle">November 2022</div>
+            </div>
 
-        <div class = "section">
-            <div class = "section-subtitle">Final designs</div>
+            <div class = "description-block">
+                <div class = "description-title">Role</div>
+                <div class = "description-subtitle">Product Designer</div>
+            </div>
+
+            <div class = "description-block">
+                <div class = "description-title">Skills</div>
+                <div class = "description-subtitle">
+                    Figma
+                    <br>
+                    Visual design
+                </div>
+            </div>
         </div>
 
-<div class = "project-photo">
-    <img src="assets/methodology/methodology.gif" alt="methodology" style="display: block; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(0, 0, 0, 0.15);">
+        <div class = "description-block">
+            <div class = "description-title">Team</div>
+            <div class = "description-subtitle">
+                Rachel Michelson
+                <br>
+                Aileen Lee (CEO)
+            </div>
+        </div>
+
+    </div>
+
+</div>
 </div>
 
-<div class = "padding"></div>
-<div class = "padding"></div>
-<div class = "padding"></div>
+<div class = "block">
+    <div class = "line"></div>
+    <div class = "text">
+        <div class = "block-title">Final designs</div>
+        <div class = "block-subtitle">
+            An interactive method of educating our users on our scoring system for brand and product sustainability.</div>
+    </div>
 
-    <div class = "bottom">© 2023 Rachel Michelson</div>
+    <div class = "photo-with-description">
+        <div class = "photo-row">
+            <div class = "box">
+                <video controls autoplay muted loop" style = "border-radius: 3px;">
+                    <source src="assets/methodology/final.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
 
 </div>
+
 </div>
+
+</div>
+
+
 
 <script>
+
     ScrollReveal({
         reset: true,
         distance: '60px',
@@ -78,7 +114,9 @@
         delay: 0
     });
     ScrollReveal({ reset: false });
-    ScrollReveal().reveal('.section-wrapper', {delay: 500});
+    ScrollReveal().reveal('.block', {delay: 500});
+
+    
 
 </script>
 
