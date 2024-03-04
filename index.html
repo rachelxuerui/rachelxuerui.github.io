@@ -128,6 +128,21 @@
         evaText.style.display = 'none';
     });
 
+    const android = document.getElementById("android");
+    const androidText = document.getElementById("android-text");
+
+    android.addEventListener("mouseenter", function() {
+        const overlay = document.getElementById("overlay-android");
+        overlay.style.display = 'block';
+        androidText.style.display = 'block';
+    }); 
+    android.addEventListener("mouseleave", function() {
+        const overlay = document.getElementById("overlay-android");
+        overlay.style.display = 'none';
+        androidText.style.display = 'none';
+    });
+
+
    
     });
 
