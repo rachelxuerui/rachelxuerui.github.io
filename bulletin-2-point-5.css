@@ -15,6 +15,7 @@
         width: 240px;
         height: auto;
     }
+    
     .wrapper {
         display: flex;
         padding: 60px 60px;
@@ -107,6 +108,7 @@
         display: flex;
         flex-direction: row;
         gap: 30px;
+        max-width: 420px;
     }
 
     .description-block {
@@ -114,6 +116,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
+        max-width: 420px;
     }
     
     .description-title {
@@ -261,7 +264,7 @@
     }
     
     .opaque {
-        opacity: 75%;
+        color: rgba(255,255,255,0.75);
     }
     
     .photo-caption {
@@ -382,12 +385,12 @@ html, body {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    width: 300px;
+    max-width: 420px;
 }
 
 .description-block {
     display: flex;
-    max-width: 300px;
+    max-width: 420px;
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
@@ -538,7 +541,7 @@ video {
 }
 
 .opaque {
-    opacity: 75%;
+    color: rgba(255,255,255,0.75);
 }
 
 .photo-caption {
