@@ -416,16 +416,22 @@ html, body {
     align-items: center;
 }
 
-.box {
-    flex-shrink: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%; 
+.photo-row img {
+    width: 100%;
+    /* width: auto; */
     height: 100%;
-    position: relative;
-    gap: 12px;
+    object-fit: cover; /* Maintain aspect ratio and cover container */
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.space {
+    padding: 60px 0;
+}
+
+.box:hover img {
+    transform: scale(1.2);
+    z-index: 2;
 }
 
 .photo-with-description {
@@ -435,14 +441,6 @@ html, body {
     gap: 12px;
     align-items: center;
     text-align: center;
-}
-
-.photo-row img {
-    width: 100%;
-    /* width: auto; */
-    height: 100%;
-    object-fit: cover; /* Maintain aspect ratio and cover container */
-    border-radius: 6px;
 }
 
 video {
