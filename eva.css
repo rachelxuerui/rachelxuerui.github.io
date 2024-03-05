@@ -8,11 +8,13 @@
         height: 100%;
         background-color: #000;
         font-family: 'DM Sans';
+        flex-shrink: 1;
     }
 
     .wrapper {
         display: flex;
-        padding: 60px 0px;
+        padding: 60px 60px;
+        padding-bottom: 120px;
         flex-direction: column;
         align-items: center;
         color: white;
@@ -193,6 +195,7 @@
         height: 100%;
         object-fit: cover; /* Maintain aspect ratio and cover container */
         border-radius: 6px;
+        transition: transform 0.3s ease;
     }
 
     video {
@@ -208,23 +211,6 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-    }
-
-    .arrows {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        cursor: pointer;
-    }
-
-    .arrow-left {
-        color: rgba(255, 255, 255, 0.20);
-        cursor: pointer;
-    }
-
-    .arrow-right {
-        color: rgba(255, 255, 255, 0.50);
-        cursor: pointer;
     }
 
     .final-designs-wrapper {

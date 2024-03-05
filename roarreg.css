@@ -224,12 +224,13 @@
     .overview-column {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        gap: 30px;
         max-width: 420px;
     }
     
     .description-block {
         display: flex;
+        max-width: 420px;
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
@@ -249,9 +250,10 @@
     
     .block {
         display: flex;
+        padding: 0 6vw;
         flex-direction: column;
         align-items: center;
-        gap: 24px;
+        gap: 60px;
         align-self: stretch;
     }
     
@@ -281,10 +283,10 @@
     
     .photo-row {
         flex-shrink: 1;
+        flex-grow: 1;
         display: flex;
         justify-content: space-between;
-        gap: 30px;
-        overflow: wrap;
+        gap: 60px;
         align-items: center;
         flex-direction: column;
     }
@@ -303,11 +305,9 @@
     
     .photo-row img {
         width: 100%;
-        /* width: auto; */
         height: 100%;
         object-fit: cover; /* Maintain aspect ratio and cover container */
         border-radius: 6px;
-        transition: transform 0.3s ease;
     }
 
     .space {
@@ -340,35 +340,6 @@
         font-weight: 400;
         line-height: normal;
     }
-    
-    .arrows {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        cursor: pointer;
-    }
-    
-    .arrow-left {
-        color: rgba(255, 255, 255, 0.20);
-        cursor: pointer;
-    }
-    
-    .arrow-right {
-        color: rgba(255, 255, 255, 0.50);
-        cursor: pointer;
-    }
-    
-    .photo-caption {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        align-items: center;
-    }
-    
-    .final-title {
-        font-size: 24px;
-    }
-    
     
     a {
         text-decoration: none;
