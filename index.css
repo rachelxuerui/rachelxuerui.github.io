@@ -210,6 +210,36 @@
         background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
         display: none; /* Initially hidden */
     }
+
+    #overlay-preppie {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
+        display: none; /* Initially hidden */
+    }
+
+    #overlay-roar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
+        display: none; /* Initially hidden */
+    }
+
+    #overlay-flexi {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
+        display: none; /* Initially hidden */
+    }
     
     .photo-text {
         position: absolute;
@@ -454,6 +484,36 @@ html, body {
 }
 
 #overlay-who {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
+    display: none; /* Initially hidden */
+}
+
+#overlay-preppie {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
+    display: none; /* Initially hidden */
+}
+
+#overlay-roar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
+    display: none; /* Initially hidden */
+}
+
+#overlay-flexi {
     position: absolute;
     top: 0;
     left: 0;
