@@ -5,13 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="eva.css">
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<title>Eva - ExpertVoice Assistant</title>
 <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
 
 <div class = "button">
     <a href = "index.html"><div class = "option"><b>Work</b></div></a>
-    <div class = "option"><div class = "opaque">Case studies</div></div> 
+    <a href = "case-studies.html" target="_blank"><div class = "option"><div class = "opaque">Case studies</div></div></a> 
     <a href = "assets/resume.pdf" target="_blank"><div class = "option"><div class = "opaque">Resume</div></div></a>
     <div class = "option"><div class = "opaque">About</div></div>
 </div>
@@ -127,7 +128,7 @@
     </div>
     <br>
     <div class = "photo-row">
-        <img src = "assets/eva/quote.png" style = "width: 100%">
+        <div class = 'box'><img src = "assets/eva/quote.png"></div>
     </div>
     <br><br>
     <div class = "block-subtitle">
@@ -199,7 +200,10 @@ what if this purchase decision was made by a generative AI tool, using our value
         <div class = "initial-title">Introduction</div>
         <br>
         <div class = "row">
-            <img src = "assets/eva/initial-introduction.png" style = "max-width: 300px;">
+            <video id = "vid" width="300" controls autoplay muted loop = "display: block; max-width: 240px; height: auto; border-radius: 6px;">
+                <source src="assets/eva/initial-introduction.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
                 <div class = "insights" style = "max-width: 480px">
                     <div class = "insight">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 23 23" fill="none">
