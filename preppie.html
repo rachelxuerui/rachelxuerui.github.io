@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="roarreg.css">
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<title>RoarReg</title>
+<script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+
+<div class = "button">
+    <a href = "index.html"><div class = "option"><div class = "opaque">Work</div></div></a>
+    <a href = "case-studies.html" target="_blank"><div class = "option"><b>Case studies</b></div></a> 
+    <a href = "assets/resume.pdf" target="_blank"><div class = "option"><div class = "opaque">Resume</div></div></a>
+    <div class = "option"><div class = "opaque">About</div></div>
+</div>
+
+<div class = "wrapper" style = "background: radial-gradient(ellipse at bottom, rgba(106, 210, 180, 0.5), transparent), radial-gradient(ellipse at top, rgba(63, 158, 131, 0.25), transparent);">
+
+<div class = "splash">
+<div class = "header">
+    <div class = "title">Preppie</div> 
+    <div class = "subtitle">Designing and implementing AI powered interview preparation</div>
+</div>
+
+<div class = "project">
+    <div class = "photo-row">
+        <div class = "box">
+            <img src="assets/preppie/splash.png">
+        </div>
+    </div>
+
+    <div class = "line"></div>
+
+    <div class = "project-overview">
+
+        <div class = "description-block">
+            <div class = "description-title">Project overview</div>
+            <div class = "description-subtitle">
+                This project was completed for the grad-level course: <b>Advanced Web Design Studio</b>, taught by Lydia Chilton at Columbia University. 
+                <br><br>
+                Our semester-long project was to solve a problem using <b>generative AI</b>. 
+                <br><br>
+                I decided to focus on solving the issue of <b>a lack of conversational interview preparation resources</b>.
+            </div>
+            </div>
+
+        <div class = "overview-column">
+            <div class = "description-block">
+                <div class = "description-title">Timeline</div>
+                <div class = "description-subtitle">September - December 2023</div>
+            </div>
+
+            <div class = "description-block">
+                <div class = "description-title">Role</div>
+                <div class = "description-subtitle">Product Designer<br>Front-end Developer</div>
+            </div>
+
+            <div class = "description-block">
+                <div class = "description-title">Skills</div>
+                <div class = "description-subtitle">
+                    Figma<br>
+                    UI/UX Design<br>
+                    HTML, CSS, JavaScript<br>
+                    Flask/Python<br>
+                    Synthesia & OpenAI APIs
+                </div>
+            </div>
+        </div>
+
+        <div class = "description-block">
+            <div class = "description-title">Team</div>
+            <div class = "description-subtitle">
+                Rachel Michelson
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class = "block">
+    <div class = "how-might-we">How might we use generative AI to solve a common user problem?</div>
+</div>
+
+<div class = "block">
+    <div class = "line"></div>
+
+<div class = "text">
+    <div class = "block-title">Problem</div>
+    <br>
+    <div class = "block-subtitle">
+    It is difficult for young professionals to prepare for <b>behavioral interviews</b>. They find that they are able to practice the most during the actual interview itself.
+</div>
+</div>
+    <div class = "photo-row">
+        <div class = "box"><img src = "assets/preppie/persona.png"></div>
+    </div>
+</div>
+</div>
+
+<div class = "block">
+    <div class = "line"></div>
+    <div class = "text">
+        <div class = "block-title">Approach</div>
+        <div class = "block-subtitle">
+        <div class = "photo-with-description">
+            <div class = "photo-row">
+                <div class = "box">
+                    <img src = "assets/preppie/input.png">
+                </div>
+                <div class = "box">
+                    <img src = "assets/preppie/code1.png">
+                </div>
+            </div>
+        Use the OpenAI API to generate interview questions based on a user's work experience, the role they are applying for, and any additional inputs
+        </div>
+
+        <div class = "space"></div>
+
+        <div class = "photo-with-description">
+            <div class = "photo-row">
+                <div class = "box">
+                    <img src = "assets/preppie/synthesia1.png">
+                </div>
+                <div class = "box">
+                    <img src = "assets/preppie/synthesia2.png">
+                </div>
+            </div>
+            Use the Synthesia API to generate a realistic interviewer interface
+        </div>
+
+        <div class = "space"></div>
+
+        <div class = "photo-with-description">
+            <div class = "photo-row">
+                <div class = "box">
+                    <img src = "assets/preppie/recording1.png">
+                </div>
+                <div class = "box">
+                    <img src = "assets/preppie/recording2.png">
+                </div>
+            </div>
+            Throughout the interview, use the Web Speech API to convert user response into text
+        </div>
+
+        <div class = "space"></div>
+
+        <div class = "photo-with-description">
+            <div class = "photo-row">
+                <div class = "box">
+                    <img src = "assets/preppie/feedback1.png">
+                </div>
+                <div class = "box">
+                    <img src = "assets/preppie/feedback2.png">
+                </div>
+            </div>
+        At the end of the interview, use the OpenAI API to provide feedback on user responses from the interview
+        </div>     
+</div>   
+</div>
+</div>
+
+<div class = "block">
+    <div class = "line"></div>
+    <div class = "text">
+        <div class = "block-title">Solution</div></div>
+        <div class = "block-subtitle" style = "align-self: center;">
+        Preppie takes in relevant inputs: your work experience, the role you are applying for, the company, and anything else you want to add to personalize your interview.
+        <br><br>
+        Preppie then simulates a live, remote interview experience, with a realistic AI interviewer. 
+        <br><br>
+        Preppie will use generative AI to provide feedback on your responses to interviewer questions, including what went well, what to improve, and example responses.</div>    
+        <div class = "box">
+        <iframe src="https://www.youtube.com/embed/f90nQDbkvdM?si=91WgmeFO5LHIlOX9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+</div>
+
+<div class = "block">
+    <div class = "line"></div>
+    <div class = "text">
+        <div class = "block-title">Code</div></div>
+        <div class = "row">
+        <div class = "block-subtitle" style = "align-self: center;">
+        I've coded this entire project using Flask (Python), HTML, CSS, and JavaScript.
+        <br><br>
+        If you're curious about my code, please reach out to me at rxm2101@columbia.edu for access to the GitHub repository. You need a Synthesia and an OpenAI API key for the code to run locally.
+        <br><br>
+        If you're interested in collaborating on this project going forward, please reach out at rxm2101@columbia.edu - I would love to make this real.
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+<script>
+
+    ScrollReveal({
+        reset: true,
+        distance: '60px',
+        duration: 1500,
+        delay: 0
+    });
+    ScrollReveal({ reset: false });
+    ScrollReveal().reveal('.block', {delay: 500});
+
+    
+
+</script>
+
+</body>
+</html>

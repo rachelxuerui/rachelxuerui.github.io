@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rachel Xuerui Michelson - Design Portfolio</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    
+<div class = "button">
+    <a href = "index.html"><div class = "option"><div class = "opaque">Work</div></div></a>
+    <div class = "option"><b>Case studies</b></div> 
+    <a href = "assets/resume.pdf" target="_blank"><div class = "option"><div class = "opaque">Resume</div></div></a>
+    <div class = "option"><div class = "opaque">About</div></div>
+</div>
+
+<div class = "wrapper">
+    <div class = "top-text">
+        <div class = "header">Rachel Michelson is an incoming Product Designer at ExpertVoice, based in NYC.</div>
+        <div class = "subheader">Studying Computer Science at Columbia University, I am passionate about using the intersection between design and emerging technology to help streamline user experiences.</div>
+</div>
+
+<div class = "experience">
+<div class = "photo-column">
+
+        <a href = 'preppie.html'><div class = "box">
+            <img src = "assets/preppie.png" id = "preppie">
+            <div id = 'overlay-preppie'></div>
+            <div class = "photo-text" id = "preppie-text">
+                <div class = "photo-text-header">Preppie</div>
+                <div class = "photo-text-subheader">Designing and implementing AI powered interview preparation</div>
+            </div>
+        </div></a>
+
+        <div class = "photo-row">
+        <a href = 'roarreg.html'><div class = "box">
+            <img src = "assets/roarreg.png" id = "roar">
+            <div id = 'overlay-roar'></div>
+            <div class = "photo-text" id = "roar-text">
+                <div class = "photo-text-header">RoarReg</div>
+                <div class = "photo-text-subheader">Streamlining the course registration process for Columbia students using Google technology</div>
+            </div>
+        </div></a>
+
+        <a href = 'flexi.html'><div class = "box">
+            <img src = "assets/flexi.png" id = "flexi">
+            <div id = 'overlay-flexi'></div>
+            <div class = "photo-text" id = "flexi-text">
+                <div class = "photo-text-header">Flexi</div>
+                <div class = "photo-text-subheader">Pivoting on an existing idea: personalized stretches for your specific needs</div>
+            </div>
+        </div></a>
+        </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    
+    function addFadeTransition(element, overlayId, textId) {
+    element.addEventListener("mouseenter", function() {
+        const overlay = document.getElementById(overlayId);
+        const text = document.getElementById(textId);
+        
+        overlay.style.transition = 'opacity 0.5s ease';
+        text.style.transition = 'opacity 0.5s ease';
+        
+        overlay.style.opacity = '1';
+        text.style.opacity = '1';
+        
+        // Display the elements
+        overlay.style.display = 'block';
+        text.style.display = 'block';
+    });
+
+    element.addEventListener("mouseleave", function() {
+        const overlay = document.getElementById(overlayId);
+        const text = document.getElementById(textId);
+        
+        overlay.style.transition = 'opacity 0.5s ease';
+        text.style.transition = 'opacity 0.5s ease';
+        
+        overlay.style.opacity = '0';
+        text.style.opacity = '0';
+        
+
+        setTimeout(function() {
+            overlay.style.display = 'none';
+            text.style.display = 'none';
+        }, 500); 
+    });
+}
+
+    // Add fade transitions for each element
+    addFadeTransition(document.getElementById("preppie"), "overlay-preppie", "preppie-text");
+    addFadeTransition(document.getElementById("roar"), "overlay-roar", "roar-text");
+    addFadeTransition(document.getElementById("flexi"), "overlay-flexi", "flexi-text");
+
+
+   
+    });
+
+    
+
+</script>
+
+</body>
+</html

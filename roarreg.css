@@ -1,0 +1,802 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+@media screen and (max-width: 800px) {
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: #000;
+        font-family: 'DM Sans';
+        flex-shrink: 1;
+    }
+    .designs-header {
+        color: #FFF;
+        font-size: 24px;
+        font-style: normal;
+        font-family: "EB Garamond", serif;
+        line-height: normal;
+    }
+
+    .designs-body {
+        color: #FFF;
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        opacity: 75%;
+    }
+
+    .search {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-self: stretch;
+    }
+
+    .opaque {
+        opacity: 75%;
+    }
+
+    .bold {
+        color: #FFF;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .text {
+        color: #FFF;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .insights {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .insight {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        align-self: stretch;
+        color: #FFF;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .how-might-we {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: stretch;
+        /* background: radial-gradient(17.86% 50% at 50% 50%, rgba(76, 182, 234, 1) 0%, rgba(0, 0, 0, 0.00) 100%); */
+        width: 100%;
+        height: auto;
+        color: #FFF;
+        text-align: center;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        padding: 120px 0;
+        margin: 240px 0;
+    }
+
+    .bubbles {
+        flex-shrink: 1;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 60px;  
+    }
+
+    .bubble {
+        display: flex;
+        flex-basis: auto;
+        flex-shrink: 1;
+        flex-direction: column;
+        justify-content: center;
+        gap: 9px;
+        object-fit: cover;
+        width: 180px;
+        height: 180px;
+        background: rgba(255, 255, 255, 0.10);
+        color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        overflow: hidden;
+        padding: 10px;
+    }
+
+    .photo-column {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .photo-with-description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .wrapper {
+        display: flex;
+        padding: 60px 60px;
+        padding-bottom: 120px;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        background: radial-gradient(ellipse at bottom, rgba(76, 182, 234, 1), transparent), radial-gradient(ellipse at top, rgba(54, 121, 155, 0.25), transparent);
+    }
+    
+    .button {
+        display: flex;
+        padding: 16px 18px;
+        align-items: flex-start;
+        gap: 12px;
+        border-radius: 100px;
+        background: rgba(0, 0, 0, 0.9);
+        box-shadow: 0px 0px 5px 5px rgba(255, 255, 255, 0.05);
+        width: min-content;
+        position: fixed;
+        bottom: 30px; 
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+    }
+    
+    .option {
+        color: white;
+        font-size: 16px;
+        font-style: normal;
+        line-height: normal;
+        width: max-content;
+    }
+    
+    .splash {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 60px;
+    }
+    
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        padding-bottom: 30px;
+        gap: 12px;
+        align-self: stretch;
+    }
+    
+    .title {
+        text-align: left;
+        font-size: 42px;
+        font-weight: 400;
+        font-family: "EB Garamond", serif;
+    }
+    
+    .subtitle {
+        text-align: left;
+        font-size: 18px;
+        font-weight: 100;
+    }
+    
+    .project {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        align-self: stretch;
+    }
+    
+    .line {
+        width: 100%;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.5);
+        margin: 120px;
+    }
+    
+    .project-overview {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: flex-start;
+        gap: 120px;
+        opacity: 75%;
+    }
+    
+    .overview-column {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 420px;
+    }
+    
+    .description-block {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .description-title {
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+    }
+    
+    .description-subtitle {
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 300;
+    }
+    
+    .block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        align-self: stretch;
+    }
+    
+    .text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        align-self: stretch;
+    }
+    
+    .block-title {
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        font-family: "EB Garamond", serif;
+    }
+    
+    .block-subtitle {
+        align-self: stretch;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    
+    .photo-row {
+        flex-shrink: 1;
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        overflow: wrap;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .box {
+        flex-shrink: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%; 
+        height: 100%;
+        position: relative;
+        gap: 12px;
+    }
+    
+    .photo-row img {
+        width: 100%;
+        /* width: auto; */
+        height: 100%;
+        object-fit: cover; /* Maintain aspect ratio and cover container */
+        border-radius: 6px;
+        transition: transform 0.3s ease;
+    }
+
+    .space {
+        padding: 60px 0;
+    }
+
+    .box:hover img {
+        transform: scale(1.2);
+        z-index: 2;
+    }
+    
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Maintain aspect ratio and cover container */
+    }
+
+    iframe {
+        width: 100%;
+        height: calc(100vw * 9 / 16);
+        object-fit: cover;
+    }
+    
+    
+    .photo-description {
+        color: rgba(255, 255, 255, 0.50);
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    
+    .arrows {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+    }
+    
+    .arrow-left {
+        color: rgba(255, 255, 255, 0.20);
+        cursor: pointer;
+    }
+    
+    .arrow-right {
+        color: rgba(255, 255, 255, 0.50);
+        cursor: pointer;
+    }
+    
+    .photo-caption {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+    
+    .final-title {
+        font-size: 24px;
+    }
+    
+    
+    a {
+        text-decoration: none;
+    }
+}
+
+@media screen and (min-width: 801px) {
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #000;
+    font-family: 'DM Sans';
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.bubbles {
+    flex-shrink: 1;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 120px;  
+}
+
+.wrapper {
+    display: flex;
+    padding: 60px 0px;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    padding-bottom: 120px;
+    background: radial-gradient(ellipse at bottom, rgba(76, 182, 234, 1), transparent), radial-gradient(ellipse at top, rgba(54, 121, 155, 0.25), transparent);
+}
+
+.button {
+    display: flex;
+    padding: 16px 18px;
+    align-items: flex-start;
+    gap: 12px;
+    border-radius: 100px;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 0px 5px 5px rgba(255, 255, 255, 0.05);
+    width: min-content;
+    position: fixed;
+    bottom: 30px; 
+    left: 30px;
+    z-index: 10;
+}
+
+.option {
+    color: white;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+    width: max-content;
+}
+
+.space {
+    padding: 60px 0;
+}
+
+.splash {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+.designs-header {
+    color: #FFF;
+    font-size: 24px;
+    font-style: normal;
+    font-family: "EB Garamond", serif;
+    line-height: normal;
+}
+
+.designs-body {
+    color: #FFF;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 75%;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-self: stretch;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 0 180px;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.bold {
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.text {
+    color: #FFF;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.title {
+    text-align: left;
+    font-size: 42px;
+    font-weight: 400;
+    font-family: "EB Garamond", serif;
+}
+
+.subtitle {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    align-self: stretch;
+    padding: 0 180px;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 120px;
+}
+
+.project-overview {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: flex-start;
+    gap: 180px;
+    opacity: 75%;
+}
+
+.overview-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 420px;
+}
+
+.description-block {
+    display: flex;
+    max-width: 420px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.description-title {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.description-subtitle {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.block {
+    display: flex;
+    padding: 0 240px;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    align-self: stretch;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.block-title {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-family: "EB Garamond", serif;
+}
+
+.how-might-we {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    background: radial-gradient(17.86% 50% at 50% 50%, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.00) 100%);
+    width: 100%;
+    height: auto;
+    color: #FFF;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    padding: 160px 0;
+    margin: 240px 0;
+}
+
+.block-subtitle {
+    align-self: stretch;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.photo-row {
+    flex-shrink: 1;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+}
+
+.box {
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; 
+    height: 100%;
+    position: relative;
+    gap: 12px;
+}
+
+.photo-with-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
+}
+
+.photo-row img {
+    width: 100%;
+    /* width: auto; */
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover container */
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.box:hover img {
+    transform: scale(1.2);
+    z-index: 2;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover container */
+}
+
+iframe {
+    width: 100%;
+    height: calc(100vw * 9 / 16);
+    object-fit: cover;
+}
+
+.photo-description {
+    color: rgba(255, 255, 255, 0.50);
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.arrows {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.arrow-left {
+    color: rgba(255, 255, 255, 0.20);
+    cursor: pointer;
+}
+
+.arrow-right {
+    color: rgba(255, 255, 255, 0.50);
+    cursor: pointer;
+}
+
+.final-designs-wrapper {
+    border-radius: 12px;
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: rgb(255,255,255,0.1);
+    display: flex;
+    flex-direction: row;
+    gap: 120px;
+    height: 600px;
+    align-items: center;
+    align-self: stretch;
+    overflow: hidden;
+}
+
+.final-designs-wrapper-column {
+    border-radius: 12px;
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: rgb(255,255,255,0.1);
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    gap: 18px;
+    align-items: left;
+    justify-content: center;
+    align-self: stretch;
+}
+
+.final-designs-text {
+    /* flex-grow: 1; */
+    flex-shrink: 1;
+    font-size: 18px;
+    text-align: left;
+}
+
+.opaque {
+    opacity: 75%;
+}
+
+.insights {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.insight {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    align-self: stretch;
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+} 
+
+.bubble {
+    display: flex;
+    flex-basis: auto;
+    flex-shrink: 1;
+    flex-direction: column;
+    justify-content: center;
+    gap: 9px;
+    object-fit: cover;
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.10);
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.photo-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.photo-caption {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.final-title {
+    font-size: 24px;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.row {
+    flex-direction: row;
+    gap: 240px;
+    justify-content: center;
+    align-items: center;
+}
+}
