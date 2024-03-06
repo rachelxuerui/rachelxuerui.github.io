@@ -72,8 +72,6 @@
                 <div class = "description-subtitle">
                     Figma
                     <br>
-                    A/B testing
-                    <br>
                     Cross-functional
                 </div>
             </div>
@@ -119,21 +117,6 @@
     </div>
     <div class = "photo-row">
         <img src = "assets/bulletin/style-guide.png" style = "width: 100%">
-    </div>
-</div>
-
-<div class = "block">
-    <div class = "line"></div>
-    <div class = "text">
-        <div class = "block-title">A/B Testing</div>
-        <div class = "block-subtitle">In order to make decisions between certain design choices, we conducted A/B testing with 12 students at Columbia University and Barnard College. </div>
-    </div>
-    <div class = "photo-row">
-        <div class = "box"><img src = "assets/bulletin/ab.png" id = "ab-test-image"></div>
-    </div>
-    <div class = "arrows">
-        <div class="left-arrow" style = "opacity: 50%;" id = "ab-test-left">&larr;</div>
-        <div class="right-arrow" id = "ab-test-right">&rarr;</div>
     </div>
 </div>
 
@@ -251,10 +234,6 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-    const rightArrow = document.getElementById("ab-test-right");
-    const leftArrow = document.getElementById("ab-test-left");
-    const photo = document.getElementById("ab-test-image");
-    var index = 0;
 
     const rightFinal = document.getElementById("final-right");
     const leftFinal = document.getElementById("final-left");
@@ -264,37 +243,6 @@
     const div4= document.getElementById("4");
     const div5 = document.getElementById("5");
     var finalIndex = 0;
-
-    rightArrow.addEventListener("click", function() {
-            if (index == 0) {
-                photo.src = "assets/bulletin/ab1.png";
-                photo.style.opacity = 1;
-                index = 1;
-                leftArrow.style.opacity = "100%";
-            }
-            else if (index == 1) {
-                photo.src = "assets/bulletin/ab2.png";
-                photo.style.opacity = 1;
-                rightArrow.style.opacity = "50%";
-                index = 2;
-            }
-        }); 
-
-
-    leftArrow.addEventListener("click", function() {
-                if (index == 2) {
-                    photo.src = "assets/bulletin/ab1.png";
-                    photo.style.opacity = 1;
-                    index = 1;
-                    rightArrow.style.opacity = "100%";
-                }
-                else if (index == 1) {
-                    photo.src = "assets/bulletin/ab.png";
-                    photo.style.opacity = 1;
-                    index = 0;
-                    leftArrow.style.opacity = "50%";
-                }
-            }); 
 
     rightFinal.addEventListener("click", function() {
             if (finalIndex == 0) {

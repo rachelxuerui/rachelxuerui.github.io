@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/scrollreveal"></script>
     <title>Rachel Xuerui Michelson - Design Portfolio</title>
     <link rel="stylesheet" href="index.css">
 </head>
@@ -25,8 +26,8 @@
 <div class = "photo-column">
 
         <div class = "photo-row">
-        <a href = 'roarreg.html'><div class = "box">
-            <img src = "assets/roarreg.png" id = "roar">
+        <a href = 'roarreg.html'><div class = "box" id = "roar">
+            <img src = "assets/roarreg.png">
             <div id = 'overlay-roar'></div>
             <div class = "photo-text" id = "roar-text">
                 <div class = "photo-text-header">RoarReg</div>
@@ -34,24 +35,24 @@
             </div>
         </div></a>
 
-        <a href = 'flexi.html'><div class = "box">
-            <img src = "assets/flexi.png" id = "flexi">
+        <a href = 'flexi.html'><div class = "box" id = "flexi">
+            <img src = "assets/flexi.png">
             <div id = 'overlay-flexi'></div>
             <div class = "photo-text" id = "flexi-text">
                 <div class = "photo-text-header">Flexi</div>
                 <div class = "photo-text-subheader">Pivoting on an existing idea: personalized stretches for your specific needs</div>
             </div>
         </div></a>
+        </div>
 
-        <a href = 'preppie.html'><div class = "box">
-            <img src = "assets/preppie.png" id = "preppie">
+        <a href = 'preppie.html'><div class = "box" id = "preppie">
+            <img src = "assets/preppie.png">
             <div id = 'overlay-preppie'></div>
             <div class = "photo-text" id = "preppie-text">
                 <div class = "photo-text-header">Preppie</div>
                 <div class = "photo-text-subheader">Designing and implementing AI powered interview preparation</div>
             </div>
         </div></a>
-        </div>
 </div>
 </div>
 
@@ -66,13 +67,12 @@
         const overlay = document.getElementById(overlayId);
         const text = document.getElementById(textId);
         
-        overlay.style.transition = 'opacity 0.5s ease';
+        overlay.style.transition = 'opacity 1s ease';
         text.style.transition = 'opacity 0.5s ease';
         
         overlay.style.opacity = '1';
         text.style.opacity = '1';
         
-        // Display the elements
         overlay.style.display = 'block';
         text.style.display = 'block';
     });
@@ -81,7 +81,7 @@
         const overlay = document.getElementById(overlayId);
         const text = document.getElementById(textId);
         
-        overlay.style.transition = 'opacity 0.5s ease';
+        overlay.style.transition = 'opacity 1s ease';
         text.style.transition = 'opacity 0.5s ease';
         
         overlay.style.opacity = '0';
@@ -95,18 +95,22 @@
     });
 }
 
-    // Add fade transitions for each element
     addFadeTransition(document.getElementById("preppie"), "overlay-preppie", "preppie-text");
     addFadeTransition(document.getElementById("roar"), "overlay-roar", "roar-text");
     addFadeTransition(document.getElementById("flexi"), "overlay-flexi", "flexi-text");
 
 
+    ScrollReveal({
+        reset: true,
+        distance: '60px',
+        duration: 1500,
+        delay: 0
+    });
+    ScrollReveal({ reset: false });
+    ScrollReveal().reveal('.experience', {delay: 500});
    
     });
-
-    
-
+   
 </script>
-
 </body>
 </html

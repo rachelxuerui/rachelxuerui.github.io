@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/scrollreveal"></script>
     <title>Rachel Xuerui Michelson - Design Portfolio</title>
     <link rel="stylesheet" href="index.css">
 </head>
@@ -31,8 +32,8 @@
     </div>
     <div class = "photo-row">
 
-            <a href = 'bulletin-2-point-5.html'><div class = "box">
-                <img src = "assets/bulletin-25.png" id = "bulletin-25">
+            <a href = 'bulletin-2-point-5.html'><div class = "box" id = "bulletin-25">
+                <img src = "assets/bulletin-25.png">
                 <div id = 'overlay-25'></div>
                 <div class = "photo-text" id = "bulletinTwoPointFiveText">
                     <div class = "photo-text-header">The Bulletin 2.5</div>
@@ -40,8 +41,8 @@
                 </div>
             </div></a>
 
-            <a href = 'bulletin-landing.html'><div class = "box">
-                <img src = "assets/bulletin-landing.png" id = "bulletin-landing">
+            <a href = 'bulletin-landing.html'><div class = "box" id = "bulletin-landing">
+                <img src = "assets/bulletin-landing.png">
                 <div id = 'overlay-landing'></div>
                 <div class = "photo-text" id = "bulletinLandingText">
                     <div class = "photo-text-header">Landing page</div>
@@ -61,8 +62,8 @@
 </div>
 <div class = "photo-row">
 
-        <a href = 'eva.html'><div class = "box">
-            <img src = "assets/eva.png" id = "eva">
+        <a href = 'eva.html'><div class = "box" id = "eva">
+            <img src = "assets/eva.png">
             <div id = 'overlay-eva'></div>
             <div class = "photo-text" id = "eva-text">
                 <div class = "photo-text-header">Eva</div>
@@ -70,8 +71,8 @@
             </div>
         </div></a>
 
-        <a href = 'android.html'><div class = "box">
-            <img src = "assets/android.png" id = "android">
+        <a href = 'android.html'><div class = "box" id = "android">
+            <img src = "assets/android.png">
             <div id = 'overlay-android'></div>
             <div class = "photo-text" id = "android-text">
                 <div class = "photo-text-header">Android, redesigned</div>
@@ -91,8 +92,8 @@
 </div>
 <div class = "photo-column">
 
-        <a href = 'label.html'><div class = "box">
-            <img src = "assets/label.png" id = "label">
+        <a href = 'label.html'><div class = "box" id = "label">
+            <img src = "assets/label.png">
             <div id = 'overlay-label'></div>
             <div class = "photo-text" id = "label-text">
                 <div class = "photo-text-header">Eco-label, redesigned</div>
@@ -101,8 +102,8 @@
         </div></a>
 
         <div class = "photo-row">
-        <a href = 'methodology.html'><div class = "box">
-            <img src = "assets/methodology.png" id = "methodology">
+        <a href = 'methodology.html'><div class = "box" id = "methodology">
+            <img src = "assets/methodology.png">
             <div id = 'overlay-methodology'></div>
             <div class = "photo-text" id = "methodology-text">
                 <div class = "photo-text-header">Methodology</div>
@@ -110,8 +111,8 @@
             </div>
         </div></a>
 
-        <a href = 'who.html'><div class = "box">
-            <img src = "assets/who.png" id = "who">
+        <a href = 'who.html'><div class = "box" id = "who">
+            <img src = "assets/who.png">
             <div id = 'overlay-who'></div>
             <div class = "photo-text" id = "who-text">
                 <div class = "photo-text-header">Who are we</div>
@@ -126,15 +127,24 @@
 </div>
 
 <script>
+    ScrollReveal({
+        reset: true,
+        distance: '60px',
+        duration: 1500,
+        delay: 0
+    });
+    ScrollReveal({ reset: false });
+    ScrollReveal().reveal('.experience', {delay: 500});
+
     document.addEventListener("DOMContentLoaded", function() {
     
         function addFadeTransition(element, overlayId, textId) {
-    element.addEventListener("mouseenter", function() {
+        element.addEventListener("mouseenter", function() {
         const overlay = document.getElementById(overlayId);
         const text = document.getElementById(textId);
         
-        overlay.style.transition = 'opacity 0.5s ease';
-        text.style.transition = 'opacity 0.5s ease';
+        overlay.style.transition = 'opacity 1s ease';
+        text.style.transition = 'opacity 1s ease';
         
         overlay.style.opacity = '1';
         text.style.opacity = '1';
@@ -148,8 +158,8 @@
         const overlay = document.getElementById(overlayId);
         const text = document.getElementById(textId);
         
-        overlay.style.transition = 'opacity 0.5s ease';
-        text.style.transition = 'opacity 0.5s ease';
+        overlay.style.transition = 'opacity 1s ease';
+        text.style.transition = 'opacity 1s ease';
         
         overlay.style.opacity = '0';
         text.style.opacity = '0';
@@ -170,8 +180,6 @@
     addFadeTransition(document.getElementById("label"), "overlay-label", "label-text");
     addFadeTransition(document.getElementById("methodology"), "overlay-methodology", "methodology-text");
     addFadeTransition(document.getElementById("who"), "overlay-who", "who-text");
-
-
    
     });
 
