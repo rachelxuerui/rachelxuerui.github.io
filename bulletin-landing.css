@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans');
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Inconsolata:wdth,wght@125,200..900&family=Ojuju:wght@200..800&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 
 @media screen and (max-width: 800px) {
     html, body {
         margin: 0;
         padding: 0;
         height: 100%;
-        background-color: #000;
-        font-family: 'DM Sans';
+        background-color: #211023;
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 100;
         flex-shrink: 1;
     }
     
@@ -18,7 +19,7 @@
         flex-direction: column;
         align-items: center;
         color: white;
-        background: radial-gradient(ellipse at bottom, rgba(73, 2, 165, 0.5), transparent), radial-gradient(ellipse at top, rgba(175, 41, 122, 0.2), transparent);
+        /* background: radial-gradient(ellipse at bottom, rgba(73, 2, 165, 0.5), transparent), radial-gradient(ellipse at top, rgba(175, 41, 122, 0.2), transparent); */
     }
     
     .button {
@@ -64,8 +65,8 @@
     .title {
         text-align: left;
         font-size: 42px;
-        font-weight: 400;
-        font-family: "EB Garamond", serif;
+        font-family: "League Spartan", sans-serif;
+        font-weight: bolder;
     }
     
     .subtitle {
@@ -145,9 +146,9 @@
     .block-title {
         font-size: 36px;
         font-style: normal;
-        font-weight: 400;
         line-height: normal;
-        font-family: "EB Garamond", serif;
+        font-family: "League Spartan", sans-serif;
+        font-weight: bolder;
     }
     
     .block-subtitle {
@@ -240,8 +241,9 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #000;
-    font-family: 'DM Sans';
+    background-color: #211023;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 100;
 }
 
 .wrapper {
@@ -250,7 +252,7 @@ html, body {
     flex-direction: column;
     align-items: center;
     color: white;
-    background: radial-gradient(ellipse at bottom, rgba(73, 2, 165, 0.5), transparent), radial-gradient(ellipse at top, rgba(175, 41, 122, 0.2), transparent);
+    /* background: radial-gradient(ellipse at bottom, rgba(73, 2, 165, 0.5), transparent), radial-gradient(ellipse at top, rgba(175, 41, 122, 0.2), transparent); */
 }
 
 .button {
@@ -295,8 +297,8 @@ html, body {
 .title {
     text-align: left;
     font-size: 42px;
-    font-weight: 400;
-    font-family: "EB Garamond", serif;
+    font-family: "League Spartan", sans-serif;
+    font-weight: bolder;
 }
 
 .subtitle {
@@ -378,9 +380,9 @@ html, body {
 .block-title {
     font-size: 36px;
     font-style: normal;
-    font-weight: 400;
     line-height: normal;
-    font-family: "EB Garamond", serif;
+    font-family: "League Spartan", sans-serif;
+    font-weight: bolder;
 }
 
 .block-subtitle {

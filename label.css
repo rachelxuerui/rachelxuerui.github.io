@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans');
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 
 @media screen and (max-width: 800px) {
     html, body {
@@ -7,7 +7,8 @@
         padding: 0;
         height: 100%;
         background-color: #000;
-        font-family: 'DM Sans';
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 100;
         flex-shrink: 1;
     }
 
@@ -33,7 +34,8 @@
         flex-direction: column;
         align-items: center;
         color: white;
-        background: radial-gradient(ellipse at bottom, rgba(166, 68, 92, 0.75), transparent), radial-gradient(ellipse at top, rgba(255, 109, 145, 0.25), transparent);
+        background-color: #1B0C10;
+        /* background: radial-gradient(ellipse at bottom, rgba(166, 68, 92, 0.75), transparent), radial-gradient(ellipse at top, rgba(255, 109, 145, 0.25), transparent); */
     }
     
     .button {
@@ -80,7 +82,7 @@
         text-align: left;
         font-size: 42px;
         font-weight: 400;
-        font-family: "EB Garamond", serif;
+        font-family: "League Spartan", sans-serif;
     }
     
     .subtitle {
@@ -160,7 +162,7 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-        font-family: "EB Garamond", serif;
+        font-family: "League Spartan", sans-serif;
     }
     
     .block-subtitle {
@@ -257,7 +259,8 @@ html, body {
     padding: 0;
     height: 100%;
     background-color: #000;
-    font-family: 'DM Sans';
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 100;
 }
 
 .wrapper {
@@ -266,7 +269,8 @@ html, body {
     flex-direction: column;
     align-items: center;
     color: white;
-    background: radial-gradient(ellipse at bottom, rgba(166, 68, 92, 0.75), transparent), radial-gradient(ellipse at top, rgba(255, 109, 145, 0.25), transparent);
+    background-color: #1B0C10;
+    /* background: radial-gradient(ellipse at bottom, rgba(166, 68, 92, 0.75), transparent), radial-gradient(ellipse at top, rgba(255, 109, 145, 0.25), transparent); */
 }
 
 .button {
@@ -312,7 +316,8 @@ html, body {
     text-align: left;
     font-size: 42px;
     font-weight: 400;
-    font-family: "EB Garamond", serif;
+    font-family: "League Spartan", sans-serif;
+    font-weight: bolder;
 }
 
 .subtitle {
@@ -396,7 +401,7 @@ html, body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    font-family: "EB Garamond", serif;
+    font-family: "League Spartan", sans-serif;
 }
 
 .block-subtitle {

@@ -1,20 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans');
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 
 @media screen and (max-width: 800px) {
     html, body {
         margin: 0;
         padding: 0;
         height: 100%;
-        background-color: #000;
-        font-family: 'DM Sans';
+        background-color: #102530;
+        font-family: 'DM Sans', sans-serif;
         flex-shrink: 1;
     }
     .designs-header {
         color: #FFF;
         font-size: 24px;
-        font-style: normal;
-        font-family: "EB Garamond", serif;
+        font-family: "League Spartan", sans-serif;
         line-height: normal;
     }
 
@@ -23,7 +22,6 @@
         text-align: center;
         font-size: 18px;
         font-style: normal;
-        font-weight: 400;
         line-height: normal;
         opacity: 75%;
     }
@@ -51,7 +49,6 @@
         color: #FFF;
         font-size: 12px;
         font-style: normal;
-        font-weight: 400;
         line-height: normal;
     }
 
@@ -69,7 +66,6 @@
         color: #FFF;
         font-size: 18px;
         font-style: normal;
-        font-weight: 400;
         line-height: normal;
     }
 
@@ -140,7 +136,7 @@
         flex-direction: column;
         align-items: center;
         color: white;
-        background: radial-gradient(ellipse at bottom, rgba(76, 182, 234, 1), transparent), radial-gradient(ellipse at top, rgba(54, 121, 155, 0.25), transparent);
+        /* background: radial-gradient(ellipse at bottom, rgba(76, 182, 234, 1), transparent), radial-gradient(ellipse at top, rgba(54, 121, 155, 0.25), transparent); */
     }
     
     .button {
@@ -187,13 +183,12 @@
         text-align: left;
         font-size: 42px;
         font-weight: 400;
-        font-family: "EB Garamond", serif;
+        font-family: "League Spartan", sans-serif;
     }
     
     .subtitle {
         text-align: left;
         font-size: 18px;
-        font-weight: 100;
     }
     
     .project {
@@ -245,7 +240,6 @@
     .description-subtitle {
         font-size: 18px;
         font-style: normal;
-        font-weight: 300;
     }
     
     .block {
@@ -270,14 +264,13 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-        font-family: "EB Garamond", serif;
+        font-family: "League Spartan", sans-serif;
     }
     
     .block-subtitle {
         align-self: stretch;
         font-size: 18px;
         font-style: normal;
-        font-weight: 400;
         line-height: normal;
     }
     
@@ -337,7 +330,6 @@
         text-align: center;
         font-size: 18px;
         font-style: normal;
-        font-weight: 400;
         line-height: normal;
     }
     
@@ -352,8 +344,9 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #000;
-    font-family: 'DM Sans';
+    background-color: #102530;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 100;
 }
 
 .row {
@@ -377,7 +370,7 @@ html, body {
     align-items: center;
     color: white;
     padding-bottom: 120px;
-    background: radial-gradient(ellipse at bottom, rgba(76, 182, 234, 1), transparent), radial-gradient(ellipse at top, rgba(54, 121, 155, 0.25), transparent);
+    /* background: radial-gradient(ellipse at bottom, rgba(76, 182, 234, 1), transparent), radial-gradient(ellipse at top, rgba(54, 121, 155, 0.25), transparent); */
 }
 
 .button {
@@ -418,7 +411,8 @@ html, body {
     color: #FFF;
     font-size: 24px;
     font-style: normal;
-    font-family: "EB Garamond", serif;
+    font-family: "League Spartan", sans-serif;
+    font-weight: 600;
     line-height: normal;
 }
 
@@ -468,7 +462,7 @@ html, body {
     text-align: left;
     font-size: 42px;
     font-weight: 400;
-    font-family: "EB Garamond", serif;
+    font-family: "League Spartan", sans-serif;
 }
 
 .subtitle {
@@ -552,7 +546,7 @@ html, body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    font-family: "EB Garamond", serif;
+    font-family: "League Spartan", sans-serif;
 }
 
 .how-might-we {
@@ -560,7 +554,7 @@ html, body {
     justify-content: center;
     align-items: center;
     align-self: stretch;
-    background: radial-gradient(17.86% 50% at 50% 50%, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.00) 100%);
+    background: radial-gradient(17.86% 50% at 50% 50%, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.00) 100%);
     width: 100%;
     height: auto;
     color: #FFF;
@@ -613,7 +607,6 @@ html, body {
 
 .photo-row img {
     width: 100%;
-    /* width: auto; */
     height: 100%;
     object-fit: cover; /* Maintain aspect ratio and cover container */
     border-radius: 6px;

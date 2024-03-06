@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans');
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Inconsolata:wdth,wght@125,200..900&family=Ojuju:wght@200..800&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 
 @media screen and (max-width: 800px) {
     html, body {
         margin: 0;
         padding: 0;
         height: 100%;
-        background-color: #000;
-        font-family: 'DM Sans';
+        background-color: #13151C;
+        font-family: "DM Sans", sans-serif;
         flex-shrink: 1;
     }
     
@@ -22,8 +22,8 @@
         padding-bottom: 120px;
         flex-direction: column;
         align-items: center;
-        color: white;
-        background: radial-gradient(ellipse at bottom, rgba(76, 182, 234, 0.25), transparent), radial-gradient(ellipse at top, rgba(0, 75, 141, 0.6), transparent);
+        color: #FFF;
+        /* background: radial-gradient(ellipse at bottom, rgba(76, 182, 234, 0.25), transparent), radial-gradient(ellipse at top, rgba(0, 75, 141, 0.6), transparent); */
     }
     
     .button {
@@ -32,7 +32,7 @@
         align-items: flex-start;
         gap: 12px;
         border-radius: 100px;
-        background: rgba(0, 0, 0, 0.9);
+        background: rgba(0, 0, 0, 0.75);
         box-shadow: 0px 0px 5px 5px rgba(255, 255, 255, 0.05);
         width: min-content;
         position: fixed;
@@ -70,7 +70,8 @@
         text-align: left;
         font-size: 42px;
         font-weight: 400;
-        font-family: "EB Garamond", serif;
+        font-family: "League Spartan", sans-serif;
+        font-weight: bolder;
     }
     
     .subtitle {
@@ -91,7 +92,7 @@
     .line {
         width: 100%;
         height: 1px;
-        background: rgba(255, 255, 255, 0.5);
+        background: #000A2C;
         margin: 120px;
     }
     
@@ -153,7 +154,8 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-        font-family: "EB Garamond", serif;
+        font-family: "League Spartan", sans-serif;
+        font-weight: bolder;
     }
     
     .block-subtitle {
@@ -170,6 +172,7 @@
         justify-content: space-between;
         gap: 30px;
         overflow: wrap;
+        display: column;
     }
     
     .box {
@@ -200,7 +203,7 @@
     }
     
     .photo-description {
-        color: rgba(255, 255, 255, 0.50);
+        opacity: 75%;
         text-align: center;
         font-size: 18px;
         font-style: normal;
@@ -216,12 +219,12 @@
     }
     
     .arrow-left {
-        color: rgba(255, 255, 255, 0.20);
+        opacity: 75%;
         cursor: pointer;
     }
     
     .arrow-right {
-        color: rgba(255, 255, 255, 0.50);
+        opacity: 75%;
         cursor: pointer;
     }
     
@@ -251,7 +254,7 @@
         display: flex;
         flex-direction: column;
         gap: 30px;
-        height: 1200px;
+        height: auto;
         align-items: center;
         align-self: stretch;
         overflow: hidden;
@@ -265,7 +268,7 @@
     }
     
     .opaque {
-        color: rgba(255,255,255,0.75);
+        opacity: 75%;
     }
     
     .photo-caption {
@@ -290,8 +293,10 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #000;
-    font-family: 'DM Sans';
+    background-color: #13151C;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 100;
+    font-style: normal;
 }
 
 .wrapper {
@@ -299,8 +304,8 @@ html, body {
     padding: 60px 0px;
     flex-direction: column;
     align-items: center;
-    color: white;
-    background: radial-gradient(ellipse at bottom, rgba(76, 182, 234, 0.25), transparent), radial-gradient(ellipse at top, rgba(0, 75, 141, 0.6), transparent);
+    color: #FFF;
+    /* background: radial-gradient(ellipse at bottom, rgba(76, 182, 234, 0.25), transparent), radial-gradient(ellipse at top, rgba(0, 75, 141, 0.6), transparent); */
 }
 
 .button {
@@ -309,7 +314,7 @@ html, body {
     align-items: flex-start;
     gap: 12px;
     border-radius: 100px;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 5px 5px rgba(255, 255, 255, 0.05);
     width: min-content;
     position: fixed;
@@ -347,7 +352,8 @@ html, body {
     text-align: left;
     font-size: 42px;
     font-weight: 400;
-    font-family: "EB Garamond", serif;
+    font-family: "League Spartan", sans-serif;
+    font-weight: bolder;
 }
 
 .subtitle {
@@ -406,7 +412,7 @@ html, body {
 .description-subtitle {
     font-size: 18px;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 100;
     display: flex;
 }
 
@@ -430,16 +436,17 @@ html, body {
 .block-title {
     font-size: 36px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     line-height: normal;
-    font-family: "EB Garamond", serif;
+    font-family: "League Spartan", sans-serif;
+    font-weight: bolder;
 }
 
 .block-subtitle {
     align-self: stretch;
     font-size: 18px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 100;
     line-height: normal;
 }
 
@@ -483,11 +490,11 @@ video {
 }
 
 .photo-description {
-    color: rgba(255, 255, 255, 0.50);
+    opacity:  75%;
     text-align: center;
     font-size: 18px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 200;
     line-height: normal;
 }
 
@@ -548,7 +555,7 @@ video {
 }
 
 .opaque {
-    color: rgba(255,255,255,0.75);
+    opacity: 75%;
 }
 
 .photo-caption {

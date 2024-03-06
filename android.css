@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans');
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 
 @media screen and (max-width: 800px) {
     html, body {
@@ -78,7 +79,7 @@
         text-align: left;
         font-size: 42px;
         font-weight: 400;
-        font-family: "EB Garamond", serif;
+        font-family: "League Spartan", sans-serif;
     }
     
     .subtitle {
@@ -161,7 +162,7 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-        font-family: "EB Garamond", serif;
+        font-family: "League Spartan", sans-serif;
     }
     
     .block-subtitle {
@@ -284,7 +285,7 @@ html, body {
     text-align: left;
     font-size: 42px;
     font-weight: 400;
-    font-family: "EB Garamond", serif;
+    font-family: "League Spartan", sans-serif;
 }
 
 .subtitle {
@@ -369,7 +370,7 @@ html, body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    font-family: "EB Garamond", serif;
+    font-family: "League Spartan", sans-serif;
 }
 
 .block-subtitle {
