@@ -261,6 +261,7 @@
     .photo-text-header {
         font-weight: 600;
         font-size: 24px;
+        font-family: "League Spartan", sans-serif;
     }
     
     .photo-text-subheader {
@@ -554,6 +555,7 @@ html, body {
 .photo-text-header {
     font-weight: 600;
     font-size: 1.5vw;
+    font-family: "League Spartan", sans-serif;
 }
 
 .photo-text-subheader {

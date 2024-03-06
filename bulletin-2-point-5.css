@@ -2,6 +2,54 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 
 @media screen and (max-width: 800px) {
+
+    .mobile {
+        display: flex;
+    }
+
+    .web {
+        display: none;
+    }
+
+    .space {
+        padding: 60px 0;
+    }
+
+    .design {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+        align-self: stretch;
+    }
+
+    .design-explanation {
+        color: #FFF;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .designs-header {
+        color: #FFF;
+        font-size: 24px;
+        font-style: normal;
+        font-family: "League Spartan", sans-serif;
+        font-weight: bolder;
+        line-height: normal;
+    }
+
+    .designs-body {
+        color: #FFF;
+        text-align: left;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        opacity: 75%;
+    }
+
     html, body {
         margin: 0;
         padding: 0;
@@ -155,7 +203,6 @@
         font-weight: 400;
         line-height: normal;
         font-family: "League Spartan", sans-serif;
-        font-weight: bolder;
     }
     
     .block-subtitle {
@@ -289,6 +336,15 @@
 }
 
 @media screen and (min-width: 801px) {
+
+.mobile {
+    display: none;
+}
+
+.web {
+    display: block;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -436,10 +492,9 @@ html, body {
 .block-title {
     font-size: 36px;
     font-style: normal;
-    font-weight: 600;
     line-height: normal;
+    font-weight: 400;
     font-family: "League Spartan", sans-serif;
-    font-weight: bolder;
 }
 
 .block-subtitle {
