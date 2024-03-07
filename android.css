@@ -398,6 +398,12 @@ html, body {
     height: 100%;
     position: relative;
     gap: 12px;
+    transition: transform 0.3s ease;
+}
+
+.box:hover img {
+    transform: scale(1.1);
+    z-index: 2;
 }
 
 .photo-row img {
@@ -405,6 +411,7 @@ html, body {
     height: 100%;
     object-fit: cover; /* Maintain aspect ratio and cover container */
     border-radius: 6px;
+    transition: transform 0.3s ease;
 }
 
 video {
