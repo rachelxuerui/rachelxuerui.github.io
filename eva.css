@@ -161,7 +161,7 @@
         font-style: normal;
         line-height: normal;
         font-family: "League Spartan", sans-serif;
-        font-weight: bolder;
+        font-weight: 400;
     }
 
     .block-subtitle {
@@ -585,7 +585,7 @@
         font-style: normal;
         line-height: normal;
         font-family: "League Spartan", sans-serif;
-        font-weight: bolder;
+        font-weight: 400;
     }
 
     .block-subtitle {
@@ -609,7 +609,7 @@
         flex-grow: 1;
         display: flex;
         justify-content: space-between;
-        gap: 60px;  
+        gap: 54px;  
         flex-wrap: wrap;
     }
 
