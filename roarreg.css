@@ -215,7 +215,7 @@
     .description-title {
         font-size: 18px;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 700;
     }
     
     .description-subtitle {
@@ -493,7 +493,7 @@ html, body {
 .description-title {
     font-size: 18px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
 }
 
 .description-subtitle {
@@ -752,7 +752,7 @@ a {
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
-    gap: 60px;
+    gap: 10vw;
 }
 
 .footing-right-object {

@@ -503,7 +503,7 @@ a {
     top:0;
     left:50%;
     height:100%;
-    width:2px;
+    width:6px;
     background:rgba(0,0,0,0.5);
     -ms-touch-action: pan-y;
       touch-action: pan-y;
@@ -521,8 +521,46 @@ a {
     color: black;
   }
 
+  .footing {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 120px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    background-color: white;
 }
 
+.footing-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.footing-left-text {
+    font-family: "League Spartan", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+
+.footing-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 10vw;
+}
+
+.footing-right-object {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+}
 
 .photo-with-description {
     display: flex;
