@@ -14,7 +14,7 @@
     <a href = "index.html"><div class = "option"><b>Work</b></div></a>
     <a href = "case-studies.html"><div class = "option"><div class = "opaque">Case studies</div></div></a>
     <a href = "assets/resume.pdf" target="_blank"><div class = "option"><div class = "opaque">Resume</div></div></a>
-    <div class = "option"><div class = "opaque">About</div></div>
+    <a href = "about.html"><div class = "option"><div class = "opaque">About</div></div></a>
 </div>
 
 <div class = "wrapper">
@@ -154,14 +154,39 @@
             </div>
         </div>
         </div>
-        <div class = "box">
+
+        <div class = "box" id = "normal">
             <div class = "photo-with-description">
             <img src = "assets/android/final2.png">
             <div class = "photo-description">
-                A page before a user’s profile listing options previously held in the kabob menu
+                A page before a user's profile listing options previously held in the kabob menu
             </div>
         </div>
         </div>
+
+        <div class = "box2">
+            <div class = "photo-with-description">
+                <div class="container">
+  
+                    <div id="before-after-slider">
+                      <div id="before-image">
+                        <img src="assets/android/original2.png" alt="before"/>
+                      </div>
+                    
+                      <div id="after-image">
+                        <img src="assets/android/final2.png" alt="After"/>
+                      </div>
+                  
+                      <div id="resizer"></div>
+                    
+                   </div>
+                  </div>
+            <div class = "photo-description">
+                A page before a user's profile listing options previously held in the kabob menu
+            </div>
+        </div>
+        </div>
+
         <div class = "box">
             <div class = "photo-with-description">
             <img src = "assets/android/final3.png">
@@ -192,6 +217,34 @@
 </div>
 </div>
 
+<div class = "footing">
+    <div class = "footing-left">
+    <div class = "footing-left-text">Rachel Xuerui Michelson</div>
+    <div class = "opa">
+    &copy;2024 Rachel Michelson<br>
+    All Rights Reserved.
+    </div>
+    </div>
+
+    <div class = "footing-right">
+        <div class = "footing-right-object">
+    <b>Main</b>
+    <a href = "index.html">Work</a>
+    <a href = "case-studies.html">Case studies</a>
+    <a href = "about.html">About me</a>
+    <a href = "resume.pdf">Resume</a>
+    <a href = "https://github.com/rachelxuerui">GitHub</a>
+    </div>
+
+
+    <div class = "footing-right-object">
+    <b>Contact me!</b>
+    <a href = "https://www.linkedin.com/in/rachelxmichelson/" target="_blank">LinkedIn</a>
+    <a>rxm2101@columbia.edu</a>
+    </div>
+    </div>
+</div>
+
 
 
 <script>
@@ -206,6 +259,97 @@
     ScrollReveal().reveal('.block', {delay: 500});
 
     
+
+const slider = document.getElementById('before-after-slider');
+const before = document.getElementById('before-image');
+const beforeImage = before.getElementsByTagName('img')[0];
+const resizer = document.getElementById('resizer');
+
+let active = false;
+
+//Sort overflow out for Overlay Image
+document.addEventListener("DOMContentLoaded", function() {
+  let width = slider.offsetWidth;
+  console.log(width);
+  beforeImage.style.width = width + 'px';
+});
+
+//Adjust width of image on resize 
+window.addEventListener('resize', function() {
+  let width = slider.offsetWidth;
+  console.log(width);
+  beforeImage.style.width = width + 'px';
+})
+
+resizer.addEventListener('mousedown',function(){
+  active = true;
+ resizer.classList.add('resize');
+
+});
+
+document.body.addEventListener('mouseup',function(){
+  active = false;
+ resizer.classList.remove('resize');
+});
+
+document.body.addEventListener('mouseleave', function() {
+  active = false;
+  resizer.classList.remove('resize');
+});
+
+document.body.addEventListener('mousemove',function(e){
+  if (!active) return;
+  let x = e.pageX;
+  x -= slider.getBoundingClientRect().left;
+  slideIt(x);
+  pauseEvent(e);
+});
+
+resizer.addEventListener('touchstart',function(){
+  active = true;
+  resizer.classList.add('resize');
+});
+
+document.body.addEventListener('touchend',function(){
+  active = false;
+  resizer.classList.remove('resize');
+});
+
+document.body.addEventListener('touchcancel',function(){
+  active = false;
+  resizer.classList.remove('resize');
+});
+
+//calculation for dragging on touch devices
+document.body.addEventListener('touchmove',function(e){
+  if (!active) return;
+  let x;
+  
+  let i;
+  for (i=0; i < e.changedTouches.length; i++) {
+  x = e.changedTouches[i].pageX; 
+  }
+  
+  x -= slider.getBoundingClientRect().left;
+  slideIt(x);
+  pauseEvent(e);
+});
+
+function slideIt(x){
+    let transform = Math.max(0,(Math.min(x,slider.offsetWidth)));
+    before.style.width = transform+"px";
+    resizer.style.left = transform-0+"px";
+}
+
+//stop divs being selected.
+function pauseEvent(e){
+    if(e.stopPropagation) e.stopPropagation();
+    if(e.preventDefault) e.preventDefault();
+    e.cancelBubble=true;
+    e.returnValue=false;
+    return false;
+}
+
 
 </script>
 

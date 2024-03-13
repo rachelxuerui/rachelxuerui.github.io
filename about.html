@@ -1,76 +1,131 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="index.css">
-<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Rachel Xuerui Michelson - Design Portfolio</title>
+    <link rel="stylesheet" href="about.css">
 </head>
 <body>
+    
+<div class = "button">
+    <a href = "index.html"><div class = "option"><div class = "opaque">Work</div></div></a>
+    <a href = "case-studies.html"><div class = "option"><div class = "opaque">Case studies</div></div></a> 
+    <a href = "assets/resume.pdf" target="_blank"><div class = "option"><div class = "opaque">Resume</div></div></a>
+    <b><div class = "option">About</div></b>
+</div>
 
-<div class = "big-container">
+<div class = "wrapper">
+    <div class = "row">
+    <div class = "photo-row">
+        <div class = "box"><img src = "assets/me.jpg"></div></div>
+        <div class = "about-text">
+            <div class = "header">Rachel Michelson is an incoming Product Designer at ExpertVoice, based in NYC.</div>
+            <div class = "body">Currently studying Computer Science at <b>Columbia University</b> and working as a Product Designer at <b>The Bulletin</b>.
+            </div>
+            <div class = "body">As someone with an active background in coding, I love designing with <b>emerging technology</b> such as generative AI in mind, considering how to use these new technologies to <b>streamline and enhance user experiences</b>.</div>
+            <div class = "body">I also currently serve as the Events Lead for <b>Design @ Columbia</b>, aiming to help new designers break into the field.</div>
+        </div>
+</div>
 
-<div class = "top-buttons">
+    <div class = "text">
+        <div class = "header2">Is designing all that I do?</div>
+        <div class = "body">No! Outside of work, I love to <b>rock climb</b> and go running.</div>
+        <div class = "body">I currently work at <b>Manhattan Plaza Health Club Climbing Gym</b> as a <b>Climbing Instructor</b>, and join <b>Run for Chinatown</b> for their weekly Monday evening runs.</div>
+        <div class = "body">I've also picked up a slight gaming habit. Currently, I'm playing <b>Cyberpunk, The Witcher</b>, and <b>Fallout 4</b>.</div>
+
+    </div>
+</div>
+
+<div class = "footing">
+    <div class = "footing-left">
+    <div class = "footing-left-text">Rachel Xuerui Michelson</div>
+    <div class = "opa">
+    &copy;2024 Rachel Michelson<br>
+    All Rights Reserved.
+    </div>
+    </div>
+
+    <div class = "footing-right">
+        <div class = "footing-right-object">
+    <b>Main</b>
     <a href = "index.html">Work</a>
-    <div class = "bold"><a href = "about.html">About</a></div>
-    <a href = "assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+    <a href = "case-studies.html">Case studies</a>
+    <a href = "about.html">About me</a>
+    <a href = "resume.pdf">Resume</a>
+    <a href = "https://github.com/rachelxuerui" target target="_blank">GitHub</a>
+    </div>
+
+
+    <div class = "footing-right-object">
+    <b>Contact me!</b>
+    <a href = "https://www.linkedin.com/in/rachelxmichelson/">LinkedIn</a>
+    <a>rxm2101@columbia.edu</a>
+    </div>
+    </div>
 </div>
 
-<br><br>
+<script>
+    ScrollReveal({
+        reset: true,
+        distance: '60px',
+        duration: 1500,
+        delay: 0
+    });
+    ScrollReveal({ reset: false });
+    ScrollReveal().reveal('.experience', {delay: 500});
 
-<div class = "container">
-
-    <div class = "intro">
-    <div class = "intro-header">Hi, I'm Rachel!</div>
-</div>
-
-    <div class = "padding"></div>
-
-    <div class = "project-photo">
-        <img src="assets/about/me.png" alt="pictures of me" style="display: block; width: 100%; height: auto;">
-    </div>
-
-    <div class = "padding"></div>
-    <div class = "padding"></div>
-    <div class = "padding"></div>
-    <div class = "padding"></div>
-    <div class = "padding"></div>
-
-    <div class = "bodyy">
-        Originally from Bloomington, Indiana, I moved to New York City a few years ago to attend <b>Columbia University</b>. 
-    </div>
-
-    <div class = "body">
-        I have extensive experience in <b>UI/UX design</b> - social media, news, e-commerce, productivity, etc. 
-        <br>I've worked for startups like <b><a href = "https://www.infinitegoods.eco" target="_blank" rel="noopener noreferrer" style = "color: #B43598">Infinite Goods</a></b>, as well as companies such as <b><a href = "https://expertvoice.com" target="_blank" rel="noopener noreferrer" style = "color: #FC4540">ExpertVoice</a></b>.
-
-    </div>
-
-    <div class = "body">
-        I have particularly found fulfillment in <b>designing visually appealing interfaces</b>, creating <b>detailed and
-        interactive prototypes</b>, and experimenting with how new technologies like <b>generative AI</b> can <b>streamline user experiences</b>.
-    </div>
-
-    <div class = "body">
-        As for teamwork, I am extremely familiar with <b>cross-functional collaboration</b> and <b>Agile development</b>. Furthermore, as a computer science major, I have a deep understanding of front and back
-        end development - <b>I designed and coded this website myself!</b>
-    </div>
-
-    <div class = "body">
-        Outside of work, I love to boulder. I currently work at <a href = "https://mphc.com/rock-climbing-gym/" target="_blank" rel="noopener noreferrer">Manhattan Plaza Health Club Climbing Gym</a> - let me know
-        if you ever want a day pass :) 
-    </div>
-
-
-    <div class = "padding"></div>
-    <div class = "padding"></div>
-    <div class = "padding"></div>
+    document.addEventListener("DOMContentLoaded", function() {
     
-        <div class = "bottom">© 2023 Rachel Michelson</div>
+        function addFadeTransition(element, overlayId, textId) {
+        element.addEventListener("mouseenter", function() {
+        const overlay = document.getElementById(overlayId);
+        const text = document.getElementById(textId);
+        
+        overlay.style.transition = 'opacity 1s ease';
+        text.style.transition = 'opacity 1s ease';
+        
+        overlay.style.opacity = '1';
+        text.style.opacity = '1';
+        
+        // Display the elements
+        overlay.style.display = 'block';
+        text.style.display = 'block';
+    });
+
+    element.addEventListener("mouseleave", function() {
+        const overlay = document.getElementById(overlayId);
+        const text = document.getElementById(textId);
+        
+        overlay.style.transition = 'opacity 1s ease';
+        text.style.transition = 'opacity 1s ease';
+        
+        overlay.style.opacity = '0';
+        text.style.opacity = '0';
+        
+
+        setTimeout(function() {
+            overlay.style.display = 'none';
+            text.style.display = 'none';
+        }, 500); 
+    });
+}
+
+    // Add fade transitions for each element
+    addFadeTransition(document.getElementById("bulletin-25"), "overlay-25", "bulletinTwoPointFiveText");
+    addFadeTransition(document.getElementById("bulletin-landing"), "overlay-landing", "bulletinLandingText");
+    addFadeTransition(document.getElementById("eva"), "overlay-eva", "eva-text");
+    addFadeTransition(document.getElementById("android"), "overlay-android", "android-text");
+    addFadeTransition(document.getElementById("label"), "overlay-label", "label-text");
+    addFadeTransition(document.getElementById("methodology"), "overlay-methodology", "methodology-text");
+    addFadeTransition(document.getElementById("who"), "overlay-who", "who-text");
+   
+    });
+
     
-    </div>
-    </div>
-    
-    </div>
-    
-    </body>
-    </html>
-    
+
+</script>
+
+</body>
+</html

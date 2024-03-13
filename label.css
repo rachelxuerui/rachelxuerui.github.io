@@ -6,7 +6,7 @@
         margin: 0;
         padding: 0;
         height: 100%;
-        background-color: #000;
+        background-color: #F7F7F7;
         font-family: 'DM Sans', sans-serif;
         font-weight: 100;
         flex-shrink: 1;
@@ -34,8 +34,6 @@
         flex-direction: column;
         align-items: center;
         color: white;
-        background-color: #1B0C10;
-        /* background: radial-gradient(ellipse at bottom, rgba(166, 68, 92, 0.75), transparent), radial-gradient(ellipse at top, rgba(255, 109, 145, 0.25), transparent); */
     }
     
     .button {
@@ -44,18 +42,18 @@
         align-items: flex-start;
         gap: 12px;
         border-radius: 100px;
-        background: rgba(0, 0, 0, 0.9);
+        background: rgba(247, 247, 247, 0.9);
         box-shadow: 0px 0px 5px 5px rgba(255, 255, 255, 0.05);
         width: min-content;
         position: fixed;
         bottom: 30px; 
-        left: 50%;
-        transform: translateX(-50%);
         z-index: 10;
+        border: solid 1px black;
     }
     
+
     .option {
-        color: white;
+        color: black;
         font-size: 16px;
         font-style: normal;
         line-height: normal;
@@ -103,7 +101,7 @@
     .line {
         width: 100%;
         height: 1px;
-        background: rgba(255, 255, 255, 0.5);
+        background: rgba(0, 0, 0, 0.5);
         margin: 120px;
     }
     
@@ -197,42 +195,24 @@
     
     .photo-row img {
         width: 100%;
-        /* width: auto; */
         height: 100%;
-        object-fit: cover; /* Maintain aspect ratio and cover container */
+        object-fit: cover; 
         border-radius: 6px;
     }
     
     video {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Maintain aspect ratio and cover container */
+        object-fit: cover; 
     }
     
     .photo-description {
-        color: rgba(255, 255, 255, 0.50);
+        color: rgba(0, 0, 0, 0.50);
         text-align: center;
         font-size: 18px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-    }
-    
-    .arrows {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        cursor: pointer;
-    }
-    
-    .arrow-left {
-        color: rgba(255, 255, 255, 0.20);
-        cursor: pointer;
-    }
-    
-    .arrow-right {
-        color: rgba(255, 255, 255, 0.50);
-        cursor: pointer;
     }
     
     .photo-caption {
@@ -249,6 +229,7 @@
     
     a {
         text-decoration: none;
+        color: black;
     }
 }
 
@@ -258,7 +239,8 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #000;
+    background-color: #F7F7F7;
+    color: black;
     font-family: 'DM Sans', sans-serif;
     font-weight: 100;
 }
@@ -268,28 +250,16 @@ html, body {
     padding: 60px 0px;
     flex-direction: column;
     align-items: center;
-    color: white;
-    background-color: #1B0C10;
-    /* background: radial-gradient(ellipse at bottom, rgba(166, 68, 92, 0.75), transparent), radial-gradient(ellipse at top, rgba(255, 109, 145, 0.25), transparent); */
 }
 
 .button {
     display: flex;
-    padding: 16px 18px;
-    align-items: flex-start;
     gap: 12px;
-    border-radius: 100px;
-    background: rgba(0, 0, 0, 0.9);
-    box-shadow: 0px 0px 5px 5px rgba(255, 255, 255, 0.05);
-    width: min-content;
-    position: fixed;
-    bottom: 30px; 
-    left: 30px;
-    z-index: 10;
+    padding: 24px 24px;
 }
 
 .option {
-    color: white;
+    color: black;
     font-size: 16px;
     font-style: normal;
     line-height: normal;
@@ -339,7 +309,7 @@ html, body {
 .line {
     width: 100%;
     height: 1px;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.5);
     margin: 120px;
 }
 
@@ -423,9 +393,8 @@ html, body {
 
 .photo-row img {
     width: 100%;
-    /* width: auto; */
     height: 100%;
-    object-fit: cover; /* Maintain aspect ratio and cover container */
+    object-fit: cover;
     border-radius: 6px;
     transition: transform 0.3s ease;
 }
@@ -451,11 +420,11 @@ html, body {
 video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Maintain aspect ratio and cover container */
+    object-fit: cover; 
 }
 
 .photo-description {
-    color: rgba(255, 255, 255, 0.50);
+    color: rgba(0, 0, 0, 0.50);
     text-align: center;
     font-size: 18px;
     font-style: normal;
@@ -463,61 +432,6 @@ video {
     line-height: normal;
 }
 
-.arrows {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    cursor: pointer;
-}
-
-.arrow-left {
-    color: rgba(255, 255, 255, 0.20);
-    cursor: pointer;
-}
-
-.arrow-right {
-    color: rgba(255, 255, 255, 0.50);
-    cursor: pointer;
-}
-
-.final-designs-wrapper {
-    border-radius: 12px;
-    padding-left: 120px;
-    padding-right: 120px;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    background-color: rgb(255,255,255,0.1);
-    display: flex;
-    flex-direction: row;
-    gap: 120px;
-    height: 600px;
-    align-items: center;
-    align-self: stretch;
-    overflow: hidden;
-}
-
-.final-designs-wrapper-column {
-    border-radius: 12px;
-    padding-left: 120px;
-    padding-right: 120px;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    background-color: rgb(255,255,255,0.1);
-    display: flex;
-    flex-direction: column;
-    height: 600px;
-    gap: 18px;
-    align-items: left;
-    justify-content: center;
-    align-self: stretch;
-}
-
-.final-designs-text {
-    /* flex-grow: 1; */
-    flex-shrink: 1;
-    font-size: 18px;
-    text-align: left;
-}
 
 .opaque {
     opacity: 75%;
@@ -543,6 +457,7 @@ video {
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 }
