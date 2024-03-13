@@ -14,6 +14,38 @@
     .opaque {
         opacity: 75%;
     }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        gap: 120px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .about-text {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        gap: 18px;
+    }
+    
+    .body {
+        font-size: 18px;
+    }
+    
+    .text {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+    .header2 {
+        font-family: "League Spartan", sans-serif;
+        font-size: 30px;
+    }
+    
     
     .wrapper {
         display: flex;
@@ -26,6 +58,7 @@
         color: black;
         background-color: #F7F7F7;
         flex-shrink: 1;
+        gap: 120px;
     }
     
     .buttonMode {
@@ -34,14 +67,7 @@
         align-items: center;
         color: black;
     }
-    
-    .top-text {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-        align-self: stretch;
-    }
+
     
     .header {
         font-size: 6vw;
