@@ -864,7 +864,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: stretch;
-        gap: 60px;
+        gap: 10vw;
     }
     
     .footing-right-object {
