@@ -59,6 +59,7 @@
         background-color: #F7F7F7;
         flex-shrink: 1;
         gap: 120px;
+        padding-bottom: 120px;
     }
     
     .buttonMode {
