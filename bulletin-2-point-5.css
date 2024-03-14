@@ -282,6 +282,14 @@
     a {
         text-decoration: none;
     }
+
+    .number {
+        font-family: "League Spartan", sans-serif;
+        font-weight: 700;
+        font-size: 60px;
+        color: rgba(0,75,141,0.1);
+        min-width: 60px;
+    }
 }
 
 @media screen and (min-width: 801px) {
@@ -597,6 +605,14 @@ a {
     display: flex;
     flex-direction: column;
     gap: 12px;
+}
+
+.number {
+    font-family: "League Spartan", sans-serif;
+    font-weight: 700;
+    font-size: 120px;
+    color: rgba(0,75,141,0.1);
+    min-width: 200px;
 }
 
 }

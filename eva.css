@@ -374,7 +374,7 @@
         font-weight: 700;
         font-size: 60px;
         color: rgba(255,0,0,0.1);
-        width: 300px;
+        width: 60px;
     }
 
     .footing {
@@ -757,7 +757,7 @@
         font-weight: 700;
         font-size: 120px;
         color: rgba(255,0,0,0.1);
-        width: 300px;
+        min-width: 300px;
     }
 
     .footing {
