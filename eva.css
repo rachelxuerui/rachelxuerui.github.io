@@ -361,13 +361,6 @@
         align-self: stretch;
     }
 
-    .search {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        align-self: stretch;
-    }
-
     .design-explanation {
         text-align: left;
         display: flex;
@@ -735,13 +728,6 @@
         flex-direction: column;
         align-items: left;
         gap: 60px;
-        align-self: stretch;
-    }
-
-    .search {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
         align-self: stretch;
     }
 
