@@ -12,8 +12,29 @@
         flex-shrink: 1;
     }
 
+    .opaque {
+        opacity: 75%;
+    }
+
+    .designs-header {
+        font-size: 24px;
+        font-style: normal;
+        text-align: left;
+        font-family: "League Spartan", sans-serif;
+        font-weight: 400;
+        line-height: normal;
+    }
+
     .footing {
         display: none;
+    }
+
+    .number {
+        font-family: "League Spartan", sans-serif;
+        font-weight: 700;
+        font-size: 60px;
+        color: rgba(255,0,0,0.1);
+        min-width: 60px;
     }
 
     .opaque {
@@ -26,6 +47,13 @@
 
     #normal {
         display: flex;
+    }
+
+    .design-explanation {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
     }
 
     .photo-with-description {
@@ -44,6 +72,10 @@
         flex-direction: column;
         align-items: center;
         color: black;
+    }
+
+    .space {
+        padding: 60px 0;
     }
     
     .button {
@@ -191,6 +223,7 @@
         display: flex;
         justify-content: space-between;
         gap: 60px;
+        align-items: center;
     }
     
     .box {
@@ -257,6 +290,22 @@ html, body {
     flex-direction: column;
     align-items: center;
     color: black;
+}
+
+.design-explanation {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.designs-header {
+    font-size: 24px;
+    font-style: normal;
+    text-align: left;
+    font-family: "League Spartan", sans-serif;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .button {
@@ -330,6 +379,18 @@ html, body {
     opacity: 75%;
 }
 
+.number {
+    font-family: "League Spartan", sans-serif;
+    font-weight: 700;
+    font-size: 120px;
+    color: rgba(255,0,0,0.1);
+    min-width: 200px;
+}
+
+.space {
+    padding: 60px 0;
+}
+
 .overview-column {
     display: flex;
     flex-direction: column;
@@ -396,6 +457,7 @@ html, body {
     display: flex;
     justify-content: space-between;
     gap: 30px;
+    align-items: center;
 }
 
 .box {
@@ -468,6 +530,9 @@ video {
     font-weight: 700;
 }
 
+.opaque {
+    opacity: 75%;
+}
 
 a {
     text-decoration: none;
