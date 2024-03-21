@@ -224,6 +224,7 @@
         justify-content: space-between;
         gap: 60px;
         align-items: center;
+        flex-direction: column;
     }
     
     .box {
