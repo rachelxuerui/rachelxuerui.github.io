@@ -213,6 +213,8 @@
         justify-content: space-between;
         overflow: wrap;
         align-items: stretch;
+        flex-direction: column;
+        gap: 60px;
     }
     
     .box {
@@ -233,6 +235,14 @@
         height: 100%;
         object-fit: cover;
         border-radius: 3px;
+    }
+
+    .photo-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+        gap: 60px;
     }
     
     video {
@@ -282,6 +292,7 @@
     
     a {
         text-decoration: none;
+        color: black;
     }
 
     .number {
@@ -568,6 +579,7 @@ video {
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 .footing {
