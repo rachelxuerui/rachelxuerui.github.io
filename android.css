@@ -642,3 +642,10 @@ a {
     align-items: center;
     text-align: center;
 }
+
+.fancy {
+    font-family: "League Spartan", sans-serif;
+    font-size: 42px;
+    color: rgba(255,0,0,0.5);
+    text-align: center;
+}
