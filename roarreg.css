@@ -133,6 +133,17 @@
         z-index: 10;
         border: solid 1px black;
     }
+
+    .flexi-row {
+        flex-shrink: 1;
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
     
     .option {
         color: black;
@@ -345,12 +356,6 @@ html, body {
     background-color: #F7F7F7;
     font-family: 'DM Sans', sans-serif;
     font-weight: 100;
-}
-
-.row {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
 }
 
 .bubbles {
@@ -720,6 +725,17 @@ a {
     display: flex;
     flex-direction: column;
     gap: 12px;
+}
+
+.flexi-row {
+    flex-shrink: 1;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
 }
 
 }
