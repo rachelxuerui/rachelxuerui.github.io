@@ -10,7 +10,6 @@
         color: black;
         font-family: 'DM Sans', sans-serif;
         flex-shrink: 1;
-        display: flex;
         justify-content: center;
     }
 
@@ -226,8 +225,8 @@
     .number {
         font-family: "League Spartan", sans-serif;
         font-weight: 700;
-        font-size: 120px;
-        color: rgba(78, 182, 234, 0.1);
+        font-size: 60px;
+        color: rgba(78, 182, 234, 0.25);
         min-width: 60px;
     }
     
@@ -630,7 +629,7 @@ iframe {
     font-family: "League Spartan", sans-serif;
     font-weight: 700;
     font-size: 120px;
-    color: rgba(78, 182, 234, 0.1);
+    color: rgba(78, 182, 234, 0.25);
     min-width: 200px;
 }
 
@@ -724,4 +723,15 @@ a {
     gap: 12px;
 }
 
+}
+
+.row {
+    flex-shrink: 1;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
 }
