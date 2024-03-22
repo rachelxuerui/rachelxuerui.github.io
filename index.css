@@ -12,7 +12,7 @@
     }
 
     .opaque {
-        opacity: 75%;
+        color: rgba(0,0,0,0.75);
     }
     
     .wrapper {
@@ -55,36 +55,6 @@
         font-weight: 400;
     }
     
-    .experience {
-        display: flex;
-        flex-direction: column;
-        align-items: left;
-        gap: 2vw;
-        align-self: stretch;
-    }
-    
-    .experience-text {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-    }
-    
-    .experience-title {
-        font-size: 6vw;
-        font-family: "League Spartan", sans-serif;
-        font-weight: 400;
-    }
-    
-    .experience-subtitle {
-        font-size: 3vw;
-        font-weight: 400;
-    }
-    
-    .experience-description {
-        align-self: stretch;
-        font-size: 2.5vw;
-    }
-    
     .photo-wrapper {
         display: flex;
         flex-direction: column;
@@ -109,7 +79,6 @@
     img {
         width: 100%;
         height: 100%;
-        object-fit: cover; 
         border-radius: 1vw;
     }
 
@@ -126,7 +95,6 @@
     .photo-column img {
         width: 100%;
         height: 100%;
-        object-fit: cover; 
         border-radius: 1vw;
     }
     
@@ -139,131 +107,6 @@
         height: 100%;
         position: relative;
         cursor: pointer;
-    }
-    
-    #overlay-landing {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
-        display: none; /* Initially hidden */
-    }
-    
-    #overlay-25 {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
-        display: none; /* Initially hidden */
-    }
-    
-    #overlay-eva {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
-        display: none; /* Initially hidden */
-    }
-    
-    #overlay-android {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
-        display: none; /* Initially hidden */
-    }
-
-    #overlay-label {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
-        display: none; /* Initially hidden */
-    }
-
-    #overlay-methodology {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
-        display: none; /* Initially hidden */
-    }
-
-    #overlay-who {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
-        display: none; /* Initially hidden */
-    }
-
-    #overlay-preppie {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
-        display: none; /* Initially hidden */
-    }
-
-    #overlay-roar {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
-        display: none; /* Initially hidden */
-    }
-
-    #overlay-flexi {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
-        display: none; /* Initially hidden */
-    }
-    
-    .photo-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        display: none;
-        color: white;
-    }
-    
-    .photo-text-header {
-        font-size: 30px;
-        font-family: "League Spartan", sans-serif;
-        font-weight: 400;
-    }
-    
-    .photo-text-subheader {
-        font-size: 16px;
     }
     
     .button {
@@ -345,36 +188,6 @@ html, body {
     font-weight: 400;
 }
 
-.experience {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    gap: 30px;
-    align-self: stretch;
-}
-
-.experience-text {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-}
-
-.experience-title {
-    font-size: 3vw;
-    font-family: "League Spartan", sans-serif;
-    font-weight: 400;
-}
-
-.experience-subtitle {
-    font-size: 1.2vw;
-    font-weight: 400;
-}
-
-.experience-description {
-    align-self: stretch;
-    font-size: 1.2vw;
-}
-
 .photo-wrapper {
     display: flex;
     flex-direction: column;
@@ -389,7 +202,7 @@ html, body {
     flex-grow: 1;
     display: flex;
     justify-content: space-between;
-    gap: 30px;
+    gap: 18px;
 }
 
 .photo-column {
@@ -398,21 +211,21 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 30px;
+    gap: 18px;
 }
 
 .photo-row img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
     border-radius: 1vw;
+    transition: transform 0.3s ease;
 }
 
 .photo-column img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
     border-radius: 1vw;
+    transition: transform 0.3s ease;
 }
 
 .box {
@@ -420,145 +233,14 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%; 
     height: 100%;
     position: relative;
     cursor: pointer;
 }
 
-#overlay-landing {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 1vw;
-    background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
-    display: none; /* Initially hidden */
-}
-
-#overlay-25 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 1vw;
-    background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
-    display: none; /* Initially hidden */
-}
-
-#overlay-eva {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 1vw;
-    background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
-    display: none; /* Initially hidden */
-}
-
-#overlay-android {
-    border-radius: 1vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
-    display: none; /* Initially hidden */
-}
-
-#overlay-label {
-    border-radius: 1vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
-    display: none; /* Initially hidden */
-}
-
-#overlay-methodology {
-    border-radius: 1vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
-    display: none; /* Initially hidden */
-}
-
-#overlay-who {
-    border-radius: 1vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
-    display: none; /* Initially hidden */
-}
-
-#overlay-preppie {
-    border-radius: 1vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
-    display: none; /* Initially hidden */
-}
-
-#overlay-roar {
-    border-radius: 1vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
-    display: none; /* Initially hidden */
-}
-
-#overlay-flexi {
-    border-radius: 1vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
-    display: none; /* Initially hidden */
-}
-
-.photo-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.box:hover img {
+    transform: scale(1.3);
     z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display: none;
-    color: white;
-}
-
-.photo-text-header {
-    font-weight: 400;
-    font-size: 1.5vw;
-    font-family: "League Spartan", sans-serif;
-}
-
-.photo-text-subheader {
-    font-size: 1vw;
 }
 
 .button {
