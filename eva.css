@@ -227,7 +227,7 @@
     }
 
     .opaque {
-        opacity: 75%;
+        color: rgba(0,0,0,0.75);
     }
 
     .photo-caption {
@@ -750,7 +750,7 @@
     }
 
     .opaque {
-        opacity: 75%;
+        color: rgba(0,0,0,0.75);
     }
     
     .number {
@@ -809,4 +809,8 @@
     justify-content: space-between;
     gap: 60px;
     align-items: center;
+}
+
+.arrow {
+    color: rgba(255,0,0,0.5);
 }
