@@ -11,6 +11,19 @@
         justify-content: center;
     }
 
+    .overlay {
+        display: none;
+    }
+    
+    .overlay-small {
+        display: none;
+    }
+    
+    .overlay-content {
+       display: none;
+      }
+    
+
     .opaque {
         color: rgba(0,0,0,0.75);
     }
