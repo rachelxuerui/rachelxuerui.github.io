@@ -23,34 +23,69 @@
 
 <div class = "photo-column">
 <div class = "photo-row">
-    <a href = "eva.html"><div class = "box">
+    <a href = "eva.html"><div class = "box" id = "eva">
         <img src = "assets/homepage/eva.png">
+        <div id="overlay" class="overlay" style = "background-color: rgba(255, 235, 235, 1);">
+            <div class="overlay-content">
+                Helping consumers make purchase decisions with an AI powered chatbot
+            </div>
+        </div>
     </div></a>
     <a href = "android.html"><div class = "box">
         <img src = "assets/homepage/android.png">
+        <div id="overlay" class="overlay" style = "background-color: rgba(255, 235, 235, 1);">
+            <div class="overlay-content">
+                Redesigning aspects of the Android experience
+            </div>
+        </div>
     </div></a>
 </div>
 
 <div class = "photo-row">
     <a href = "bulletin-2-point-5.html"><div class = "box">
         <img src = "assets/homepage/bulletin25.png">
+        <div id="overlay" class="overlay" style = "background-color: rgba(238, 249, 255, 1);">
+            <div class="overlay-content">
+                Redesigning The Bulletin mobile app
+            </div>
+        </div>
     </div></a>
     <a href = "org.html"><div class = "box">
         <img src = "assets/homepage/org.png">
+        <div id="overlay" class="overlay" style = "background-color: rgba(238, 249, 255, 1);">
+            <div class="overlay-content">
+                Helping organizers manage their events and applications on The Bulletin
+            </div>
+        </div>
     </div></a>
 </div>
 
 <div class = "photo-row">
     <a href = "roarreg.html"><div class = "box">
         <img src = "assets/homepage/roarreg.png">
+        <div id="overlay" class="overlay" style = "background-color: rgba(238, 249, 255, 1);">
+            <div class="overlay-content">
+                Streamlining the course registration process
+            </div>
+        </div>
     </div></a>
 
     <div class = "photo-column">
     <a href = "bulletin-landing.html"><div class = "box">
         <img src = "assets/homepage/landing.png">
+        <div id="overlay" class="overlay" style = "background-color: #F0F1FC; font-size: 12px;">
+            <div class="overlay-content">
+                Attracting new users through an elevated landing page
+            </div>
+        </div>
     </div></a>
     <a href = "label.html"><div class = "box">
         <img src = "assets/homepage/label.png">
+        <div id="overlay" class="overlay" style = "background-color: #FFE3EA; font-size: 12px;">
+            <div class="overlay-content">
+                Redesigning a scoring system for product sustainability
+            </div>
+        </div>
     </div></a>
     </div>
 </div>
@@ -58,19 +93,39 @@
 <div class = "photo-row">
     <a href = "preppie.html"><div class = "box">
         <img src = "assets/homepage/preppie.png">
+        <div id="overlay" class="overlay" style = "background-color: #C1C1C1;">
+            <div class="overlay-content">
+                Developing AI powered interview preparation
+            </div>
+        </div>
     </div></a>
 
     <div class = "photo-column">
     <a href = "methodology.html"><div class = "box">
         <img src = "assets/homepage/methodology.png">
+        <div id="overlay" class="overlay" style = "background-color: #CBE9E5; font-size: 12px;">
+            <div class="overlay-content">
+                Explaining a sustainability scoring system through interactivity
+            </div>
+        </div>
     </div></a>
     <a href = "who.html"><div class = "box">
         <img src = "assets/homepage/who.png">
+        <div id="overlay" class="overlay" style = "background-color: #D9F1FA; font-size: 12px;">
+            <div class="overlay-content">
+                Showcasing our talented team
+            </div>
+        </div>
     </div></a>
     </div>
 
     <a href = "flexi.html"><div class = "box">
         <img src = "assets/homepage/flexi.png">
+        <div id="overlay" class="overlay" style = "background-color: #7D7D7D;">
+            <div class="overlay-content">
+                Personalizing stretches for specific user needs
+            </div>
+        </div>
     </div></a>
 </div>
 
@@ -107,5 +162,33 @@
     </div>
 </div>
 
+<script>
+
+// document.getElementById("eva").addEventListener("mouseover", function() {
+//   var imgWidth = document.getElementById("eva").querySelector("img").offsetWidth;
+//   document.getElementById("overlay").style.width = imgWidth + "px";
+//   document.getElementById("overlay").classList.add("show");
+// });
+
+// document.getElementById("eva").addEventListener("mouseout", function() {
+//   document.getElementById("overlay").classList.remove("show");
+// });
+
+document.querySelectorAll(".box").forEach(function(box) {
+    box.addEventListener("mouseover", function() {
+        var imgWidth = box.querySelector("img").offsetWidth;
+        box.querySelector(".overlay").style.width = imgWidth + "px";
+        box.querySelector(".overlay").classList.add("show");
+    });
+
+    box.addEventListener("mouseout", function() {
+        box.querySelector(".overlay").classList.remove("show");
+    });
+});
+
+
+</script>
+
 </body>
-</html
+</html>
+
