@@ -68,16 +68,6 @@
         font-weight: 400;
     }
     
-    .photo-wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border: 3px solid rgba(255, 255, 255, 0.50);
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 6px;
-        padding: 48px;
-    }
     
     .photo-row {
         flex-shrink: 1;
@@ -164,7 +154,7 @@ html, body {
 
 .wrapper {
     display: flex;
-    padding: 3vw 18vw;
+    padding: 3vw 120px;
     margin: auto;
     flex-direction: column;
     align-items: center;
