@@ -163,25 +163,20 @@
 
 <script>
 
-// document.getElementById("eva").addEventListener("mouseover", function() {
-//   var imgWidth = document.getElementById("eva").querySelector("img").offsetWidth;
-//   document.getElementById("overlay").style.width = imgWidth + "px";
-//   document.getElementById("overlay").classList.add("show");
-// });
-
-// document.getElementById("eva").addEventListener("mouseout", function() {
-//   document.getElementById("overlay").classList.remove("show");
-// });
-
 document.querySelectorAll(".box").forEach(function(box) {
     box.addEventListener("mouseover", function() {
         var imgWidth = box.querySelector("img").offsetWidth;
         box.querySelector(".overlay").style.width = imgWidth + "px";
         box.querySelector(".overlay").classList.add("show");
+        box.style.transform = "translateY(-12px)";
+        box.style.zIndex = "2";
+        box.style.transition = "all 0.5s ease-in-out";
     });
 
     box.addEventListener("mouseout", function() {
         box.querySelector(".overlay").classList.remove("show");
+        box.style.transform = "scale(1)";
+        box.style.zIndex = "1";
     });
 });
 

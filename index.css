@@ -231,14 +231,12 @@ html, body {
     width: 100%;
     height: 100%;
     border-radius: 1vw;
-    transition: transform 0.3s ease;
 }
 
 .photo-column img {
     width: 100%;
     height: 100%;
     border-radius: 1vw;
-    transition: transform 0.3s ease;
 }
 
 .box {
@@ -251,12 +249,8 @@ html, body {
     cursor: pointer;
     overflow: hidden;
     border-radius: 1vw;
+    transition: bottom 1s ease-in-out;
 }
-
-/* .box:hover img {
-    transform: scale(1.3);
-    z-index: 2;
-} */
 
 .button {
     display: flex;
