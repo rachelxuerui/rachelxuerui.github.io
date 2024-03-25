@@ -548,3 +548,12 @@ a {
 }
 
 }
+
+.photo-with-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
+}

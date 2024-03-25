@@ -463,9 +463,11 @@ html, body {
 
 .photo-row {
     flex-shrink: 1;
+    flex-grow: 1;
     display: flex;
     justify-content: space-between;
-    gap: 30px;
+    gap: 60px;
+    align-items: center;
 }
 
 .box {
@@ -478,15 +480,15 @@ html, body {
     height: 100%;
     position: relative;
     gap: 12px;
-    border-radius: 3px;
 }
 
 .photo-row img {
     width: 100%;
     height: 100%;
     object-fit: cover; 
-    transition: transform 0.3s ease;
     border-radius: 3px;
+    justify-content: center;
+    align-items: center;
 }
 
 video {
@@ -500,9 +502,7 @@ video {
     color: rgba(0, 0, 0, 0.50);
     text-align: center;
     font-size: 18px;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
 }
 
 .photo-with-description {
@@ -540,7 +540,6 @@ video {
     opacity: 75%;
 }
 
-
 .design {
     display: flex;
     flex-direction: column;
@@ -557,7 +556,7 @@ video {
 }
 
 .opaque {
-    opacity: 75%;
+    color: rgba(0,0,0,0.75);
 }
 
 .photo-caption {
