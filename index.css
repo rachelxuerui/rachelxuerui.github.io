@@ -60,7 +60,7 @@
         font-size: 6vw;
         font-weight: 400;
         font-family: "League Spartan", sans-serif;
-        font-weight: 400;
+        line-height: 42px;
     }
     
     .subheader {
@@ -184,10 +184,11 @@ html, body {
     font-size: 3vw;
     font-family: "League Spartan", sans-serif;
     font-weight: 400;
+    line-height: 42px;
 }
 
 .subheader {
-    font-size: 1.2vw;
+    font-size: 16px;
     font-weight: 400;
 }
 
