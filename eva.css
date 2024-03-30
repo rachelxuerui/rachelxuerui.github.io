@@ -101,7 +101,6 @@
     .line {
         width: 100%;
         height: 1px;
-        background: rgba(0, 0, 0, 0.5);
         margin: 120px;
     }
 
@@ -462,7 +461,6 @@
     .line {
         width: 100%;
         height: 1px;
-        background: rgba(0, 0, 0, 0.5);
         margin: 120px;
     }
 
@@ -843,3 +841,9 @@
     align-items: stretch;
     font-size: 18px;
 }
+
+.sticky {
+    position: sticky;
+    top: 0;
+    width: 100%;
+  }
