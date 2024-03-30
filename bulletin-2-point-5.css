@@ -394,23 +394,24 @@ html, body {
 
 .project-overview {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-content: flex-start;
-    gap: 180px;
+    gap: 60px;
     opacity: 75%;
+    width: 75%;
 }
+
 
 .overview-column {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
-    max-width: 420px;
+    align-items: stretch;
+    flex-direction: row;
+    gap: 120px;
 }
 
 .description-block {
     display: flex;
-    max-width: 420px;
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
