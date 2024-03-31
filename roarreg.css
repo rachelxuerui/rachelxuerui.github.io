@@ -309,17 +309,12 @@
         height: 100%;
         object-fit: cover;
         border-radius: 6px;
-        transition: transform 0.3s ease;
     }
 
     .space {
         padding: 60px 0;
     }
 
-    .box:hover img {
-        transform: scale(1.2);
-        z-index: 2;
-    }
     
     video {
         width: 100%;
@@ -606,13 +601,8 @@ html, body {
     height: 100%;
     object-fit: cover; 
     border-radius: 6px;
-    transition: transform 0.3s ease;
 }
 
-.box:hover img {
-    transform: scale(1.2);
-    z-index: 2;
-}
 
 video {
     width: 100%;
