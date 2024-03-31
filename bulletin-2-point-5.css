@@ -517,6 +517,7 @@ video {
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
+    gap: 48px;
 }
 
 .space {
