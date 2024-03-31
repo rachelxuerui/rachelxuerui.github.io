@@ -625,3 +625,25 @@ a {
 }
 
 }
+
+.arrow {
+    color: rgba(0,75,141,0.5);
+}
+
+.insights {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+
+.insight {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    align-self: stretch;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
