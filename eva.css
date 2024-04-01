@@ -399,7 +399,7 @@
 
     .wrapper {
         display: flex;
-        padding: 60px 0px;
+        padding: 60px 240px;
         flex-direction: column;
         align-items: center;
         color: rgba(0,0,0,1);
@@ -430,14 +430,13 @@
         display: flex;
         flex-direction: column;
         align-items: left;
-        padding: 0 180px;
         gap: 12px;
         align-self: stretch;
     }
 
     .title {
         text-align: left;
-        font-size: 42px;
+        font-size: 60px;
         font-family: "League Spartan", sans-serif;
         font-weight: 400;
     }
@@ -451,11 +450,8 @@
     .project {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         gap: 60px;
         align-self: stretch;
-        padding: 0 180px;
     }
 
     .line {
@@ -470,8 +466,7 @@
         justify-content: space-between;
         align-content: flex-start;
         gap: 60px;
-        opacity: 75%;
-        width: 75%;
+        opacity: 50%;
     }
     
     
@@ -503,7 +498,6 @@
 
     .block {
         display: flex;
-        padding: 0 240px;
         flex-direction: column;
         align-items: center;
         gap: 60px;

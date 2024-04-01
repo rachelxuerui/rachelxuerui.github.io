@@ -367,7 +367,7 @@ html, body {
 
 .wrapper {
     display: flex;
-    padding: 60px 0px;
+    padding: 60px 240px;
     flex-direction: column;
     align-items: center;
     padding-bottom: 120px;
@@ -428,7 +428,6 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: left;
-    padding: 0 180px;
     gap: 12px;
     align-self: stretch;
 }
@@ -449,7 +448,7 @@ html, body {
 
 .title {
     text-align: left;
-    font-size: 42px;
+    font-size: 60px;
     font-weight: 400;
     font-family: "League Spartan", sans-serif;
 }
@@ -463,11 +462,8 @@ html, body {
 .project {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 60px;
     align-self: stretch;
-    padding: 0 180px;
 }
 
 .line {
@@ -482,8 +478,7 @@ html, body {
     justify-content: space-between;
     align-content: flex-start;
     gap: 60px;
-    opacity: 75%;
-    width: 75%;
+    opacity: 50%;
 }
 
 
@@ -515,7 +510,6 @@ html, body {
 
 .block {
     display: flex;
-    padding: 0 240px;
     flex-direction: column;
     align-items: center;
     gap: 60px;

@@ -113,7 +113,6 @@
         display: flex;
         flex-direction: column;
         align-items: left;
-        padding-bottom: 30px;
         gap: 12px;
         align-self: stretch;
     }
@@ -153,7 +152,7 @@
         justify-content: space-between;
         align-content: flex-start;
         gap: 180px;
-        opacity: 75%;
+        opacity: 50%;
     }
 
     .overview-column {
@@ -286,7 +285,7 @@ html, body {
 
 .wrapper {
     display: flex;
-    padding: 60px 0px;
+    padding: 60px 240px;
     flex-direction: column;
     align-items: center;
     color: rgba(0,0,0,1);
@@ -333,15 +332,13 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: left;
-    padding: 0 180px;
-    padding-bottom: 30px;
     gap: 12px;
     align-self: stretch;
 }
 
 .title {
     text-align: left;
-    font-size: 42px;
+    font-size: 60px;
     font-weight: 400;
     font-family: "League Spartan", sans-serif;
 }
@@ -359,7 +356,6 @@ html, body {
     align-items: center;
     gap: 60px;
     align-self: stretch;
-    padding: 0 120px;
 }
 
 .line {
@@ -387,10 +383,8 @@ html, body {
     justify-content: space-between;
     align-content: flex-start;
     gap: 60px;
-    opacity: 75%;
-    width: 75%;
+    opacity: 50%;
 }
-
 
 .overview-column {
     display: flex;
@@ -421,7 +415,6 @@ html, body {
 
 .block {
     display: flex;
-    padding: 0 240px;
     flex-direction: column;
     align-items: center;
     gap: 60px;
@@ -454,9 +447,10 @@ html, body {
 
 .photo-row {
     flex-shrink: 1;
+    flex-grow: 1;
     display: flex;
     justify-content: space-between;
-    gap: 30px;
+    gap: 60px;
     align-items: center;
 }
 
@@ -496,6 +490,8 @@ html, body {
     object-fit: cover; 
     border-radius: 6px;
     transition: transform 0.3s ease;
+    justify-content: center;
+    align-items: center;
 }
 
 video {
