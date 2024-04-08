@@ -251,6 +251,7 @@
         height: auto;
         text-align: center;
         font-size: 36px;
+        padding: 120px 0px;
     }
 
     .fancy {
@@ -494,7 +495,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: stretch;
-        gap: 12px;
+        gap: 60px;
     }
 
     .box {
@@ -570,6 +571,7 @@
         height: auto;
         text-align: center;
         font-size: 36px;
+        padding: 240px 0px;
     }
 
     .fancy {
@@ -659,6 +661,13 @@
         min-width: 300px;
     }
 
+    .number-roar {
+        font-weight: 700;
+        font-size: 120px;
+        color: rgba(78, 182, 234, 0.25);
+        min-width: 300px;
+    }
+
     .number-bulletin {
         font-weight: 700;
         font-size: 120px;
@@ -666,6 +675,12 @@
         min-width: 200px;
     }
 
+    .number-roar {
+        font-weight: 700;
+        font-size: 120px;
+        color: rgba(78, 182, 234, 0.25);
+        min-width: 200px;
+    }
     
     .footing {
         display: flex;
@@ -880,4 +895,5 @@ b {
     height: auto;
     text-align: center;
     font-size: 36px;
+    padding: 240px 0px;
 }
