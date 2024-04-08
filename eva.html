@@ -18,19 +18,18 @@
 
 <div class = "wrapper">
 
-<div class = "splash">
+<div class = "block">
 
-<div class = "photo-row">
-    <div class = "box-static"><img src = "assets/eva/splash.png"></div>
-</div>
+    <div class = "header">
+        <div class = "title">Eva - purchase decision chatbot</div> 
+        <div class = "subtitle">Helping consumers confidently make purchase decisions with an AI powered chatbot</div>
+    </div>
 
-<div class = "header">
-    <div class = "title">Eva - purchase decision chatbot</div> 
-    <div class = "subtitle">Helping consumers confidently make purchase decisions with an AI powered chatbot</div>
-</div>
+    <div class = "photo-row">
+        <div class = "box-static"><img src = "assets/eva/splash.png"></div>
+    </div>
 
 <div class = "project">
-
     <div class = "project-overview">
 
         <div class = "description-block">
@@ -45,17 +44,17 @@
 
         <div class = "overview-column">
             <div class = "description-block">
-                <div class = "description-title">Timeline</div>
+                <div class = "description">TIMELINE</div>
                 <div class = "description-subtitle">June - August 2023</div>
             </div>
 
             <div class = "description-block">
-                <div class = "description-title">Role</div>
+                <div class = "description">ROLE</div>
                 <div class = "description-subtitle">Product Designer</div>
             </div>
 
             <div class = "description-block">
-                <div class = "description-title">Skills</div>
+                <div class = "description">SKILLS</div>
                 <div class = "description-subtitle">
                     Figma
                     <br>
@@ -66,9 +65,9 @@
             </div>
 
         <div class = "description-block">
-            <div class = "description-title">Team</div>
+            <div class = "description">TEAM</div>
             <div class = "description-subtitle">
-                Rachel Michelson, with mentorship from Isaac Kulka
+                Isaac Kulka (mentor)
             </div>
         </div>
         
@@ -79,35 +78,73 @@
 </div>
 
 <div class = "block">
-    <div class = "how-might-we">How might we combine brand and expert content into an experience that helps people find and learn about the best products?</div>
+    <div class = "how-might-we">How might we combine brand and Expert content into an experience that helps people find and learn about the best products?</div>
 </div>
 
-<div class = "block" id = "ideation">
-    <div class = "line"></div>
+<div class = "block">
     <div class = "text">
-        <div class = "block-title">Problem</div>
-        <div class = "block-subtitle">
+        <div class = "description">PROBLEM</div>
+        <div class = "body">
             Recent research indicates that most users come to ExpertVoice with an openness to shop for new products. 
             <br><br>
             It is difficult to make decisions between many products when there is a large amount of information that must be sifted through.</div>
     </div>
-    <div class = "how-might-we" style = "padding:36px 0;margin:0;text-align: left;">
-        "It isn't that shopping on Expertvoice is hard, it is just that there are so many great options, it is hard to decide."
-    </div>
-    <div class = "block-subtitle">
-    This phenomenon is fairly common, and more well known as the <b>Paradox of Choice</b>.
-    This response stood out to me, and thinking about current advancements in generative AI, I wondered:
 </div>
-<div class = "how-might-we" style = "padding:36px 0;margin:0;text-align: left;">
-    What if this purchase decision was aided by a generative AI tool, using our valued Expert reviews and product information?
+
+<div class = "block-color">
+        <div class = "fancy">"It isn't that shopping on Expertvoice is hard, it is just that there are so many great options, it is hard to decide."</div>
+        <div class = "photo-row">
+            <video id = "vid" controls autoplay muted loop>
+                <source src="assets/eva/paradox.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class = "body">
+            This phenomenon is fairly common, and more well known as the Paradox of Choice.
+        </div>
+</div>
+
+<div class = "block">
+    <div class = "text">
+        <div class = "description">BRAINSTORMING</div>
+        <div class = "body">
+            During my internship, there was one piece of emerging technology that had been gaining increasing popularity - ChatGPT. This generative AI model could take in text inputs and perform sentiment analysis, text summarization, and draw conclusions. 
+            <br><br>
+            With this in mind, I played around in ChatGPT, feeding it reviews, product descriptions, and asking it questions about products in different contexts.
+        </div>
+    </div>
+</div>
+
+<div class = "block-color">
+    <div class = "text">
+    <div class = "description">QUESTION</div>
+        <div class = "body">
+            Would the Ghost 15 be good for my job as a nurse with plantar fasciitis? Please provide supporting quotes from reviews.
+        </div>
+    </div>
+
+    <div class = "photo-row">
+        <div class = "text">
+            <div class = "description">INPUTS</div>
+            <div class = "photo-column">
+                <img src = "assets/eva/input1.png">
+                <img src = "assets/eva/input2.png">
+                <img src = "assets/eva/input3.png">
+            </div>
+        </div>
+        <div class = "text">
+            <div class = "description">OUTPUT</div>
+            <div class = "photo-column">
+                <img src = "assets/eva/output.png">
+            </div>
+        </div>
 </div>
 </div>
 
 <div class = "block" id = "research">
-    <div class = "line"></div>
     <div class = "text">
-        <div class = "block-title">Research</div>
-        <div class = "block-subtitle">
+        <div class = "description">RESEARCH INSIGHTS</div>
+        <div class = "body">
             I conducted 30 minute user interview sessions with 5 ExpertVoice users.
         </div>
     </div>
@@ -118,138 +155,89 @@
 </div>
 
 <div class = "block" id = "design">
-    <div class = "line"></div>
     <div class = "text">
-        <div class = "block-title" id = "initial">Initial designs</div>
-        <section id = "initial-section">
-        <div class = "block-subtitle">
-            A chatbot interface providing users with product recommendations using Expert reviews, product information, and brand content.
-            <br><br>
-            I tested these initial designs on 5 ExpertVoice users in a series of usability tests.</div>
+        <div class = "description">INITIAL DESIGNS</div>
+        <div class = "body">
+            I recruited 5 ExpertVoice users for usability testing.</div>
     </div>
-</div>
-
-<div class = 'space'></div>
-
-<div class = 'outline'>
-<div class = "block">
-    <div class = "text">
-        <div class = "initial-title">Introduction</div>
-        <br>
-        <div class = "row">
-            <video id = "vid" controls autoplay muted loop style = "display: block; max-width: 300px; height: auto; border-radius: 6px;">
+    <div class = "photo-row">
+        <div class = "box">
+            <video id = "vid" controls autoplay muted loop>
                 <source src="assets/eva/initial-introduction.mov" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-                <div class = "insights" style = "max-width: 480px">
-                    <div class = "insight">
-                        <div class = "arrow">&#8618;</div> 
-                          The Yeti is intimidating, offputting, and unwelcoming
-                    </div>
-                    <div class = "insight">
-                        <div class = "arrow">&#8618;</div>                       
-                          Grayed out button style does not seem clickable
-                    </div>
-                    <div class = "insight">
-                        <div class = "arrow">&#8618;</div> 
-                          Too many slides in the introduction - overwhelming
-                    </div>
-                    <div class = "insight">
-                        <div class = "arrow">&#8618;</div> 
-                          Users like knowing about data usage and privacy
-                    </div>
+        </div>
+        <div class = "photo-column">
+        <div class = "text">
+            <div class = "description">DESIGN APPROACH</div>
+            <div class = "body">
+                <ul>
+                    <li>Provide an introduction to Eva using anthropomorphism to build trust</li>
+                    <li>Explain Eva's capabilities and use cases</li>
+                    <li>Include details about AI and data usage for transparency</li>
+                </ul>
             </div>
         </div>
-    </div>
-</div>
-
-<div class = 'space'></div>
-
-<div class = "block">
-    <div class = "text">
-        <div class = "row">
-
-            <div class = 'column'>
-            <div class = "initial-title">Product suggestions</div>
-            <div class = "photo-row">
-                <div class = "box"><img src = "assets/eva/products.png"></div>
-            </div>
-            <div class = "insights" style = "max-width: 480px">
-                <div class = "insight">
-                    <div class = "arrow">&#8618;</div> 
-                    How much shopping do we want users to do within the chatbot interface?
-                </div>
-                <div class = "insight">
-                    <div class = "arrow">&#8618;</div> 
-                    What primary actions would users find the most useful?
-                </div>
-                </div>
-                </div>
-
-                <div class = "space"></div>
-
-        <div class = "column">
-            <div class = "initial-title">Relevant reviews</div>
-            <div class = "photo-row">
-                <div class = "box"><img src = "assets/eva/reviews.png"></div>
-            </div>
-            <div class = "insights" >
-                <div class = "insight">
-                    <div class = "arrow">&#8618;</div> 
-                      Users want to know why the reviewer is relevant to their inquiry
-                </div>
-                </div>
-                </div>
-    </div>
-    </div>
-    </div>
-    </div>
-
-
-<div class = 'space'></div>
-
-<div class = "block">
-    <div class = "text">
-        <div class = "initial-title">Chatbot Interface</div>
-        <br>
-        <div class = "row">
-            <div class = "photo-row"><div class = "box"><img src = "assets/eva/chatbot.png" style = "max-width: 300px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);"></div></div>
-                <div class = "insights" style = "max-width: 480px">
-                    <div class = "insight">
-                        <div class = "arrow">&#8618;</div> 
-                          Users don't know what they should or can ask the chatbot
-                    </div>
-                    <div class = "insight">
-                        <div class = "arrow">&#8618;</div> 
-                          Scroll for overflowing products is unintuitive and awkward
-                    </div>
-                    <div class = "insight">
-                        <div class = "arrow">&#8618;</div> 
-                          Grayed out button does not seem clickable, seems disabled
-                    </div>
+        <div class = "text">
+            <div class = "description">INSIGHTS</div>
+            <div class = "body">
+                <ul>
+                    <li>The Yeti is intimidating and off putting</li>
+                    <li>Too many slides in the introduction</li>
+                    <li>Users appreciate the information about data usage</li>
+                </ul>
             </div>
         </div>
+        </div>
     </div>
+
+    <div class = "photo-row">
+        <div class = "box">
+            <img src = "assets/eva/chatbot.png" style = "box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);">
+        </div>
+        <div class = "photo-column">
+            <div class = "text">
+                <div class = "description">DESIGN APPROACH</div>
+                <div class = "body">
+                    <ul>
+                        <li>Provide an introduction to Eva using anthropomorphism to build trust</li>
+                        <li>Provide supporting evidence for Eva's suggestions via review cards</li>
+                        <li>Encourage users to read ExpertVoice lessons for more information</li>
+                    </ul>
+                </div>
+            </div>
+            <div class = "text">
+                <div class = "description">INSIGHTS</div>
+                <div class = "body">
+                    <ul>
+                        <li>Grayed out button style for relevant reviews does not seem clickable</li>
+                        <li>Relevant reviews are nice to have and build user trust in Eva</li>
+                        <li>Method for scrolling is awkward</li>
+                    </ul>
+                </div>
+            </div>
+            </div>
 </div>
-</section>
+</div>
 
 
     <div class = "block" id = "refine">
-        <div class = "line"></div>
         <div class = "text">
-            <div class = "block-title" id = "final">Final designs</div></div>
+            <div class = "description">FINAL DESIGNS</div>
+            <div class = "body">Updated designs using insights from usability testing and the ExpertVoice Product Design team.</div>
+        </div>
                 <div class = "design">
                     <div class = "design-explanation">
                         <div class = "designs-header">Search integration</div>
-                        <div class = "designs-body">
+                        <div class = "body">
                             Recent data collected using Scuba and hotjar revealed that <b>search is the primary action from the main navigation page</b>. 
                             Thus, I decided to integrate the <b>primary call to action</b> to access Eva with the <b>search bar</b>, 
                             with potential <b>secondary calls to actions</b> where users may feel stuck in their shopping process.</div>
                     </div>
-                    <div class = "photo-row"><div class = 'box'><video id = "vid" controls autoplay muted loop>
+                    <div class = "photo-row"><video id = "vid" controls autoplay muted loop>
                         <source src="assets/eva/search.mov" type="video/mp4">
                         Your browser does not support the video tag.
-                    </video></div></div>
+                    </video></div>
                 </div>
     
                 <div class = "space"></div>
@@ -257,7 +245,7 @@
                 <div class = "design">
                     <div class = "design-explanation">
                         <div class = "designs-header">Introducing Eva</div>
-                        <div class = "designs-body">Provide transparency about AI, data usage, and inform users of Eva’s purpose</div>
+                        <div class = "body">Provide transparency about AI, data usage, and inform users of Eva’s purpose</div>
                     </div>
                         <div class = "photo-row">
                             <div class = "box"><img src = "assets/eva/intro1.png"></div>
@@ -272,7 +260,7 @@
                 <div class = "design">
                     <div class = "design-explanation">
                         <div class = "designs-header">Suggestion prompts</div>
-                        <div class = "designs-body">Quick primary actions to help users understand Eva's purpose and functionality, and encourage them to ask Eva for a recommendation</div>
+                        <div class = "body">Quick primary actions to help users understand Eva's purpose and functionality, and encourage them to ask Eva for a recommendation</div>
                     </div>
                     <div class = "photo-row">
                         <div class = "box"><img src = "assets/eva/suggestions1.png"></div>
@@ -286,7 +274,7 @@
                 <div class = "design">
                     <div class = "design-explanation">
                         <div class = "designs-header">Product suggestions</div>
-                        <div class = "designs-body">Utilize Expert reviews, product information, and other content to provide Experts with valuable product recommendations, weighing more complete reviews more heavily</div>
+                        <div class = "body">Utilize Expert reviews, product information, and other content to provide Experts with valuable product recommendations, weighing more complete reviews more heavily</div>
                     </div>
                     <div class = "photo-row">
                         <div class = "box"><img src = "assets/eva/product1.png"></div>
@@ -300,7 +288,7 @@
                 <div class = "design">
                     <div class = "design-explanation">
                         <div class = "designs-header">Supporting Expert content</div>
-                        <div class = "designs-body">Provide quotes and links to relevant reviews and additional content to promote trust in product suggestions</div>
+                        <div class = "body">Provide quotes and links to relevant reviews and additional content to promote trust in product suggestions</div>
                     </div>
                     <div class = "photo-row">
                         <div class = "photo-column">
@@ -316,7 +304,7 @@
                 <div class = "design">
                     <div class = "design-explanation">
                         <div class = "designs-header">Feedback mechanisms</div>
-                        <div class = "designs-body">Provide a method of improving the chatbot through user feedback, as well as encourage a feeling of control in users</div>
+                        <div class = "body">Provide a method of improving the chatbot through user feedback, as well as encourage a feeling of control in users</div>
                     </div>
                     <div class = "photo-row">
                         <div class = "box"><img src = "assets/eva/feedback1.png"></div>
@@ -329,9 +317,8 @@
             </div>
 
             <div class = "block">
-                <div class = "line"></div>
                 <div class = "text">
-                    <div class = "block-title">What I learned</div>
+                    <div class = "description">WHAT I LEARNED</div>
                     </div>
                 <div class = "l-row">
                     <div class = "number">01</div>

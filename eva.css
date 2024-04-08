@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans');
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
-
 @media screen and (max-width: 800px) {
 
 
@@ -9,15 +6,15 @@
         padding: 0;
         height: 100%;
         background-color: #F7F7F7;
-        font-family: 'DM Sans', sans-serif;
-        font-weight: 100;
+        font-family: 'Inter Tight', sans-serif;
+        font-weight: 300;
         flex-shrink: 1;
     }
 
     .photo-column {
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        align-items: stretch;
     }
 
     .footing {
@@ -26,8 +23,9 @@
 
     .wrapper {
         display: flex;
-        padding: 60px 60px;
+        padding-top: 60px;
         padding-bottom: 120px;
+        gap: 120px;
         flex-direction: column;
         align-items: center;
         color: rgba(0,0,0,1);
@@ -78,14 +76,11 @@
     .title {
         text-align: left;
         font-size: 42px;
-        font-family: "League Spartan", sans-serif;
-        font-weight: 400;
     }
 
     .subtitle {
         text-align: left;
         font-size: 18px;
-        font-weight: 100;
     }
 
     .project {
@@ -96,12 +91,6 @@
         gap: 60px;
         align-self: stretch;
         padding: 0 60px;
-    }
-
-    .line {
-        width: 100%;
-        height: 1px;
-        margin: 120px;
     }
 
     .project-overview {
@@ -117,7 +106,6 @@
         display: flex;
         flex-direction: row;
         gap: 30px;
-        max-width: 420px;
     }
 
     .description-block {
@@ -128,24 +116,23 @@
         gap: 12px;
     }
 
-    .description-title {
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 700;
-    }
-
-    .description-subtitle {
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 300;
-    }
-
     .block {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 24px;
         align-self: stretch;
+        padding: 0 60px;
+    }
+
+    .block-color {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        align-self: stretch;
+        background-color: #FFEDED;
+        padding: 60px 60px;
     }
 
     .text {
@@ -156,20 +143,10 @@
         align-self: stretch;
     }
 
-    .block-title {
-        text-align: left;
-        font-size: 36px;
-        font-style: normal;
-        line-height: normal;
-        font-family: "League Spartan", sans-serif;
-        font-weight: 400;
-    }
-
-    .block-subtitle {
+    .body {
         align-self: stretch;
         font-size: 18px;
         font-style: normal;
-        font-weight: 400;
         line-height: normal;
     }
 
@@ -180,15 +157,6 @@
         justify-content: space-between;
         gap: 60px;
         flex-direction: column;
-    }
-
-    .bubbles {
-        flex-shrink: 1;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 12vw;
     }
 
     .box {
@@ -203,11 +171,36 @@
         gap: 12px;
     }
 
+    .box-shadow {
+        flex-shrink: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%; 
+        height: 100%;
+        position: relative;
+        gap: 12px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .box-shadow img {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    }
+
     .photo-row img {
         width: 100%;
         height: 100%;
         object-fit: cover; 
         border-radius: 3px;
+    }
+
+    .photo-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        gap: 12px;
     }
 
     video {
@@ -222,7 +215,6 @@
         text-align: center;
         font-size: 18px;
         font-style: normal;
-        font-weight: 400;
         line-height: normal;
     }
 
@@ -241,34 +233,9 @@
         font-size: 24px;
     }
 
-    .bubble {
-        display: flex;
-        flex-basis: auto;
-        flex-shrink: 1;
-        flex-direction: column;
-        justify-content: center;
-        gap: 9px;
-        object-fit: cover;
-        width: 180px;
-        height: 180px;
-        border: solid 1px black;
-        border-radius: 50%;
-        text-align: center;
-        overflow: hidden;
-        padding: 10px;
-    }
-
-    .bold {
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-    }
-
     .text {
         font-size: 12px;
         font-style: normal;
-        font-weight: 400;
         line-height: normal;
     }
 
@@ -284,11 +251,19 @@
         height: auto;
         text-align: center;
         font-size: 36px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: normal;
-        padding: 160px 0;
-        margin: 240px 0;
+    }
+
+    .fancy {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: stretch;
+        background: -webkit-linear-gradient(left, #F99E9E, rgba(255,0,0));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        width: 100%;
+        height: auto;
+        text-align: center;
     }
 
     .insights {
@@ -304,9 +279,6 @@
         gap: 6px;
         align-self: stretch;
         font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
     }
 
     a {
@@ -331,8 +303,6 @@
     }
 
     .initial-title {
-        font-family: "League Spartan", sans-serif;
-        font-weight: 400;
         font-size: 24px;
     }
 
@@ -342,19 +312,11 @@
 
     .designs-header {
         font-size: 24px;
-        font-style: normal;
-        font-family: "League Spartan", sans-serif;
-        font-weight: 400;
-        line-height: normal;
     }
 
     .designs-body {
         text-align: left;
         font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        opacity: 75%;
     }
 
 
@@ -374,10 +336,16 @@
     }
 
     .number {
-        font-family: "League Spartan", sans-serif;
         font-weight: 700;
         font-size: 60px;
         color: rgba(255,0,0,0.1);
+        width: 60px;
+    }
+
+    .number-bulletin {
+        font-weight: 700;
+        font-size: 60px;
+        color: rgba(0,75,141,0.1);
         width: 60px;
     }
 
@@ -394,12 +362,14 @@
         padding: 0;
         height: 100%;
         background-color: #F7F7F7;
-        font-family: 'DM Sans', sans-serif;
+        font-family: 'Inter Tight', sans-serif;
+        font-weight: 300;
     }
 
     .wrapper {
         display: flex;
-        padding: 60px 240px;
+        padding: 60px 0px;
+        gap: 120px;
         flex-direction: column;
         align-items: center;
         color: rgba(0,0,0,1);
@@ -436,15 +406,12 @@
 
     .title {
         text-align: left;
-        font-size: 60px;
-        font-family: "League Spartan", sans-serif;
-        font-weight: 400;
+        font-size: 54px;
     }
 
     .subtitle {
         text-align: left;
         font-size: 18px;
-        font-weight: 100;
     }
 
     .project {
@@ -454,21 +421,14 @@
         align-self: stretch;
     }
 
-    .line {
-        width: 100%;
-        height: 1px;
-        margin: 120px;
-    }
-
     .project-overview {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-content: flex-start;
         gap: 60px;
-        opacity: 50%;
+        opacity: 75%;
     }
-    
     
     .overview-column {
         display: flex;
@@ -483,18 +443,6 @@
         align-items: flex-start;
         gap: 12px;
     }
-    
-    .description-title {
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 700;
-    }
-
-    .description-subtitle {
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 300;
-    }
 
     .block {
         display: flex;
@@ -502,6 +450,17 @@
         align-items: center;
         gap: 60px;
         align-self: stretch;
+        padding: 0 180px;
+    }
+
+    .block-color {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+        align-self: stretch;
+        background-color: #FFEDED;
+        padding: 60px 180px;
     }
 
     .text {
@@ -510,29 +469,21 @@
         align-items: flex-start;
         gap: 12px;
         align-self: stretch;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
     }
 
-    .block-title {
-        text-align: left;
-        font-size: 36px;
-        font-style: normal;
-        line-height: normal;
-        font-family: "League Spartan", sans-serif;
-        font-weight: 400;
-    }
-
-    .block-subtitle {
+    .body {
         align-self: stretch;
         font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
     }
 
     .photo-row {
         flex-shrink: 1;
         flex-grow: 1;
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         gap: 60px;
         align-items: center;
@@ -541,30 +492,17 @@
     .photo-column {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         align-items: stretch;
-        gap: 30px;
-    }
-
-    .bubbles {
-        flex-shrink: 1;
-        flex-grow: 1;
-        display: flex;
-        justify-content: space-between;
-        gap: 54px;  
-        flex-wrap: wrap;
+        gap: 12px;
     }
 
     .box {
         flex-shrink: 1;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%; 
-        height: 100%;
         position: relative;
-        gap: 12px;
+        height: 100%;
+        max-width: 300px;
     }
 
     .box:hover img {
@@ -585,7 +523,7 @@
     video {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Maintain aspect ratio and cover container */
+        object-fit: cover;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
     }
 
@@ -593,9 +531,6 @@
         color: rgba(255, 255, 255, 0.50);
         text-align: center;
         font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
     }
 
     .photo-caption {
@@ -609,23 +544,6 @@
         font-size: 24px;
     }
 
-    .bubble {
-        display: flex;
-        flex-basis: auto;
-        flex-shrink: 1;
-        flex-direction: column;
-        justify-content: center;
-        gap: 9px;
-        object-fit: cover;
-        width: 120px;
-        height: 120px;
-        border: solid 1px black;
-        border-radius: 50%;
-        text-align: center;
-        overflow: hidden;
-        padding: 10px;
-    }
-
     .bold {
         font-size: 18px;
         font-style: normal;
@@ -634,10 +552,10 @@
     }
 
     .text {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
         font-size: 12px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
     }
 
     .how-might-we {
@@ -652,19 +570,20 @@
         height: auto;
         text-align: center;
         font-size: 36px;
-        font-style: normal;
-        font-weight: 300;
-        line-height: normal;
-        padding: 120px 0;
-        margin: 240px 0;
     }
 
     .fancy {
-        font-size: 48px;
-        font-style: normal;
-        line-height: normal;
-        font-family: "League Spartan", sans-serif;
-        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: stretch;
+        background: -webkit-linear-gradient(left, #F99E9E, rgba(255,0,0));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-size: 36px;
     }
 
     .insights {
@@ -680,22 +599,11 @@
         gap: 6px;
         align-self: stretch;
         font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
     }
 
     a {
         text-decoration: none;
         color: rgba(0,0,1);
-    }
-
-    .row {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 120px;
-        align-items: center;
     }
 
     .column {
@@ -707,8 +615,6 @@
     }
 
     .initial-title {
-        font-family: "League Spartan", sans-serif;
-        font-weight: 400;
         font-size: 24px;
     }
 
@@ -718,18 +624,11 @@
 
     .designs-header {
         font-size: 24px;
-        font-style: normal;
-        font-family: "League Spartan", sans-serif;
-        font-weight: 400;
-        line-height: normal;
     }
 
     .designs-body {
         text-align: left;
         font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
         opacity: 75%;
     }
 
@@ -754,11 +653,17 @@
     }
     
     .number {
-        font-family: "League Spartan", sans-serif;
         font-weight: 700;
         font-size: 120px;
         color: rgba(255,0,0,0.1);
         min-width: 300px;
+    }
+
+    .number-bulletin {
+        font-weight: 700;
+        font-size: 120px;
+        color: rgba(0,75,141,0.1);
+        min-width: 200px;
     }
 
     
@@ -768,7 +673,6 @@
         justify-content: space-between;
         align-items: stretch;
         padding: 120px;
-        font-family: "DM Sans", sans-serif;
         font-size: 18px;
         background-color: white;
     }
@@ -781,8 +685,6 @@
     }
     
     .footing-left-text {
-        font-family: "League Spartan", sans-serif;
-        font-weight: 400;
         font-size: 30px;
     }
     
@@ -800,6 +702,94 @@
         flex-direction: column;
         gap: 12px;
     }
+
+
+#normal {
+    display: none;
+}
+
+.box2 {
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; 
+    height: 100%;
+    position: relative;
+    gap: 12px;
+}
+
+.box-shadow {
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; 
+    height: 100%;
+    position: relative;
+    gap: 12px;
+}
+
+.box-shadow img {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.container {
+    flex-shrink: 1;
+    display: flex;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+  }
+  
+  #before-after-slider {
+    width:100%;
+    position:relative;
+    overflow:hidden;
+  }
+  
+  #after-image {
+    display:flex;
+  }
+  
+  #before-image {
+    position:absolute;
+    height:100%;
+    width:50%;
+    overflow:hidden;
+    z-index:2;
+  }
+  
+  #resizer {
+    position:absolute;
+    display:flex;
+    align-items:center;
+    z-index:5;
+    top:0;
+    left:50%;
+    height:100%;
+    width:6px;
+    background:rgba(0,0,0,0.5);
+    -ms-touch-action: pan-y;
+      touch-action: pan-y;
+    cursor: pointer;
+  }
+  
+  #resizer:after {
+    font-weight:900;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:absolute;
+    width:10px;
+    height:10px;
+    font-size: 8px;
+    color: black;
+    cursor: pointer;
+  }
+
 }
 
 .l-row {
@@ -809,10 +799,6 @@
     justify-content: space-between;
     gap: 60px;
     align-items: center;
-}
-
-.arrow {
-    color: rgba(255,0,0,0.5);
 }
 
 .box-static {
@@ -836,8 +822,62 @@
     font-size: 18px;
 }
 
-.sticky {
-    position: sticky;
-    top: 0;
+.description {
+    color: rgba(0,0,0,0.75);
+    font-size: 12px;
+}
+
+b {
+    font-weight: 500;
+}
+
+.photo-with-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
+}
+
+.fancy {
+    font-size: 42px;
+    background: -webkit-linear-gradient(left, #F99E9E, rgba(255,0,0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.photo-row-no-shadow {
+    flex-shrink: 1;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 60px;
+    align-items: center;
+}
+
+.photo-row-no-shadow img {
     width: 100%;
-  }
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 3px;
+    transition: transform 0.3s ease;
+    justify-content: center;
+    align-items: center;
+}
+
+.how-might-we-blue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    width: 100%;
+    background: -webkit-linear-gradient(left, #1571BE, #4599DF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    height: auto;
+    text-align: center;
+    font-size: 36px;
+}

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="android.css">
+<link rel="stylesheet" href="eva.css">
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 <title>Android, redesigned</title>
 <script src="https://unpkg.com/scrollreveal"></script>
@@ -18,9 +18,14 @@
 
 <div class = "wrapper">
 
-<div class = "project">
+<div class = "block">
     
-    <div class = "photo-row">
+    <div class = "header">
+        <div class = "title">Android - redesigned</div> 
+        <div class = "subtitle">Making go-to-cart a primary action, adding a profile menu, and updating the Android navigation and color scheme</div>
+    </div>
+
+    <div class = "photo-row-no-shadow">
         <div class = "box">
             <img src ="assets/android/mockup1.png">
         </div>
@@ -34,15 +39,9 @@
         </div>
     </div>
 
-    <div class = "splash">
-        <div class = "header">
-            <div class = "title">Android - redesigned</div> 
-            <div class = "subtitle">Making go-to-cart a primary action, adding a profile menu, and updating the Android navigation and color scheme</div>
-        </div>
-
     <div class = "project-overview">
         <div class = "description-block">
-            <div class = "description-subtitle">
+            <div class = "body">
                 This was my secondary project for my internship with ExpertVoice.
                 The project started out simple, with the task of adding a cart icon to the Android experience. However, as I continued to design, I found more and more design flaws that needed to be fixed. 
                 The end result is a new Android design that aligns more closely with the web and iOS experience, and is overall more intuitive and easy to use.</div>
@@ -50,28 +49,29 @@
 
         <div class = "overview-column">
             <div class = "description-block">
-                <div class = "description-title">Timeline</div>
-                <div class = "description-subtitle">June - August 2023</div>
+                <div class = "description">TIMELINE</div>
+                <div class = "body">June - August 2023</div>
             </div>
 
             <div class = "description-block">
-                <div class = "description-title">Role</div>
-                <div class = "description-subtitle">Product Designer</div>
+                <div class = "description">ROLE</div>
+                <div class = "body">Product Designer</div>
             </div>
 
             <div class = "description-block">
-                <div class = "description-title">Skills</div>
-                <div class = "description-subtitle">
+                <div class = "description">SKILLS</div>
+                <div class = "body">
                     Figma
                 </div>
             </div>
 
         <div class = "description-block">
-            <div class = "description-title">Team</div>
-            <div class = "description-subtitle">
+            <div class = "description">TEAM</div>
+            <div class = "body">
                 Rachel Michelson,
                 with mentorship
-                from Isaac Kulka
+                from Isaac Kulka <br>
+                Steven Parker (QA) <br>
             </div>
         </div>
         </div>
@@ -79,98 +79,94 @@
     </div>
 
 </div>
-</div>
 
     <div class = "block">
-        <div class = "line"></div>
     <div class = "text">
-        <div class = "block-title">Problem</div>
-        <div class = "block-subtitle">Android users can only access their carts by opening a kabob menu first, an unintuitive experience that <b>deprioritizes the checkout process</b>.</div>
+        <div class = "description">PROBLEM</div>
+        <div class = "body">Android users can only access their carts by opening a kabob menu first, an unintuitive experience that <b>deprioritizes the checkout process</b>.</div>
     </div>
-    <div class = "photo-row">
-        <div class = "box">
+    <div class = "photo-row-no-shadow">
             <div class = "photo-with-description">
-            <img src = "assets/android/original.png"></div>
-            <div class = "photo-description">Original Android go-to-cart flow</div>
+            <img src = "assets/android/original.png">
+            <div class = "description">Original Android go-to-cart flow</div>
     </div>
     </div>
     </div>
 
 <div class = "block">
-    <div class = "line"></div>
     <div class = "text">
-        <div class = "block-title">Initial designs</div>
-        <div class = "block-subtitle">Instead of simply adding a cart button in the top right, I decided to explore what <b>removing the kabob menu</b> would look like, <b>placing its options into a menu appearing before the user profile</b>.</div>
+        <div class = "description">DESIGN ITERATIONS</div>
+        <div class = "body">The simplest solution? Shoving a cart button into the top right, with all of the other icons.</div>
     </div>
+
     <div class = "photo-row">
-        <div class = "fancy">
-            If we remove the kabob menu, what happens to the options?
-        </div>
-        <div class = "box2">
-            <div class = "photo-with-description">
-                <img src = "assets/android/web.png" style = "box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);">
-                <div class = "photo-description">
-                    Existing profile menu on our web experience
-                </div>
-        </div>
+        <div class = 'box-shadow'><img src = "assets/android/initial1.png" style = "height: 30vw; width: auto;"></div>
     </div>
-    <div class = "box2">
-        <div class = "photo-with-description">
-            <img src = "assets/android/profile-menu.png" style = "box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);">
-            <div class = "photo-description">
-                Redesign of kabob menu options in a profile menu
-            </div>
-    </div>
-</div>
+
+    <div class = "fancy">7 icons is ... a lot of icons.</div>
 </div>
 
+<div class = "block-color">
+    <div class = "text">
+        <div class = "description">THE MENU</div>
+        <div class = "body">The first step I wanted to take in reducing the number of icons in the top right was eliminating the kabob menu.</div>
+    </div>
+
+    <div class = "photo-row">
+        <div class = "photo-with-description"><img src = "assets/android/kabob.png" style = "height: 30vw; width: auto;"><div class = "description">Kabob menu</div></div>
+        <div class = "photo-with-description"><img src = "assets/android/web.png" style = "height: 30vw; width: auto;"><div class = "description">Profile menu on web</div></div>
+        <div class = "photo-with-description"><img src = "assets/android/profile-menu.png" style = "height: 30vw; width: auto;"><div class = "description">My designed Android profile menu</div></div>
+    </div>
+
+    <div class = "body">This results in a design more consistent with our <b>web experience.</b></div>
+</div>
+
+<div class = "block">
 <div class = "text">
-    <div class = "block-subtitle">This results in a design more consistent with our <b>web experience.</b></div>
-    <div class = "block-subtitle">Next, I explored redesigning the navigation bars.</b></div>
+    <div class = "body">Next, I explored redesigning the navigation bars.</b></div>
     </div>
 
     <div class = "photo-row">
-        <div class = "box2">
-            <div class = "photo-with-description">
-            <img src = "assets/android/initial1.png" style = "box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);">
-            <div class = "photo-description">
-                Too many icons in the top. Overwhelming. Icon salad. 
-            </div>
-        </div>
-        </div>
-        <div class = "box2">
-            <div class = "photo-with-description">
-            <img src = "assets/android/initial2.png" style = "box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);">
-            <div class = "photo-description">
+        <div class = "box-shadow">
+        <div class = "photo-with-description">
+            <img src = "assets/android/initial2.png">
+            <div class = "description">
                 Not enough physical space between icons.
             </div>
         </div>
         </div>
-        <div class = "box">
-            <div class = "photo-with-description">
-            <img src = "assets/android/initial3.png" style = "box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);">
-            <div class = "photo-description">
-                Navigation bar color distracts users from main content. 
+        <div class = "box-shadow">
+        <div class = "photo-with-description">
+            <img src = "assets/android/initial3.png">
+            <div class = "description">
+                Red color distracts users from main content. 
+            </div>
+        </div>
+    </div>
+        <div class = "box-shadow">
+        <div class = "photo-with-description">
+            <img src = "assets/android/final3.png">
+            <div class = "description">
+                A color scheme consistent with our iOS experience.
             </div>
         </div>
         </div>
     </div>
-    <div class = "block-subtitle">
+    <div class = "body">
         After presenting these designs to other engineers and designers, we decided the <b>red was too vibrant to be a primary color</b>, and ultimately <b>distracts users from the content we want them to focus on</b>.
     </div>
 </div>
 
 <div class = "block">
-    <div class = "line"></div>
     <div class = "text">
-        <div class = "block-title">Final designs</div>
-        <div class = "block-subtitle">The Android redesign is now live! Special thanks to the engineering team at ExpertVoice for implementing and testing my designs.</div>
+        <div class = "description">FINAL DESIGNS</div>
+        <div class = "body">This Android redesign has since been deployed. Special thanks to the engineering team at ExpertVoice for implementing and testing my designs.</div>
     </div>
     <div class = "photo-row">
-        <div class = "box2">
+        <div class = "box-shadow">
             <div class = "photo-with-description">
-            <img src = "assets/android/final1.png" style = "box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);">
-            <div class = "photo-description">
+            <img src = "assets/android/final1.png">
+            <div class = "description">
                 Cart icon is a primary action, accessible from all pages, encouraging users to checkout.
             </div>
         </div>
@@ -179,7 +175,7 @@
         <div class = "box2" id = "normal">
             <div class = "photo-with-description">
             <img src = "assets/android/final2.png">
-            <div class = "photo-description">
+            <div class = "description">
                 A page before a user's profile listing options previously held in the kabob menu
             </div>
         </div>
@@ -202,16 +198,16 @@
                     
                    </div>
                   </div>
-            <div class = "photo-description">
+            <div class = "description">
                 A page before a user's profile listing options previously held in the kabob menu
             </div>
         </div>
         </div>
 
-        <div class = "box2">
+        <div class = "box-shadow">
             <div class = "photo-with-description">
-            <img src = "assets/android/final3.png" style = "box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);">
-            <div class = "photo-description">
+            <img src = "assets/android/final3.png">
+            <div class = "description">
                 A calmer white design. Easier on the eyes, and allows users to focus on shopping.
             </div>
         </div>
@@ -222,16 +218,16 @@
 <div class = "block">
     <div class = "line"></div>
     <div class = "text">
-        <div class = "block-title">Next steps</div>
-        <div class = "block-subtitle">
+        <div class = "description">NEXT STEPS</div>
+        <div class = "body">
             A potential future design is an expansion of the search bar,  encouraging more users to shop through an increased width of the search bar.</div>
     </div>
 <div class = "photo-row">
-    <div class = 'box2'>
-        <img src = 'assets/android/next1.png' style = "box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);">
+    <div class = 'box-shadow'>
+        <img src = 'assets/android/next1.png' style = "height: 42vw; width: auto;">
     </div>
-    <div class = 'box2'>
-        <img src = 'assets/android/next2.png' style = "box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);">
+    <div class = 'box-shadow'>
+        <img src = 'assets/android/next2.png' style = "height: 42vw; width: auto;">
     </div>
 </div>
 </div>
@@ -239,7 +235,7 @@
 <div class = "block">
     <div class = "line"></div>
     <div class = "text">
-        <div class = "block-title">What I learned</div>
+        <div class = "description">WHAT I LEARNED</div>
         </div>
     
     <div class = "photo-row">
@@ -274,7 +270,7 @@
     </div>
 
     <br><br>
-    <a href = "eva.html"><div class = "opaque">Eva -  purchase decision chatbot &#8618;</div></a>
+    <a href = "roarreg.html"><div class = "opaque">RoarReg - streamlining course registration &#8618;</div></a>
     <br><br>
 
     </div>
