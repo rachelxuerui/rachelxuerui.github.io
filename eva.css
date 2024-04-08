@@ -97,7 +97,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        align-content: flex-start;
+        align-content: center;
         gap: 180px;
         opacity: 75%;
     }
@@ -426,7 +426,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        align-content: flex-start;
+        align-content: center;
         gap: 60px;
         opacity: 75%;
     }
