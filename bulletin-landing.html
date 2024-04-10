@@ -82,11 +82,10 @@
         <div class = "body">The original landing page does not excite nor inform users of The Bulletin's purpose, nor the types of events, applications, and organizations listed on the platform.</div>
     </div>
     <div class = "photo-row">
-    <div class = "box-shadow">
         <div class = "photo-with-description">
-        <img src = "assets/bulletin/original-landing.png">
+        <div class = "box-shadow">
+        <img src = "assets/bulletin/original-landing.png"></div>
     <div class = "description">Original landing page for The Bulletin</div>
-</div>
 </div>
 </div>
 </div>
@@ -119,7 +118,7 @@
 </div>
 
 <br><br>
-<a href = "bulletin-2-point-5.html">The Bulletin 2.5 -  app redesign &#8618;</a>
+<a href = "org.html">Organizer Portal &#8618;</a>
 <br><br>
 
 </div>
@@ -154,113 +153,6 @@
 
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    const rightArrow = document.getElementById("ab-test-right");
-    const leftArrow = document.getElementById("ab-test-left");
-    const photo = document.getElementById("ab-test-image");
-    var index = 0;
-
-    const rightFinal = document.getElementById("final-right");
-    const leftFinal = document.getElementById("final-left");
-    const div1 = document.getElementById("1");
-    const div2 = document.getElementById("2");
-    const div3 = document.getElementById("3");
-    const div4= document.getElementById("4");
-    const div5 = document.getElementById("5");
-    var finalIndex = 0;
-
-    rightArrow.addEventListener("click", function() {
-            if (index == 0) {
-                photo.src = "assets/bulletin/ab1.png";
-                photo.style.opacity = 1;
-                index = 1;
-                leftArrow.style.opacity = "100%";
-            }
-            else if (index == 1) {
-                photo.src = "assets/bulletin/ab2.png";
-                photo.style.opacity = 1;
-                rightArrow.style.opacity = "50%";
-                index = 2;
-            }
-        }); 
-
-
-    leftArrow.addEventListener("click", function() {
-                if (index == 2) {
-                    photo.src = "assets/bulletin/ab1.png";
-                    photo.style.opacity = 1;
-                    index = 1;
-                    rightArrow.style.opacity = "100%";
-                }
-                else if (index == 1) {
-                    photo.src = "assets/bulletin/ab.png";
-                    photo.style.opacity = 1;
-                    index = 0;
-                    leftArrow.style.opacity = "50%";
-                }
-            }); 
-
-    rightFinal.addEventListener("click", function() {
-            if (finalIndex == 0) {
-                div1.parentNode.replaceChild(div2, div1);
-                div2.style.display = "flex";
-                div1.style.display = "none";
-                leftFinal.style.opacity = "100%"
-                finalIndex = 1;
-            }
-            else if (finalIndex == 1) {
-                div2.parentNode.replaceChild(div3, div2);
-                div3.style.display = "flex";
-                div2.style.display = "none";
-                finalIndex = 2;
-            }
-            else if (finalIndex == 2) {
-                div3.parentNode.replaceChild(div4, div3);
-                div4.style.display = "flex";
-                div3.style.display = "none";
-                finalIndex = 3;
-            }
-            else if (finalIndex == 3) {
-                div4.parentNode.replaceChild(div5, div4);
-                div5.style.display = "flex";
-                div4.style.display = "none";
-                rightFinal.style.opacity = "50%"
-                finalIndex = 4;
-            }
-        }); 
-
-    leftFinal.addEventListener("click", function() {
-            if (finalIndex == 4) {
-                div5.parentNode.replaceChild(div4, div5);
-                div4.style.display = "flex";
-                div5.style.display = "none";
-                rightFinal.style.opacity = "100%"
-                finalIndex = 3;
-            }
-            else if (finalIndex == 3) {
-                div4.parentNode.replaceChild(div3, div4);
-                div3.style.display = "flex";
-                div4.style.display = "none";
-                finalIndex = 2;
-            }
-            else if (finalIndex == 2) {
-                div3.parentNode.replaceChild(div2, div3);
-                div2.style.display = "flex";
-                div3.style.display = "none";
-                finalIndex = 1;
-            }
-            else if (finalIndex == 1) {
-                div2.parentNode.replaceChild(div1, div2);
-                div1.style.display = "flex";
-                div2.style.display = "none";
-                finalIndex = 0;
-                leftFinal.style.opacity = "50%";
-            }
-
-        }); 
-
-
-        });
 
     ScrollReveal({
         reset: true,
@@ -270,8 +162,6 @@
     });
     ScrollReveal({ reset: false });
     ScrollReveal().reveal('.block', {delay: 500});
-
-    
 
 </script>
 

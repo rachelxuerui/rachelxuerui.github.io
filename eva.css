@@ -15,6 +15,7 @@
         display: flex;
         flex-direction: column;
         align-items: stretch;
+        gap: 60px;
     }
 
     .footing {
@@ -83,16 +84,6 @@
         font-size: 18px;
     }
 
-    .project {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 60px;
-        align-self: stretch;
-        padding: 0 60px;
-    }
-
     .project-overview {
         display: flex;
         flex-direction: column;
@@ -110,7 +101,6 @@
 
     .description-block {
         display: flex;
-        max-width: 420px;
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
@@ -199,8 +189,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: stretch;
-        gap: 12px;
+        gap: 60px;
     }
 
     video {
@@ -295,6 +284,17 @@
         align-items: center;
     }
 
+    .flexi-row {
+        flex-shrink: 1;
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
     .column {
         display: flex;
         flex-direction: column;
@@ -347,6 +347,13 @@
         font-weight: 700;
         font-size: 60px;
         color: rgba(0,75,141,0.1);
+        width: 60px;
+    }
+
+    .number-roar {
+        font-weight: 700;
+        font-size: 60px;
+        color: rgba(78, 182, 234, 0.25);
         width: 60px;
     }
 
@@ -501,9 +508,13 @@
     .box {
         flex-shrink: 1;
         display: flex;
-        position: relative;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%; 
         height: 100%;
-        max-width: 300px;
+        position: relative;
+        gap: 12px;
     }
 
     .box:hover img {
@@ -805,6 +816,18 @@
     cursor: pointer;
   }
 
+
+.flexi-row {
+    flex-shrink: 1;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
 }
 
 .l-row {
@@ -850,7 +873,7 @@ b {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 12px;
+    gap: 24px;
     align-items: center;
     text-align: center;
 }

@@ -14,14 +14,10 @@
         display: none;
     }
     
-    .overlay-small {
-        display: none;
-    }
     
     .overlay-content {
        display: none;
       }
-    
     
     .wrapper {
         display: flex;
@@ -299,7 +295,10 @@ a {
 }
 
 .overlay-content {
+    display: flex;
     width: 100%;
+    flex-direction: column;
+    gap: 6px;
   }
 
 
@@ -324,4 +323,23 @@ b {
 
 .opaque {
     color: rgba(0,0,0,0.75);
+}
+
+.description {
+    color: rgba(0,0,0,0.75);
+    font-size: 12px;
+}
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    color: rgba(0,0,0,0.5);
+}
+
+.tag {
+    padding: 6px 12px;
+    font-size: 12px;
+    border: solid 0.5px;
+    border-radius: 100px;
 }
