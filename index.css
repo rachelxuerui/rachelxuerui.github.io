@@ -48,7 +48,7 @@
     
     .header {
         font-size: 6vw;
-        font-weight: 400;
+        font-weight: 300;
         line-height: 110%;
         background: -webkit-linear-gradient(left, #F99E9E, #76B3DE);
         -webkit-background-clip: text;
@@ -173,7 +173,7 @@ html, body {
 
 .header {
     font-size: 3vw;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 42px;
     background: -webkit-linear-gradient(left, #F99E9E, #76B3DE);
     -webkit-background-clip: text;
