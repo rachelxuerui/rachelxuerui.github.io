@@ -561,7 +561,7 @@
     .bold {
         font-size: 18px;
         font-style: normal;
-        font-weight: 700;
+        font-weight: 500;
         line-height: normal;
     }
 
@@ -807,7 +807,6 @@
   }
   
   #resizer:after {
-    font-weight:900;
     display:flex;
     justify-content:center;
     align-items:center;

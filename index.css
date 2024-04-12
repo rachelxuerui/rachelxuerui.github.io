@@ -57,7 +57,7 @@
     
     .subheader {
         font-size: 3vw;
-        font-weight: 400;
+        font-weight: 300;
     }
     
     
@@ -182,7 +182,7 @@ html, body {
 
 .subheader {
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .photo-wrapper {
@@ -273,7 +273,7 @@ a {
 }
 
 .footing-left-text {
-    font-weight: 400;
+    font-weight: 300;
     font-size: 30px;
 }
 
