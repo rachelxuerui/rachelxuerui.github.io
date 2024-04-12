@@ -323,7 +323,7 @@ b {
 }
 
 .opaque {
-    color: rgba(0,0,0,0.75);
+    color: rgba(0,0,0,0.5);
 }
 
 .description {
