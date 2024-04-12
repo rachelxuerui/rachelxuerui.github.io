@@ -225,8 +225,8 @@
 
     .text {
         font-size: 12px;
-        font-style: normal;
-        line-height: normal;
+        justify-content: flex-start;
+        gap: 12px;
     }
 
     .how-might-we {
@@ -922,4 +922,8 @@ b {
     text-align: center;
     font-size: 36px;
     padding: 240px 0px;
+}
+
+.about-header {
+    font-size: 42px;
 }
