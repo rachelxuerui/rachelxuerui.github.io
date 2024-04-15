@@ -378,7 +378,7 @@
     .wrapper {
         display: flex;
         padding: 60px 0px;
-        gap: 120px;
+        gap: 300px;
         flex-direction: column;
         align-items: center;
         color: rgba(0,0,0,1);
