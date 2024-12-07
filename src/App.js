@@ -1,18 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-
-function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>;
-}
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/home.js';
+import TaxonomyMapping from './pages/taxonomy-mapping.js';
 
 function App() {
   return (
-    <div>
-      <Welcome name="Sara" />
-      <Welcome name="Cahal" />
-      <Welcome name="Edite" />
-    </div>
-
+    <Router> 
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/taxonomy-mapping" element={<TaxonomyMapping />} />
+      </Routes>
+    </Router>
   );
 }
 
