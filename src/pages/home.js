@@ -1,6 +1,6 @@
 import '../App.css';
 import React from 'react';
-import { BodyText, NavBar, ProjectCard} from '../components/homepage-components.js';
+import { NavBar, ProjectCard } from '../components/homepage-components.js';
 
 
 function Home() {
@@ -19,15 +19,15 @@ function Home() {
     <NavBar links={links} activeLink='Work'/>
 
     <div class = "homepage-wrapper">
-    
     <div class = "homepage-grid">
+
     <div class = "header-wrapper">
     <div class = "header">
       Rachel Xuerui Michelson 
     </div>
     <i><div className = "opaque">Associate Product Designer at ExpertVoice, Columbia University Alum, based in NYC.</div></i>
-    <BodyText text = "I care about thoughtful and intentional design, using root cause analysis to create lasting solutions." />
-    <BodyText text = "I currently work at ExpertVoice on the Tooling Team, designing interfaces to connect Brands with Experts, and optimizing internal tooling through design." />
+    <div>I care about thoughtful and intentional design, using root cause analysis to create lasting solutions.</div>
+    <div>I currently work at ExpertVoice on the Tooling Team, designing interfaces to connect Brands with Experts, and optimizing internal tooling through design.</div>
 
     </div>
         <ProjectCard link = "taxonomy-mapping" company = "EXPERTVOICE" project = "Optimizing taxonomy mapping" description = "Identifying and designing for common user workflows for mapping taxonomies within product catalogs." photo = "/assets/taxonomy.gif"/>
@@ -39,8 +39,8 @@ function Home() {
         <ProjectCard company = "INFINITE GOODS" project = "Eco-label" description = "Redesigning a metric for sustainable fashion." photo = "../assets/eco-label.jpg"/>
         <ProjectCard company = "ADVANCED WEB DESIGN STUDIO" project = "Preppie" description = "Designing and coding an AI interview preparation tool in Flask." photo = "../assets/taxonomy.jpg"/>
         <ProjectCard company = "INTRODUCTION TO DATA VISUALIZATION" project = "Engineering a Top hit" description = "Analyzing trends in the Spotify dataset in Flask, D3.js, and Chart.js." photo = "../assets/taxonomy.jpg"/>
+    
     </div>
-
     </div>
 
     </>

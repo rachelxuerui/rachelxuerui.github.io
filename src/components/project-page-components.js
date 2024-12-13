@@ -36,7 +36,7 @@ import '../App.css';
             <div>{props.description}</div>
         </div>
         <ProjectOverview team = {props.team} role = 'Product Designer' duration = {props.duration} collaborators = {props.collaborators} />
-        <div classname = "project-intro-photo"><img src = {props.image}></img></div>
+        <img src = {props.image} alt = {props.alt}></img>
   
       </div>
   
@@ -55,4 +55,62 @@ import '../App.css';
     )
   }
 
-export {ProjectIntro, ProjectOverview, ProjectSection}
+  function Paragraph(props) {
+    const images = props.images || [];
+    const paragraphs = props.paragraphs || [];
+
+    return (
+        <div className="paragraph">
+
+            {props.header && <div className="opaque">{props.header}</div>}
+
+            {paragraphs.length > 0 && paragraphs.map((paragraph, index) => (
+                <div className="body" key={index}>{paragraph}</div>
+            ))}
+
+            {images.length > 0 && (
+                <div className="images">
+                    {images.map((imageData, index) => {
+                        const [imageUrl, caption] = imageData; 
+                        return (
+                            <div className="image-with-text" key={index}>
+                                <div>
+                                    <img src={imageUrl} alt={`image-${index}`} />
+                                </div>
+                                {caption && <div className="opaque">{caption}</div>}
+                            </div>
+                        );
+                    })}
+                </div>
+            )}
+
+        </div>
+    );
+}
+
+function Cards(props) {
+ return (
+  <div className = "cards-wrapper">
+    <div className = "opaque">{props.header}</div>
+
+    {props.text.length > 0 && (
+      <div className = "cards">
+          {props.text.map((cardData, index) => {
+              const [header, text] = cardData;
+              return (
+                  <div className="card" key={index}>
+                      <div className = "opaque">{header}</div>
+                      {text}
+                  </div>
+              );
+          })}
+      </div>
+  )}
+</div>
+
+ )
+}
+
+
+
+export {ProjectIntro, ProjectOverview, ProjectSection, Paragraph, Cards}
