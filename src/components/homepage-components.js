@@ -29,9 +29,12 @@ function NavBar({ links, activeLink }) {
     const navigate = useNavigate();
   
     const handleClick = () => {
-      navigate(props.link);
+      if (props.mobile) {
+        navigate(props.link);
+      } else {
+        props.onClick();
+      }
     };
-  
   
     return (
       <div className="project-card" onClick={handleClick}>
