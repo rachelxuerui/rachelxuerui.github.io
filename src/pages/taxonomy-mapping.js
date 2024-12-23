@@ -82,6 +82,32 @@ const TaxonomyMapping = ({ showNavBar = true }) => { // Accept showNavBar as a p
             image = "../assets/taxonomy/dashboard.png"
             />
 
+            <Solution
+            // isImageFirst = {true}
+            header = "Batch Command Side Panel"
+            what = "A side panel for bulk assigning taxonomy to products with ML powered suggestions."
+            why = "Improving upon batch commands by allowing users to scroll the products selected for confirmation, as well as by introducing ML suggestions."
+            image = "../assets/taxonomy/batch.gif"
+            />
+
+            <Solution
+            header = "Mapping Side Panel"
+            what = "A side panel for individually assigning taxonomy to products with ML powered suggestions."
+            why = "For any products in a catalog that were uncaught by batch commands."
+            image = "../assets/taxonomy/mapping.gif"
+            />
+
+            <Solution
+            // isImageFirst = {true}
+            header = "Refining Side Panel"
+            what = "A side panel for refining the taxonomy of products assigned to taxonomies that now have new child nodes, and are therefore no longer a leaf node."
+            why = "So every product can be assigned to the most specific leaf node, increasing product relevance."
+            image = "../assets/taxonomy/leafing.gif"
+            />
+
+            
+
+
         
         </div>
         </>

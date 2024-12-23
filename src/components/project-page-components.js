@@ -113,25 +113,42 @@ function Cards(props) {
 
 function Solution(props) {
   return (
-    <div className = "solution-wrapper">
-      <div className = "left">
-        <div className = "twenty-four">{props.header}</div>
-
-        <div className = "solution-text-wrapper">
-          <div className = "opaque">WHAT</div>
-          {props.what}
-        </div>
-
-        <div className = "solution-text-wrapper">
-          <div className = "opaque">WHY</div>
-          {props.why}
-        </div>
-      </div>
-      
-      <div className = "right"><img src = {props.image}></img></div>
+    <div className="solution-wrapper">
+      {props.isImageFirst ? (
+        <>
+          <div className="right"><img src={props.image} alt="solution" /></div>
+          <div className="left">
+            <div className="twenty-four">{props.header}</div>
+            <div className="solution-text-wrapper">
+              <div className="opaque">WHAT</div>
+              {props.what}
+            </div>
+            <div className="solution-text-wrapper">
+              <div className="opaque">WHY</div>
+              {props.why}
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="left">
+            <div className="twenty-four">{props.header}</div>
+            <div className="solution-text-wrapper">
+              <div className="opaque">WHAT</div>
+              {props.what}
+            </div>
+            <div className="solution-text-wrapper">
+              <div className="opaque">WHY</div>
+              {props.why}
+            </div>
+          </div>
+          <div className="right"><img src={props.image} alt="solution" /></div>
+        </>
+      )}
     </div>
-  )
+  );
 }
+
 
 
 
