@@ -1,20 +1,19 @@
 import React from 'react';
 import '../App.css';
 import { NavBar } from '../components/homepage-components.js';
-import { Paragraph, ProjectIntro, ProjectSection, Cards } from '../components/project-page-components.js';
+import { Paragraph, ProjectIntro, ProjectSection, Cards, Solution } from '../components/project-page-components.js';
 
-const TaxonomyMapping = () => {
-
+const TaxonomyMapping = ({ showNavBar = true }) => { // Accept showNavBar as a prop
     const links = [
         { path: '/', label: 'Work' },
         { path: '/resume.js', label: 'Resume' },
         { path: '/about.js', label: 'About' }
-      ];
+    ];
 
     return (
         <>
-        {/* <NavBar links={links} activeLink='Work'/> */}
-        <div class = "project-page-wrapper">
+        {showNavBar && <NavBar links={links} activeLink="Work"/>}
+        <div className = "project-page-wrapper">
             <ProjectIntro 
             company = "EXPERTVOICE" 
             name = "Optimizing taxonomy mapping" 
@@ -62,11 +61,6 @@ const TaxonomyMapping = () => {
             paragraphs = {["When working in a catalog that was just uploaded, they prefer to use the batch command tool in the products app to quickly assign taxonomies along similar traits, then map any remaining products individually."]}
             />
 
-            <ProjectSection
-            label = "SOLUTION"
-            text = "Improve and optimize for the main workflows."
-            />
-
             <Cards 
             header="MAIN USER FLOWS" 
             text={[["BULK MAPPING", "Users upload catalogs, and map products to an ExpertVoice product taxonomy using batch assignments."], 
@@ -74,6 +68,18 @@ const TaxonomyMapping = () => {
                 ["LEAFING", "When a child taxonomies have been added, go through and reassign each product to one of those new child taxonomies."],
                 ["FIXING GENDER ERRORS", "Assign products to the correct gender trait and gendered taxonomy based on name and description."],
             ]} 
+            />
+
+            <ProjectSection
+            label = "SOLUTION"
+            text = "Improve upon and optimize for the main workflows."
+            />
+
+            <Solution
+            header = "Dashboard"
+            what = "A list of catalogs with unmapped products, unleafed products, and products with gender inconsistencies."
+            why = "Because users prefer working within their own catalogs, this provides easy entry points into catalogs with problems that need to be addressed."
+            image = "../assets/taxonomy/dashboard.png"
             />
 
         

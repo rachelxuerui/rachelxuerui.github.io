@@ -34,7 +34,7 @@ function Home() {
       project: "Optimizing taxonomy mapping",
       description: "Identifying and designing for common user workflows for mapping taxonomies within product catalogs.",
       photo: "/assets/taxonomy.gif",
-      component: <TaxonomyMapping/>
+      component: <TaxonomyMapping showNavBar={false} />
     },
     {
       company: "EXPERTVOICE",
@@ -93,8 +93,8 @@ function Home() {
       Rachel Xuerui Michelson 
     </div>
     <i><div className = "opaque">Associate Product Designer at ExpertVoice, Columbia University Alum, based in NYC.</div></i>
-    <div>I care about thoughtful and intentional design, using root cause analysis to create lasting solutions.</div>
-    <div>I currently work at ExpertVoice on the Tooling Team, designing interfaces to connect Brands with Experts, and optimizing internal tooling through design.</div>
+    {/* <div>I care about thoughtful and intentional design, using root cause analysis to create lasting solutions.</div> */}
+    <div>Currently at ExpertVoice on the Tooling Team, designing interfaces to connect Brands with Experts, and optimizing internal tooling through design.</div>
 
     </div>
 
