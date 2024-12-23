@@ -13,7 +13,7 @@ const TaxonomyMapping = () => {
 
     return (
         <>
-        <NavBar links={links} activeLink='Work'/>
+        {/* <NavBar links={links} activeLink='Work'/> */}
         <div class = "project-page-wrapper">
             <ProjectIntro 
             company = "EXPERTVOICE" 
