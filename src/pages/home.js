@@ -107,16 +107,16 @@ function Home() {
               description={project.description}
               photo={project.photo}
               link={project.link}
-              onClick={() => openModal(project)}
+              // onClick={() => openModal(project)}
               mobile = {isMobile()}
             />
           ))}
 
-    {activeProject && (
+    {/* {activeProject && (
       <Modal onClose={closeModal} projectLink={activeProject.link}>
         {activeProject.component}
       </Modal>
-    )}
+    )} */}
 
 
     </div>
