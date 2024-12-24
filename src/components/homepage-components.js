@@ -30,11 +30,6 @@ function NavBar({ links, activeLink }) {
   
     const handleClick = () => {
       navigate(props.link)
-      // if (props.mobile) {
-      //   navigate(props.link);
-      // } else {
-      //   props.onClick();
-      // }
     };
   
     return (

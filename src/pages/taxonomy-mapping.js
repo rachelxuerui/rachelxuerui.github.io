@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../App.css';
 import { NavBar, Footer } from '../components/homepage-components.js';
-import { Paragraph, ProjectIntro, ProjectSection, Cards, Solution } from '../components/project-page-components.js';
+import { Paragraph, ProjectIntro, ProjectSection, Cards, Solution, Slideshow } from '../components/project-page-components.js';
 
 
 
@@ -30,7 +30,7 @@ const TaxonomyMapping = ({ showNavBar = true }) => { // Accept showNavBar as a p
 
             <ProjectSection 
             label = "PROBLEM"
-            text = "Commerce Operations Specialists struggle to efficiently assign taxonomy to products in new catalogs with existing tooling."
+            text = "Commerce Operations Specialists struggle to efficiently assign taxonomy to products in new catalogs."
             />
 
             <Paragraph
@@ -57,8 +57,9 @@ const TaxonomyMapping = ({ showNavBar = true }) => { // Accept showNavBar as a p
             ]}
             />
 
-            <Paragraph
-            images = {[["../assets/taxonomy/products.png","Products App"],["../assets/taxonomy/unmapped.png",["Unmapped Products App"]]]}
+            <Slideshow
+            images = {["../assets/taxonomy/products.png", "../assets/taxonomy/unmapped.png"]}
+            captions = {["Products App", "Unmapped Products App"]}
             />
 
             <Paragraph

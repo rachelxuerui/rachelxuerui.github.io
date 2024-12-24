@@ -12,21 +12,6 @@ function Home() {
     { path: '/about', label: 'About' }
   ];
 
-  // dealing with modal
-  const [activeProject, setActiveProject] = useState(null);
-
-  const isMobile = () => window.innerWidth <= 800; 
-
-  const openModal = (project) => {
-    if (!isMobile()) {
-      setActiveProject(project);
-    }
-  };
-
-  const closeModal = () => {
-    setActiveProject(null);
-  };
-
   const projects = [
     {
       link: 'taxonomy-mapping',
@@ -93,7 +78,6 @@ function Home() {
       Rachel Xuerui Michelson 
     </div>
     <i><div className = "opaque">Associate Product Designer at <a href = "https://www.expertvoice.com/home" target="_blank" rel="noopener noreferrer">ExpertVoice</a>, Columbia University Alum, based in NYC.</div></i>
-    {/* <div>I care about thoughtful and intentional design, using root cause analysis to create lasting solutions.</div> */}
     <div>Currently at ExpertVoice on the Tooling Team, designing interfaces to connect Brands with Experts, and optimizing internal tooling through design.</div>
 
     </div>
@@ -107,16 +91,9 @@ function Home() {
               description={project.description}
               photo={project.photo}
               link={project.link}
-              // onClick={() => openModal(project)}
-              mobile = {isMobile()}
             />
           ))}
 
-    {/* {activeProject && (
-      <Modal onClose={closeModal} projectLink={activeProject.link}>
-        {activeProject.component}
-      </Modal>
-    )} */}
 
 
     </div>

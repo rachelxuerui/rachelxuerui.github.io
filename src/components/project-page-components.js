@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import '../App.css';
 import Modal from '../components/modal';
+import { Slide } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
   function ProjectOverview(props) {
     return (
@@ -151,10 +155,23 @@ function Solution(props) {
   );
 }
 
-export default Solution;
+function Slideshow(props) {
+  const { images, captions } = props;
 
+  return (
+    <div className="slides">
+      <Slide>
+        {images.map((image, index) => (
+          <div className="slide-wrapper" key={index}>
+            <img src={image} alt={`Slide ${index + 1}`} />
+            <span>{captions[index]}</span>
+          </div>
+        ))}
+      </Slide>
+    </div>
+  );
+}
 
+export default Slideshow;
 
-
-
-export {ProjectIntro, ProjectOverview, ProjectSection, Paragraph, Cards, Solution}
+export {ProjectIntro, ProjectOverview, ProjectSection, Paragraph, Cards, Solution, Slideshow}
