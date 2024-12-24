@@ -16,8 +16,11 @@ function Modal({ onClose, children, projectLink }) {
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <div className = "modal-options">
             {/* <button className="modal-close" onClick={onClose}><object data="../assets/close.svg" type="image/svg+xml"></object></button> */}
-            <button className="modal-expand" onClick={handleExpandClick}><object data="../assets/expand.svg" type="image/svg+xml"></object>
+            {projectLink && (
+            <button className="modal-expand" onClick={handleExpandClick}>
+              <object data="../assets/expand.svg" type="image/svg+xml"></object>
             </button>
+          )}
         </div>
         {children}
       </div>

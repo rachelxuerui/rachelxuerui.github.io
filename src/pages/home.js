@@ -1,6 +1,6 @@
 import '../App.css';
 import React, { useState } from 'react';
-import { NavBar, ProjectCard } from '../components/homepage-components.js';
+import { NavBar, ProjectCard, Footer } from '../components/homepage-components.js';
 import Modal from '../components/modal';
 import TaxonomyMapping from './taxonomy-mapping.js';
 
@@ -92,7 +92,7 @@ function Home() {
     <div className = "header">
       Rachel Xuerui Michelson 
     </div>
-    <i><div className = "opaque">Associate Product Designer at ExpertVoice, Columbia University Alum, based in NYC.</div></i>
+    <i><div className = "opaque">Associate Product Designer at <a href = "https://www.expertvoice.com/home" target="_blank" rel="noopener noreferrer">ExpertVoice</a>, Columbia University Alum, based in NYC.</div></i>
     {/* <div>I care about thoughtful and intentional design, using root cause analysis to create lasting solutions.</div> */}
     <div>Currently at ExpertVoice on the Tooling Team, designing interfaces to connect Brands with Experts, and optimizing internal tooling through design.</div>
 
@@ -121,6 +121,8 @@ function Home() {
 
     </div>
     </div>
+
+    <Footer/>
 
     </>
 

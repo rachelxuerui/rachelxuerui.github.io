@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../App.css';
+import Modal from '../components/modal';
 
   function ProjectOverview(props) {
     return (
@@ -82,6 +83,7 @@ import '../App.css';
                         );
                     })}
                 </div>
+
             )}
 
         </div>
@@ -112,42 +114,45 @@ function Cards(props) {
 }
 
 function Solution(props) {
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+
   return (
-    <div className="solution-wrapper">
-      {props.isImageFirst ? (
-        <>
-          <div className="right"><img src={props.image} alt="solution" /></div>
-          <div className="left">
-            <div className="twenty-four">{props.header}</div>
-            <div className="solution-text-wrapper">
-              <div className="opaque">WHAT</div>
-              {props.what}
-            </div>
-            <div className="solution-text-wrapper">
-              <div className="opaque">WHY</div>
-              {props.why}
-            </div>
+    <>
+      <div className="solution-wrapper">
+        <div className="left">
+          <div className="twenty-four">{props.header}</div>
+          <div className="solution-text-wrapper">
+            <div className="opaque">WHAT</div>
+            {props.what}
           </div>
-        </>
-      ) : (
-        <>
-          <div className="left">
-            <div className="twenty-four">{props.header}</div>
-            <div className="solution-text-wrapper">
-              <div className="opaque">WHAT</div>
-              {props.what}
-            </div>
-            <div className="solution-text-wrapper">
-              <div className="opaque">WHY</div>
-              {props.why}
-            </div>
+          <div className="solution-text-wrapper">
+            <div className="opaque">WHY</div>
+            {props.why}
           </div>
-          <div className="right"><img src={props.image} alt="solution" /></div>
-        </>
+        </div>
+        <div className="right" onClick={toggleModal}>
+          <img src={props.image} alt="solution" />
+        </div>
+      </div>
+
+      {isModalVisible && (
+        <Modal onClose={toggleModal}>
+          <div class = "image-modal">
+          <div className = "twenty-four">{props.header}</div>
+          <div><img src = {props.image}></img></div>
+          </div>
+      </Modal>
       )}
-    </div>
+    </>
   );
 }
+
+export default Solution;
+
 
 
 

@@ -49,4 +49,10 @@ function NavBar({ links, activeLink }) {
     );
   }
 
-export {NavBar, ProjectCard};
+  function Footer() {
+    return (
+      <div className = "footer">feet</div>
+    )
+  }
+
+export {NavBar, ProjectCard, Footer};
