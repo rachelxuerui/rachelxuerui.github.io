@@ -70,7 +70,7 @@ const TaxonomyMapping = ({ showNavBar = true }) => { // Accept showNavBar as a p
             header="MAIN USER FLOWS" 
             text={[["BULK MAPPING", "Users upload catalogs, and map products to an ExpertVoice product taxonomy using batch assignments."], 
                 ["MAPPING", "Once most products have been assigned taxonomy with batch assignments, individually map the remaining products."],
-                ["LEAFING", "When a child taxonomies have been added, go through and reassign each product to one of those new child taxonomies."],
+                ["REFINING", "When a child taxonomies have been added, go through and refine each product's taxonomy down to a leaf node."],
                 ["FIXING GENDER ERRORS", "Assign products to the correct gender trait and gendered taxonomy based on name and description."],
             ]} 
             />
