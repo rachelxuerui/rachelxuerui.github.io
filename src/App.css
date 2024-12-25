@@ -427,6 +427,7 @@ button {
   :root {
     --homepage-margin-size: 30px; 
     --page-margin-size: 30px;
+    --orientation: column;
   }
 
   .homepage-grid {

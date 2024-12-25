@@ -37,13 +37,13 @@ function Home() {
       company: "EXPERTVOICE",
       project: "Eva",
       description: "An internship project - helping consumers make purchase decisions with an AI chatbot.",
-      photo: "../assets/eva.jpg",
+      photo: "../assets/eva.gif",
     },
     {
       company: "EXPERTVOICE",
       project: "Android navigation",
       description: "Another internship project - redesigning the main android navigation.",
-      photo: "../assets/android.jpg",
+      photo: "../assets/android.gif",
     },
     {
       company: "INFINITE GOODS",
