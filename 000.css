@@ -12,7 +12,7 @@ body {
   font-family: 'Gerstner';
   display: flex;
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
   color: rgba(0, 0, 0, 0.5);
   font-size: 18px;
   line-height: 1;
@@ -62,7 +62,8 @@ a:hover {
 /* leftmost side panel */
 .sidebar {
   display: flex;
-  width: 25%;
+  min-width: 25%;
+  width: auto;
   flex-direction: column;
   justify-content: space-between;
   background: #fff;
@@ -90,6 +91,10 @@ a:hover {
   align-items: center;
   height: 24px;
   padding: 3px 0;
+}
+
+.sidebar li #name {
+  text-overflow: ellipsis; 
 }
 
 .sidebar a:hover {
@@ -262,8 +267,21 @@ a:hover {
 }
 
 .project-content-left {
+  overflow-y: scroll;
   width: 25%;
   padding: 48px;
   height: 100vh;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width:600px) {
+  .content {
+  flex: 1 1 auto;
+  height: 100vh;
+  min-height: 0;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+}
 }
