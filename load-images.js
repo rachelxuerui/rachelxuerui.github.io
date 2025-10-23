@@ -138,6 +138,37 @@
 
     // Re-add tooltip at the end
     if (tooltip) content.appendChild(tooltip);
+
+    // Setup infinite scroll after images are loaded
+    setupInfiniteScroll();
+  };
+
+  // Infinite scroll setup (to work with dynamically loaded images)
+  const setupInfiniteScroll = () => {
+    const content = document.querySelector('.content');
+    if (!content) return;
+
+    // Get all cells except tooltip as template
+    const templateCells = Array.from(content.children).filter(
+      child => child.id !== 'tooltip'
+    );
+
+    const cloneCells = () => templateCells.map(cell => cell.cloneNode(true));
+
+    content.addEventListener('scroll', () => {
+      const scrollBottom = content.scrollTop + content.clientHeight;
+      if (scrollBottom >= content.scrollHeight - 10) {
+        const tooltip = document.getElementById('tooltip');
+        cloneCells().forEach(clone => {
+          // Insert before tooltip to keep it at the end
+          if (tooltip) {
+            content.insertBefore(clone, tooltip);
+          } else {
+            content.appendChild(clone);
+          }
+        });
+      }
+    }, { passive: true });
   };
 
   // Use the static approach by default (works without server-side support)
