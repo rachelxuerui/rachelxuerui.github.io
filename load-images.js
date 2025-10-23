@@ -126,7 +126,6 @@
       'assets/007 Townhouse in Tribeca I/construction/007_co_l01_240523_306.jpeg',
       'assets/007 Townhouse in Tribeca I/construction/007_co_l01_240730_346.jpeg',
       'assets/007 Townhouse in Tribeca I/construction/007_co_l01_241024_411.jpeg',
-      'assets/photo.png'
     ];
 
     images.forEach(imagePath => {
