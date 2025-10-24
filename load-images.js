@@ -37,8 +37,8 @@
 
   // Function to create a cell element
   const createCell = (imagePath, photoName, folderName) => {
-    const link = document.createElement('a');
-    link.href = folderNameToSlug(folderName);
+    const container = document.createElement('div');
+    container.id = 'townhouse';
 
     const cell = document.createElement('div');
     cell.className = 'cell';
@@ -49,8 +49,8 @@
     img.dataset.name = folderName;
 
     cell.appendChild(img);
-    link.appendChild(cell);
-    return link;
+    container.appendChild(cell);
+    return container;
   };
 
   // Main function to load images

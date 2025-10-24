@@ -15,8 +15,27 @@
     }
   };
 
-  // Intercept logo and close button clicks early
+  const openOverlay = () => {
+    console.log('openOverlay called, overlay:', overlay);
+    if (overlay) {
+      overlay.classList.add('active');
+      console.log('Added active class, classList:', overlay.classList);
+    }
+  };
+
+  // Open overlay when clicking on townhouse project - use mousedown with capture
   document.addEventListener('mousedown', (e) => {
+    const townhouseItem = e.target.closest('#townhouse');
+
+    if (townhouseItem) {
+      console.log('Townhouse mousedown detected!');
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      openOverlay();
+      return;
+    }
+
+    // Check for close buttons
     if (overlay) {
       const logo = e.target.closest('#logo');
       const close = e.target.closest('#close-overlay');
@@ -35,4 +54,6 @@
       fadeOutAndNavigate();
     }
   });
+
+  console.log('Overlay script loaded');
 })();
