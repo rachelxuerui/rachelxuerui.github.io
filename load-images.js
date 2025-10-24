@@ -1,7 +1,7 @@
 
 (() => {
   // =========================
-  // Dynamic Image Loading
+  // Dynamic Image Loading NOT USED RIGHT NOW
   // =========================
 
   // Define the asset structure - update this as needed
