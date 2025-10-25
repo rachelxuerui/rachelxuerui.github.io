@@ -6,9 +6,9 @@
 
   // Define the asset structure - update this as needed
   const assetPaths = [
-    'assets/007 Townhouse in Tribeca I/images/',
-    'assets/007 Townhouse in Tribeca I/construction/',
-    'assets/007 Townhouse in Tribeca I/drawings'
+    'assets/007-townhouse-in-tribeca-i/images/',
+    'assets/007-townhouse-in-tribeca-i/construction/',
+    'assets/007-townhouse-in-tribeca-i/drawings'
   ];
 
   // Function to extract filename without extension
@@ -100,22 +100,22 @@
 
     // Define all your images here
     const images = [
-      'assets/007 Townhouse in Tribeca I/images/007_cp_250725_ww-500.jpg',
-      'assets/007 Townhouse in Tribeca I/images/007_cp_250725_ww-502.jpg',
-      'assets/007 Townhouse in Tribeca I/images/007_cp_250725_ww-505.jpg',
-      'assets/007 Townhouse in Tribeca I/images/007_cp_250725_ww-507.jpg',
-      'assets/007 Townhouse in Tribeca I/images/007_cp_250725_ww-510.jpg',
-      'assets/007 Townhouse in Tribeca I/images/007_cp_250726_ww-514.jpg',
-      'assets/007 Townhouse in Tribeca I/images/007_cp_250726_ww-523.jpg',
-      'assets/007 Townhouse in Tribeca I/images/007_cp_250726_ww-542.jpg',
-      'assets/007 Townhouse in Tribeca I/construction/007_co_L02240409_042.jpeg',
-      'assets/007 Townhouse in Tribeca I/construction/007_co_L02240627_080.jpeg',
-      'assets/007 Townhouse in Tribeca I/construction/007_co_L04240924_051.JPG',
-      'assets/007 Townhouse in Tribeca I/construction/007_co_l01_240409_246.jpeg',
-      'assets/007 Townhouse in Tribeca I/construction/007_co_l01_240507_055.jpeg',
-      'assets/007 Townhouse in Tribeca I/construction/007_co_l01_240523_306.jpeg',
-      'assets/007 Townhouse in Tribeca I/construction/007_co_l01_240730_346.jpeg',
-      'assets/007 Townhouse in Tribeca I/construction/007_co_l01_241024_411.jpeg',
+      'assets/007-townhouse-in-tribeca-i/images/007_cp_250725_ww-500.jpg',
+      'assets/007-townhouse-in-tribeca-i/images/007_cp_250725_ww-502.jpg',
+      'assets/007-townhouse-in-tribeca-i/images/007_cp_250725_ww-505.jpg',
+      'assets/007-townhouse-in-tribeca-i/images/007_cp_250725_ww-507.jpg',
+      'assets/007-townhouse-in-tribeca-i/images/007_cp_250725_ww-510.jpg',
+      'assets/007-townhouse-in-tribeca-i/images/007_cp_250726_ww-514.jpg',
+      'assets/007-townhouse-in-tribeca-i/images/007_cp_250726_ww-523.jpg',
+      'assets/007-townhouse-in-tribeca-i/images/007_cp_250726_ww-542.jpg',
+      'assets/007-townhouse-in-tribeca-i/construction/007_co_L02240409_042.jpeg',
+      'assets/007-townhouse-in-tribeca-i/construction/007_co_L02240627_080.jpeg',
+      'assets/007-townhouse-in-tribeca-i/construction/007_co_L04240924_051.JPG',
+      'assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240409_246.jpeg',
+      'assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240507_055.jpeg',
+      'assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240523_306.jpeg',
+      'assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240730_346.jpeg',
+      'assets/007-townhouse-in-tribeca-i/construction/007_co_l01_241024_411.jpeg',
     ];
 
     images.forEach(imagePath => {
