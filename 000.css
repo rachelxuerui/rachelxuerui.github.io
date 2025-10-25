@@ -7,6 +7,10 @@
   --light-gray: rgba(0, 0, 0, 0.2);
 }
 
+/* =========================
+   Base Styles
+   ========================= */
+
 body {
   margin: 0;
   font-family: 'Gerstner';
@@ -15,7 +19,7 @@ body {
   /* overflow: hidden; */
   color: rgba(0, 0, 0, 0.5);
   font-size: 18px;
-  line-height: 1;
+  line-height: 1.5;
 }
 
 #link:hover {
@@ -31,6 +35,10 @@ a {
 a:hover {
   cursor: pointer;
 }
+
+/* =========================
+   Lines
+   ========================= */
 
 .lines {
   opacity: 0;
@@ -59,16 +67,20 @@ a:hover {
   transform: rotate(-45deg);
 }
 
-/* leftmost side panel */
+/* =========================
+   Sidebar
+   ========================= */
+
 .sidebar {
   display: flex;
-  min-width: 25%;
-  width: auto;
+  width: 25%;
+  flex-shrink: 0;
   flex-direction: column;
   justify-content: space-between;
   background: #fff;
   border-right: 1px solid var(--light-gray);
   padding: 48px;
+  padding-right: 24px;
   box-sizing: border-box;
   position: sticky;
   top: 0;
@@ -87,30 +99,27 @@ a:hover {
 .sidebar li {
   display: flex;
   flex-direction: row;
-  gap: 18px;
+  gap: 24px;
   align-items: center;
   height: 24px;
   padding: 3px 0;
+  cursor: pointer;
+  transition: opacity 0.2s;
 }
 
 .sidebar li #name {
-  text-overflow: ellipsis; 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .sidebar a:hover {
   opacity: 0.5;
 }
 
-/* .sidebar ul:hover li {
-  color: rgba(0, 0, 0, 0.25);
-}
-
-.sidebar ul:hover li:hover {
-  color: rgba(0, 0, 0, 0.5);
-} */
-
 .number {
   width: 30px;
+  letter-spacing: 1.5px;
 }
 
 .sidebar h1 {
@@ -122,22 +131,29 @@ a:hover {
   padding: 0;
 }
 
-.sidebar contact {
+.contact {
   display: flex;
   flex-direction: column;
+  margin-bottom: 0;
 }
 
 .zeroes {
   display: flex;
   flex-direction: column;
+  line-height: 1;
   gap: 1.5px;
 }
+
 
 .zeroes-top {
   display: flex;
   flex-direction: row;
-  gap: 3px;
+  gap: 1.5px;
 }
+
+/* =========================
+   Content Grid
+   ========================= */
 
 .content {
   flex: 1 1 auto;
@@ -151,8 +167,6 @@ a:hover {
 
 .cell {
   aspect-ratio: 1 / 1;
-  border: thin dotted var(--light-gray);
-  border-width: 1px 1px 1px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -160,15 +174,39 @@ a:hover {
   box-sizing: border-box;
 }
 
-.cell img {
+.cell img,
+.cell video {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  transition: opacity ease 0.5s;
+  cursor: pointer;
 }
 
-.cell img:hover {
-  opacity: 75%;
+.cell:has(img:hover) ~ .cell img,
+.cell:has(img:hover) ~ .cell video,
+.cell:has(video:hover) ~ .cell img,
+.cell:has(video:hover) ~ .cell video {
+  opacity: 0.25;
 }
+
+.cell img:hover ~ img,
+.cell img:hover ~ video,
+.cell video:hover ~ img,
+.cell video:hover ~ video {
+  opacity: 0.25;
+}
+
+.content:has(.cell img:hover) .cell img:not(:hover),
+.content:has(.cell img:hover) .cell video:not(:hover),
+.content:has(.cell video:hover) .cell img:not(:hover),
+.content:has(.cell video:hover) .cell video:not(:hover) {
+  opacity: 0.25;
+}
+
+/* =========================
+   Tooltip
+   ========================= */
 
 .tooltip {
   position: fixed;
@@ -182,7 +220,9 @@ a:hover {
   z-index: 9999;
 }
 
-/* OVERLAY */
+/* =========================
+   Overlay
+   ========================= */
 
 .project-overlay {
   position: fixed;
@@ -196,14 +236,14 @@ a:hover {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 .project-overlay.active {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  animation: fadeIn 0.3s ease;
+  animation: fadeIn 0.5s ease;
 }
 
 @keyframes fadeIn {
@@ -221,6 +261,8 @@ a:hover {
   pointer-events: auto;
   box-sizing: border-box;
   color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  height: 100vh;
 }
 
 .project-content h1 {
@@ -231,7 +273,6 @@ a:hover {
 
 .project-content p {
   font-size: 18px;
-  line-height: 1.5;
   margin: 0;
   max-width: 600px;
 }
@@ -243,7 +284,6 @@ a:hover {
   right: 24px;
   background: none;
   border: none;
-  line-height: 1;
   cursor: pointer;
   color: rgba(0, 0, 0, 0.5);
   font-size: 24px;
@@ -269,9 +309,103 @@ a:hover {
 .project-content-left {
   overflow-y: scroll;
   width: 25%;
+  padding-top: 66px;
   padding: 48px;
   height: 100vh;
   border-right: 1px solid var(--light-gray);
+  box-sizing: border-box;
+}
+
+.project-content-right {
+  overflow-y: scroll;
+  flex: 1;
+  padding-top: 66px;
+  padding: 48px;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+/* =========================
+   Media Queries
+   ========================= */
+
+@media screen and (max-width:950px) {
+  .contact {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+  }
+
+  .contact li {
+    font-size: 0;
+  }
+
+  .contact li a {
+    font-size: 18px;
+  }
+
+  /* Phone icon */
+  .contact-phone::before {
+    content: 'T';
+    font-size: 18px;
+    font-family: 'Gerstner';
+  }
+
+  .contact-phone a {
+    display: none;
+  }
+
+  /* Address icon */
+  .contact-address {
+    display: flex;
+    align-items: center;
+  }
+
+  .contact-address::before {
+    content: 'A';
+    font-size: 18px;
+    font-family: 'Gerstner';
+  }
+
+  .contact-address br {
+    display: none;
+  }
+
+  /* Email icon */
+  .contact-email::before {
+    content: '@';
+    font-size: 18px;
+    font-family: 'Gerstner';
+  }
+
+  .contact-email a {
+    display: none;
+  }
+}
+
+@media screen and (max-width:1200px) {
+  .sidebar {
+    width: 25%;
+    min-width: 25%;
+  }
+
+  .sidebar li #name {
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
+  .project-overlay {
+    left: 25%;
+  }
+
+  .project-content-left {
+    width: 25%;
+  }
 }
 
 @media screen and (max-width:600px) {

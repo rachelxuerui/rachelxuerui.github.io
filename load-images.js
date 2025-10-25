@@ -1,7 +1,7 @@
 
 (() => {
   // =========================
-  // Dynamic Image Loading NOT USED RIGHT NOW
+  // Dynamic Image Loading
   // =========================
 
   // Define the asset structure - update this as needed
@@ -30,13 +30,8 @@
     return imageExtensions.some(ext => filename.toLowerCase().endsWith(ext));
   };
 
-  // Function to convert folder name to URL slug
-  const folderNameToSlug = (folderName) => {
-    return folderName.toLowerCase().replace(/\s+/g, '-') + '.html';
-  };
-
   // Function to create a cell element
-  const createCell = (imagePath, photoName, folderName) => {
+  const createCell = (imagePath, photoName) => {
     const container = document.createElement('div');
     container.id = 'townhouse';
 
@@ -46,7 +41,6 @@
     const img = document.createElement('img');
     img.src = imagePath;
     img.alt = photoName;
-    img.dataset.name = folderName;
 
     cell.appendChild(img);
     container.appendChild(cell);
@@ -58,10 +52,8 @@
     const content = document.querySelector('.content');
     if (!content) return;
 
-    // Clear existing content except tooltip
-    const tooltip = document.getElementById('tooltip');
+    // Clear existing content
     content.innerHTML = '';
-    if (tooltip) content.appendChild(tooltip);
 
     // Collect all image files
     const allImages = [];
@@ -81,8 +73,7 @@
               const imagePath = basePath + filename;
               allImages.push({
                 path: imagePath,
-                photoName: getPhotoName(filename),
-                folderName: getFolderName(imagePath)
+                photoName: getPhotoName(filename)
               });
             }
           });
@@ -94,8 +85,8 @@
 
     // Create cells for all images
     allImages.forEach(img => {
-      const cell = createCell(img.path, img.photoName, img.folderName);
-      content.insertBefore(cell, tooltip);
+      const cell = createCell(img.path, img.photoName);
+      content.appendChild(cell);
     });
   };
 
@@ -104,8 +95,7 @@
     const content = document.querySelector('.content');
     if (!content) return;
 
-    // Clear existing content except tooltip
-    const tooltip = document.getElementById('tooltip');
+    // Clear existing content
     content.innerHTML = '';
 
     // Define all your images here
@@ -130,13 +120,9 @@
 
     images.forEach(imagePath => {
       const photoName = getPhotoName(imagePath);
-      const folderName = getFolderName(imagePath);
-      const cell = createCell(imagePath, photoName, folderName);
+      const cell = createCell(imagePath, photoName);
       content.appendChild(cell);
     });
-
-    // Re-add tooltip at the end
-    if (tooltip) content.appendChild(tooltip);
 
     // Setup infinite scroll after images are loaded
     setupInfiniteScroll();
@@ -147,33 +133,21 @@
     const content = document.querySelector('.content');
     if (!content) return;
 
-    // Get all cells except tooltip as template
-    const templateCells = Array.from(content.children).filter(
-      child => child.id !== 'tooltip'
-    );
+    // Get all cells as template
+    const templateCells = Array.from(content.children);
 
     const cloneCells = () => templateCells.map(cell => cell.cloneNode(true));
 
     content.addEventListener('scroll', () => {
       const scrollBottom = content.scrollTop + content.clientHeight;
       if (scrollBottom >= content.scrollHeight - 10) {
-        const tooltip = document.getElementById('tooltip');
         cloneCells().forEach(clone => {
-          // Insert before tooltip to keep it at the end
-          if (tooltip) {
-            content.insertBefore(clone, tooltip);
-          } else {
-            content.appendChild(clone);
-          }
+          content.appendChild(clone);
         });
       }
     }, { passive: true });
   };
 
-  // Use the static approach by default (works without server-side support)
   loadImagesStatic();
-
-  // If you have a backend that can provide directory listings, use:
-  // loadImages();
 })();
 
