@@ -21,8 +21,24 @@
       description: `The studio's largest built work yet. A gut renovation of a late 19th century dairy-factory-turned-townhouse in the Tribeca Historic District. The 14-month construction process has been a lesson in flexibility: rapid redesigns to discovered/accommodate historical elements (arches, cast iron columns, brickwork) discovered during demolition, and minor re-filings to accommodate a client who kept adding scope (elevator, new floor finishes, an additional kitchen) over the course of construction. Substantial completion is scheduled for early May; two weeks ago, I got a text asking if we can turn the gym into a listening room. ("Of course we can!")`,
       sections: ['Images', 'Drawings', 'Construction', 'Data', 'Instruments of Science'],
       rightContentHTML: `
-        <div class="project-images">
-          <p>Images and content for Townhouse in Tribeca I will go here.</p>
+        <div class="content">
+          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250725_ww-500.jpg" loading="lazy"></div>
+          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250725_ww-502.jpg" loading="lazy"></div>
+          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250725_ww-505.jpg" loading="lazy"></div>
+          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250725_ww-507.jpg" loading="lazy"></div>
+          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250725_ww-510.jpg" loading="lazy"></div>
+          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250726_ww-514.jpg" loading="lazy"></div>
+          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250726_ww-523.jpg" loading="lazy"></div>
+          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250726_ww-542.jpg" loading="lazy"></div>
+          <div class="cell"><video src="assets/007-townhouse-in-tribeca-i/construction/007_co_241105_0433_resin-floor.mp4" controls preload="metadata"></video></div>
+          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_L02240409_042.jpeg" loading="lazy"></div>
+          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_L02240627_080.jpeg" loading="lazy"></div>
+          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_L04240924_051.JPG" loading="lazy"></div>
+          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240409_246.jpeg" loading="lazy"></div>
+          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240507_055.jpeg" loading="lazy"></div>
+          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240523_306.jpeg" loading="lazy"></div>
+          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240730_346.jpeg" loading="lazy"></div>
+          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_241024_411.jpeg" loading="lazy"></div>
         </div>
       `
     },
