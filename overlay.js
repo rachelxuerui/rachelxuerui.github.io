@@ -22,23 +22,24 @@
       sections: ['Images', 'Drawings', 'Construction', 'Data', 'Instruments of Science'],
       rightContentHTML: `
         <div class="content">
-          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250725_ww-500.jpg" loading="lazy"></div>
-          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250725_ww-502.jpg" loading="lazy"></div>
-          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250725_ww-505.jpg" loading="lazy"></div>
-          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250725_ww-507.jpg" loading="lazy"></div>
-          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250725_ww-510.jpg" loading="lazy"></div>
-          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250726_ww-514.jpg" loading="lazy"></div>
-          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250726_ww-523.jpg" loading="lazy"></div>
-          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250726_ww-542.jpg" loading="lazy"></div>
-          <div class="cell"><video src="assets/007-townhouse-in-tribeca-i/construction/007_co_241105_0433_resin-floor.mp4" controls preload="metadata"></video></div>
-          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_L02240409_042.jpeg" loading="lazy"></div>
-          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_L02240627_080.jpeg" loading="lazy"></div>
-          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_L04240924_051.JPG" loading="lazy"></div>
-          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240409_246.jpeg" loading="lazy"></div>
-          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240507_055.jpeg" loading="lazy"></div>
-          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240523_306.jpeg" loading="lazy"></div>
-          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240730_346.jpeg" loading="lazy"></div>
-          <div class="cell"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_241024_411.jpeg" loading="lazy"></div>
+          <div class="overlay-cell" data-section="Images"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250725_ww-500.jpg" loading="lazy"></div>
+          <div class="overlay-cell" data-section="Images"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250725_ww-502.jpg" loading="lazy"></div>
+          <div class="overlay-cell" data-section="Images"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250725_ww-505.jpg" loading="lazy"></div>
+          <div class="overlay-cell" data-section="Images"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250725_ww-507.jpg" loading="lazy"></div>
+          <div class="overlay-cell" data-section="Images"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250725_ww-510.jpg" loading="lazy"></div>
+          <div class="overlay-cell" data-section="Images"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250726_ww-514.jpg" loading="lazy"></div>
+          <div class="overlay-cell" data-section="Drawings"><img src="assets/007-townhouse-in-tribeca-i/drawings/010_dr_p-proposed-01-11x17.jpg" loading="lazy"></div>
+          <div class="overlay-cell" data-section="Drawings"><img src="assets/007-townhouse-in-tribeca-i/drawings/010_dr_p-proposed-02-11x17.jpg" loading="lazy"></div>
+          <div class="overlay-cell" data-section="Drawings"><img src="assets/007-townhouse-in-tribeca-i/drawings/010_dr_p-proposed-03-11x17.jpg" loading="lazy"></div>
+          <div class="overlay-cell" data-section="Construction"><video src="assets/007-townhouse-in-tribeca-i/construction/007_co_241105_0433_resin-floor.mp4" controls preload="metadata"></video></div>
+          <div class="overlay-cell" data-section="Construction"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_L02240409_042.jpeg" loading="lazy"></div>
+          <div class="overlay-cell" data-section="Construction"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_L02240627_080.jpeg" loading="lazy"></div>
+          <div class="overlay-cell" data-section="Construction"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_L04240924_051.JPG" loading="lazy"></div>
+          <div class="overlay-cell" data-section="Construction"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240409_246.jpeg" loading="lazy"></div>
+          <div class="overlay-cell" data-section="Construction"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240507_055.jpeg" loading="lazy"></div>
+          <div class="overlay-cell" data-section="Construction"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240523_306.jpeg" loading="lazy"></div>
+          <div class="overlay-cell" data-section="Construction"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240730_346.jpeg" loading="lazy"></div>
+          <div class="overlay-cell" data-section="Construction"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_241024_411.jpeg" loading="lazy"></div>
         </div>
       `
     },
@@ -109,7 +110,7 @@
       if (data.sections && data.sections.length > 0) {
         leftHTML += '<ul>';
         data.sections.forEach(section => {
-          leftHTML += `<li><div>${section}</div></li>`;
+          leftHTML += `<li><div class="section-link" data-section="${section}">${section}</div></li>`;
         });
         leftHTML += '</ul>';
       }
@@ -122,6 +123,18 @@
       } else {
         overlayContentRight.innerHTML = '';
       }
+
+      // Add click listeners to section links
+      const sectionLinks = overlayContentLeft.querySelectorAll('.section-link');
+      sectionLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const sectionName = e.target.dataset.section;
+          const firstCell = overlayContentRight.querySelector(`.overlay-cell[data-section="${sectionName}"]`);
+          if (firstCell) {
+            firstCell.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
 
       overlay.classList.add('active');
 
@@ -215,6 +228,21 @@
         e.stopImmediatePropagation();
         showLinesEffect(e.clientX, e.clientY);
         closeOverlay();
+        return;
+      }
+
+      // Close overlay if clicking outside the content areas
+      if (overlay.classList.contains('active')) {
+        const clickedInContent = e.target.closest('.project-content-left') ||
+                                  e.target.closest('.project-content-right') ||
+                                  e.target.closest('.close-overlay');
+
+        if (!clickedInContent) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          showLinesEffect(e.clientX, e.clientY);
+          closeOverlay();
+        }
       }
     }
   }, true);
