@@ -223,7 +223,7 @@ a:hover {
   color: rgba(0,0,0,0.5);
   opacity: 0;
   transition: opacity 0.2s;
-  z-index: 9999;
+  z-index: 100001;
 }
 
 /* =========================
@@ -369,6 +369,65 @@ a:hover {
   height: auto;
   object-fit: cover;
   transition: opacity ease 0.3s;
+}
+
+/* =========================
+   Timeline & Schedule
+   ========================= */
+
+.overview {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 30px;
+}
+
+.overview-row {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.overview-left {
+  display: flex;
+  width: 72px;
+  align-items: left;
+  justify-self: left;
+}
+
+.schedule {
+  position: relative;
+  padding: 0 30px;
+}
+
+.timeline {
+  display: flex;
+  position: relative;
+}
+
+.timeline > div {
+  position: relative;
+}
+
+#legend {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.legend-item {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.legend-item.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* =========================

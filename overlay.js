@@ -40,6 +40,42 @@
           <div class="overlay-cell" data-section="Construction"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240523_306.jpeg" loading="lazy"></div>
           <div class="overlay-cell" data-section="Construction"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240730_346.jpeg" loading="lazy"></div>
           <div class="overlay-cell" data-section="Construction"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_241024_411.jpeg" loading="lazy"></div>
+        
+        <div class="overview">
+          <div class="overview-row">
+            <div class="overview-left">Location:</div>
+            <div class="overview-right">Tribeca, NY</div>
+          </div>
+          <div class="overview-row">
+            <div class="overview-left">Year:</div>
+            <div class="overview-right">2025</div>
+          </div>
+          <div class="overview-row">
+            <div class="overview-left">Size:</div>
+            <div class="overview-right">6500 SF</div>
+          </div>
+          <div class="overview-row">
+            <div class="overview-left">Team</div>
+            <div class="overview-right">Paolo Caracini (ASA), Jedidiah Lau, Francesca Viozzi (ASA), Lyric Barnik</div>
+          </div>
+          <div class="overview-row">
+            <div class="overview-left">Consultants:</div>
+            <div class="overview-right">CES (Mechanical, Electrical, Plumbing, Sprinkler), Five Phase (Structure),William Vitacco & Associates (Code Review), DTV (AV, IT, Security)</div>
+          </div>
+        </div>
+        <div class="schedule">
+          <div class="header">Schedule</div>
+          <div class="timeline"><div id="design">ddd</div><div id="fast-tracked">*</div><div id="design">d</div><div id="revision">+</div><div id="fitting">f</div><div id="dob">#</div><div id="fitting">f</div><div id="amendments">^</div><div id="construction">cccccccccccccccccc</div></div>
+          <div id="legend">
+            <div class="legend-item" data-for="design">Design</div>
+            <div class="legend-item" data-for="fast-tracked">Fast-tracked design schedule</div>
+            <div class="legend-item" data-for="revision">Revision</div>
+            <div class="legend-item" data-for="fitting">Fitting</div>
+            <div class="legend-item" data-for="dob">DOB</div>
+            <div class="legend-item" data-for="amendments">Amendments</div>
+            <div class="legend-item" data-for="construction">Construction</div>
+          </div>
+        </div>
         </div>
       `
     },
@@ -107,6 +143,11 @@
       // Build the left content
       let leftHTML = `<p>${data.description}</p>`;
 
+      // Add project-specific left content (overview, schedule, etc.)
+      if (data.leftContentHTML) {
+        leftHTML += data.leftContentHTML;
+      }
+
       if (data.sections && data.sections.length > 0) {
         leftHTML += '<ul>';
         data.sections.forEach(section => {
@@ -135,6 +176,39 @@
           }
         });
       });
+
+      // Initialize schedule hover functionality if schedule exists in overlay
+      const timelineItems = overlayContentRight.querySelectorAll('.timeline > div[id]');
+      const legendItems = overlayContentRight.querySelectorAll('.legend-item');
+      const legendContainer = overlayContentRight.querySelector('#legend');
+
+      if (legendContainer && timelineItems.length > 0) {
+        timelineItems.forEach(item => {
+          item.addEventListener('mouseenter', function() {
+            const id = this.id;
+            const itemRect = this.getBoundingClientRect();
+            const legendRect = legendContainer.getBoundingClientRect();
+
+            // Calculate center position of the hovered item relative to the legend container
+            const centerX = itemRect.left + itemRect.width / 2 - legendRect.left;
+
+            // Show all legend items that match this ID
+            legendItems.forEach(legend => {
+              if (legend.getAttribute('data-for') === id) {
+                legend.classList.add('show');
+                legend.style.left = centerX + 'px';
+              }
+            });
+          });
+
+          item.addEventListener('mouseleave', function() {
+            // Hide all legend items
+            legendItems.forEach(legend => {
+              legend.classList.remove('show');
+            });
+          });
+        });
+      }
 
       overlay.classList.add('active');
 
