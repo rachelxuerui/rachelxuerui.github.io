@@ -217,7 +217,7 @@ a:hover {
 .tooltip {
   position: fixed;
   pointer-events: none;
-  font-size: 18px;
+  font-size: 15px;
   padding: 4px 8px;
   border-radius: 1px;
   color: rgba(0,0,0,0.5);
@@ -326,8 +326,8 @@ a:hover {
   overflow-y: scroll;
   width: calc(100% / 3);
   padding-top: 102px;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-left: 24px;
+  padding-right: 24px;
   height: 100vh;
   border-right: 1px dotted var(--light-gray);
   box-sizing: border-box;
