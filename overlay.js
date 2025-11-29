@@ -9,7 +9,7 @@
   // Project data - can be expanded as needed
   const projectData = {
     '000': {
-      description: 'About 000 Studio...',
+      leftContentHTML: '<p>About 000 Studio...</p>',
       sections: [],
       rightContentHTML: `
         <div class="about-studio">
@@ -18,7 +18,9 @@
       `
     },
     '007': {
-      description: `The studio's largest built work yet. A gut renovation of a late 19th century dairy-factory-turned-townhouse in the Tribeca Historic District. The 14-month construction process has been a lesson in flexibility: rapid redesigns to accommodate historical elements (arches, cast iron columns, brickwork) discovered during demolition, and minor re-filings to accommodate a client who kept adding scope (elevator, new floor finishes, an additional kitchen) over the course of construction. Substantial completion is scheduled for early May; two weeks ago, I got a text asking if we can turn the gym into a listening room. ("Of course we can!")`,
+      leftContentHTML: `
+      <ul><li class="project-item"><div class = "number">007</div><div id = "name">Townhouse in Tribeca I</div></li></ul>
+      <p>The studio's largest built work yet. A gut renovation of a late 19th century dairy-factory-turned-townhouse in the Tribeca Historic District. The 14-month construction process has been a lesson in flexibility: rapid redesigns to accommodate historical elements (arches, cast iron columns, brickwork) discovered during demolition, and minor re-filings to accommodate a client who kept adding scope (elevator, new floor finishes, an additional kitchen) over the course of construction. Substantial completion is scheduled for early May; two weeks ago, I got a text asking if we can turn the gym into a listening room. ("Of course we can!")</p>`,
       sections: ['Images', 'Drawings', 'Construction', 'Data', 'Instruments of Science'],
       rightContentHTML: `
         <div class="content">
@@ -31,7 +33,7 @@
           <div class="overlay-cell" data-section="Drawings"><img src="assets/007-townhouse-in-tribeca-i/drawings/010_dr_p-proposed-01-11x17.jpg" loading="lazy"></div>
           <div class="overlay-cell" data-section="Drawings"><img src="assets/007-townhouse-in-tribeca-i/drawings/010_dr_p-proposed-02-11x17.jpg" loading="lazy"></div>
           <div class="overlay-cell" data-section="Drawings"><img src="assets/007-townhouse-in-tribeca-i/drawings/010_dr_p-proposed-03-11x17.jpg" loading="lazy"></div>
-          <div class="overlay-cell" data-section="Construction"><video src="assets/007-townhouse-in-tribeca-i/construction/007_co_241105_0433_resin-floor.mp4" controls preload="metadata"></video></div>
+          <div class="overlay-cell" data-section="Construction"><video src="assets/007-townhouse-in-tribeca-i/construction/007_co_241105_0433_resin-floor.mp4" autoplay loop muted playsinline preload="metadata"></video></div>
           <div class="overlay-cell" data-section="Construction"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_L02240409_042.jpeg" loading="lazy"></div>
           <div class="overlay-cell" data-section="Construction"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_L02240627_080.jpeg" loading="lazy"></div>
           <div class="overlay-cell" data-section="Construction"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_L04240924_051.JPG" loading="lazy"></div>
@@ -80,47 +82,47 @@
       `
     },
     '001': {
-      description: 'Project details for 1000 Miles x 50 ft coming soon...',
+      leftContentHTML: '<p>Project details for 1000 Miles x 50 ft coming soon...</p>',
       sections: []
     },
     '002': {
-      description: 'Project details for Apartment in Gramercy I coming soon...',
+      leftContentHTML: '<p>Project details for Apartment in Gramercy I coming soon...</p>',
       sections: []
     },
     '003': {
-      description: 'Project details for Apartment in Brooklyn Heights coming soon...',
+      leftContentHTML: '<p>Project details for Apartment in Brooklyn Heights coming soon...</p>',
       sections: []
     },
     '004': {
-      description: 'Project details for Apartment in Gramercy II coming soon...',
+      leftContentHTML: '<p>Project details for Apartment in Gramercy II coming soon...</p>',
       sections: []
     },
     '005': {
-      description: 'Project details for Project EATS coming soon...',
+      leftContentHTML: '<p>Project details for Project EATS coming soon...</p>',
       sections: []
     },
     '006': {
-      description: 'Project details for Furniture for Two Friends coming soon...',
+      leftContentHTML: '<p>Project details for Furniture for Two Friends coming soon...</p>',
       sections: []
     },
     '008': {
-      description: 'Project details for House in Sydney coming soon...',
+      leftContentHTML: '<p>Project details for House in Sydney coming soon...</p>',
       sections: []
     },
     '009': {
-      description: 'Project details for Apartment on the UWS coming soon...',
+      leftContentHTML: '<p>Project details for Apartment on the UWS coming soon...</p>',
       sections: []
     },
     '010': {
-      description: 'Project details for Townhouse in Tribeca II coming soon...',
+      leftContentHTML: '<p>Project details for Townhouse in Tribeca II coming soon...</p>',
       sections: []
     },
     '011': {
-      description: 'Project details for Projects for Larry coming soon...',
+      leftContentHTML: '<p>Project details for Projects for Larry coming soon...</p>',
       sections: []
     },
     '012': {
-      description: 'Project details for Apartment in Sutton Place coming soon...',
+      leftContentHTML: '<p>Project details for Apartment in Sutton Place coming soon...</p>',
       sections: []
     }
   };
@@ -128,10 +130,17 @@
   const closeOverlay = () => {
     if (overlay) {
       overlay.classList.remove('active');
+      // Re-enable scrolling on body
+      document.body.style.overflow = '';
       // Re-enable scrolling on content
       const content = document.querySelector('.content');
       if (content) {
         content.style.overflow = '';
+      }
+      // Re-enable scrolling on sidebar
+      const sidebar = document.querySelector('.sidebar');
+      if (sidebar) {
+        sidebar.style.overflow = '';
       }
     }
   };
@@ -141,9 +150,9 @@
       const data = projectData[projectId];
 
       // Build the left content
-      let leftHTML = `<p>${data.description}</p>`;
+      let leftHTML = '';
 
-      // Add project-specific left content (overview, schedule, etc.)
+      // Add project-specific left content
       if (data.leftContentHTML) {
         leftHTML += data.leftContentHTML;
       }
@@ -212,10 +221,17 @@
 
       overlay.classList.add('active');
 
+      // Disable scrolling on body
+      document.body.style.overflow = 'hidden';
       // Disable scrolling on content
       const content = document.querySelector('.content');
       if (content) {
         content.style.overflow = 'hidden';
+      }
+      // Disable scrolling on sidebar
+      const sidebar = document.querySelector('.sidebar');
+      if (sidebar) {
+        sidebar.style.overflow = 'hidden';
       }
     }
   };

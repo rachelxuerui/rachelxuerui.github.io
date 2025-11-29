@@ -16,10 +16,8 @@ body {
   font-family: 'Gerstner';
   display: flex;
   height: 100vh;
-  /* overflow: hidden; */
   color: rgba(0, 0, 0, 0.5);
-  font-size: 15px;
-  line-height: 1.5;
+  font-size: 18px;
 }
 
 #link:hover {
@@ -73,7 +71,7 @@ a:hover {
 
 .sidebar {
   display: flex;
-  width: 25%;
+  width: calc(100% / 3);
   flex-shrink: 0;
   flex-direction: column;
   justify-content: space-between;
@@ -184,9 +182,15 @@ a:hover {
 .cell img,
 .cell video {
   max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   transition: opacity ease 0.3s;
   cursor: pointer;
+}
+
+.cell video::-webkit-media-controls,
+.cell video::-webkit-media-controls-enclosure {
+  display: none !important;
 }
 
 .cell:has(img:hover) ~ .cell img,
@@ -232,10 +236,6 @@ a:hover {
 
 .project-overlay {
   position: fixed;
-  top: 0;
-  left: 25%;
-  right: 0;
-  bottom: 0;
   background-color: rgba(255, 255, 255, 0.9);
   z-index: 100000;
   color: black;
@@ -284,7 +284,7 @@ a:hover {
 .close-overlay {
   font-family: inherit;
   position: absolute;
-  top: 24px;
+  top: 48px;
   right: 24px;
   background: none;
   border: none;
@@ -307,10 +307,10 @@ a:hover {
   padding: 0;
 }
 
-.project-content-left li {
-  /* padding: 1.5px 0; */
-  font-size: 15px;
-  line-height: 22.5px;
+.project-content-left .project-item {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
 }
 
 .section-link {
@@ -323,11 +323,12 @@ a:hover {
 }
 
 .project-content-left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   overflow-y: scroll;
   width: calc(100% / 3);
-  padding-top: 102px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding: 28px 48px;
   height: 100vh;
   border-right: 1px dotted var(--light-gray);
   box-sizing: border-box;
@@ -346,7 +347,7 @@ a:hover {
   gap: 30px;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(auto-fill, 1fr);
-  padding-top: 110px;
+  padding-top: 51px;
   padding-bottom: 30px;
 }
 
@@ -369,6 +370,11 @@ a:hover {
   height: auto;
   object-fit: cover;
   transition: opacity ease 0.3s;
+}
+
+.overlay-cell video::-webkit-media-controls,
+.overlay-cell video::-webkit-media-controls-enclosure {
+  display: none !important;
 }
 
 /* =========================
@@ -493,10 +499,10 @@ a:hover {
     padding: 48 24px;
   }
 
-  .project-overlay-left {
-    padding: 48 24px;
+  /* .project-overlay-left {
+     padding: 48 24px;
     padding-top: 66px;
-  }
+  } */
 
   .sidebar .project-item #name {
     display: none;
@@ -528,7 +534,7 @@ a:hover {
   }
 
   .project-overlay {
-    left: 25%;
+    left: 0;
   }
 
   .project-content-left {
