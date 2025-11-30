@@ -115,19 +115,26 @@
 
   const closeOverlay = () => {
     if (overlay) {
+      overlay.classList.add('closing');
       overlay.classList.remove('active');
-      // Re-enable scrolling on body
-      document.body.style.overflow = '';
-      // Re-enable scrolling on content
-      const content = document.querySelector('.content');
-      if (content) {
-        content.style.overflow = '';
-      }
-      // Re-enable scrolling on sidebar
-      const sidebar = document.querySelector('.sidebar');
-      if (sidebar) {
-        sidebar.style.overflow = '';
-      }
+
+      // Wait for animation to complete before cleanup
+      setTimeout(() => {
+        overlay.classList.remove('closing');
+        overlay.style.visibility = '';
+        // Re-enable scrolling on body
+        document.body.style.overflow = '';
+        // Re-enable scrolling on content
+        const content = document.querySelector('.content');
+        if (content) {
+          content.style.overflow = '';
+        }
+        // Re-enable scrolling on sidebar
+        const sidebar = document.querySelector('.sidebar');
+        if (sidebar) {
+          sidebar.style.overflow = '';
+        }
+      }, 300);
     }
   };
 
@@ -224,7 +231,8 @@
         });
       }
 
-      overlay.classList.add('active');
+      // Make overlay visible first
+      overlay.style.visibility = 'visible';
 
       // Disable scrolling on body
       document.body.style.overflow = 'hidden';
@@ -238,6 +246,13 @@
       if (sidebar) {
         sidebar.style.overflow = 'hidden';
       }
+
+      // Add active class after a small delay to trigger animation
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          overlay.classList.add('active');
+        });
+      });
     }
   };
 

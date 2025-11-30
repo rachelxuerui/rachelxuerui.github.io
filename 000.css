@@ -240,7 +240,7 @@ a:hover {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3 ease, visibility 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .project-overlay.active {
@@ -250,12 +250,25 @@ a:hover {
   animation: fadeIn 0.3s ease;
 }
 
+.project-overlay.closing {
+  animation: fadeOut 0.3s ease;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 
@@ -282,20 +295,22 @@ a:hover {
 .sections-header {
   position: fixed;
   top: 0;
+  left: calc(100% / 3);
+  right: 0;
   display: flex;
-  width: 63%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.75);
-  padding: 48px 24px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 48px 30px;
   border-bottom: 1px dotted var(--light-gray);
+  box-sizing: border-box;
 }
 
 .sections-nav {
   display: flex;
   flex-direction: row;
-  gap: 24px;
+  gap: 30px;
   flex-wrap: wrap;
 }
 
