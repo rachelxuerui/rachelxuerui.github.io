@@ -42,12 +42,14 @@
     </div>
 
     <ul class="contact">
-      <li class="contact-phone">T: <a href="tel:2012561092">201 256 1092</a></li>
+      <li class="contact-phone"><a href="tel:2012561092">201 256 1092</a></li>
       <li class="contact-address">
-        <div>A: 616 East 9th Street</div>
-        <div>New York, NY 10009</div>
+        <a href="https://maps.google.com/?q=616+East+9th+Street,+New+York,+NY+10009" target="_blank">
+          <div>616 East 9th Street</div>
+          <div>New York, NY 10009</div>
+        </a>
       </li>
-      <li class="contact-email">@: <a href="mailto:info@000.nyc" id = "link">info@000.nyc</a></li>
+      <li class="contact-email"><a href="mailto:info@000.nyc" id = "link">info@000.nyc</a></li>
 
     </div>
   </aside>
@@ -75,21 +77,26 @@
   <!-- Overlay -->
   <div class="project-overlay" id="project-overlay">
     <div class="project-content">
-      <button class="close-overlay" id="close-overlay">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </button>
       <div class = "project-content-left" id="overlay-content-left">
         <!-- Content will be dynamically loaded here -->
       </div>
       <div class = "project-content-right" id="overlay-content-right">
+        <div class="sections-header">
+          <div class="sections-nav" id="sections-nav">
+            <!-- Sections will be dynamically loaded here -->
+          </div>
+          <button class="close-overlay" id="close-overlay">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
         <!-- Content will be dynamically loaded here -->
       </div>
     </div>
   </div>
 
-  <script src="lines.js"></script>
+  <!-- <script src="lines.js"></script> -->
   <!-- <script src="tooltip.js"></script> -->
   <script src="infinite-scroll.js"></script>
   <script src="hover-swap.js"></script>

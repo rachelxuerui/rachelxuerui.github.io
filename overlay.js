@@ -10,17 +10,14 @@
   const projectData = {
     '000': {
       leftContentHTML: '<p>About 000 Studio...</p>',
-      sections: [],
-      rightContentHTML: `
-        <div class="about-studio">
-          <p>About section will go here.</p>
-        </div>
-      `
+      sections: []
     },
     '007': {
       leftContentHTML: `
-      <ul><li class="project-item"><div class = "number">007</div><div id = "name">Townhouse in Tribeca I</div></li></ul>
-      <p>The studio's largest built work yet. A gut renovation of a late 19th century dairy-factory-turned-townhouse in the Tribeca Historic District. The 14-month construction process has been a lesson in flexibility: rapid redesigns to accommodate historical elements (arches, cast iron columns, brickwork) discovered during demolition, and minor re-filings to accommodate a client who kept adding scope (elevator, new floor finishes, an additional kitchen) over the course of construction. Substantial completion is scheduled for early May; two weeks ago, I got a text asking if we can turn the gym into a listening room. ("Of course we can!")</p>`,
+      <div class="project-header">
+        <ul><li class="project-item"><div class = "number">007</div><div id = "name">Townhouse in Tribeca I</div></li></ul>
+        <p>The studio's largest built work yet. A gut renovation of a late 19th century dairy-factory-turned-townhouse in the Tribeca Historic District. The 14-month construction process has been a lesson in flexibility: rapid redesigns to accommodate historical elements (arches, cast iron columns, brickwork) discovered during demolition, and minor re-filings to accommodate a client who kept adding scope (elevator, new floor finishes, an additional kitchen) over the course of construction. Substantial completion is scheduled for early May; two weeks ago, I got a text asking if we can turn the gym into a listening room. ("Of course we can!")</p>
+      </div>`,
       sections: ['Images', 'Drawings', 'Construction', 'Data', 'Instruments of Science'],
       rightContentHTML: `
         <div class="content">
@@ -82,47 +79,36 @@
       `
     },
     '001': {
-      leftContentHTML: '<p>Project details for 1000 Miles x 50 ft coming soon...</p>',
       sections: []
     },
     '002': {
-      leftContentHTML: '<p>Project details for Apartment in Gramercy I coming soon...</p>',
       sections: []
     },
     '003': {
-      leftContentHTML: '<p>Project details for Apartment in Brooklyn Heights coming soon...</p>',
       sections: []
     },
     '004': {
-      leftContentHTML: '<p>Project details for Apartment in Gramercy II coming soon...</p>',
       sections: []
     },
     '005': {
-      leftContentHTML: '<p>Project details for Project EATS coming soon...</p>',
       sections: []
     },
     '006': {
-      leftContentHTML: '<p>Project details for Furniture for Two Friends coming soon...</p>',
       sections: []
     },
     '008': {
-      leftContentHTML: '<p>Project details for House in Sydney coming soon...</p>',
       sections: []
     },
     '009': {
-      leftContentHTML: '<p>Project details for Apartment on the UWS coming soon...</p>',
       sections: []
     },
     '010': {
-      leftContentHTML: '<p>Project details for Townhouse in Tribeca II coming soon...</p>',
       sections: []
     },
     '011': {
-      leftContentHTML: '<p>Project details for Projects for Larry coming soon...</p>',
       sections: []
     },
     '012': {
-      leftContentHTML: '<p>Project details for Apartment in Sutton Place coming soon...</p>',
       sections: []
     }
   };
@@ -157,25 +143,44 @@
         leftHTML += data.leftContentHTML;
       }
 
-      if (data.sections && data.sections.length > 0) {
-        leftHTML += '<ul>';
-        data.sections.forEach(section => {
-          leftHTML += `<li><div class="section-link" data-section="${section}">${section}</div></li>`;
-        });
-        leftHTML += '</ul>';
-      }
-
       overlayContentLeft.innerHTML = leftHTML;
 
-      // Load right content from embedded HTML
-      if (data.rightContentHTML) {
-        overlayContentRight.innerHTML = data.rightContentHTML;
-      } else {
-        overlayContentRight.innerHTML = '';
+      // Build sections navigation in header
+      const sectionsNav = document.getElementById('sections-nav');
+      if (sectionsNav) {
+        if (data.sections && data.sections.length > 0) {
+          let sectionsHTML = '';
+          data.sections.forEach(section => {
+            sectionsHTML += `<div class="section-link" data-section="${section}">${section}</div>`;
+          });
+          sectionsNav.innerHTML = sectionsHTML;
+        } else {
+          sectionsNav.innerHTML = '';
+        }
       }
 
-      // Add click listeners to section links
-      const sectionLinks = overlayContentLeft.querySelectorAll('.section-link');
+      // Load right content from embedded HTML - append after sections header
+      const sectionsHeader = overlayContentRight.querySelector('.sections-header');
+      if (data.rightContentHTML) {
+        // Remove any existing content except the sections header
+        Array.from(overlayContentRight.children).forEach(child => {
+          if (!child.classList.contains('sections-header')) {
+            child.remove();
+          }
+        });
+        // Insert content after the header
+        sectionsHeader.insertAdjacentHTML('afterend', data.rightContentHTML);
+      } else {
+        // Remove any existing content except the sections header
+        Array.from(overlayContentRight.children).forEach(child => {
+          if (!child.classList.contains('sections-header')) {
+            child.remove();
+          }
+        });
+      }
+
+      // Add click listeners to section links in header
+      const sectionLinks = document.querySelectorAll('.section-link');
       sectionLinks.forEach(link => {
         link.addEventListener('click', (e) => {
           const sectionName = e.target.dataset.section;
@@ -237,39 +242,39 @@
   };
 
   // Helper to show lines effect
-  const showLinesEffect = (x, y) => {
-    const lines = document.getElementById('lines');
-    if (!lines) return;
+  // const showLinesEffect = (x, y) => {
+  //   const lines = document.getElementById('lines');
+  //   if (!lines) return;
 
-    lines.style.opacity = '1';
-    const yLine = document.getElementById('y');
-    const xLine = document.getElementById('x');
-    const zLine = document.getElementById('z');
-    const vh = window.innerHeight;
+  //   lines.style.opacity = '1';
+  //   const yLine = document.getElementById('y');
+  //   const xLine = document.getElementById('x');
+  //   const zLine = document.getElementById('z');
+  //   const vh = window.innerHeight;
 
-    if (yLine) {
-      yLine.style.left = x + 'px';
-      yLine.style.top = y + 'px';
-      yLine.style.height = (vh - y) + 'px';
-    }
+  //   if (yLine) {
+  //     yLine.style.left = x + 'px';
+  //     yLine.style.top = y + 'px';
+  //     yLine.style.height = (vh - y) + 'px';
+  //   }
 
-    if (xLine) {
-      xLine.style.left = x + 'px';
-      xLine.style.top = y + 'px';
-      xLine.style.width = (vh - y) + 'px';
-    }
+  //   if (xLine) {
+  //     xLine.style.left = x + 'px';
+  //     xLine.style.top = y + 'px';
+  //     xLine.style.width = (vh - y) + 'px';
+  //   }
 
-    if (zLine) {
-      zLine.style.left = x + 'px';
-      zLine.style.top = y + 'px';
-      zLine.style.width = (vh - y) + 'px';
-    }
+  //   if (zLine) {
+  //     zLine.style.left = x + 'px';
+  //     zLine.style.top = y + 'px';
+  //     zLine.style.width = (vh - y) + 'px';
+  //   }
 
-    // Hide lines after overlay opens
-    setTimeout(() => {
-      if (lines) lines.style.opacity = '0';
-    }, 300);
-  };
+  //   // Hide lines after overlay opens
+  //   setTimeout(() => {
+  //     if (lines) lines.style.opacity = '0';
+  //   }, 300);
+  // };
 
   // Open overlay when clicking on any project item or content cell
   document.addEventListener('mousedown', (e) => {
@@ -283,7 +288,7 @@
       const projectId = projectItem.dataset.project;
       e.preventDefault();
       e.stopImmediatePropagation();
-      showLinesEffect(e.clientX, e.clientY);
+      // showLinesEffect(e.clientX, e.clientY);
       openOverlay(projectId);
       return;
     }
@@ -293,7 +298,7 @@
       if (projectId) {
         e.preventDefault();
         e.stopImmediatePropagation();
-        showLinesEffect(e.clientX, e.clientY);
+        // showLinesEffect(e.clientX, e.clientY);
         openOverlay(projectId);
         return;
       }
@@ -304,7 +309,7 @@
     if (logo) {
       e.preventDefault();
       e.stopImmediatePropagation();
-      showLinesEffect(e.clientX, e.clientY);
+      // showLinesEffect(e.clientX, e.clientY);
       openOverlay('000');
       return;
     }
@@ -316,7 +321,7 @@
       if (close) {
         e.preventDefault();
         e.stopImmediatePropagation();
-        showLinesEffect(e.clientX, e.clientY);
+        // showLinesEffect(e.clientX, e.clientY);
         closeOverlay();
         return;
       }
@@ -330,7 +335,7 @@
         if (!clickedInContent) {
           e.preventDefault();
           e.stopImmediatePropagation();
-          showLinesEffect(e.clientX, e.clientY);
+          // showLinesEffect(e.clientX, e.clientY);
           closeOverlay();
         }
       }
