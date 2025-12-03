@@ -40,7 +40,7 @@
           <div class="overlay-cell" data-section="Construction"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240730_346.jpeg" loading="lazy"></div>
           <div class="overlay-cell" data-section="Construction"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_241024_411.jpeg" loading="lazy"></div>
         
-        <div class="overview">
+        <div class="overview" data-section="Data">
           <div class="overview-row">
             <div class="overview-left">Location:</div>
             <div class="overview-right">Tribeca, NY</div>
@@ -54,25 +54,27 @@
             <div class="overview-right">6500 SF</div>
           </div>
           <div class="overview-row">
-            <div class="overview-left">Team</div>
+            <div class="overview-left">Team:</div>
             <div class="overview-right">Paolo Caracini (ASA), Jedidiah Lau, Francesca Viozzi (ASA), Lyric Barnik</div>
           </div>
           <div class="overview-row">
             <div class="overview-left">Consultants:</div>
             <div class="overview-right">CES (Mechanical, Electrical, Plumbing, Sprinkler), Five Phase (Structure),William Vitacco & Associates (Code Review), DTV (AV, IT, Security)</div>
           </div>
-        </div>
-        <div class="schedule">
-          <div class="header">Schedule</div>
-          <div class="timeline"><div id="design">ddd</div><div id="fast-tracked">*</div><div id="design">d</div><div id="revision">+</div><div id="fitting">f</div><div id="dob">#</div><div id="fitting">f</div><div id="amendments">^</div><div id="construction">cccccccccccccccccc</div></div>
-          <div id="legend">
-            <div class="legend-item" data-for="design">Design</div>
-            <div class="legend-item" data-for="fast-tracked">Fast-tracked design schedule</div>
-            <div class="legend-item" data-for="revision">Revision</div>
-            <div class="legend-item" data-for="fitting">Fitting</div>
-            <div class="legend-item" data-for="dob">DOB</div>
-            <div class="legend-item" data-for="amendments">Amendments</div>
-            <div class="legend-item" data-for="construction">Construction</div>
+          <div class="schedule">
+            <div class="overview-left">Schedule:</div>
+            <div class="timeline-container">
+              <div class="timeline"><div id="design">ddd</div><div id="fast-tracked">*</div><div id="design">d</div><div id="revision">+</div><div id="fitting">f</div><div id="dob">#</div><div id="fitting">f</div><div id="amendments">^</div><div id="construction">cccccccccccccccccc</div></div>
+              <div id="legend">
+                <div class="legend-item" data-for="design">Design</div>
+                <div class="legend-item" data-for="fast-tracked">Fast-tracked design schedule</div>
+                <div class="legend-item" data-for="revision">Revision</div>
+                <div class="legend-item" data-for="fitting">Fitting</div>
+                <div class="legend-item" data-for="dob">DOB</div>
+                <div class="legend-item" data-for="amendments">Amendments</div>
+                <div class="legend-item" data-for="construction">Construction</div>
+              </div>
+            </div>
           </div>
         </div>
         </div>
@@ -191,9 +193,10 @@
       sectionLinks.forEach(link => {
         link.addEventListener('click', (e) => {
           const sectionName = e.target.dataset.section;
-          const firstCell = overlayContentRight.querySelector(`.overlay-cell[data-section="${sectionName}"]`);
-          if (firstCell) {
-            firstCell.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Look for either .overlay-cell or .overview with matching data-section
+          const targetElement = overlayContentRight.querySelector(`.overlay-cell[data-section="${sectionName}"], .overview[data-section="${sectionName}"]`);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         });
       });
