@@ -4,7 +4,7 @@
 }
 
 :root {
-  --light-gray: rgba(0, 0, 0, 0.25);
+  --light-gray: rgba(0, 0, 0, 0.5);
 }
 
 /* =========================
@@ -16,14 +16,18 @@ body {
   font-family: 'Gerstner';
   display: flex;
   height: 100vh;
-  color: rgba(0, 0, 0, 0.5);
-  font-size: 22px;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 20px;
   line-height: 1.5;
   scroll-behavior: smooth;
 }
 
+p {
+  font-family: Georgia;
+}
+
 #link:hover {
-  opacity: 0.5;
+  opacity: 0.25;
   cursor: pointer
 }
 
@@ -78,12 +82,16 @@ a:hover {
   flex-direction: column;
   justify-content: space-between;
   border-right: 1px dotted var(--light-gray);
-  padding: 48px;
-  padding-right: 24px;
+  padding: 36px;
+  padding-right: 36px;
   box-sizing: border-box;
   position: sticky;
   top: 0;
   height: 100vh;
+}
+
+.sidebar p {
+  max-width: 400px;
 }
 
 .sidebar-top {
@@ -91,8 +99,8 @@ a:hover {
   flex-direction: column;
   overflow-y: visible;
   min-height: 0;
-  gap: 9px;
   font-variant-numeric: tabular-nums;
+  gap: 36px;
 }
 
 .sidebar .project-item {
@@ -111,7 +119,7 @@ a:hover {
 }
 
 .sidebar a:hover {
-  opacity: 0.5;
+  opacity: 0.25;
 }
 
 .number {
@@ -126,6 +134,7 @@ a:hover {
 .sidebar ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .contact {
@@ -175,7 +184,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px;
+  padding: 18px;
   box-sizing: border-box;
 }
 
@@ -224,7 +233,7 @@ a:hover {
   font-size: 22px;
   padding: 4px 8px;
   border-radius: 1px;
-  color: rgba(0,0,0,0.5);
+  color: rgba(0,0,0,0.25);
   opacity: 0;
   transition: opacity 0.2s;
   z-index: 100001;
@@ -236,7 +245,7 @@ a:hover {
 
 .project-overlay {
   position: fixed;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
   z-index: 100000;
   color: black;
   opacity: 0;
@@ -279,19 +288,15 @@ a:hover {
   z-index: 10001;
   pointer-events: auto;
   box-sizing: border-box;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.8);
   display: flex;
   height: 100vh;
 }
 
-.project-content h1 {
-  font-weight: normal;
-  margin: 0 0 24px 0;
-}
 
 .project-content p {
   margin: 0;
-  max-width: 600px;
+  max-width: 400px;
 }
 
 .sections-header {
@@ -303,10 +308,11 @@ a:hover {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 48px 30px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 36px;
   border-bottom: 1px dotted var(--light-gray);
   box-sizing: border-box;
+  height: 92px;
 }
 
 .sections-nav {
@@ -314,6 +320,10 @@ a:hover {
   flex-direction: row;
   gap: 30px;
   flex-wrap: wrap;
+}
+
+.section-link {
+  line-height: 20px;
 }
 
 .close-overlay {
@@ -336,12 +346,13 @@ a:hover {
   list-style: none;
   padding: 0;
   line-height: 1;
+  margin: 0;
 }
 
 .project-header {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 56px;
   line-height: 1.5;
 }
 
@@ -357,7 +368,7 @@ a:hover {
 }
 
 .section-link:hover {
-  opacity: 0.5;
+  opacity: 0.25;
 }
 
 .project-content-left {
@@ -366,7 +377,7 @@ a:hover {
   justify-content: space-between;
   overflow-y: scroll;
   width: calc(100% / 3);
-  padding: 28px 48px;
+  padding: 36px 36px;
   height: 100vh;
   border-right: 1px dotted var(--light-gray);
   box-sizing: border-box;
@@ -610,4 +621,53 @@ a:hover {
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(1, 1fr);
 }
+}
+
+/* Image Viewer Overlay */
+.image-viewer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 200000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  cursor: pointer;
+}
+
+.image-viewer-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.image-viewer-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  cursor: default;
+}
+
+.close-image-viewer {
+  position: fixed;
+  top: 48px;
+  right: 30px;
+  background: none;
+  border: none;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: opacity 0.2s;
+  z-index: 200001;
+  padding: 0;
+}
+
+.close-image-viewer:hover {
+  opacity: 0.25;
 }

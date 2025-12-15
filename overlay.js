@@ -201,6 +201,16 @@
         });
       });
 
+      // Add click listeners to images in overlay
+      const overlayImages = overlayContentRight.querySelectorAll('.overlay-cell img');
+      overlayImages.forEach(img => {
+        img.addEventListener('click', (e) => {
+          e.stopPropagation();
+          openImageViewer(img.src);
+        });
+        img.style.cursor = 'pointer';
+      });
+
       // Initialize schedule hover functionality if schedule exists in overlay
       const timelineItems = overlayContentRight.querySelectorAll('.timeline > div[id]');
       const legendItems = overlayContentRight.querySelectorAll('.legend-item');
@@ -296,6 +306,12 @@
 
   // Open overlay when clicking on any project item or content cell
   document.addEventListener('mousedown', (e) => {
+    // Don't handle clicks if image viewer is open
+    const imageViewer = document.getElementById('image-viewer-overlay');
+    if (imageViewer && imageViewer.classList.contains('active')) {
+      return;
+    }
+
     // Check if clicking on a project item in sidebar
     const projectItem = e.target.closest('.project-item');
 
@@ -362,8 +378,58 @@
 
   // Close on escape key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && overlay) {
-      closeOverlay();
+    if (e.key === 'Escape') {
+      const imageViewer = document.getElementById('image-viewer-overlay');
+      if (imageViewer && imageViewer.classList.contains('active')) {
+        closeImageViewer();
+      } else if (overlay && overlay.classList.contains('active')) {
+        closeOverlay();
+      }
     }
   });
+
+  // =========================
+  // Image Viewer
+  // =========================
+  const imageViewerOverlay = document.getElementById('image-viewer-overlay');
+  const imageViewerImg = document.getElementById('image-viewer-img');
+  const closeImageViewerBtn = document.getElementById('close-image-viewer');
+
+  const openImageViewer = (imageSrc) => {
+    if (imageViewerOverlay && imageViewerImg) {
+      imageViewerImg.src = imageSrc;
+      imageViewerOverlay.classList.add('active');
+    }
+  };
+
+  const closeImageViewer = () => {
+    if (imageViewerOverlay) {
+      imageViewerOverlay.classList.remove('active');
+      // Clear image source after animation
+      setTimeout(() => {
+        if (imageViewerImg) {
+          imageViewerImg.src = '';
+        }
+      }, 300);
+    }
+  };
+
+  // Close image viewer when clicking background
+  if (imageViewerOverlay) {
+    imageViewerOverlay.addEventListener('click', (e) => {
+      if (e.target === imageViewerOverlay) {
+        closeImageViewer();
+      }
+    });
+  }
+
+  // Close image viewer when clicking close button
+  if (closeImageViewerBtn) {
+    closeImageViewerBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      closeImageViewer();
+    });
+  }
 })();
