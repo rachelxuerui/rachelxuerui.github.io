@@ -26,11 +26,6 @@ p {
   font-family: Georgia;
 }
 
-#link:hover {
-  opacity: 0.25;
-  cursor: pointer
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -118,7 +113,7 @@ a:hover {
   text-overflow: ellipsis;
 }
 
-.sidebar a:hover {
+.sidebar .project-item:hover {
   opacity: 0.25;
 }
 
@@ -142,6 +137,39 @@ a:hover {
   flex-direction: column;
   margin-bottom: 0;
   gap: 6px;
+}
+
+.contact li {
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+
+/* When hovering contact items, dim everything else on the page */
+.sidebar:has(.contact-phone:hover) .project-item,
+.sidebar:has(.contact-phone:hover) .contact-address,
+.sidebar:has(.contact-phone:hover) .contact-email {
+  opacity: 0.25;
+}
+
+.sidebar:has(.contact-address:hover) .project-item,
+.sidebar:has(.contact-address:hover) .contact-phone,
+.sidebar:has(.contact-address:hover) .contact-email {
+  opacity: 0.25;
+}
+
+.sidebar:has(.contact-email:hover) .project-item,
+.sidebar:has(.contact-email:hover) .contact-phone,
+.sidebar:has(.contact-email:hover) .contact-address {
+  opacity: 0.25;
+}
+
+body:has(.contact-phone:hover) .content .cell img,
+body:has(.contact-phone:hover) .content .cell video,
+body:has(.contact-address:hover) .content .cell img,
+body:has(.contact-address:hover) .content .cell video,
+body:has(.contact-email:hover) .content .cell img,
+body:has(.contact-email:hover) .content .cell video {
+  opacity: 0.25;
 }
 
 .sidebar .contact-address {
@@ -396,10 +424,9 @@ a:hover {
 }
 
 .project-content-right .content {
+  display: flex;
+  flex-direction: column;
   gap: 30px;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(auto-fill, 1fr);
-  padding-bottom: 30px;
 }
 
 .prohect-content-right .content .cell {
@@ -419,40 +446,70 @@ a:hover {
   contain: layout style paint;
 }
 
-.overlay-cell:nth-child(3n+1) {
+/* Position classes - use data-position attribute */
+.overlay-cell[data-position="left"] {
   justify-content: flex-start;
 }
 
-.overlay-cell:nth-child(3n+2) {
+.overlay-cell[data-position="center"] {
   justify-content: center;
 }
 
-.overlay-cell:nth-child(3n+3) {
+.overlay-cell[data-position="right"] {
   justify-content: flex-end;
 }
 
 .overlay-cell img,
 .overlay-cell video {
-  width: 100%;
   height: auto;
   object-fit: cover;
   transition: opacity ease 0.3s;
 }
 
-/* Vary image widths for visual interest */
-.overlay-cell:nth-child(3n+1) img,
-.overlay-cell:nth-child(3n+1) video {
+/* Width classes - use data-width attribute (percentage values) */
+.overlay-cell[data-width="50"] img,
+.overlay-cell[data-width="50"] video {
+  width: 50%;
+}
+
+.overlay-cell[data-width="60"] img,
+.overlay-cell[data-width="60"] video {
+  width: 60%;
+}
+
+.overlay-cell[data-width="65"] img,
+.overlay-cell[data-width="65"] video {
+  width: 65%;
+}
+
+.overlay-cell[data-width="70"] img,
+.overlay-cell[data-width="70"] video {
+  width: 70%;
+}
+
+.overlay-cell[data-width="75"] img,
+.overlay-cell[data-width="75"] video {
   width: 75%;
 }
 
-.overlay-cell:nth-child(3n+2) img,
-.overlay-cell:nth-child(3n+2) video {
+.overlay-cell[data-width="80"] img,
+.overlay-cell[data-width="80"] video {
+  width: 80%;
+}
+
+.overlay-cell[data-width="85"] img,
+.overlay-cell[data-width="85"] video {
+  width: 85%;
+}
+
+.overlay-cell[data-width="90"] img,
+.overlay-cell[data-width="90"] video {
   width: 90%;
 }
 
-.overlay-cell:nth-child(3n+3) img,
-.overlay-cell:nth-child(3n+3) video {
-  width: 65%;
+.overlay-cell[data-width="100"] img,
+.overlay-cell[data-width="100"] video {
+  width: 100%;
 }
 
 .overlay-cell video::-webkit-media-controls,
@@ -683,17 +740,26 @@ a:hover {
   pointer-events: auto;
 }
 
-.image-viewer-overlay img {
-  max-width: 90%;
-  max-height: 90%;
+#image-viewer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  height: 90vh;
+}
+
+#image-viewer-content img,
+#image-viewer-content video {
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   cursor: default;
 }
 
 .close-image-viewer {
   position: fixed;
-  top: 48px;
-  right: 30px;
+  top: 36px;
+  right: 36px;
   background: none;
   border: none;
   color: rgba(0, 0, 0, 0.5);
