@@ -18,7 +18,8 @@
         <ul><li class="project-item"><div class = "number">007</div><div id = "name">Townhouse in Tribeca I</div></li></ul>
         <p>The studio's largest built work yet. A gut renovation of a late 19th century dairy-factory-turned-townhouse in the Tribeca Historic District. The 14-month construction process has been a lesson in flexibility: rapid redesigns to accommodate historical elements (arches, cast iron columns, brickwork) discovered during demolition, and minor re-filings to accommodate a client who kept adding scope (elevator, new floor finishes, an additional kitchen) over the course of construction. Substantial completion is scheduled for early May; two weeks ago, I got a text asking if we can turn the gym into a listening room. ("Of course we can!")</p>
       </div>`,
-      sections: ['Images', 'Drawings', 'Construction', 'Data', 'Instruments of Science'],
+      // sections: ['Images', 'Drawings', 'Construction', 'Data', 'Instruments of Science'],
+      sections: [],
       rightContentHTML: `
         <div class="content">
           <div class="overlay-cell" data-section="Images"><img src="assets/007-townhouse-in-tribeca-i/images/007_cp_250725_ww-500.jpg" loading="lazy"></div>
@@ -39,8 +40,8 @@
           <div class="overlay-cell" data-section="Construction"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240523_306.jpeg" loading="lazy"></div>
           <div class="overlay-cell" data-section="Construction"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240730_346.jpeg" loading="lazy"></div>
           <div class="overlay-cell" data-section="Construction"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_241024_411.jpeg" loading="lazy"></div>
-        
-        <div class="overview" data-section="Data">
+
+        <!-- <div class="overview" data-section="Data">
           <div class="overview-row">
             <div class="overview-left">Location:</div>
             <div class="overview-right">Tribeca, NY</div>
@@ -76,7 +77,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         </div>
       `
     },
@@ -155,18 +156,18 @@
       overlayContentLeft.innerHTML = leftHTML;
 
       // Build sections navigation in header
-      const sectionsNav = document.getElementById('sections-nav');
-      if (sectionsNav) {
-        if (data.sections && data.sections.length > 0) {
-          let sectionsHTML = '';
-          data.sections.forEach(section => {
-            sectionsHTML += `<div class="section-link" data-section="${section}">${section}</div>`;
-          });
-          sectionsNav.innerHTML = sectionsHTML;
-        } else {
-          sectionsNav.innerHTML = '';
-        }
-      }
+      // const sectionsNav = document.getElementById('sections-nav');
+      // if (sectionsNav) {
+      //   if (data.sections && data.sections.length > 0) {
+      //     let sectionsHTML = '';
+      //     data.sections.forEach(section => {
+      //       sectionsHTML += `<div class="section-link" data-section="${section}">${section}</div>`;
+      //     });
+      //     sectionsNav.innerHTML = sectionsHTML;
+      //   } else {
+      //     sectionsNav.innerHTML = '';
+      //   }
+      // }
 
       // Load right content from embedded HTML - append after sections header
       const sectionsHeader = overlayContentRight.querySelector('.sections-header');
@@ -189,17 +190,17 @@
       }
 
       // Add click listeners to section links in header
-      const sectionLinks = document.querySelectorAll('.section-link');
-      sectionLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          const sectionName = e.target.dataset.section;
-          // Look for either .overlay-cell or .overview with matching data-section
-          const targetElement = overlayContentRight.querySelector(`.overlay-cell[data-section="${sectionName}"], .overview[data-section="${sectionName}"]`);
-          if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        });
-      });
+      // const sectionLinks = document.querySelectorAll('.section-link');
+      // sectionLinks.forEach(link => {
+      //   link.addEventListener('click', (e) => {
+      //     const sectionName = e.target.dataset.section;
+      //     // Look for either .overlay-cell or .overview with matching data-section
+      //     const targetElement = overlayContentRight.querySelector(`.overlay-cell[data-section="${sectionName}"], .overview[data-section="${sectionName}"]`);
+      //     if (targetElement) {
+      //       targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      //     }
+      //   });
+      // });
 
       // Add click listeners to images in overlay
       const overlayImages = overlayContentRight.querySelectorAll('.overlay-cell img');
