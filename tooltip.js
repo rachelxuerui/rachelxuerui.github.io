@@ -1,27 +1,17 @@
 (() => {
   // =========================
-  // Tooltip on hover
+  // Unified Tooltip System
   // =========================
-  const container = document.querySelector('.content');
-  const overlayContainer = document.getElementById('overlay-content-right');
   const tooltip = document.getElementById('tooltip');
-  if (!container || !tooltip) return;
+  if (!tooltip) return;
 
   const H_OFFSET = 3;
   const V_OFFSET = 3;
-  let hoveringImg = null;
+  let currentMedia = null;
 
   const showTooltip = (content, x, y) => {
     tooltip.style.opacity = '1';
-    tooltip.replaceChildren();
-
-    if (typeof content === 'string') {
-      tooltip.innerHTML = content;
-    } else if (content instanceof Node) {
-      tooltip.appendChild(content.cloneNode(true));
-    } else {
-      tooltip.textContent = String(content ?? '');
-    }
+    tooltip.textContent = content;
 
     const vw = document.documentElement.clientWidth;
     const vh = document.documentElement.clientHeight;
@@ -39,115 +29,80 @@
 
   const hideTooltip = () => {
     tooltip.style.opacity = '0';
+    currentMedia = null;
   };
 
-  // Hide tooltip on scroll/wheel/touch
-  const hideOnScroll = () => {
-    hoveringImg = null;
-    hideTooltip();
-  };
-
-  container.addEventListener('mousemove', (e) => {
+  // Unified mousemove handler for both main content and overlay
+  document.addEventListener('mousemove', (e) => {
     // Check if click is active from lines.js
-    if (window.isClickActive && window.isClickActive()) return;
+    if (window.isClickActive && window.isClickActive()) {
+      return;
+    }
 
-    const img = e.target.closest('.overlay-cell img');
-    if (img && container.contains(img)) {
-      hoveringImg = img;
-      const label = img.dataset.name || img.getAttribute('alt') || '';
-      showTooltip(label, e.clientX, e.clientY);
-    } else if (hoveringImg) {
-      hoveringImg = null;
+    // Check for overlay media first
+    const overlay = document.getElementById('project-overlay');
+    const overlayRight = document.getElementById('overlay-content-right');
+
+    if (overlay && overlay.classList.contains('active') && overlayRight) {
+      const img = e.target.closest('.overlay-cell img');
+      const video = e.target.closest('.overlay-cell video');
+      const media = img || video;
+
+      if (media && overlayRight.contains(media)) {
+        const src = media.getAttribute('src') || '';
+        const filename = src.split('/').pop();
+        showTooltip(filename, e.clientX, e.clientY);
+        currentMedia = media;
+        return;
+      }
+    }
+
+    // Check for main content media
+    const content = document.querySelector('.content');
+    if (content) {
+      const cell = e.target.closest('.cell');
+      if (cell && content.contains(cell)) {
+        const img = cell.querySelector('img');
+        const video = cell.querySelector('video');
+        const media = img || video;
+
+        if (media) {
+          const label = media.dataset.name || media.getAttribute('alt') || '';
+          if (label) {
+            showTooltip(label, e.clientX, e.clientY);
+            currentMedia = media;
+            return;
+          }
+        }
+      }
+    }
+
+    // No media found, hide tooltip
+    if (currentMedia) {
       hideTooltip();
     }
   }, { passive: true });
 
-  container.addEventListener('mouseleave', hideTooltip);
-
-  // Hover class for cells
-  container.addEventListener('mouseover', (e) => {
-    const cell = e.target.closest('.overlay-cell');
-    if (cell && container.contains(cell) && !cell.contains(e.relatedTarget)) {
-      cell.classList.add('is-hover');
-    }
-  });
-
-  container.addEventListener('mouseout', (e) => {
-    const cell = e.target.closest('.overlay-cell');
-    if (cell && container.contains(cell) && !cell.contains(e.relatedTarget)) {
-      cell.classList.remove('is-hover');
-    }
-  });
-
-  // Function to attach overlay listeners - called after overlay content loads
-  const attachOverlayListeners = () => {
-    const overlayContainer = document.getElementById('overlay-content-right');
-    if (!overlayContainer) return;
-
-    overlayContainer.addEventListener('mousemove', (e) => {
-      // Check if click is active from lines.js
-      if (window.isClickActive && window.isClickActive()) return;
-
-      const img = e.target.closest('.overlay-cell img');
-      if (img && overlayContainer.contains(img)) {
-        hoveringImg = img;
-        let label = img.dataset.name || img.getAttribute('alt') || '';
-
-        // If no label, extract filename from src
-        if (!label && img.src) {
-          const srcPath = img.getAttribute('src') || img.src;
-          label = srcPath.split('/').pop();
-        }
-
-        showTooltip(label, e.clientX, e.clientY);
-      } else if (hoveringImg) {
-        hoveringImg = null;
-        hideTooltip();
-      }
-    }, { passive: true });
-
-    overlayContainer.addEventListener('mouseleave', hideTooltip);
-
-    overlayContainer.addEventListener('mouseover', (e) => {
-      const cell = e.target.closest('.overlay-cell');
-      if (cell && overlayContainer.contains(cell) && !cell.contains(e.relatedTarget)) {
-        cell.classList.add('is-hover');
-      }
-    });
-
-    overlayContainer.addEventListener('mouseout', (e) => {
-      const cell = e.target.closest('.overlay-cell');
-      if (cell && overlayContainer.contains(cell) && !cell.contains(e.relatedTarget)) {
-        cell.classList.remove('is-hover');
-      }
-    });
-
-    overlayContainer.addEventListener('scroll', hideOnScroll, { passive: true });
-    overlayContainer.addEventListener('wheel', hideOnScroll, { passive: true });
-    overlayContainer.addEventListener('touchmove', hideOnScroll, { passive: true });
-  };
-
-  // Watch for overlay content changes using MutationObserver
-  if (overlayContainer) {
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-          attachOverlayListeners();
-        }
-      });
-    });
-
-    observer.observe(overlayContainer, { childList: true });
-  }
-
-  container.addEventListener('scroll', hideOnScroll, { passive: true });
-  container.addEventListener('wheel', hideOnScroll, { passive: true });
-  container.addEventListener('touchmove', hideOnScroll, { passive: true });
+  // Hide tooltip on various events
+  document.addEventListener('scroll', hideTooltip, { passive: true, capture: true });
+  document.addEventListener('wheel', hideTooltip, { passive: true, capture: true });
+  document.addEventListener('touchmove', hideTooltip, { passive: true, capture: true });
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) hideTooltip();
   });
   window.addEventListener('blur', hideTooltip);
 
-  // Listen for custom event from lines.js
+  // Listen for custom hideTooltip event
   document.addEventListener('hideTooltip', hideTooltip);
+
+  // Hide tooltip when overlay closes
+  const overlayElement = document.getElementById('project-overlay');
+  if (overlayElement) {
+    const observer = new MutationObserver(() => {
+      if (!overlayElement.classList.contains('active')) {
+        hideTooltip();
+      }
+    });
+    observer.observe(overlayElement, { attributes: true, attributeFilter: ['class'] });
+  }
 })();

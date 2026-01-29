@@ -40,79 +40,8 @@
           <div class="overlay-cell" data-section="Construction" data-position="left" data-width="70"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240523_306.jpeg" loading="lazy"></div>
           <div class="overlay-cell" data-section="Construction" data-position="center" data-width="80"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_240730_346.jpeg" loading="lazy"></div>
           <div class="overlay-cell" data-section="Construction" data-position="right" data-width="75"><img src="assets/007-townhouse-in-tribeca-i/construction/007_co_l01_241024_411.jpeg" loading="lazy"></div>
-
-        <!-- <div class="overview" data-section="Data">
-          <div class="overview-row">
-            <div class="overview-left">Location:</div>
-            <div class="overview-right">Tribeca, NY</div>
-          </div>
-          <div class="overview-row">
-            <div class="overview-left">Year:</div>
-            <div class="overview-right">2025</div>
-          </div>
-          <div class="overview-row">
-            <div class="overview-left">Size:</div>
-            <div class="overview-right">6500 SF</div>
-          </div>
-          <div class="overview-row">
-            <div class="overview-left">Team:</div>
-            <div class="overview-right">Paolo Caracini (ASA), Jedidiah Lau, Francesca Viozzi (ASA), Lyric Barnik</div>
-          </div>
-          <div class="overview-row">
-            <div class="overview-left">Consultants:</div>
-            <div class="overview-right">CES (Mechanical, Electrical, Plumbing, Sprinkler), Five Phase (Structure),William Vitacco & Associates (Code Review), DTV (AV, IT, Security)</div>
-          </div>
-          <div class="schedule">
-            <div class="overview-left">Schedule:</div>
-            <div class="timeline-container">
-              <div class="timeline"><div id="design">ddd</div><div id="fast-tracked">*</div><div id="design">d</div><div id="revision">+</div><div id="fitting">f</div><div id="dob">#</div><div id="fitting">f</div><div id="amendments">^</div><div id="construction">cccccccccccccccccc</div></div>
-              <div id="legend">
-                <div class="legend-item" data-for="design">Design</div>
-                <div class="legend-item" data-for="fast-tracked">Fast-tracked design schedule</div>
-                <div class="legend-item" data-for="revision">Revision</div>
-                <div class="legend-item" data-for="fitting">Fitting</div>
-                <div class="legend-item" data-for="dob">DOB</div>
-                <div class="legend-item" data-for="amendments">Amendments</div>
-                <div class="legend-item" data-for="construction">Construction</div>
-              </div>
-            </div>
-          </div>
-        </div> -->
         </div>
       `
-    },
-    '001': {
-      sections: []
-    },
-    '002': {
-      sections: []
-    },
-    '003': {
-      sections: []
-    },
-    '004': {
-      sections: []
-    },
-    '005': {
-      sections: []
-    },
-    '006': {
-      sections: []
-    },
-    '008': {
-      sections: []
-    },
-    '009': {
-      sections: []
-    },
-    '010': {
-      sections: []
-    },
-    '011': {
-      sections: []
-    },
-    '012': {
-      sections: []
     }
   };
 
@@ -155,20 +84,6 @@
 
       overlayContentLeft.innerHTML = leftHTML;
 
-      // Build sections navigation in header
-      // const sectionsNav = document.getElementById('sections-nav');
-      // if (sectionsNav) {
-      //   if (data.sections && data.sections.length > 0) {
-      //     let sectionsHTML = '';
-      //     data.sections.forEach(section => {
-      //       sectionsHTML += `<div class="section-link" data-section="${section}">${section}</div>`;
-      //     });
-      //     sectionsNav.innerHTML = sectionsHTML;
-      //   } else {
-      //     sectionsNav.innerHTML = '';
-      //   }
-      // }
-
       // Load right content from embedded HTML - append after sections header
       const sectionsHeader = overlayContentRight.querySelector('.sections-header');
       if (data.rightContentHTML) {
@@ -188,19 +103,6 @@
           }
         });
       }
-
-      // Add click listeners to section links in header
-      // const sectionLinks = document.querySelectorAll('.section-link');
-      // sectionLinks.forEach(link => {
-      //   link.addEventListener('click', (e) => {
-      //     const sectionName = e.target.dataset.section;
-      //     // Look for either .overlay-cell or .overview with matching data-section
-      //     const targetElement = overlayContentRight.querySelector(`.overlay-cell[data-section="${sectionName}"], .overview[data-section="${sectionName}"]`);
-      //     if (targetElement) {
-      //       targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      //     }
-      //   });
-      // });
 
       // Add click listeners to images in overlay
       const overlayImages = overlayContentRight.querySelectorAll('.overlay-cell img');
@@ -280,41 +182,6 @@
     }
   };
 
-  // Helper to show lines effect
-  // const showLinesEffect = (x, y) => {
-  //   const lines = document.getElementById('lines');
-  //   if (!lines) return;
-
-  //   lines.style.opacity = '1';
-  //   const yLine = document.getElementById('y');
-  //   const xLine = document.getElementById('x');
-  //   const zLine = document.getElementById('z');
-  //   const vh = window.innerHeight;
-
-  //   if (yLine) {
-  //     yLine.style.left = x + 'px';
-  //     yLine.style.top = y + 'px';
-  //     yLine.style.height = (vh - y) + 'px';
-  //   }
-
-  //   if (xLine) {
-  //     xLine.style.left = x + 'px';
-  //     xLine.style.top = y + 'px';
-  //     xLine.style.width = (vh - y) + 'px';
-  //   }
-
-  //   if (zLine) {
-  //     zLine.style.left = x + 'px';
-  //     zLine.style.top = y + 'px';
-  //     zLine.style.width = (vh - y) + 'px';
-  //   }
-
-  //   // Hide lines after overlay opens
-  //   setTimeout(() => {
-  //     if (lines) lines.style.opacity = '0';
-  //   }, 300);
-  // };
-
   // Open overlay when clicking on any project item or content cell
   document.addEventListener('mousedown', (e) => {
     // Don't handle clicks if image viewer is open
@@ -333,7 +200,6 @@
       const projectId = projectItem.dataset.project;
       e.preventDefault();
       e.stopImmediatePropagation();
-      // showLinesEffect(e.clientX, e.clientY);
       openOverlay(projectId);
       return;
     }
@@ -343,7 +209,6 @@
       if (projectId) {
         e.preventDefault();
         e.stopImmediatePropagation();
-        // showLinesEffect(e.clientX, e.clientY);
         openOverlay(projectId);
         return;
       }
@@ -354,7 +219,6 @@
     if (logo) {
       e.preventDefault();
       e.stopImmediatePropagation();
-      // showLinesEffect(e.clientX, e.clientY);
       openOverlay('000');
       return;
     }
@@ -366,7 +230,6 @@
       if (close) {
         e.preventDefault();
         e.stopImmediatePropagation();
-        // showLinesEffect(e.clientX, e.clientY);
         closeOverlay();
         return;
       }
@@ -380,7 +243,6 @@
         if (!clickedInContent) {
           e.preventDefault();
           e.stopImmediatePropagation();
-          // showLinesEffect(e.clientX, e.clientY);
           closeOverlay();
         }
       }

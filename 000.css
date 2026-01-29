@@ -17,7 +17,7 @@ body {
   display: flex;
   height: 100vh;
   color: rgba(0, 0, 0, 0.8);
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.5;
   scroll-behavior: smooth;
 }
@@ -33,37 +33,6 @@ a {
 
 a:hover {
   cursor: pointer;
-}
-
-/* =========================
-   Lines
-   ========================= */
-
-.lines {
-  opacity: 0;
-  z-index: 99999;
-}
-
-.y, .x, .z {
-  position: fixed;
-  background-color: var(--light-gray);
-  z-index: 9999;
-}
-
-.y {
-  width: 1px;
-  transform-origin: top left;
-}
-
-.x {
-  height: 1px;
-  transform-origin: top left;
-}
-
-.z {
-  height: 1px;
-  transform-origin: top left;
-  transform: rotate(-45deg);
 }
 
 /* =========================
@@ -145,30 +114,13 @@ a:hover {
 }
 
 /* When hovering contact items, dim everything else on the page */
-.sidebar:has(.contact-phone:hover) .project-item,
-.sidebar:has(.contact-phone:hover) .contact-address,
-.sidebar:has(.contact-phone:hover) .contact-email {
+.sidebar:has(.contact li:hover) .project-item,
+.sidebar:has(.contact li:hover) .contact li:not(:hover) {
   opacity: 0.25;
 }
 
-.sidebar:has(.contact-address:hover) .project-item,
-.sidebar:has(.contact-address:hover) .contact-phone,
-.sidebar:has(.contact-address:hover) .contact-email {
-  opacity: 0.25;
-}
-
-.sidebar:has(.contact-email:hover) .project-item,
-.sidebar:has(.contact-email:hover) .contact-phone,
-.sidebar:has(.contact-email:hover) .contact-address {
-  opacity: 0.25;
-}
-
-body:has(.contact-phone:hover) .content .cell img,
-body:has(.contact-phone:hover) .content .cell video,
-body:has(.contact-address:hover) .content .cell img,
-body:has(.contact-address:hover) .content .cell video,
-body:has(.contact-email:hover) .content .cell img,
-body:has(.contact-email:hover) .content .cell video {
+body:has(.contact li:hover) .content .cell img,
+body:has(.contact li:hover) .content .cell video {
   opacity: 0.25;
 }
 
@@ -670,8 +622,15 @@ body:has(.contact-email:hover) .content .cell video {
   }
 
   .sidebar .project-item {
-    row-gap: 0;
-    column-gap: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .project-content-left .project-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
   }
 
   /* fix this annoyingness*/
