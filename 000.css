@@ -225,6 +225,10 @@ body:has(.contact li:hover) .content .cell video {
 
 .project-overlay {
   position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100% / 3);
+  height: 100vh;
   background-color: rgba(255, 255, 255, 0.95);
   z-index: 100000;
   color: black;
@@ -359,7 +363,7 @@ body:has(.contact li:hover) .content .cell video {
   flex-direction: column;
   justify-content: space-between;
   overflow-y: scroll;
-  width: calc(100% / 3);
+  width: 100%;
   padding: 36px 36px;
   height: 100vh;
   border-right: 1px dotted var(--light-gray);
