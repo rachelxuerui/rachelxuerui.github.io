@@ -9,7 +9,20 @@
   // Project data - can be expanded as needed
   const projectData = {
     '000': {
-      text: '<p>About 000 Studio...</p>'
+      text: `
+        <div class="zeroes">
+          <div class="zeroes-top">
+            <div class="zero">0</div><div class="zero">0</div>
+          </div>
+          <div class="zero">0</div>
+        </div>
+        <p>is the basis of an indexing system, the origin point of any 3-dimensional object, the standard of precision tolerance, and an architectural practice based in Manhattan. Current works include projects with a local artist and a non-profit, several private residences, as well as speculative proposals for a developer.
+
+000 is a certified Minority Business Enterprise in New York City, and was founded in 2023 by Jedidiah Lau, AIA.
+
+Prior to independent practice, Jedy was an Associate at Diller Scofidio + Renfro in New York City, and a Project Architect at OMA / Rem Koolhaas in Rotterdam and Hong Kong. He has published in the New York Review of Architecture, Pidgin, Rumor, and PLAT, and has been a guest critic at Princeton, Yale, Cornell, and Columbia, among others. He holds an M.Arch from Princeton University, where he was awarded the Suzanne Kolarik Underwood Prize.
+        </p>
+      `
     },
     '001': {
       text: '<p>Project 001: 1000 Miles x 50 ft</p>'
@@ -76,7 +89,7 @@
       const cell = e.target.closest('.cell[data-project]');
       if (cell) {
         const projectId = cell.dataset.project;
-        if (projectId && projectId !== '000') {
+        if (projectId) {
           showHoverOverlay(projectId);
         }
       }
@@ -93,6 +106,21 @@
   // Hide overlay when mouse enters the overlay itself
   if (overlay) {
     overlay.addEventListener('mouseenter', () => {
+      hideHoverOverlay();
+    });
+  }
+
+  // Add hover event to logo to show '000' overlay
+  const logo = document.getElementById('logo');
+  if (logo) {
+    // Expand the hover area with padding
+    logo.style.padding = '20px';
+    logo.style.margin = '-20px'; // Negative margin to keep visual position the same
+
+    logo.addEventListener('mouseenter', () => {
+      showHoverOverlay('000');
+    });
+    logo.addEventListener('mouseleave', () => {
       hideHoverOverlay();
     });
   }
