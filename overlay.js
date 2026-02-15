@@ -6,72 +6,53 @@
   const overlay = document.getElementById('project-overlay');
   const overlayContentLeft = document.getElementById('overlay-content-left');
 
-  // Project data - can be expanded as needed
-  const projectData = {
-    '000': {
-      text: `
-        <div class="zeroes">
-          <div class="zeroes-top">
-            <div class="zero">0</div><div class="zero">0</div>
-          </div>
-          <div class="zero">0</div>
-        </div>
-        <p>is the basis of an indexing system, the origin point of any 3-dimensional object, the standard of precision tolerance, and an architectural practice based in Manhattan. Current works include projects with a local artist and a non-profit, several private residences, as well as speculative proposals for a developer.
+  // Cache for loaded HTML content
+  const contentCache = {};
 
-000 is a certified Minority Business Enterprise in New York City, and was founded in 2023 by Jedidiah Lau, AIA.
+  // Load HTML file for a project
+  const loadProjectContent = async (projectId) => {
+    if (contentCache[projectId]) {
+      return contentCache[projectId];
+    }
 
-Prior to independent practice, Jedy was an Associate at Diller Scofidio + Renfro in New York City, and a Project Architect at OMA / Rem Koolhaas in Rotterdam and Hong Kong. He has published in the New York Review of Architecture, Pidgin, Rumor, and PLAT, and has been a guest critic at Princeton, Yale, Cornell, and Columbia, among others. He holds an M.Arch from Princeton University, where he was awarded the Suzanne Kolarik Underwood Prize.
-        </p>
-      `
-    },
-    '001': {
-      text: '<p>Project 001: 1000 Miles x 50 ft</p>'
-    },
-    '002': {
-      text: '<p>Project 002: Apartment in Gramercy I</p>'
-    },
-    '003': {
-      text: '<p>Project 003: Apartment in Brooklyn Heights</p>'
-    },
-    '004': {
-      text: '<p>Project 004: Apartment in Gramercy II</p>'
-    },
-    '005': {
-      text: '<p>Project 005: Project EATS</p>'
-    },
-    '006': {
-      text: '<p>Project 006: Furniture for Two Friends</p>'
-    },
-    '007': {
-      text: `
-      <div class="project-header">
-        <ul><li class="project-item"><div class = "number">007</div><div id = "name">Townhouse in Tribeca I</div></li></ul>
-        <p>The studio's largest built work yet. A gut renovation of a late 19th century dairy-factory-turned-townhouse in the Tribeca Historic District. The 14-month construction process has been a lesson in flexibility: rapid redesigns to accommodate historical elements (arches, cast iron columns, brickwork) discovered during demolition, and minor re-filings to accommodate a client who kept adding scope (elevator, new floor finishes, an additional kitchen) over the course of construction. Substantial completion is scheduled for early May; two weeks ago, I got a text asking if we can turn the gym into a listening room. ("Of course we can!")</p>
-      </div>`
-    },
-    '008': {
-      text: '<p>Project 008: House in Sydney</p>'
-    },
-    '009': {
-      text: '<p>Project 009: Apartment on the UWS</p>'
-    },
-    '010': {
-      text: '<p>Project 010: Townhouse in Tribeca II</p>'
-    },
-    '011': {
-      text: '<p>Project 011: Projects for Larry</p>'
-    },
-    '012': {
-      text: '<p>Project 012: Apartment in Sutton Place</p>'
+    try {
+      const response = await fetch(`projects/${projectId}.html`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const html = await response.text();
+      contentCache[projectId] = html;
+      return html;
+    } catch (error) {
+      console.error(`Error loading project ${projectId}:`, error);
+      return `<p>Error loading project content.</p>`;
     }
   };
 
   let currentProjectId = null;
+  let isScrolling = false;
+  let scrollTimeout = null;
+  let showTimeout = null;
+  let hideTimeout = null;
 
-  const showHoverOverlay = (projectId) => {
-    if (projectData[projectId] && currentProjectId !== projectId && overlay && overlayContentLeft) {
-      currentProjectId = projectId;
-      overlayContentLeft.innerHTML = projectData[projectId].text;
+  const showHoverOverlay = async (projectId) => {
+    if (overlay && overlayContentLeft) {
+      const content = await loadProjectContent(projectId);
+
+      // If switching between different projects, fade out then in
+      if (currentProjectId !== projectId && currentProjectId !== null) {
+        overlayContentLeft.style.opacity = '0';
+        setTimeout(() => {
+          currentProjectId = projectId;
+          overlayContentLeft.innerHTML = content;
+          overlayContentLeft.style.opacity = '1';
+        }, 150);
+      } else {
+        // First time showing or same project
+        currentProjectId = projectId;
+        overlayContentLeft.innerHTML = content;
+        overlayContentLeft.style.opacity = '1';
+      }
       overlay.classList.add('active');
     }
   };
@@ -83,6 +64,64 @@ Prior to independent practice, Jedy was an Associate at Diller Scofidio + Renfro
     }
   };
 
+  const debouncedShowOverlay = (projectId) => {
+    // Clear any pending hide
+    if (hideTimeout) {
+      clearTimeout(hideTimeout);
+      hideTimeout = null;
+    }
+
+    // Don't show overlay during scroll
+    if (isScrolling) return;
+
+    // Debounce the show with a small delay
+    if (showTimeout) {
+      clearTimeout(showTimeout);
+    }
+    showTimeout = setTimeout(() => {
+      if (!isScrolling) {
+        showHoverOverlay(projectId);
+      }
+    }, 100);
+  };
+
+  const debouncedHideOverlay = () => {
+    // Clear any pending show
+    if (showTimeout) {
+      clearTimeout(showTimeout);
+      showTimeout = null;
+    }
+
+    // Debounce the hide with a small delay
+    if (hideTimeout) {
+      clearTimeout(hideTimeout);
+    }
+    hideTimeout = setTimeout(() => {
+      hideHoverOverlay();
+    }, 100);
+  };
+
+  // Track scrolling state
+  if (content) {
+    content.addEventListener('scroll', () => {
+      isScrolling = true;
+
+      // Clear any pending overlay changes during scroll
+      if (showTimeout) {
+        clearTimeout(showTimeout);
+        showTimeout = null;
+      }
+
+      // Reset scrolling flag after scroll ends
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+      scrollTimeout = setTimeout(() => {
+        isScrolling = false;
+      }, 150);
+    }, { passive: true });
+  }
+
   // Use event delegation on content
   if (content) {
     content.addEventListener('mouseenter', (e) => {
@@ -90,7 +129,7 @@ Prior to independent practice, Jedy was an Associate at Diller Scofidio + Renfro
       if (cell) {
         const projectId = cell.dataset.project;
         if (projectId) {
-          showHoverOverlay(projectId);
+          debouncedShowOverlay(projectId);
         }
       }
     }, true);
@@ -98,30 +137,19 @@ Prior to independent practice, Jedy was an Associate at Diller Scofidio + Renfro
     content.addEventListener('mouseleave', (e) => {
       const cell = e.target.closest('.cell[data-project]');
       if (cell) {
-        hideHoverOverlay();
+        debouncedHideOverlay();
       }
     }, true);
-  }
-
-  // Hide overlay when mouse enters the overlay itself
-  if (overlay) {
-    overlay.addEventListener('mouseenter', () => {
-      hideHoverOverlay();
-    });
   }
 
   // Add hover event to logo to show '000' overlay
   const logo = document.getElementById('logo');
   if (logo) {
-    // Expand the hover area with padding
-    logo.style.padding = '20px';
-    logo.style.margin = '-20px'; // Negative margin to keep visual position the same
-
     logo.addEventListener('mouseenter', () => {
       showHoverOverlay('000');
     });
     logo.addEventListener('mouseleave', () => {
       hideHoverOverlay();
     });
-  }
+  };
 })();
