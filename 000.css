@@ -261,6 +261,12 @@ a:hover {
   max-width: 400px;
 }
 
+br.gap-36 {
+  display: block;
+  content: "";
+  height: 36px;
+}
+
 .project-content-left ul {
   list-style: none;
   padding: 0;
@@ -272,6 +278,13 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 56px;
+  line-height: 1.5;
+}
+
+.project-header-000 {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
   line-height: 1.5;
 }
 
@@ -478,6 +491,13 @@ a:hover {
   max-height: 100%;
   object-fit: contain;
   cursor: default;
+}
+
+#image-viewer-content iframe,
+#image-viewer-content embed {
+  width: 90vw;
+  height: 90vh;
+  border: none;
 }
 
 .close-image-viewer {
