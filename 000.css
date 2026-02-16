@@ -143,13 +143,6 @@ a:hover {
   line-height: 1;
   gap: 1.5px;
   cursor: pointer;
-  position: relative;
-  padding: 18px;
-  margin: -18px;
-}
-
-.zeroes * {
-  pointer-events: none;
 }
 
 .zeroes-top {
