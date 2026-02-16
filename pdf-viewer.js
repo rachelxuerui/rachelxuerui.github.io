@@ -2,11 +2,10 @@
   // Set PDF.js worker
   pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
-  // Handle PDF thumbnail clicks
-  const pdfThumbnails = document.querySelectorAll('.pdf-thumbnail');
+  // Handle PDF thumbnail clicks using event delegation
+  const content = document.querySelector('.content');
   const imageViewerOverlay = document.getElementById('image-viewer-overlay');
   const imageViewerContent = document.getElementById('image-viewer-content');
-  const closeButton = document.getElementById('close-image-viewer');
 
   async function renderPDF(pdfPath) {
     try {
@@ -56,41 +55,24 @@
     }
   }
 
-  pdfThumbnails.forEach(thumbnail => {
-    thumbnail.addEventListener('click', (e) => {
-      const pdfPath = thumbnail.dataset.pdf;
-      if (pdfPath) {
-        e.stopPropagation();
+  // Use event delegation on content container
+  if (content) {
+    content.addEventListener('click', (e) => {
+      const thumbnail = e.target.closest('.pdf-thumbnail');
+      if (thumbnail) {
+        const pdfPath = thumbnail.dataset.pdf;
+        if (pdfPath) {
+          e.stopPropagation();
 
-        // Show overlay with loading message
-        imageViewerContent.innerHTML = '<p>Loading PDF...</p>';
-        imageViewerOverlay.classList.add('active');
+          // Show overlay with loading message
+          imageViewerContent.innerHTML = '<p>Loading PDF...</p>';
+          imageViewerOverlay.classList.add('active');
 
-        // Render PDF
-        renderPDF(pdfPath);
-      }
-    });
-  });
-
-  // Close overlay
-  if (closeButton) {
-    closeButton.addEventListener('click', () => {
-      imageViewerOverlay.classList.remove('active');
-      setTimeout(() => {
-        imageViewerContent.innerHTML = '';
-      }, 300);
-    });
-  }
-
-  // Close on overlay click (but not on content)
-  if (imageViewerOverlay) {
-    imageViewerOverlay.addEventListener('click', (e) => {
-      if (e.target === imageViewerOverlay) {
-        imageViewerOverlay.classList.remove('active');
-        setTimeout(() => {
-          imageViewerContent.innerHTML = '';
-        }, 300);
+          // Render PDF
+          renderPDF(pdfPath);
+        }
       }
     });
   }
+
 })();

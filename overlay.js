@@ -7,7 +7,7 @@
   const overlayContentLeft = document.getElementById('overlay-content-left');
 
   // Cache for loaded HTML content
-  const contentCache = {};
+  const contentCache = {}
 
   // Load HTML file for a project
   const loadProjectContent = async (projectId) => {
@@ -27,7 +27,7 @@
       console.error(`Error loading project ${projectId}:`, error);
       return `<p>Error loading project content.</p>`;
     }
-  };
+  }
 
   let currentProjectId = null;
   let isScrolling = false;
@@ -55,14 +55,14 @@
       }
       overlay.classList.add('active');
     }
-  };
+  }
 
   const hideHoverOverlay = () => {
     if (overlay) {
       currentProjectId = null;
       overlay.classList.remove('active');
     }
-  };
+  }
 
   const debouncedShowOverlay = (projectId) => {
     // Clear any pending hide
@@ -83,7 +83,7 @@
         showHoverOverlay(projectId);
       }
     }, 100);
-  };
+  }
 
   const debouncedHideOverlay = () => {
     // Clear any pending show
@@ -99,7 +99,7 @@
     hideTimeout = setTimeout(() => {
       hideHoverOverlay();
     }, 100);
-  };
+  }
 
   // Track scrolling state
   if (content) {
@@ -151,5 +151,5 @@
     logo.addEventListener('mouseleave', () => {
       hideHoverOverlay();
     });
-  };
+  }
 })();

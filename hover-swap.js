@@ -20,7 +20,7 @@
     // Use event delegation on the container
     container.addEventListener('mouseenter', (e) => {
       const img = e.target.closest('.hover-swap');
-      if (img && img.classList.contains('hover-swap')) {
+      if (img) {
         const hoverSrc = img.dataset.hoverSrc;
         if (hoverSrc) {
           img.dataset.originalSrc = img.getAttribute('src');
@@ -31,7 +31,7 @@
 
     container.addEventListener('mouseleave', (e) => {
       const img = e.target.closest('.hover-swap');
-      if (img && img.classList.contains('hover-swap')) {
+      if (img) {
         const originalSrc = img.dataset.originalSrc;
         if (originalSrc) {
           img.setAttribute('src', originalSrc);

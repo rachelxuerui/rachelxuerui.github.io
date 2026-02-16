@@ -52,25 +52,4 @@
     });
   }
 
-  // Close overlay
-  if (closeButton) {
-    closeButton.addEventListener('click', () => {
-      imageViewerOverlay.classList.remove('active');
-      setTimeout(() => {
-        imageViewerContent.innerHTML = '';
-      }, 300);
-    });
-  }
-
-  // Close on overlay click (but not on content)
-  if (imageViewerOverlay) {
-    imageViewerOverlay.addEventListener('click', (e) => {
-      if (e.target === imageViewerOverlay) {
-        imageViewerOverlay.classList.remove('active');
-        setTimeout(() => {
-          imageViewerContent.innerHTML = '';
-        }, 300);
-      }
-    });
-  }
 })();

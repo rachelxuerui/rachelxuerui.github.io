@@ -3,10 +3,6 @@
   src: url('Gerstner-ProgrammRegular.otf') format('opentype');
 }
 
-:root {
-  --light-gray: rgba(0, 0, 0, 0.5);
-}
-
 /* =========================
    Base Styles
    ==================== ===== */
@@ -42,22 +38,12 @@ a:hover {
   flex-direction: column;
   justify-content: space-between;
   padding: 36px;
-  padding-right: 36px;
   box-sizing: border-box;
   position: sticky;
   top: 0;
   height: 100vh;
   opacity: 0;
   animation: fadeIn 0.15s ease forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 .sidebar p {
@@ -81,7 +67,7 @@ a:hover {
   align-items: center;
 }
 
-.sidebar li #name {
+.sidebar li .name {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -420,12 +406,7 @@ br.gap-36 {
     padding: 48px 24px;
   }
 
-  /* .project-overlay-left {
-     padding: 48 24px;
-    padding-top: 66px;
-  } */
-
-  .sidebar .project-item #name {
+  .sidebar .project-item .name {
     display: none;
   }
 
