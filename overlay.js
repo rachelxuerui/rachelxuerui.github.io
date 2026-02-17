@@ -125,18 +125,21 @@
   // Use event delegation on content
   if (content) {
     content.addEventListener('mouseenter', (e) => {
-      const cell = e.target.closest('.cell[data-project]');
-      if (cell) {
-        const projectId = cell.dataset.project;
-        if (projectId) {
-          debouncedShowOverlay(projectId);
+      const img = e.target.closest('.cell img, .cell video');
+      if (img) {
+        const cell = img.closest('.cell[data-project]');
+        if (cell) {
+          const projectId = cell.dataset.project;
+          if (projectId) {
+            debouncedShowOverlay(projectId);
+          }
         }
       }
     }, true);
 
     content.addEventListener('mouseleave', (e) => {
-      const cell = e.target.closest('.cell[data-project]');
-      if (cell) {
+      const img = e.target.closest('.cell img, .cell video');
+      if (img) {
         debouncedHideOverlay();
       }
     }, true);
