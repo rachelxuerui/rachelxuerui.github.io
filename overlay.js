@@ -149,9 +149,11 @@
   const logo = document.getElementById('logo');
   if (logo) {
     logo.addEventListener('mouseenter', () => {
+      console.log('showHoverOverlay');
       showHoverOverlay('000');
     });
     logo.addEventListener('mouseleave', () => {
+      console.log('hideHoverOverlay');
       hideHoverOverlay();
     });
   }
