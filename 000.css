@@ -161,8 +161,9 @@ a:hover {
 .cell img,
 .cell video {
   max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+  width: auto;
+  height: auto;
+  display: block;
   transition: opacity ease 0.15s;
   cursor: pointer;
 }
@@ -207,7 +208,7 @@ a:hover {
 .project-overlay.active {
   opacity: 1;
   visibility: visible;
-  pointer-events: auto;
+  pointer-events: none;
   animation: fadeIn 0.15s ease;
 }
 
@@ -223,7 +224,7 @@ a:hover {
 .project-content {
   position: relative;
   z-index: 10001;
-  pointer-events: auto;
+  pointer-events: none;
   box-sizing: border-box;
   color: rgba(0, 0, 0, 0.8);
   display: flex;
