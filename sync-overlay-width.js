@@ -1,5 +1,9 @@
 (() => {
   const syncOverlayWidth = () => {
+    // Only sync on desktop, not mobile
+    const isMobile = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+    if (isMobile) return;
+
     const sidebar = document.querySelector('.sidebar');
     const overlay = document.querySelector('.project-overlay');
 
