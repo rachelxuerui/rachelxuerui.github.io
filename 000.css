@@ -166,7 +166,18 @@ a:hover {
   height: auto;
   display: block;
   transition: opacity ease 0.15s;
+}
+
+.cell img.pdf-thumbnail {
   cursor: pointer;
+}
+
+/* Mobile: all images/videos are clickable */
+@media (hover: none) and (pointer: coarse) {
+  .cell img,
+  .cell video {
+    cursor: pointer;
+  }
 }
 
 .cell video::-webkit-media-controls,
@@ -203,6 +214,17 @@ a:hover {
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.15s ease, visibility 0.15s ease;
+}
+
+/* Mobile: full-screen overlay */
+@media (hover: none) and (pointer: coarse) {
+  .project-overlay {
+    width: 100vw;
+  }
+
+  .project-overlay.active {
+    pointer-events: auto;
+  }
 }
 
 .project-overlay.active {
@@ -274,6 +296,31 @@ a:hover {
   height: 100vh;
   box-sizing: border-box;
   transition: opacity 0.15s ease;
+}
+
+.close-project-overlay {
+  display: none;
+}
+
+/* Mobile: show close button */
+@media (hover: none) and (pointer: coarse) {
+  .close-project-overlay {
+    display: block;
+    position: fixed;
+    top: 36px;
+    right: 36px;
+    background: none;
+    border: none;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: opacity 0.2s;
+    z-index: 100001;
+    padding: 0;
+  }
+
+  .close-project-overlay:hover {
+    opacity: 0.25;
+  }
 }
 
 /* =========================

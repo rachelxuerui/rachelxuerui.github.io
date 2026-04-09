@@ -7,6 +7,13 @@
   const imageViewerOverlay = document.getElementById('image-viewer-overlay');
   const imageViewerContent = document.getElementById('image-viewer-content');
 
+  // Close overlay on ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+      imageViewerOverlay.classList.remove('active');
+    }
+  });
+
   async function renderPDF(pdfPath) {
     try {
       // Load PDF

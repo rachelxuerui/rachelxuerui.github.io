@@ -122,39 +122,77 @@
     }, { passive: true });
   }
 
-  // Use event delegation on content
-  if (content) {
-    content.addEventListener('mouseenter', (e) => {
-      const img = e.target.closest('.cell img, .cell video');
-      if (img) {
-        const cell = img.closest('.cell[data-project]');
-        if (cell) {
-          const projectId = cell.dataset.project;
-          if (projectId) {
-            debouncedShowOverlay(projectId);
+  // Detect mobile device
+  const isMobile = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+
+  if (isMobile) {
+    // Mobile: click to show overlay
+    if (content) {
+      content.addEventListener('click', (e) => {
+        const img = e.target.closest('.cell img, .cell video');
+        if (img && !img.classList.contains('pdf-thumbnail')) {
+          e.stopPropagation();
+          const cell = img.closest('.cell[data-project]');
+          if (cell) {
+            const projectId = cell.dataset.project;
+            if (projectId) {
+              showHoverOverlay(projectId);
+            }
           }
         }
-      }
-    }, true);
+      });
+    }
 
-    content.addEventListener('mouseleave', (e) => {
-      const img = e.target.closest('.cell img, .cell video');
-      if (img) {
-        debouncedHideOverlay();
-      }
-    }, true);
-  }
+    // Mobile: close button
+    const closeButton = document.getElementById('close-project-overlay');
+    if (closeButton) {
+      closeButton.addEventListener('click', () => {
+        hideHoverOverlay();
+      });
+    }
 
-  // Add hover event to logo to show '000' overlay
-  const logo = document.getElementById('logo');
-  if (logo) {
-    logo.addEventListener('mouseenter', () => {
-      console.log('showHoverOverlay');
-      showHoverOverlay('000');
-    });
-    logo.addEventListener('mouseleave', () => {
-      console.log('hideHoverOverlay');
-      hideHoverOverlay();
-    });
+    // Mobile: logo click
+    const logo = document.getElementById('logo');
+    if (logo) {
+      logo.addEventListener('click', () => {
+        showHoverOverlay('000');
+      });
+    }
+  } else {
+    // Desktop: hover to show overlay
+    if (content) {
+      content.addEventListener('mouseenter', (e) => {
+        const img = e.target.closest('.cell img, .cell video');
+        if (img && !img.classList.contains('pdf-thumbnail')) {
+          const cell = img.closest('.cell[data-project]');
+          if (cell) {
+            const projectId = cell.dataset.project;
+            if (projectId) {
+              debouncedShowOverlay(projectId);
+            }
+          }
+        }
+      }, true);
+
+      content.addEventListener('mouseleave', (e) => {
+        const img = e.target.closest('.cell img, .cell video');
+        if (img && !img.classList.contains('pdf-thumbnail')) {
+          debouncedHideOverlay();
+        }
+      }, true);
+    }
+
+    // Desktop: hover event to logo to show '000' overlay
+    const logo = document.getElementById('logo');
+    if (logo) {
+      logo.addEventListener('mouseenter', () => {
+        console.log('showHoverOverlay');
+        showHoverOverlay('000');
+      });
+      logo.addEventListener('mouseleave', () => {
+        console.log('hideHoverOverlay');
+        hideHoverOverlay();
+      });
+    }
   }
 })();
