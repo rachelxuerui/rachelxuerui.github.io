@@ -352,10 +352,15 @@ a:hover {
     transition: opacity 0.2s;
     z-index: 100001;
     padding: 0;
+    pointer-events: auto;
   }
 
   .close-project-overlay:hover {
     opacity: 0.25;
+  }
+
+  .project-content-left {
+    pointer-events: auto;
   }
 }
 
