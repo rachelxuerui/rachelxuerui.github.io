@@ -35,6 +35,9 @@
   let showTimeout = null;
   let hideTimeout = null;
 
+  // Get hover delay from CSS variable
+  const hoverDelay = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--hover-delay')) || 100;
+
   const showHoverOverlay = async (projectId) => {
     if (overlay && overlayContentLeft) {
       const content = await loadProjectContent(projectId);
@@ -82,7 +85,7 @@
       if (!isScrolling) {
         showHoverOverlay(projectId);
       }
-    }, 100);
+    }, hoverDelay);
   }
 
   const debouncedHideOverlay = () => {
@@ -98,7 +101,7 @@
     }
     hideTimeout = setTimeout(() => {
       hideHoverOverlay();
-    }, 100);
+    }, hoverDelay);
   }
 
   // Track scrolling state

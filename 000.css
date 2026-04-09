@@ -3,6 +3,10 @@
   src: url('Gerstner-ProgrammRegular.otf') format('opentype');
 }
 
+:root {
+  --hover-delay: 100ms; /* Configure hover delay in one place */
+}
+
 /* =========================
    Base Styles
    ==================== ===== */
@@ -58,6 +62,12 @@ a:hover {
   font-variant-numeric: tabular-nums;
   gap: 36px;
   flex: 1;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.sidebar-top::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .sidebar .project-item {
@@ -92,6 +102,19 @@ a:hover {
   align-items: start;
   flex-shrink: 0;
   padding: 6px 0;
+  position: relative;
+  background: white;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 40%, white);
+  pointer-events: none;
 }
 
 .contact-label-column {
@@ -148,6 +171,12 @@ a:hover {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .cell {
@@ -165,7 +194,7 @@ a:hover {
   width: auto;
   height: auto;
   display: block;
-  transition: opacity ease 0.15s;
+  transition: filter 0.15s ease;
 }
 
 .cell img.pdf-thumbnail {
@@ -190,12 +219,13 @@ a:hover {
   transition: opacity 0.15s ease;
 }
 
-/* Dim all other images/videos when hovering over one */
-.content:has(.cell img:hover) .cell img:not(:hover),
-.content:has(.cell img:hover) .cell video:not(:hover),
-.content:has(.cell video:hover) .cell img:not(:hover),
-.content:has(.cell video:hover) .cell video:not(:hover) {
-  opacity: 0.25;
+/* Blur all other images/videos when hovering over one, except same project */
+.content:has(.cell img:hover) .cell img:not(:hover):not(.same-project),
+.content:has(.cell img:hover) .cell video:not(:hover):not(.same-project),
+.content:has(.cell video:hover) .cell img:not(:hover):not(.same-project),
+.content:has(.cell video:hover) .cell video:not(:hover):not(.same-project) {
+  filter: blur(8px);
+  transition-delay: var(--hover-delay);
 }
 
 /* =========================
@@ -296,6 +326,12 @@ a:hover {
   height: 100vh;
   box-sizing: border-box;
   transition: opacity 0.15s ease;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.project-content-left::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .close-project-overlay {
@@ -429,7 +465,7 @@ a:hover {
 @media screen and (max-width:571px) {
 
   .sidebar {
-    width: fit-content;
+    width: 50%;
   }
   .contact {
     grid-template-columns: 1fr;
