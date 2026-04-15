@@ -37,11 +37,12 @@ a:hover {
 
 .sidebar {
   display: flex;
-  width: calc(100% / 3);
+  width: fit-content;
   flex-shrink: 0;
   flex-direction: column;
   justify-content: space-between;
   padding: 36px;
+  padding-right: 60px;
   box-sizing: border-box;
   position: sticky;
   top: 0;
@@ -76,6 +77,7 @@ a:hover {
   flex-direction: row;
   gap: 24px;
   align-items: center;
+  color: rgba(0,0,0,0.25);
 }
 
 .sidebar li .name {
@@ -165,37 +167,32 @@ a:hover {
 .content {
   flex: 1 1 auto;
   height: 100vh;
-  min-height: 0;
   overflow-y: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
   scroll-behavior: smooth;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .content::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
 .cell {
-  aspect-ratio: 1 / 1;
+  padding: 18px;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 18px;
-  box-sizing: border-box;
+  transition: width 0.3s ease, height 0.3s ease;
 }
 
 .cell img,
 .cell video {
-  max-width: 90%;
-  max-height: 90%;
-  width: auto;
-  height: auto;
+  object-fit: contain;
   display: block;
-  transition: filter 0.15s ease;
+  transition: filter 0.15s ease, max-width 0.3s ease, max-height 0.3s ease;
 }
 
 .cell img.pdf-thumbnail {
@@ -288,6 +285,7 @@ a:hover {
 .project-content p {
   margin: 0;
   max-width: 400px;
+  text-wrap: pretty;
 }
 
 .project-content-left ul {
@@ -429,50 +427,26 @@ a:hover {
    Media Queries
    ========================= */
 
-@media screen and (max-width:1074px) {
-  .sidebar {
-    width: fit-content;
-    padding: 36px;
+@media screen and (min-width: 1500px) {
+  .content {
+    grid-template-columns: repeat(4, 1fr);
   }
+}
 
+@media screen and (max-width:1074px) {
   .content {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
   }
-
-.sidebar .project-item {
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
-  align-items: center;
-}
-
-.sidebar li .name {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 }
 
 @media screen and (max-width:800px) {
   .content {
-  flex: 1 1 auto;
-  height: 100vh;
-  min-height: 0;
-  overflow-y: auto;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-}
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 
 @media screen and (max-width:571px) {
-
-  .sidebar {
-    width: 50%;
-  }
   .contact {
     grid-template-columns: 1fr;
     height: 108px;
