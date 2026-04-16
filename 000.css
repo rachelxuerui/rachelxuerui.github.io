@@ -4,6 +4,7 @@
 }
 
 :root {
+  --transition-speed: 0.5s; /* Global transition duration */
   --hover-delay: 100ms; /* Configure hover delay in one place */
 }
 
@@ -20,6 +21,7 @@ body {
   font-size: 18px;
   line-height: 1.5;
   scroll-behavior: smooth;
+  background-color: white;
 }
 
 a {
@@ -199,13 +201,7 @@ a:hover {
   cursor: pointer;
 }
 
-/* Mobile: all images/videos are clickable */
-@media (hover: none) and (pointer: coarse) {
-  .cell img,
-  .cell video {
-    cursor: pointer;
-  }
-}
+/* Mobile: all images/videos are clickable - consolidated in media queries section below */
 
 .cell video::-webkit-media-controls,
 .cell video::-webkit-media-controls-enclosure {
@@ -222,7 +218,7 @@ a:hover {
 .content:has(.cell img:hover) .cell video:not(:hover):not(.same-project),
 .content:has(.cell video:hover) .cell img:not(:hover):not(.same-project),
 .content:has(.cell video:hover) .cell video:not(:hover):not(.same-project) {
-  filter: blur(8px);
+  filter: blur(12px);
   transition-delay: var(--hover-delay);
 }
 
@@ -244,16 +240,7 @@ a:hover {
   transition: opacity 0.15s ease, visibility 0.15s ease;
 }
 
-/* Mobile: full-screen overlay */
-@media (hover: none) and (pointer: coarse) {
-  .project-overlay {
-    width: 100vw;
-  }
-
-  .project-overlay.active {
-    pointer-events: auto;
-  }
-}
+/* Mobile */
 
 .project-overlay.active {
   opacity: 1;
@@ -337,31 +324,7 @@ a:hover {
   display: none;
 }
 
-/* Mobile: show close button */
-@media (hover: none) and (pointer: coarse) {
-  .close-project-overlay {
-    display: block;
-    position: fixed;
-    top: 36px;
-    right: 36px;
-    background: none;
-    border: none;
-    color: rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    transition: opacity 0.2s;
-    z-index: 100001;
-    padding: 0;
-    pointer-events: auto;
-  }
-
-  .close-project-overlay:hover {
-    opacity: 0.25;
-  }
-
-  .project-content-left {
-    pointer-events: auto;
-  }
-}
+/* Mobile: show close button - consolidated in media queries section below */
 
 /* =========================
    Image Viewer Overlay
@@ -467,5 +430,52 @@ a:hover {
 
   .name {
     display: none;
+  }
+}
+
+/* Mobile/Touch Devices */
+@media (hover: none) and (pointer: coarse) and (max-width: 768px) {
+  /* Sidebar padding */
+  .sidebar {
+    padding-right: 18px;
+  }
+
+  /* All images/videos are clickable */
+  .cell img,
+  .cell video {
+    cursor: pointer;
+  }
+
+  /* Full-screen overlay */
+  .project-overlay {
+    width: 100vw;
+  }
+
+  .project-overlay.active {
+    pointer-events: auto;
+  }
+
+  /* Show close button */
+  .close-project-overlay {
+    display: block;
+    position: fixed;
+    top: 36px;
+    right: 36px;
+    background: none;
+    border: none;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: opacity 0.2s;
+    z-index: 100001;
+    padding: 0;
+    pointer-events: auto;
+  }
+
+  .close-project-overlay:hover {
+    opacity: 0.25;
+  }
+
+  .project-content-left {
+    pointer-events: auto;
   }
 }
