@@ -1,28 +1,48 @@
 (() => {
   const content = document.querySelector('.content');
   const sidebar = document.querySelector('.sidebar');
-  if (!content || !sidebar) return;
 
-  let sidebarScrollMode = false;
+  if (!content || !sidebar) {
+    console.log('[scroll-control] missing content or sidebar');
+    return;
+  }
 
   function isOverMedia(x, y) {
     const el = document.elementFromPoint(x, y);
-    return el && el.closest('.cell img, .cell video');
+    const isMedia = !!el?.closest('.cell img, .cell video');
+
+    console.log('[scroll-control] hit test:', {
+      el,
+      isMedia,
+      x,
+      y
+    });
+
+    return isMedia;
   }
 
-  // continuously detect what mode we are in
-  document.addEventListener('pointermove', (e) => {
-    sidebarScrollMode = !!isOverMedia(e.clientX, e.clientY);
-  }, { passive: true });
-
-  // intercept ALL scroll intent
   window.addEventListener('wheel', (e) => {
-    if (!sidebarScrollMode) return;
+    console.log('[scroll-control] wheel fired', {
+      deltaY: e.deltaY,
+      x: e.clientX,
+      y: e.clientY
+    });
 
-    // stop content scroll completely
+    const overMedia = isOverMedia(e.clientX, e.clientY);
+
+    console.log('[scroll-control] overMedia =', overMedia);
+
+    if (!overMedia) return;
+
     e.preventDefault();
 
-    // route scroll to sidebar
+    const before = sidebar.scrollTop;
+
     sidebar.scrollTop += e.deltaY;
+
+    console.log('[scroll-control] sidebar scroll:', {
+      before,
+      after: sidebar.scrollTop
+    });
   }, { passive: false });
 })();
