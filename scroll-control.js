@@ -3,33 +3,26 @@
   const sidebar = document.querySelector('.sidebar');
   if (!content || !sidebar) return;
 
-  let isHoveringImage = false;
+  let sidebarScrollMode = false;
 
-  function setupHoverListeners() {
-    const media = content.querySelectorAll('.cell img, .cell video');
-
-    media.forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        isHoveringImage = true;
-      });
-
-      el.addEventListener('mouseleave', () => {
-        isHoveringImage = false;
-      });
-    });
+  function isOverMedia(x, y) {
+    const el = document.elementFromPoint(x, y);
+    return el && el.closest('.cell img, .cell video');
   }
 
-  content.addEventListener('wheel', (e) => {
-    if (isHoveringImage) {
-      e.preventDefault();
+  // continuously detect what mode we are in
+  document.addEventListener('pointermove', (e) => {
+    sidebarScrollMode = !!isOverMedia(e.clientX, e.clientY);
+  }, { passive: true });
 
-      // 👇 Redirect scroll to sidebar
-      sidebar.scrollTop += e.deltaY;
-    }
+  // intercept ALL scroll intent
+  window.addEventListener('wheel', (e) => {
+    if (!sidebarScrollMode) return;
+
+    // stop content scroll completely
+    e.preventDefault();
+
+    // route scroll to sidebar
+    sidebar.scrollTop += e.deltaY;
   }, { passive: false });
-
-  setupHoverListeners();
-
-  const observer = new MutationObserver(setupHoverListeners);
-  observer.observe(content, { childList: true });
 })();

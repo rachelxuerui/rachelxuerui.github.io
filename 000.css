@@ -167,10 +167,11 @@ a:hover {
    ========================= */
 
 .content {
+  display: grid;
   flex: 1 1 auto;
+  min-height: 0;
   height: 100vh;
   overflow-y: auto;
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
   scroll-behavior: smooth;
   scrollbar-width: none;
