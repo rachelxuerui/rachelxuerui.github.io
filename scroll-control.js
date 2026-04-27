@@ -1,42 +1,35 @@
 (() => {
-  // =========================
-  // Prevent content scroll when hovering over images
-  // =========================
   const content = document.querySelector('.content');
-  if (!content) return;
+  const sidebar = document.querySelector('.sidebar');
+  if (!content || !sidebar) return;
 
   let isHoveringImage = false;
 
-  // Add hover listeners to all images and videos in content
   function setupHoverListeners() {
     const media = content.querySelectorAll('.cell img, .cell video');
 
-    media.forEach(element => {
-      element.addEventListener('mouseenter', () => {
+    media.forEach(el => {
+      el.addEventListener('mouseenter', () => {
         isHoveringImage = true;
       });
 
-      element.addEventListener('mouseleave', () => {
+      el.addEventListener('mouseleave', () => {
         isHoveringImage = false;
       });
     });
   }
 
-  // Prevent scrolling on content when hovering over images
   content.addEventListener('wheel', (e) => {
     if (isHoveringImage) {
       e.preventDefault();
-      e.stopPropagation();
+
+      // 👇 Redirect scroll to sidebar
+      sidebar.scrollTop += e.deltaY;
     }
   }, { passive: false });
 
-  // Initialize hover listeners
   setupHoverListeners();
 
-  // Re-setup listeners when new content is added (for infinite scroll)
-  const observer = new MutationObserver(() => {
-    setupHoverListeners();
-  });
-
+  const observer = new MutationObserver(setupHoverListeners);
   observer.observe(content, { childList: true });
 })();
