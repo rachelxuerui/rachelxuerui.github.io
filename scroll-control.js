@@ -1,48 +1,42 @@
 (() => {
   const content = document.querySelector('.content');
-  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.getElementById('project-overlay');
+  const overlayContent = document.getElementById('overlay-content-left');
 
-  if (!content || !sidebar) {
-    console.log('[scroll-control] missing content or sidebar');
+  if (!content || !overlay || !overlayContent) {
     return;
   }
 
-  function isOverMedia(x, y) {
-    const el = document.elementFromPoint(x, y);
-    const isMedia = !!el?.closest('.cell img, .cell video');
+  let hoveringProjectMedia = false;
 
-    console.log('[scroll-control] hit test:', {
-      el,
-      isMedia,
-      x,
-      y
-    });
+  const isProjectMedia = (target) => {
+    if (!target || typeof target.closest !== 'function') return false;
+    const media = target.closest('.cell img, .cell video');
+    return !!media && !media.classList.contains('pdf-thumbnail');
+  };
 
-    return isMedia;
-  }
+  const normalizeWheelDelta = (e) => {
+    if (e.deltaMode === WheelEvent.DOM_DELTA_LINE) return e.deltaY * 16;
+    if (e.deltaMode === WheelEvent.DOM_DELTA_PAGE) return e.deltaY * overlayContent.clientHeight;
+    return e.deltaY;
+  };
+
+  content.addEventListener('mouseenter', (e) => {
+    if (isProjectMedia(e.target)) {
+      hoveringProjectMedia = true;
+    }
+  }, true);
+
+  content.addEventListener('mouseleave', (e) => {
+    if (isProjectMedia(e.target)) {
+      hoveringProjectMedia = false;
+    }
+  }, true);
 
   window.addEventListener('wheel', (e) => {
-    console.log('[scroll-control] wheel fired', {
-      deltaY: e.deltaY,
-      x: e.clientX,
-      y: e.clientY
-    });
-
-    const overMedia = isOverMedia(e.clientX, e.clientY);
-
-    console.log('[scroll-control] overMedia =', overMedia);
-
-    if (!overMedia) return;
+    if (!hoveringProjectMedia || !overlay.classList.contains('active')) return;
 
     e.preventDefault();
-
-    const before = sidebar.scrollTop;
-
-    sidebar.scrollTop += e.deltaY;
-
-    console.log('[scroll-control] sidebar scroll:', {
-      before,
-      after: sidebar.scrollTop
-    });
+    overlayContent.scrollTop += normalizeWheelDelta(e);
   }, { passive: false });
 })();

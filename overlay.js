@@ -41,6 +41,14 @@
   const showHoverOverlay = async (projectId) => {
     if (overlay && overlayContentLeft) {
       const content = await loadProjectContent(projectId);
+      const refreshDateTime = () => {
+        if (typeof window.updateDateTime === 'function') {
+          window.updateDateTime();
+        }
+      };
+      const resetOverlayScroll = () => {
+        overlayContentLeft.scrollTop = 0;
+      };
 
       // If switching between different projects, fade out then in
       if (currentProjectId !== projectId && currentProjectId !== null) {
@@ -48,12 +56,16 @@
         setTimeout(() => {
           currentProjectId = projectId;
           overlayContentLeft.innerHTML = content;
+          resetOverlayScroll();
+          refreshDateTime();
           overlayContentLeft.style.opacity = '1';
         }, 150);
       } else {
         // First time showing or same project
         currentProjectId = projectId;
         overlayContentLeft.innerHTML = content;
+        resetOverlayScroll();
+        refreshDateTime();
         overlayContentLeft.style.opacity = '1';
       }
       overlay.classList.add('active');
@@ -64,6 +76,9 @@
     if (overlay) {
       currentProjectId = null;
       overlay.classList.remove('active');
+      if (overlayContentLeft) {
+        overlayContentLeft.scrollTop = 0;
+      }
     }
   }
 

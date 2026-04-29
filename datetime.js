@@ -1,22 +1,39 @@
-function updateDateTime() {
-  const now = new Date();
+(() => {
+  function getOrdinalSuffix(day) {
+    if (day >= 11 && day <= 13) return 'th';
 
-  const formatted = now.toLocaleString(undefined, {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: '2-digit'
-  });
+    switch (day % 10) {
+      case 1:
+        return 'st';
+      case 2:
+        return 'nd';
+      case 3:
+        return 'rd';
+      default:
+        return 'th';
+    }
+  }
 
-  document.querySelectorAll('.datetime').forEach(el => {
-  el.textContent = formatted;
-});
-}
+  function updateDateTime() {
+    const now = new Date();
+    const month = now.toLocaleString(undefined, { month: 'long' });
+    const day = now.getDate();
+    const time = now.toLocaleTimeString(undefined, {
+      hour: 'numeric',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    });
 
-// run once on load
-updateDateTime();
+    const formatted = `${month} ${day}${getOrdinalSuffix(day)} ${time}`;
 
-// optional: keep updating
-setInterval(updateDateTime, 1000);
+    document.querySelectorAll('.datetime').forEach(el => {
+      el.textContent = formatted;
+    });
+  }
+
+  window.updateDateTime = updateDateTime;
+
+  updateDateTime();
+  setInterval(updateDateTime, 1000);
+})();
