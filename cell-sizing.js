@@ -46,7 +46,7 @@
   let resizeTimeout;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(updateCellSizes, 100);
+    resizeTimeout = setTimeout(updateCellSizes, 20);
   });
 
   // Run after infinite scroll adds new cells

@@ -21,7 +21,7 @@ body {
   font-size: 18px;
   line-height: 1.5;
   scroll-behavior: smooth;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 a {
@@ -89,6 +89,7 @@ a:hover {
 }
 
 .number {
+  font-variant-numeric: tabular-nums;
   letter-spacing: 1.5px;
 }
 
@@ -147,6 +148,8 @@ a:hover {
 .zeroes {
   display: flex;
   flex-direction: column;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 1.5px;
   line-height: 1;
   gap: 1.5px;
   width: max-content;
@@ -159,7 +162,6 @@ a:hover {
 .zeroes-top {
   display: flex;
   flex-direction: row;
-  gap: 1.5px;
 }
 
 /* =========================
@@ -232,7 +234,7 @@ a:hover {
   top: 0;
   left: 0;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255,255,255,0.9);
   z-index: 100000;
   color: black;
   opacity: 0;
