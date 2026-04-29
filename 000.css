@@ -276,6 +276,14 @@ a:hover {
   text-wrap: pretty;
 }
 
+.project-description {
+  max-width: 400px;
+}
+
+.project-content .project-description p + p {
+  margin-top: 1.5em;
+}
+
 .project-content-left ul {
   list-style: none;
   padding: 0;
