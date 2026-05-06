@@ -40,3 +40,35 @@
     overlayContent.scrollTop += normalizeWheelDelta(e);
   }, { passive: false });
 })();
+
+
+(() => {
+  const logo = document.getElementById('logo');
+  const overlay = document.getElementById('project-overlay');
+  const overlayContent = document.getElementById('overlay-content-left');
+
+  if (!logo || !overlay || !overlayContent) return;
+
+  let hoveringLogo = false;
+
+  logo.addEventListener('mouseenter', () => {
+    hoveringLogo = true;
+  });
+
+  logo.addEventListener('mouseleave', () => {
+    hoveringLogo = false;
+  });
+
+  const normalizeWheelDelta = (e) => {
+    if (e.deltaMode === WheelEvent.DOM_DELTA_LINE) return e.deltaY * 16;
+    if (e.deltaMode === WheelEvent.DOM_DELTA_PAGE) return e.deltaY * overlayContent.clientHeight;
+    return e.deltaY;
+  };
+
+  window.addEventListener('wheel', (e) => {
+    if (!hoveringLogo || !overlay.classList.contains('active')) return;
+
+    e.preventDefault();
+    overlayContent.scrollTop += normalizeWheelDelta(e);
+  }, { passive: false });
+})();
