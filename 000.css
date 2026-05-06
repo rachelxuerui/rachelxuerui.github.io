@@ -37,6 +37,10 @@ span {
   white-space: nowrap;
 }
 
+.datetime {
+  font-variant-numeric: tabular-nums;
+}
+
 /* =========================
    Sidebar
    ========================= */
