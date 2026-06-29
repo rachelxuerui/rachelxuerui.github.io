@@ -319,6 +319,8 @@ span {
   display: flex;
   flex-direction: row;
   gap: 24px;
+  position: fixed;
+  z-index: 10001;
 }
 
 .project-content-left {
