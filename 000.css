@@ -498,6 +498,6 @@ span {
 
   .project-content-left {
     pointer-events: auto;
-    padding-top: 0;
+    padding-top: 36px;
   }
 }
