@@ -5,29 +5,75 @@
   const content = document.querySelector('.content');
   const overlay = document.getElementById('project-overlay');
   const overlayContentLeft = document.getElementById('overlay-content-left');
+  const rightOverlay = document.getElementById('project-overlay-right');
+  const overlayContentRight = document.getElementById('overlay-content-right');
 
-  // Cache for loaded HTML content
-  const contentCache = {}
+  let currentClickedProject = null;
 
-  // Load HTML file for a project
-  const loadProjectContent = async (projectId) => {
-    if (contentCache[projectId]) {
-      return contentCache[projectId];
+  // Cache
+  const leftContentCache = {};
+  const rightContentCache = {};
+
+  // Left overlay content
+  const loadLeftProjectContent = async (projectId) => {
+    if (leftContentCache[projectId]) {
+      return leftContentCache[projectId];
     }
 
     try {
-      const response = await fetch(`projects/${projectId}.html`);
+      const response = await fetch(`preview/${projectId}.html`);
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
+
       const html = await response.text();
-      contentCache[projectId] = html;
+      leftContentCache[projectId] = html;
+
       return html;
+
     } catch (error) {
-      console.error(`Error loading project ${projectId}:`, error);
+      console.error(`Error loading left project ${projectId}:`, error);
       return `<p>Error loading project content.</p>`;
     }
+  };
+
+  const hasRightProjectContent = async (projectId) => {
+  try {
+    const response = await fetch(`details/${projectId}.html`, {
+      method: 'HEAD'
+    });
+
+    return response.ok;
+
+  } catch (error) {
+    return false;
   }
+};
+
+  // Right overlay content
+  const loadRightProjectContent = async (projectId) => {
+    if (rightContentCache[projectId]) {
+      return rightContentCache[projectId];
+    }
+
+    try {
+      const response = await fetch(`details/${projectId}.html`);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const html = await response.text();
+      rightContentCache[projectId] = html;
+
+      return html;
+
+    } catch (error) {
+      console.error(`Error loading right project ${projectId}:`, error);
+      return `<p>Error loading project details.</p>`;
+    }
+  };
 
   let currentProjectId = null;
   let isScrolling = false;
@@ -40,7 +86,7 @@
 
   const showHoverOverlay = async (projectId) => {
     if (overlay && overlayContentLeft) {
-      const content = await loadProjectContent(projectId);
+      const content = await loadLeftProjectContent(projectId);
       const refreshDateTime = () => {
         if (typeof window.updateDateTime === 'function') {
           window.updateDateTime();
@@ -72,14 +118,66 @@
     }
   }
 
+  const showClickOverlay = async (projectId) => {
+
+  overlayContentRight.querySelectorAll('.detail-link').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const targetId = link.getAttribute('href').substring(1);
+    const target = overlayContentRight.querySelector(`#${targetId}`);
+
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
+  const hasContent = await hasRightProjectContent(projectId);
+
+  // No detail page = do nothing
+  if (!hasContent) {
+    return;
+  }
+
+  const content = await loadRightProjectContent(projectId);
+
+  currentClickedProject = projectId;
+  isLeftOverlayLocked = true;
+
+  overlayContentRight.innerHTML = content;
+  overlayContentRight.scrollTop = 0;
+
+  rightOverlay.classList.add('active');
+};
+
+  let isLeftOverlayLocked = false;
+
   const hideHoverOverlay = () => {
+    if (isLeftOverlayLocked) return;
+
     if (overlay) {
       currentProjectId = null;
       overlay.classList.remove('active');
-      if (overlayContentLeft) {
-        overlayContentLeft.scrollTop = 0;
-      }
     }
+  };
+
+const hideClickOverlay = () => {
+  currentClickedProject = null;
+  isLeftOverlayLocked = false;
+
+  rightOverlay.classList.remove('active');
+  hideHoverOverlay();
+};
+
+  // Close right project overlay button
+  const closeRightButton = document.getElementById('close-project-overlay-right');
+
+  if (closeRightButton) {
+    closeRightButton.addEventListener('click', hideClickOverlay);
   }
 
   const debouncedShowOverlay = (projectId) => {
@@ -138,6 +236,22 @@
         isScrolling = false;
       }, 150);
     }, { passive: true });
+
+    content.addEventListener('click', (e) => {
+
+      const media = e.target.closest('.cell img, .cell video');
+
+      if (!media) return;
+
+      if (media.classList.contains('pdf-thumbnail')) return;
+
+      const cell = media.closest('.cell[data-project]');
+
+      if (!cell) return;
+
+      showClickOverlay(cell.dataset.project);
+
+    });
   }
 
   // Detect mobile device
@@ -160,6 +274,14 @@
         }
       });
     }
+
+    // // Add the close button listener here
+    // const closeRightButton = document.getElementById('close-project-overlay-right');
+
+    // if (closeRightButton) {
+    //     closeRightButton.addEventListener('click', hideClickOverlay);
+    // }
+
 
     // Mobile: close button
     const closeButton = document.getElementById('close-project-overlay');
@@ -213,4 +335,6 @@
       });
     }
   }
+  
+  
 })();

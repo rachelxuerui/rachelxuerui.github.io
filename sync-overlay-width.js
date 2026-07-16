@@ -1,41 +1,45 @@
 (() => {
+  const isMobile = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+
+  const sidebar = document.querySelector('.sidebar');
+  const leftOverlay = document.getElementById('project-overlay');
+  const rightOverlay = document.getElementById('project-overlay-right');
+
   const syncOverlayWidth = () => {
-    // Only sync on desktop, not mobile
-    const isMobile = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+    // Don't run on mobile
     if (isMobile) return;
 
-    const sidebar = document.querySelector('.sidebar');
-    const overlay = document.querySelector('.project-overlay');
+    if (!sidebar || !leftOverlay) return;
 
-    if (sidebar && overlay) {
-      const sidebarWidth = sidebar.offsetWidth;
-      overlay.style.width = `${sidebarWidth}px`;
+    const sidebarWidth = sidebar.offsetWidth;
+
+    // Left overlay = sidebar width
+    leftOverlay.style.width = `${sidebarWidth}px`;
+
+    // Right overlay starts after sidebar
+    if (rightOverlay) {
+      rightOverlay.style.left = `${sidebarWidth}px`;
     }
   };
 
-  // Sync on page load
+  // Initial sync
   syncOverlayWidth();
 
-  // Sync on window resize
+  // Sync on resize (debounced)
   let resizeTimeout;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(syncOverlayWidth, 100);
   });
 
-  // Sync when overlay becomes active (in case sidebar changed)
-  const overlay = document.querySelector('.project-overlay');
-  if (overlay) {
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.attributeName === 'class') {
-          if (overlay.classList.contains('active')) {
-            syncOverlayWidth();
-          }
-        }
-      });
+  // Sync when left overlay is activated
+  if (leftOverlay) {
+    const observer = new MutationObserver(() => {
+      if (leftOverlay.classList.contains('active')) {
+        syncOverlayWidth();
+      }
     });
 
-    observer.observe(overlay, { attributes: true });
+    observer.observe(leftOverlay, { attributes: true });
   }
 })();
