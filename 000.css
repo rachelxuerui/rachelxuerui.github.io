@@ -116,7 +116,7 @@ span {
   flex-shrink: 0;
   padding: 6px 0;
   position: relative;
-  background: white;
+  background: rgba(247, 245, 244);
 }
 
 .contact::before {
