@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minecraft Save File</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Press Start 2P', monospace;
+    overflow:hidden;
+    height:100vh;
+    color:white;
+    background:linear-gradient(#ffb7d7,#ffdced 45%,#ffecf7);
+    image-rendering:pixelated;
+}
+
+/* Clouds */
+
+.cloud{
+    position:absolute;
+    background:white;
+    opacity:.9;
+}
+
+.cloud::before,
+.cloud::after{
+    content:"";
+    position:absolute;
+    background:white;
+}
+
+.cloud.one{
+    width:90px;
+    height:25px;
+    left:10%;
+    top:10%;
+}
+.cloud.one::before{
+    width:35px;
+    height:25px;
+    left:20px;
+    top:-12px;
+}
+.cloud.one::after{
+    width:40px;
+    height:25px;
+    left:50px;
+    top:8px;
+}
+
+.cloud.two{
+    width:120px;
+    height:28px;
+    right:15%;
+    top:20%;
+}
+.cloud.two::before{
+    width:50px;
+    height:28px;
+    left:25px;
+    top:-12px;
+}
+.cloud.two::after{
+    width:50px;
+    height:28px;
+    left:70px;
+    top:6px;
+}
+
+/* Ground */
+
+.ground{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:150px;
+    background:
+        linear-gradient(#6ed65d 0 18px,#8a5a37 18px);
+    border-top:6px solid #98f080;
+}
+
+/* Flowers */
+
+.flower{
+    position:absolute;
+    bottom:140px;
+    font-size:24px;
+}
+
+.f1{left:8%;}
+.f2{left:22%;}
+.f3{left:38%;}
+.f4{left:63%;}
+.f5{left:80%;}
+
+/* Window */
+
+.window{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:700px;
+    background:#d890b7;
+    border:6px solid #5d3347;
+    box-shadow:
+        inset 4px 4px rgba(255,255,255,.2),
+        inset -4px -4px rgba(0,0,0,.25),
+        10px 10px rgba(0,0,0,.25);
+    padding:40px;
+    text-align:center;
+}
+
+.title{
+    font-size:28px;
+    margin-bottom:20px;
+    text-shadow:3px 3px #6d2d4e;
+}
+
+.subtitle{
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+.price{
+    font-size:14px;
+    margin-bottom:30px;
+    color:#fff0f8;
+}
+
+/* Photo */
+
+.photo-container{
+    position:relative;
+    width:280px;
+    height:280px;
+    margin:20px auto;
+}
+
+.kiss-photo{
+    width:100%;
+    height:100%;
+    border:6px solid white;
+    cursor:pointer;
+    transition:.15s;
+    image-rendering:pixelated;
+    display:block;
+
+    object-fit:cover;
+    object-position:center;
+}
+
+.kiss-photo:hover{
+    transform:scale(1.03);
+}
+
+.kiss-photo:active{
+    transform:scale(.98);
+}
+
+.counter{
+    margin-top:20px;
+    font-size:14px;
+    color:#fff;
+}
+
+/* Buttons */
+
+.minecraft-button{
+    display:inline-block;
+    margin-top:25px;
+    background:#c95c95;
+    border-top:4px solid #ffb8da;
+    border-left:4px solid #ffb8da;
+    border-right:4px solid #8b3f66;
+    border-bottom:4px solid #8b3f66;
+    color:white;
+    text-decoration:none;
+    font-family:'Press Start 2P';
+    font-size:14px;
+    padding:18px 26px;
+    cursor:pointer;
+    user-select:none;
+}
+
+.minecraft-button:hover{
+    background:#dd6da8;
+}
+
+.download{
+    display:none;
+}
+
+.unlock{
+    animation:pop .5s;
+}
+
+@keyframes pop{
+0%{transform:scale(.4);}
+70%{transform:scale(1.15);}
+100%{transform:scale(1);}
+}
+
+/* Kiss emojis */
+
+.kiss{
+    position:absolute;
+    font-size:34px;
+    pointer-events:none;
+    animation:kissPop .4s ease;
+    transform:translate(-50%, -50%);
+}
+
+@keyframes kissPop{
+0%{
+opacity:0;
+transform:translate(-50%, -50%) scale(.2);
+}
+100%{
+opacity:1;
+transform:translate(-50%, -50%) scale(1);
+}
+}
+
+.footer{
+    margin-top:30px;
+    font-size:10px;
+    color:#ffe8f5;
+}
+</style>
+</head>
+
+<body>
+
+<div class="cloud one"></div>
+<div class="cloud two"></div>
+
+<div class="flower f1">🌸</div>
+<div class="flower f2">🌷</div>
+<div class="flower f3">🌸</div>
+<div class="flower f4">🌷</div>
+<div class="flower f5">🌸</div>
+
+<div class="window">
+
+<div class="title">
+Hi Allen ♡
+</div>
+
+<div class="subtitle">
+Minecraft Save File
+</div>
+
+<div class="price">
+Cost: <span style="color:white;">10 Kisses</span>
+</div>
+
+<div class="photo-container">
+
+<img
+id="kissPhoto"
+class="kiss-photo"
+src="images/me-before.png"
+alt="Click to kiss me">
+
+</div>
+
+<div class="counter" id="counter">
+Click my picture to give me kisses ❤️
+</div>
+
+<a
+class="minecraft-button download"
+id="downloadButton"
+href="https://drive.google.com/uc?export=download&id=16fFzixoR1r4nnpT4pexnrflrUqoMUIX0"
+target="_blank">
+DOWNLOAD SAVE FILE
+</a>
+
+<div class="footer">
+Achievement: True Love 💖
+</div>
+
+</div>
+
+<div class="ground"></div>
+
+<!-- Sounds -->
+<audio id="kissSound" preload="auto">
+    <source src="sounds/kiss.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="levelSound" preload="auto">
+    <source src="sounds/levelup.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="chestSound" preload="auto">
+    <source src="sounds/chest.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+const photo = document.getElementById("kissPhoto");
+const counter = document.getElementById("counter");
+const download = document.getElementById("downloadButton");
+
+const kissSound = document.getElementById("kissSound");
+const levelSound = document.getElementById("levelSound");
+const chestSound = document.getElementById("chestSound");
+
+let kisses = 0;
+
+photo.addEventListener("click", (event) => {
+
+    if(kisses >= 10) return;
+
+    kisses++;
+
+    try{
+        kissSound.currentTime = 0;
+        kissSound.play();
+    }catch(e){}
+
+    // Show after image briefly, then revert
+    photo.src = "images/me-after.png";
+
+    setTimeout(() => {
+        if(kisses < 10){
+            photo.src = "images/me-before.png";
+        }
+    }, 500);
+
+    counter.textContent = `${kisses} / 10 kisses`;
+
+    // Create kiss emoji exactly where clicked
+    const kiss = document.createElement("div");
+    kiss.className = "kiss";
+    kiss.textContent = Math.random() > 0.5 ? "💋" : "💕";
+
+    const rect = photo.getBoundingClientRect();
+
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    kiss.style.left = x + "px";
+    kiss.style.top = y + "px";
+
+    document.querySelector(".photo-container").appendChild(kiss);
+
+    if(kisses === 10){
+
+        counter.innerHTML = "❤️ I LOVE YOU ❤️";
+
+        // Keep after image at the end
+        photo.src = "images/me-after.png";
+
+        download.style.display = "inline-block";
+        download.classList.add("unlock");
+
+        try{
+            levelSound.play();
+        }catch(e){}
+
+    }
+
+});
+
+download.addEventListener("click", () => {
+    try{
+        chestSound.currentTime = 0;
+        chestSound.play();
+    }catch(e){}
+});
+
+</script>
+
+</body>
+</html>
