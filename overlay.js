@@ -154,61 +154,52 @@
 
 
 
-  async function showRightOverlay(projectId, scrollTarget = null) {
+async function showRightOverlay(projectId, scrollTarget = null) {
 
-    if (!await hasDetails(projectId)) {
-      return;
-    }
-
-
-    const html = await loadContent('details', projectId);
-
-
-    currentClickedProject = projectId;
-    leftLocked = true;
-
-
-    rightContent.innerHTML = html;
-
-    rightOverlay.classList.add('active');
-
-    requestAnimationFrame(() => {
-      const target = scrollTarget
-        ? rightContent.querySelector(`#${scrollTarget}`)
-        : rightContent.querySelector('.detail-image img, img');
-
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'instant',
-          block: 'center'
-        });
-      }
-    });
-
-
-    if (scrollTarget) {
-
-      requestAnimationFrame(() => {
-
-        const target =
-          rightContent.querySelector(`#${scrollTarget}`);
-
-
-        if (target) {
-
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center'
-          });
-
-        }
-
-      });
-
-    }
+  if (!await hasDetails(projectId)) {
+    return;
   }
 
 
+  const html = await loadContent('details', projectId);
+
+
+  currentClickedProject = projectId;
+  leftLocked = true;
+
+
+  rightContent.innerHTML = html;
+
+  rightOverlay.classList.add('active');
+
+
+  requestAnimationFrame(() => {
+
+    if (scrollTarget) {
+
+      const target =
+        rightContent.querySelector(`#${scrollTarget}`);
+
+
+      if (target) {
+
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+
+      }
+
+    } else {
+
+      // Only reset to top when opening normally
+      rightContent.scrollTop = 0;
+
+    }
+
+  });
+
+}
 
   function hideLeftOverlay() {
 
