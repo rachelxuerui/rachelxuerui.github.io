@@ -570,6 +570,17 @@ span {
   margin-bottom: 36px;
 }
 
+#tooltip {
+  position: fixed;
+  pointer-events: none;
+  padding: 4px 8px;
+  border-radius: 1px;
+  color: rgba(0,0,0,0.9);
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 100001;
+}
+
 .detail-link {
   text-decoration: underline;
   text-underline-offset: 3px;
