@@ -31,6 +31,11 @@
         .getPropertyValue('--hover-delay')
     ) || 100;
 
+  const isMobile =
+    window.matchMedia(
+      "(hover:none) and (pointer:coarse)"
+    ).matches;
+
 
   // =========================
   // Content Loading
@@ -140,6 +145,17 @@
           const target =
             link.getAttribute('href').replace('#', '');
 
+          if (isMobile) {
+            leftContent
+              .querySelector(`#${CSS.escape(target)}`)
+              ?.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+
+            return;
+          }
+
           await showRightOverlay(projectId, target);
         });
       });
@@ -174,7 +190,17 @@
     if (!leftOverlay || !leftContent) return;
 
 
-    const html = await loadContent('preview', projectId);
+    let html = await loadContent('preview', projectId);
+
+    if (isMobile && hasDetails(projectId)) {
+      const detailsHtml = await loadContent('details', projectId);
+
+      html += `
+        <div class="mobile-detail-images">
+          ${detailsHtml}
+        </div>
+      `;
+    }
 
 
     if (currentProject !== projectId && currentProject !== null) {
@@ -377,6 +403,7 @@ async function showRightOverlay(projectId, scrollTarget = null) {
 
         if (!cell) return;
 
+        if (isMobile) return;
 
         showRightOverlay(cell.dataset.project);
 
@@ -384,13 +411,6 @@ async function showRightOverlay(projectId, scrollTarget = null) {
     );
 
   }
-
-
-
-  const isMobile =
-    window.matchMedia(
-      "(hover:none) and (pointer:coarse)"
-    ).matches;
 
 
 

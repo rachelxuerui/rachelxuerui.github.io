@@ -553,6 +553,35 @@ span {
   .project-content-left {
     pointer-events: auto;
     padding-top: 36px;
+    justify-content: flex-start;
+    gap: 56px;
+  }
+
+  .mobile-detail-images {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    width: 100%;
+  }
+
+  .project-content-left .detail-image {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    background-color: transparent;
+  }
+
+  .project-content-left .detail-image img,
+  .project-content-left .detail-image video {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
   }
 }
 
