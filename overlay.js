@@ -13,6 +13,7 @@
 
   const leftCache = {};
   const rightCache = {};
+  const detailProjects = new Set(['005', '013']);
 
   let currentProject = null;
   let currentClickedProject = null;
@@ -67,16 +68,51 @@
   }
 
 
-  async function hasDetails(projectId) {
-    try {
-      const response = await fetch(`details/${projectId}.html`);
-      return response.ok;
-
-    } catch {
-      return false;
-    }
+  function hasDetails(projectId) {
+    return detailProjects.has(projectId);
   }
 
+
+  function markDetailCell(cell) {
+    const projectId = cell?.dataset?.project;
+
+    if (!projectId) return;
+
+    cell.classList.toggle(
+      'has-details',
+      hasDetails(projectId)
+    );
+  }
+
+
+  function markDetailCells(root = content) {
+    if (!root) return;
+
+    if (root.matches?.('.cell[data-project]')) {
+      markDetailCell(root);
+    }
+
+    root.querySelectorAll?.('.cell[data-project]')
+      .forEach(markDetailCell);
+  }
+
+
+  if (content) {
+    markDetailCells();
+
+    const detailCellObserver =
+      new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
+          mutation.addedNodes.forEach(node => {
+            if (node.nodeType === Node.ELEMENT_NODE) {
+              markDetailCells(node);
+            }
+          });
+        });
+      });
+
+    detailCellObserver.observe(content, { childList: true });
+  }
 
   // =========================
   // Overlay Controls
@@ -95,7 +131,7 @@
 
 
   function bindDetailLinks(projectId) {
-    leftContent.querySelectorAll('.detail-link')
+    leftContent.querySelectorAll('a[href^="#"]')
       .forEach(link => {
 
         link.addEventListener('click', async event => {
@@ -107,6 +143,29 @@
           await showRightOverlay(projectId, target);
         });
       });
+  }
+
+
+  function scrollRightOverlayTo(targetId) {
+    if (!targetId || !rightContent) return;
+
+    const target =
+      rightContent.querySelector(`#${CSS.escape(targetId)}`);
+
+    if (!target) return;
+
+    const detailImage = target.closest('.detail-image') || target;
+    const detailImages = [...rightContent.querySelectorAll('.detail-image')];
+    const targetIndex = detailImages.indexOf(detailImage);
+
+    if (targetIndex === -1) return;
+
+    const step = detailImages[0]?.offsetHeight || 0;
+
+    rightContent.scrollTo({
+      top: targetIndex * step,
+      behavior: 'smooth'
+    });
   }
 
 
@@ -156,7 +215,7 @@
 
 async function showRightOverlay(projectId, scrollTarget = null) {
 
-  if (!await hasDetails(projectId)) {
+  if (!hasDetails(projectId)) {
     return;
   }
 
@@ -174,29 +233,20 @@ async function showRightOverlay(projectId, scrollTarget = null) {
 
 
   requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
 
-    if (scrollTarget) {
+      if (scrollTarget) {
 
-      const target =
-        rightContent.querySelector(`#${scrollTarget}`);
+        scrollRightOverlayTo(scrollTarget);
 
+      } else {
 
-      if (target) {
-
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'center'
-        });
+        // Only reset to top when opening normally
+        rightContent.scrollTop = 0;
 
       }
 
-    } else {
-
-      // Only reset to top when opening normally
-      rightContent.scrollTop = 0;
-
-    }
-
+    });
   });
 
 }
@@ -258,11 +308,7 @@ async function showRightOverlay(projectId, scrollTarget = null) {
     clearTimeout(hideTimeout);
 
 
-    hideTimeout = setTimeout(() => {
-
-      hideLeftOverlay();
-
-    }, hoverDelay);
+    hideLeftOverlay();
 
   }
 
@@ -449,13 +495,13 @@ async function showRightOverlay(projectId, scrollTarget = null) {
 
     logo?.addEventListener(
       'mouseenter',
-      () => showLeftOverlay('000')
+      () => showHover('000')
     );
 
 
     logo?.addEventListener(
       'mouseleave',
-      hideLeftOverlay
+      hideHover
     );
 
   }

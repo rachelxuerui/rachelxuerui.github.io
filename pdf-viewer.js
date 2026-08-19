@@ -1,11 +1,43 @@
 (() => {
-  // Set PDF.js worker
-  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  const pdfScriptSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+  const pdfWorkerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  let pdfJsPromise = null;
 
   // Handle PDF thumbnail clicks using event delegation
   const content = document.querySelector('.content');
   const imageViewerOverlay = document.getElementById('image-viewer-overlay');
   const imageViewerContent = document.getElementById('image-viewer-content');
+
+  function loadPdfJs() {
+    if (window.pdfjsLib) {
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerSrc;
+      return Promise.resolve(window.pdfjsLib);
+    }
+
+    if (pdfJsPromise) {
+      return pdfJsPromise;
+    }
+
+    pdfJsPromise = new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+
+      script.src = pdfScriptSrc;
+      script.onload = () => {
+        if (!window.pdfjsLib) {
+          reject(new Error('PDF.js failed to initialize'));
+          return;
+        }
+
+        window.pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerSrc;
+        resolve(window.pdfjsLib);
+      };
+      script.onerror = () => reject(new Error('PDF.js failed to load'));
+
+      document.head.appendChild(script);
+    });
+
+    return pdfJsPromise;
+  }
 
   // Close overlay on ESC
   document.addEventListener('keydown', (e) => {
@@ -16,6 +48,8 @@
 
   async function renderPDF(pdfPath) {
     try {
+      const pdfjsLib = await loadPdfJs();
+
       // Load PDF
       const pdf = await pdfjsLib.getDocument(pdfPath).promise;
 

@@ -2,6 +2,7 @@
   const updateCellSizes = () => {
     const content = document.querySelector('.content');
     if (!content) return;
+    if (content.classList.contains('virtual-scroll')) return;
 
     // Get the content container width
     const contentWidth = content.offsetWidth;

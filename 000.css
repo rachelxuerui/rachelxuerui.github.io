@@ -6,6 +6,8 @@
 :root {
   --transition-speed: 0.5s; /* Global transition duration */
   --hover-delay: 100ms; /* Configure hover delay in one place */
+  --hover-duration: 0.15s;
+  --hover-easing: ease;
 }
 
 /* =========================
@@ -147,6 +149,7 @@ span {
 
 .contact-label-values a:hover {
   opacity: 0.25;
+  transition-delay: var(--hover-delay);
 }
 
 .contact-label {
@@ -192,6 +195,23 @@ span {
   display: none;
 }
 
+.content.virtual-scroll {
+  display: block;
+  position: relative;
+}
+
+.content.virtual-scroll .cell {
+  position: absolute;
+  left: 0;
+  top: 0;
+  will-change: transform;
+}
+
+.virtual-scroll-spacer {
+  width: 1px;
+  pointer-events: none;
+}
+
 .cell {
   padding: 18px;
   box-sizing: border-box;
@@ -205,7 +225,15 @@ span {
 .cell video {
   object-fit: contain;
   display: block;
-  transition: filter 0.15s ease, max-width 0.3s ease, max-height 0.3s ease;
+  transition:
+    filter var(--hover-duration) var(--hover-easing),
+    max-width 0.3s ease,
+    max-height 0.3s ease;
+}
+
+.cell.has-details img,
+.cell.has-details video {
+  cursor: pointer;
 }
 
 .cell img.pdf-thumbnail {
@@ -221,7 +249,7 @@ span {
 
 /* Hover swap transition */
 .hover-swap {
-  transition: opacity 0.15s ease;
+  transition: opacity var(--hover-duration) var(--hover-easing);
 }
 
 /* Blur all other images/videos when hovering over one, except same project */
@@ -248,7 +276,9 @@ span {
   opacity: 0;
   visibility: hidden;
   /* pointer-events: none; */
-  transition: opacity 0.15s ease, visibility 0.15s ease;
+  transition:
+    opacity var(--hover-duration) var(--hover-easing),
+    visibility var(--hover-duration) var(--hover-easing);
 }
 
 /* Mobile */
@@ -257,7 +287,7 @@ span {
   opacity: 1;
   visibility: visible;
   /* pointer-events: none; */
-  animation: fadeIn 0.15s ease;
+  animation: fadeIn var(--hover-duration) var(--hover-easing);
 }
 
 @keyframes fadeIn {
@@ -332,7 +362,7 @@ span {
   padding: 36px 36px;
   height: 100vh;
   box-sizing: border-box;
-  transition: opacity 0.15s ease;
+  transition: opacity var(--hover-duration) var(--hover-easing);
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
 }
@@ -361,6 +391,7 @@ span {
 
 .close-project-overlay-right:hover {
   opacity: 0.25;
+  transition-delay: var(--hover-delay);
 }
 
 /* Mobile: show close button - consolidated in media queries section below */
@@ -382,7 +413,9 @@ span {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.15s ease, visibility 0.15s ease;
+  transition:
+    opacity var(--hover-duration) var(--hover-easing),
+    visibility var(--hover-duration) var(--hover-easing);
   cursor: pointer;
 }
 
@@ -423,6 +456,7 @@ span {
 
 .close-image-viewer:hover {
   opacity: 0.25;
+  transition-delay: var(--hover-delay);
 }
 
 /* =========================
@@ -465,6 +499,7 @@ span {
 
   .contact-label:hover {
     opacity: 0.25;
+    transition-delay: var(--hover-delay);
   }
 
   .name {
@@ -479,9 +514,9 @@ span {
     padding-right: 18px;
   }
 
-  /* All images/videos are clickable */
-  .cell img,
-  .cell video {
+  .cell.has-details img,
+  .cell.has-details video,
+  .cell img.pdf-thumbnail {
     cursor: pointer;
   }
 
@@ -512,6 +547,7 @@ span {
 
   .close-project-overlay:hover {
     opacity: 0.25;
+    transition-delay: var(--hover-delay);
   }
 
   .project-content-left {
@@ -539,7 +575,9 @@ span {
   visibility: hidden;
   pointer-events: none;
 
-  transition: opacity 0.15s ease, visibility 0.15s ease;
+  transition:
+    opacity var(--hover-duration) var(--hover-easing),
+    visibility var(--hover-duration) var(--hover-easing);
 }
 
 .project-overlay-right.active {
@@ -558,16 +596,25 @@ span {
   box-sizing: border-box;
 }
 
-/* images inside details */
+.detail-image {
+  position: sticky;
+  top: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 72px);
+  margin-bottom: 0;
+  padding-bottom: 72px;
+  box-sizing: border-box;
+  background-color: rgba(247, 245, 244, 0.95);
+}
+
 .project-content-right img,
 .project-content-right video {
   display: block;
   width: 100%;
-  height: auto;
-
+  height: 100%;
   object-fit: contain;
-
-  margin-bottom: 36px;
 }
 
 #tooltip {
@@ -585,8 +632,10 @@ span {
   text-decoration: underline;
   text-underline-offset: 3px;
   cursor: pointer;
+  transition: opacity var(--hover-duration) var(--hover-easing);
 }
 
 .detail-link:hover {
   opacity: 0.5;
+  transition-delay: var(--hover-delay);
 }

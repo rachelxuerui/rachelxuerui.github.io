@@ -6,6 +6,15 @@
 
   const H_OFFSET = 3;
   const V_OFFSET = 3;
+  const hoverDelay =
+    parseInt(
+      getComputedStyle(document.documentElement)
+        .getPropertyValue('--hover-delay')
+    ) || 100;
+
+  let activeImage = null;
+  let pendingTooltip = null;
+  let latestTooltip = null;
 
   function showTooltip(text, x, y) {
     tooltip.textContent = text;
@@ -24,6 +33,9 @@
   }
 
   function hideTooltip() {
+    activeImage = null;
+    latestTooltip = null;
+    clearTimeout(pendingTooltip);
     tooltip.style.opacity = '0';
   }
 
@@ -38,7 +50,35 @@
     // Get just the filename from the src
     let filename = img.getAttribute('src').split('/').pop();
 
-    showTooltip(filename, e.clientX, e.clientY);
+    latestTooltip = {
+      text: filename,
+      x: e.clientX,
+      y: e.clientY
+    };
+
+    if (img === activeImage && !pendingTooltip) {
+      showTooltip(filename, e.clientX, e.clientY);
+      return;
+    }
+
+    if (img === activeImage) {
+      return;
+    }
+
+    activeImage = img;
+    clearTimeout(pendingTooltip);
+
+    pendingTooltip = setTimeout(() => {
+      if (latestTooltip) {
+        showTooltip(
+          latestTooltip.text,
+          latestTooltip.x,
+          latestTooltip.y
+        );
+      }
+
+      pendingTooltip = null;
+    }, hoverDelay);
   });
 
   overlay.addEventListener('mouseleave', hideTooltip);
