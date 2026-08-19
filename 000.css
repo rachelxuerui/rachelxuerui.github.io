@@ -635,7 +635,7 @@ span {
   margin-bottom: 0;
   padding-bottom: 72px;
   box-sizing: border-box;
-  background-color: rgba(247, 245, 244, 0.95);
+  background-color: transparent;
 }
 
 .project-content-right img,
@@ -644,6 +644,30 @@ span {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+@media screen and (max-width: 1074px) {
+  .project-content-right {
+    padding: 24px;
+  }
+
+  .detail-image {
+    top: 24px;
+    height: calc(100vh - 48px);
+    padding-bottom: 48px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .project-content-right {
+    padding: 18px;
+  }
+
+  .detail-image {
+    top: 18px;
+    height: calc(100vh - 36px);
+    padding-bottom: 36px;
+  }
 }
 
 #tooltip {
