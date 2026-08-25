@@ -3,6 +3,7 @@
 
   const leftOverlay = document.getElementById('project-overlay');
   const leftContent = document.getElementById('overlay-content-left');
+  const sidebar = document.querySelector('.sidebar');
 
   const rightOverlay = document.getElementById('project-overlay-right');
   const rightContent = document.getElementById('overlay-content-right');
@@ -89,6 +90,17 @@
     );
   }
 
+  function markDetailProjectItem(item) {
+    const projectId = item?.dataset?.project;
+
+    if (!projectId) return;
+
+    item.classList.toggle(
+      'has-details',
+      hasDetails(projectId)
+    );
+  }
+
 
   function markDetailCells(root = content) {
     if (!root) return;
@@ -99,6 +111,13 @@
 
     root.querySelectorAll?.('.cell[data-project]')
       .forEach(markDetailCell);
+  }
+
+
+  function markDetailProjectItems() {
+    sidebar
+      ?.querySelectorAll('.project-item[data-project]')
+      .forEach(markDetailProjectItem);
   }
 
 
@@ -118,6 +137,8 @@
 
     detailCellObserver.observe(content, { childList: true });
   }
+
+  markDetailProjectItems();
 
   // =========================
   // Overlay Controls
@@ -353,6 +374,27 @@ async function showRightOverlay(projectId, scrollTarget = null) {
   closeLeftButton?.addEventListener(
     'click',
     hideLeftOverlay
+  );
+
+
+  sidebar?.addEventListener(
+    'click',
+    async event => {
+      const item =
+        event.target.closest('.project-item[data-project].has-details');
+
+      if (!item || !sidebar.contains(item)) return;
+
+      event.preventDefault();
+
+      const projectId = item.dataset.project;
+
+      await showLeftOverlay(projectId);
+
+      if (!isMobile) {
+        await showRightOverlay(projectId);
+      }
+    }
   );
 
 
