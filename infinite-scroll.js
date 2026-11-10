@@ -78,6 +78,18 @@
     const cell = template.cloneNode(true);
 
     cell.dataset.virtualIndex = virtualIndex;
+
+    cell.querySelectorAll('img, video').forEach(media => {
+      media.tabIndex = 0;
+
+      if (media.tagName === 'VIDEO' && !media.hasAttribute('aria-label')) {
+        media.setAttribute(
+          'aria-label',
+          `Project ${cell.dataset.project || 'media'} video`
+        );
+      }
+    });
+
     sizeCellMedia(cell);
     preloadCellMedia(cell);
 

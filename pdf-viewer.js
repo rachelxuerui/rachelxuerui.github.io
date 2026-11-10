@@ -39,13 +39,6 @@
     return pdfJsPromise;
   }
 
-  // Close overlay on ESC
-  document.addEventListener('keydown', (e) => {
-    if (e.key === "Escape") {
-      imageViewerOverlay.classList.remove('active');
-    }
-  });
-
   async function renderPDF(pdfPath) {
     try {
       const pdfjsLib = await loadPdfJs();
@@ -107,7 +100,7 @@
 
           // Show overlay with loading message
           imageViewerContent.innerHTML = '<p>Loading PDF...</p>';
-          imageViewerOverlay.classList.add('active');
+          window.openImageViewer?.(thumbnail);
 
           // Render PDF
           renderPDF(pdfPath);

@@ -26,7 +26,7 @@
         imageViewerContent.appendChild(enlargedImg);
 
         // Show overlay
-        imageViewerOverlay.classList.add('active');
+        window.openImageViewer?.(img);
       } else if (video) {
         e.stopPropagation();
 
@@ -47,7 +47,7 @@
         imageViewerContent.appendChild(enlargedVideo);
 
         // Show overlay
-        imageViewerOverlay.classList.add('active');
+        window.openImageViewer?.(video);
       }
     });
   }

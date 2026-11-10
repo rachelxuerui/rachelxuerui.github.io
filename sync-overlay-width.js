@@ -1,15 +1,22 @@
 (() => {
-  const isMobile = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
-
   const sidebar = document.querySelector('.sidebar');
   const leftOverlay = document.getElementById('project-overlay');
   const rightOverlay = document.getElementById('project-overlay-right');
+  const usesSingleColumnProjectLayout = () =>
+    window.matchMedia('(max-width: 899px)').matches;
 
   const syncOverlayWidth = () => {
-    // Don't run on mobile
-    if (isMobile) return;
-
     if (!sidebar || !leftOverlay) return;
+
+    if (usesSingleColumnProjectLayout()) {
+      leftOverlay.style.width = '';
+
+      if (rightOverlay) {
+        rightOverlay.style.left = '';
+      }
+
+      return;
+    }
 
     const sidebarWidth = sidebar.offsetWidth;
 

@@ -35,6 +35,11 @@ a:hover {
   cursor: pointer;
 }
 
+:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 3px;
+}
+
 span {
   white-space: nowrap;
 }
@@ -261,9 +266,21 @@ span {
 .content:has(.cell img:hover) .cell img:not(:hover):not(.same-project),
 .content:has(.cell img:hover) .cell video:not(:hover):not(.same-project),
 .content:has(.cell video:hover) .cell img:not(:hover):not(.same-project),
-.content:has(.cell video:hover) .cell video:not(:hover):not(.same-project) {
+.content:has(.cell video:hover) .cell video:not(:hover):not(.same-project),
+.content:has(.cell img:focus) .cell img:not(:focus):not(.same-project),
+.content:has(.cell img:focus) .cell video:not(:focus):not(.same-project),
+.content:has(.cell video:focus) .cell img:not(:focus):not(.same-project),
+.content:has(.cell video:focus) .cell video:not(:focus):not(.same-project) {
   filter: blur(12px);
   transition-delay: var(--hover-delay);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .content.sidebar-project-highlight .cell img:not(.sidebar-project),
+  .content.sidebar-project-highlight .cell video:not(.sidebar-project) {
+    filter: blur(12px);
+    transition-delay: var(--hover-delay);
+  }
 }
 
 /* =========================
@@ -293,6 +310,12 @@ span {
   visibility: visible;
   /* pointer-events: none; */
   animation: fadeIn var(--hover-duration) var(--hover-easing);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-overlay.hover-preview {
+    pointer-events: none;
+  }
 }
 
 @keyframes fadeIn {
@@ -512,8 +535,8 @@ span {
   }
 }
 
-/* Mobile/Touch Devices */
-@media (hover: none) and (pointer: coarse) and (max-width: 768px) {
+/* Narrow project layout */
+@media screen and (max-width: 899px) {
   /* Sidebar padding */
   .sidebar {
     padding-right: 18px;
@@ -527,7 +550,14 @@ span {
 
   /* Full-screen overlay */
   .project-overlay {
+    inset: 0;
     width: 100vw;
+  }
+
+  .project-overlay .project-content,
+  .project-overlay .project-content-left {
+    width: 100%;
+    max-width: none;
   }
 
   .project-overlay.active {
@@ -557,6 +587,7 @@ span {
 
   .project-content-left {
     pointer-events: auto;
+    position: relative;
     padding-top: 36px;
     justify-content: flex-start;
     gap: 56px;
@@ -567,6 +598,33 @@ span {
     flex-direction: column;
     gap: 36px;
     width: 100%;
+  }
+
+  .project-content-left .detail-image.mobile-detail-peek {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    left: 36px;
+    right: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    box-sizing: border-box;
+    background-color: transparent;
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  .project-content-left .detail-image.mobile-detail-peek img,
+  .project-content-left .detail-image.mobile-detail-peek video {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: calc(100vh - 72px);
+    object-fit: contain;
   }
 
   .project-content-left .detail-image {
@@ -649,6 +707,7 @@ span {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.08));
 }
 
 @media screen and (max-width: 1074px) {
@@ -673,17 +732,6 @@ span {
     height: calc(100vh - 36px);
     padding-bottom: 36px;
   }
-}
-
-#tooltip {
-  position: fixed;
-  pointer-events: none;
-  padding: 4px 8px;
-  border-radius: 1px;
-  color: rgba(0,0,0,0.9);
-  opacity: 0;
-  transition: opacity 0.2s;
-  z-index: 100001;
 }
 
 .detail-link {

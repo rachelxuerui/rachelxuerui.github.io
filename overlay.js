@@ -18,6 +18,7 @@
 
   let currentProject = null;
   let currentClickedProject = null;
+  let focusReturnTarget = null;
 
   let leftLocked = false;
 
@@ -25,6 +26,8 @@
   let scrollTimeout;
   let showTimeout;
   let hideTimeout;
+  let hoverPreviewRequested = false;
+  let removeMobileDetailPeek = null;
 
   const hoverDelay =
     parseInt(
@@ -32,10 +35,8 @@
         .getPropertyValue('--hover-delay')
     ) || 100;
 
-  const isMobile =
-    window.matchMedia(
-      "(hover:none) and (pointer:coarse)"
-    ).matches;
+  const usesSingleColumnProjectLayout = () =>
+    window.matchMedia('(max-width: 899px)').matches;
 
 
   // =========================
@@ -99,6 +100,11 @@
       'has-details',
       hasDetails(projectId)
     );
+
+    if (hasDetails(projectId)) {
+      item.setAttribute('role', 'button');
+      item.setAttribute('tabindex', '0');
+    }
   }
 
 
@@ -145,6 +151,7 @@
   // =========================
 
   function resetLeftScroll() {
+    removeMobileDetailPeek?.();
     leftContent.scrollTop = 0;
   }
 
@@ -153,6 +160,100 @@
     if (typeof window.updateDateTime === 'function') {
       window.updateDateTime();
     }
+  }
+
+
+  function showMobileDetailPeek(detailImage) {
+    removeMobileDetailPeek?.();
+
+    const peek = detailImage.cloneNode(true);
+    let touchY = null;
+    let dismissed = false;
+    let distance = 0;
+    let travel = 0;
+
+    peek.classList.add('mobile-detail-peek');
+    peek.removeAttribute('id');
+    peek.setAttribute('aria-hidden', 'true');
+    peek.style.position = 'fixed';
+    peek.style.top = '0';
+    peek.style.bottom = '0';
+    leftContent.append(peek);
+    travel = peek.getBoundingClientRect().height;
+
+    const dismiss = () => {
+      if (dismissed) return;
+
+      dismissed = true;
+      peek.remove();
+      leftContent.removeEventListener('wheel', handleWheel);
+      leftContent.removeEventListener('touchstart', handleTouchStart);
+      leftContent.removeEventListener('touchmove', handleTouchMove);
+
+      if (removeMobileDetailPeek === dismiss) {
+        removeMobileDetailPeek = null;
+      }
+    };
+
+    const movePeek = delta => {
+      if (delta <= 0) return 0;
+
+      const consumed = Math.min(delta, travel - distance);
+
+      distance += consumed;
+      peek.style.transform = `translateY(${-distance}px)`;
+
+      if (distance >= travel) {
+        dismiss();
+      }
+
+      return delta - consumed;
+    };
+
+    const handleWheel = event => {
+      event.preventDefault();
+
+      if (event.deltaY <= 0) return;
+
+      const remaining = movePeek(event.deltaY);
+
+      if (remaining > 0) {
+        leftContent.scrollTop += remaining;
+      }
+    };
+
+    const handleTouchStart = event => {
+      touchY = event.touches[0]?.clientY ?? null;
+    };
+
+    const handleTouchMove = event => {
+      const nextTouchY = event.touches[0]?.clientY;
+
+      if (nextTouchY === undefined || touchY === null) return;
+
+      event.preventDefault();
+
+      const delta = touchY - nextTouchY;
+
+      if (delta <= 0) {
+        touchY = nextTouchY;
+        return;
+      }
+
+      const remaining = movePeek(delta);
+
+      if (remaining > 0) {
+        leftContent.scrollTop += remaining;
+      }
+
+      touchY = nextTouchY;
+    };
+
+    leftContent.addEventListener('wheel', handleWheel, { passive: false });
+    leftContent.addEventListener('touchstart', handleTouchStart, { passive: true });
+    leftContent.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+    removeMobileDetailPeek = dismiss;
   }
 
 
@@ -166,13 +267,14 @@
           const target =
             link.getAttribute('href').replace('#', '');
 
-          if (isMobile) {
-            leftContent
-              .querySelector(`#${CSS.escape(target)}`)
-              ?.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
+          if (usesSingleColumnProjectLayout()) {
+            const detailImage = leftContent.querySelector(
+              `#${CSS.escape(target)}`
+            );
+
+            if (detailImage) {
+              showMobileDetailPeek(detailImage);
+            }
 
             return;
           }
@@ -206,14 +308,24 @@
   }
 
 
-  async function showLeftOverlay(projectId) {
+  async function showLeftOverlay(
+    projectId,
+    focusClose = false,
+    hoverPreview = false
+  ) {
 
     if (!leftOverlay || !leftContent) return;
+
+    if (!hoverPreview) {
+      hoverPreviewRequested = false;
+    }
 
 
     let html = await loadContent('preview', projectId);
 
-    if (isMobile && hasDetails(projectId)) {
+    if (hoverPreview && !hoverPreviewRequested) return;
+
+    if (usesSingleColumnProjectLayout() && hasDetails(projectId)) {
       const detailsHtml = await loadContent('details', projectId);
 
       html += `
@@ -256,11 +368,25 @@
 
 
     leftOverlay.classList.add('active');
+    leftOverlay.classList.toggle('hover-preview', hoverPreview);
+
+    if (hoverPreview) {
+      leftOverlay.setAttribute('aria-hidden', 'true');
+      leftOverlay.setAttribute('inert', '');
+    } else {
+      leftOverlay.setAttribute('aria-hidden', 'false');
+      leftOverlay.removeAttribute('inert');
+    }
+
+    if (focusClose) {
+      focusReturnTarget = document.activeElement;
+      closeLeftButton?.focus();
+    }
   }
 
 
 
-async function showRightOverlay(projectId, scrollTarget = null) {
+async function showRightOverlay(projectId, scrollTarget = null, focusClose = true) {
 
   if (!hasDetails(projectId)) {
     return;
@@ -277,6 +403,13 @@ async function showRightOverlay(projectId, scrollTarget = null) {
   rightContent.innerHTML = html;
 
   rightOverlay.classList.add('active');
+  rightOverlay.setAttribute('aria-hidden', 'false');
+  rightOverlay.removeAttribute('inert');
+
+  if (focusClose) {
+    focusReturnTarget = document.activeElement;
+    closeRightButton?.focus();
+  }
 
 
   requestAnimationFrame(() => {
@@ -305,6 +438,14 @@ async function showRightOverlay(projectId, scrollTarget = null) {
     currentProject = null;
 
     leftOverlay?.classList.remove('active');
+    leftOverlay?.classList.remove('hover-preview');
+    leftOverlay?.setAttribute('aria-hidden', 'true');
+    leftOverlay?.setAttribute('inert', '');
+
+    if (focusReturnTarget) {
+      focusReturnTarget.focus();
+      focusReturnTarget = null;
+    }
   }
 
 
@@ -315,8 +456,34 @@ async function showRightOverlay(projectId, scrollTarget = null) {
     leftLocked = false;
 
     rightOverlay?.classList.remove('active');
+    rightOverlay?.setAttribute('aria-hidden', 'true');
+    rightOverlay?.setAttribute('inert', '');
 
     hideLeftOverlay();
+  }
+
+  function trapFocus(event, overlay) {
+    const focusable = [
+      ...overlay.querySelectorAll(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )
+    ].filter(element => !element.closest('[aria-hidden="true"]'));
+
+    if (!focusable.length) {
+      event.preventDefault();
+      return;
+    }
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
   }
 
 
@@ -325,12 +492,14 @@ async function showRightOverlay(projectId, scrollTarget = null) {
   // Debounce
   // =========================
 
-  function showHover(projectId) {
+  function showHover(projectId, allowWhileScrolling = false) {
 
     clearTimeout(hideTimeout);
 
+    hoverPreviewRequested = true;
 
-    if (isScrolling) return;
+
+    if (isScrolling && !allowWhileScrolling) return;
 
 
     clearTimeout(showTimeout);
@@ -338,8 +507,8 @@ async function showRightOverlay(projectId, scrollTarget = null) {
 
     showTimeout = setTimeout(() => {
 
-      if (!isScrolling) {
-        showLeftOverlay(projectId);
+      if (!isScrolling || allowWhileScrolling) {
+        showLeftOverlay(projectId, false, true);
       }
 
     }, hoverDelay);
@@ -353,6 +522,8 @@ async function showRightOverlay(projectId, scrollTarget = null) {
 
 
     clearTimeout(hideTimeout);
+
+    hoverPreviewRequested = false;
 
 
     hideLeftOverlay();
@@ -376,6 +547,31 @@ async function showRightOverlay(projectId, scrollTarget = null) {
     hideLeftOverlay
   );
 
+  document.addEventListener('keydown', event => {
+    const activeOverlay = rightOverlay?.classList.contains('active')
+      ? rightOverlay
+      : leftOverlay?.classList.contains('active')
+        ? leftOverlay
+        : null;
+
+    if (event.key === 'Tab' && activeOverlay) {
+      trapFocus(event, activeOverlay);
+      return;
+    }
+
+    if (event.key !== 'Escape') return;
+
+    if (document.getElementById('image-viewer-overlay')?.classList.contains('active')) {
+      return;
+    }
+
+    if (rightOverlay?.classList.contains('active')) {
+      hideRightOverlay();
+    } else if (leftOverlay?.classList.contains('active')) {
+      hideLeftOverlay();
+    }
+  });
+
 
   sidebar?.addEventListener(
     'click',
@@ -389,11 +585,26 @@ async function showRightOverlay(projectId, scrollTarget = null) {
 
       const projectId = item.dataset.project;
 
-      await showLeftOverlay(projectId);
+      await showLeftOverlay(projectId, false);
 
-      if (!isMobile) {
-        await showRightOverlay(projectId);
+      if (!usesSingleColumnProjectLayout()) {
+        await showRightOverlay(projectId, null, true);
       }
+    }
+  );
+
+  sidebar?.addEventListener(
+    'keydown',
+    event => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+
+      const item =
+        event.target.closest('.project-item[data-project].has-details');
+
+      if (!item || !sidebar.contains(item)) return;
+
+      event.preventDefault();
+      item.click();
     }
   );
 
@@ -445,10 +656,37 @@ async function showRightOverlay(projectId, scrollTarget = null) {
 
         if (!cell) return;
 
-        if (isMobile) return;
+        if (usesSingleColumnProjectLayout()) return;
 
         showRightOverlay(cell.dataset.project);
 
+      }
+    );
+
+    content.addEventListener(
+      'keydown',
+      event => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+
+        const media =
+          event.target.closest('.cell img, .cell video');
+
+        if (!media) return;
+
+        const cell = media.closest('.cell[data-project]');
+
+        if (!cell) return;
+
+        if (media.classList.contains('pdf-thumbnail')) {
+          event.preventDefault();
+          media.click();
+          return;
+        }
+
+        if (!usesSingleColumnProjectLayout() && hasDetails(cell.dataset.project)) {
+          event.preventDefault();
+          showRightOverlay(cell.dataset.project);
+        }
       }
     );
 
@@ -456,7 +694,7 @@ async function showRightOverlay(projectId, scrollTarget = null) {
 
 
 
-  if (isMobile) {
+  if (usesSingleColumnProjectLayout()) {
 
 
     content?.addEventListener(
@@ -483,7 +721,8 @@ async function showRightOverlay(projectId, scrollTarget = null) {
         if (cell?.dataset.project) {
 
           showLeftOverlay(
-            cell.dataset.project
+            cell.dataset.project,
+            true
           );
 
         }
@@ -495,11 +734,39 @@ async function showRightOverlay(projectId, scrollTarget = null) {
 
     logo?.addEventListener(
       'click',
-      () => showLeftOverlay('000')
+      () => showLeftOverlay('000', true)
     );
 
 
   } else {
+
+    content?.addEventListener(
+      'focusin',
+      event => {
+        const media =
+          event.target.closest('.cell img, .cell video');
+
+        if (media && !media.classList.contains('pdf-thumbnail')) {
+          const cell = media.closest('.cell[data-project]');
+
+          if (cell?.dataset.project) {
+            showHover(cell.dataset.project, true);
+          }
+        }
+      }
+    );
+
+    content?.addEventListener(
+      'focusout',
+      event => {
+        const media =
+          event.target.closest('.cell img, .cell video');
+
+        if (media && !media.classList.contains('pdf-thumbnail')) {
+          hideHover();
+        }
+      }
+    );
 
 
     content?.addEventListener(
